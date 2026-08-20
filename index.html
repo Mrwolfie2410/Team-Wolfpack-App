@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+
+  <title>TEAM WOLFPACK</title>
+
+  <!-- We will create this file in the next step -->
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 30%, rgba(0, 190, 255, 0.22), transparent 35%),
+        radial-gradient(circle at 85% 70%, rgba(255, 95, 0, 0.22), transparent 35%),
+        #050505;
+
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .title {
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+
+      background: linear-gradient(
+        90deg,
+        #dffaff 0%,
+        #69d8ff 45%,
+        #ff7a18 55%,
+        #ffb347 100%
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 14px;
+      letter-spacing: 4px;
+      color: #d8d8d8;
+      margin-bottom: 45px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 2px;
+      margin-bottom: 45px;
+
+      background: linear-gradient(
+        90deg,
+        #63d7ff,
+        transparent,
+        #ff6a00
+      );
+    }
+
+    .welcome {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .text {
+      color: #cfcfcf;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+
+    .enter-button {
+      display: block;
+      width: 100%;
+      padding: 18px 20px;
+
+      border: 1px solid #67d8ff;
+      border-radius: 8px;
+
+      background: linear-gradient(
+        90deg,
+        rgba(36, 166, 215, 0.25),
+        rgba(255, 91, 0, 0.25)
+      );
+
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 2px;
+
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .enter-button:active {
+      transform: scale(0.98);
+    }
+
+    .website {
+      margin-top: 28px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #888;
+    }
+
+    .ice {
+      color: #78ddff;
+    }
+
+    .fire {
+      color: #ff7a18;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="app">
+
+    <h1 class="title">TEAM WOLFPACK</h1>
+
+    <div class="tagline">
+      ONE PACK • ONE PURPOSE
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="welcome">
+      WELCOME TO THE PACK
+    </div>
+
+    <p class="text">
+      Fighters. Upcoming fights. The pack. Gallery. Merch.
+      Sponsors and everything Official Team Wolfpack.
+    </p>
+
+    <a
+      class="enter-button"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+      ENTER THE WOLFPACK
+    </a>
+
+    <div class="website">
+      <span class="ice">OFFICIALTEAMWOLFPACK.COM</span><span class="fire">/BOXING</span>
+    </div>
+
+  </main>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("service-worker.js");
+      });
+    }
+  </script>
+
+</body>
+</html>
