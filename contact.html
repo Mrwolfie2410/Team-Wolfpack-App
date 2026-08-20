@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+
+<title>Contact Us | Team Wolfpack</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  padding-bottom:95px;
+
+  background:
+    radial-gradient(circle at 0% 15%,rgba(0,190,255,.22),transparent 30%),
+    radial-gradient(circle at 100% 35%,rgba(255,85,0,.22),transparent 30%),
+    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+}
+
+.header{
+  text-align:center;
+  padding:28px 18px 20px;
+}
+
+.logo{
+  width:115px;
+  height:115px;
+  object-fit:contain;
+}
+
+.brand{
+  margin-top:5px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:#67dcff;
+}
+
+.title{
+  margin-top:18px;
+  font-size:32px;
+  font-weight:900;
+}
+
+.ice{color:#67dcff}
+.fire{color:#ff751c}
+
+.subtitle{
+  margin-top:9px;
+  color:#aaa;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.line{
+  width:100%;
+  max-width:430px;
+  height:2px;
+  margin:22px auto 0;
+  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+}
+
+.content{
+  max-width:540px;
+  margin:auto;
+  padding:10px 18px 35px;
+}
+
+.contact-card{
+  position:relative;
+  overflow:hidden;
+  padding:22px 20px;
+  margin-bottom:15px;
+
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.13);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(20,150,205,.16),
+      rgba(8,8,8,.94) 50%,
+      rgba(220,70,0,.17)
+    );
+}
+
+.contact-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#4bd8ff;
+}
+
+.contact-card::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#ff6500;
+}
+
+.contact-title{
+  font-size:18px;
+  font-weight:900;
+}
+
+.contact-text{
+  margin-top:7px;
+  color:#aaa;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.contact-button{
+  display:block;
+  margin-top:14px;
+  padding:14px;
+
+  border-radius:10px;
+  border:1px solid rgba(103,220,255,.6);
+
+  text-decoration:none;
+  text-align:center;
+
+  color:white;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,170,230,.12),
+      rgba(255,90,0,.12)
+    );
+}
+
+.note{
+  margin-top:20px;
+  padding:18px;
+
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+
+  background:rgba(8,8,8,.75);
+
+  color:#aaa;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.back{
+  display:block;
+  margin-top:18px;
+  padding:16px;
+
+  text-align:center;
+  text-decoration:none;
+
+  color:white;
+  border:1px solid #59d9ff;
+  border-radius:12px;
+
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.12),
+      rgba(255,90,0,.12)
+    );
+}
+
+.bottom-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:74px;
+
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+
+  padding-bottom:env(safe-area-inset-bottom);
+
+  background:rgba(4,4,4,.97);
+  border-top:1px solid rgba(255,255,255,.12);
+
+  z-index:100;
+}
+
+.nav-item{
+  text-decoration:none;
+  color:#888;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:5px;
+
+  font-size:9px;
+  font-weight:bold;
+}
+
+.nav-icon{
+  font-size:20px;
+}
+
+.fire-nav{
+  color:#ff751c;
+}
+
+.nav-item.active{
+  color:#67dcff;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+<a href="index.html">
+<img src="icon-512.png" class="logo" alt="Team Wolfpack">
+</a>
+
+<div class="brand">TEAM WOLFPACK</div>
+
+<h1 class="title">
+<span class="ice">CONTACT</span>
+<span class="fire"> US</span>
+</h1>
+
+<p class="subtitle">
+Questions, sponsorship enquiries, fight opportunities and Team Wolfpack contact.
+</p>
+
+<div class="line"></div>
+
+</header>
+
+<main class="content">
+
+<div class="contact-card">
+
+<div class="contact-title">
+GENERAL ENQUIRIES
+</div>
+
+<div class="contact-text">
+Contact Team Wolfpack for general questions and information.
+</div>
+
+<a
+  class="contact-button"
+  href="https://officialteamwolfpack.com/boxing"
+>
+CONTACT TEAM WOLFPACK
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="contact-title">
+SPONSORSHIP
+</div>
+
+<div class="contact-text">
+Interested in sponsoring Team Wolfpack, a fighter or an upcoming event?
+</div>
+
+<a
+  class="contact-button"
+  href="https://officialteamwolfpack.com/boxing"
+>
+SPONSORSHIP ENQUIRY
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="contact-title">
+FIGHT / EVENT ENQUIRIES
+</div>
+
+<div class="contact-text">
+For boxing opportunities, event enquiries and fighter-related contact.
+</div>
+
+<a
+  class="contact-button"
+  href="https://officialteamwolfpack.com/boxing"
+>
+FIGHT ENQUIRY
+</a>
+
+</div>
+
+
+<div class="note">
+We can replace these website buttons with your direct email address, contact form or social links once you decide exactly how you want people to contact Team Wolfpack.
+</div>
+
+
+<a class="back" href="more.html">
+‹ BACK TO MORE
+</a>
+
+</main>
+
+
+<nav class="bottom-nav">
+
+<a class="nav-item" href="index.html">
+<span class="nav-icon">⌂</span>
+HOME
+</a>
+
+<a class="nav-item" href="fighters.html">
+<span class="nav-icon">♟</span>
+FIGHTERS
+</a>
+
+<a class="nav-item fire-nav" href="fights.html">
+<span class="nav-icon">♜</span>
+FIGHTS
+</a>
+
+<a class="nav-item" href="Gallery.html">
+<span class="nav-icon">▣</span>
+GALLERY
+</a>
+
+<a class="nav-item active" href="more.html">
+<span class="nav-icon">☰</span>
+MORE
+</a>
+
+</nav>
+
+</body>
+</html>
