@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+
+<title>Fights | Team Wolfpack</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:white;
+  padding-bottom:95px;
+
+  background:
+    radial-gradient(circle at 0% 15%,rgba(0,190,255,.24),transparent 30%),
+    radial-gradient(circle at 100% 35%,rgba(255,85,0,.23),transparent 30%),
+    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+}
+
+/* HEADER */
+
+.header{
+  text-align:center;
+  padding:28px 18px 20px;
+}
+
+.logo{
+  width:110px;
+  height:110px;
+  object-fit:contain;
+}
+
+.brand{
+  margin-top:5px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:#67dcff;
+}
+
+.title{
+  margin-top:18px;
+  font-size:32px;
+  font-weight:900;
+}
+
+.ice{
+  color:#67dcff;
+}
+
+.fire{
+  color:#ff751c;
+}
+
+.subtitle{
+  margin-top:8px;
+  color:#aaa;
+  font-size:13px;
+}
+
+.line{
+  width:100%;
+  max-width:430px;
+  height:2px;
+  margin:22px auto 0;
+  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+}
+
+/* CONTENT */
+
+.content{
+  max-width:540px;
+  margin:auto;
+  padding:10px 18px 35px;
+}
+
+.section{
+  margin-bottom:32px;
+}
+
+.section-title{
+  font-size:21px;
+  font-weight:900;
+  margin-bottom:15px;
+}
+
+/* FIGHT CARDS */
+
+.fight-card{
+  position:relative;
+  overflow:hidden;
+  padding:20px;
+  margin-bottom:14px;
+
+  border-radius:16px;
+
+  border:1px solid rgba(255,255,255,.13);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(20,150,205,.16),
+      rgba(8,8,8,.94) 50%,
+      rgba(220,70,0,.17)
+    );
+
+  box-shadow:0 9px 28px rgba(0,0,0,.35);
+}
+
+.fight-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#4bd8ff;
+}
+
+.fight-card::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#ff6500;
+}
+
+.badge{
+  display:inline-block;
+
+  padding:5px 9px;
+  margin-bottom:10px;
+
+  border-radius:20px;
+
+  border:1px solid rgba(255,117,28,.35);
+
+  color:#ff751c;
+  background:rgba(255,90,0,.08);
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.fighter{
+  color:#67dcff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.event{
+  margin-top:5px;
+  font-size:18px;
+  font-weight:900;
+}
+
+.date{
+  margin-top:7px;
+  color:#ff751c;
+  font-size:14px;
+  font-weight:900;
+}
+
+.matchup{
+  margin-top:13px;
+  font-size:15px;
+  font-weight:900;
+}
+
+.venue{
+  margin-top:7px;
+  color:#aaa;
+  font-size:11px;
+}
+
+.details{
+  margin-top:8px;
+  color:#67dcff;
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:.5px;
+}
+
+.profile-link{
+  display:inline-block;
+  margin-top:14px;
+  text-decoration:none;
+  color:#ff751c;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+/* NAVIGATION */
+
+.bottom-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:74px;
+
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+
+  padding-bottom:env(safe-area-inset-bottom);
+
+  background:rgba(4,4,4,.97);
+
+  border-top:1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:blur(12px);
+
+  z-index:100;
+}
+
+.nav-item{
+  text-decoration:none;
+  color:#888;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:5px;
+
+  font-size:9px;
+  font-weight:bold;
+}
+
+.nav-icon{
+  font-size:20px;
+}
+
+.nav-item.active{
+  color:#ff751c;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+<a href="index.html">
+<img src="icon-512.png" class="logo" alt="Team Wolfpack">
+</a>
+
+<div class="brand">TEAM WOLFPACK</div>
+
+<h1 class="title">
+<span class="ice">UPCOMING</span>
+<span class="fire"> FIGHTS</span>
+</h1>
+
+<p class="subtitle">
+The next fights for Team Wolfpack.
+</p>
+
+<div class="line"></div>
+
+</header>
+
+<main class="content">
+
+<section class="section">
+
+<h2 class="section-title">
+<span class="ice">MRS WOLFIE</span>
+</h2>
+
+<div class="fight-card">
+
+<div class="badge">UPCOMING</div>
+
+<div class="fighter">
+TEAM WOLFIE
+</div>
+
+<div class="event">
+AYRSHIRE BOXING • THE LAUNCH
+</div>
+
+<div class="date">
+17 OCTOBER 2026
+</div>
+
+<div class="matchup">
+MRS WOLFIE vs COLLEEN LEYDEN
+</div>
+
+<div class="venue">
+AYR RACECOURSE
+</div>
+
+<div class="details">
+FIGHT TYPE: DEBUT
+</div>
+
+<a class="profile-link" href="mrs-wolfie.html">
+VIEW MRS WOLFIE PROFILE ›
+</a>
+
+</div>
+
+
+<div class="fight-card">
+
+<div class="badge">UPCOMING</div>
+
+<div class="fighter">
+TEAM WOLFIE
+</div>
+
+<div class="event">
+EASTHOUSES BOXING CLUB
+</div>
+
+<div class="date">
+NOVEMBER 2026
+</div>
+
+<div class="matchup">
+MRS WOLFIE vs TBA
+</div>
+
+<div class="venue">
+EASTHOUSES MINERS CLUB
+</div>
+
+<div class="details">
+SUPER MIDDLEWEIGHT TITLE
+</div>
+
+<a class="profile-link" href="mrs-wolfie.html">
+VIEW MRS WOLFIE PROFILE ›
+</a>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2 class="section-title">
+<span class="fire">GREIG SLOAN</span>
+</h2>
+
+<div class="fight-card">
+
+<div class="badge">UPCOMING</div>
+
+<div class="fighter">
+TEAM SLOAN
+</div>
+
+<div class="event">
+UNFINISHED BUSINESS
+</div>
+
+<div class="date">
+19 SEPTEMBER 2026
+</div>
+
+<div class="matchup">
+GREIG SLOAN vs TBA
+</div>
+
+<div class="venue">
+HAMPDEN PARK
+</div>
+
+<a class="profile-link" href="greig-sloan.html">
+VIEW GREIG SLOAN PROFILE ›
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<nav class="bottom-nav">
+
+<a class="nav-item" href="index.html">
+<span class="nav-icon">⌂</span>
+HOME
+</a>
+
+<a class="nav-item" href="fighters.html">
+<span class="nav-icon">♟</span>
+FIGHTERS
+</a>
+
+<a class="nav-item active" href="fights.html">
+<span class="nav-icon">♜</span>
+FIGHTS
+</a>
+
+<a class="nav-item" href="https://officialteamwolfpack.com/boxing">
+<span class="nav-icon">▣</span>
+GALLERY
+</a>
+
+<a class="nav-item" href="https://officialteamwolfpack.com/boxing">
+<span class="nav-icon">☰</span>
+MORE
+</a>
+
+</nav>
+
+</body>
+</html>
