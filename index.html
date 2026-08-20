@@ -2,56 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
   <meta name="theme-color" content="#050505">
 
   <title>TEAM WOLFPACK</title>
 
-  <!-- We will create this file in the next step -->
   <link rel="manifest" href="manifest.json">
 
+  <link rel="apple-touch-icon" href="icon-192.png">
+
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-height: 100vh;
+
       background:
-        radial-gradient(circle at 15% 30%, rgba(0, 190, 255, 0.22), transparent 35%),
-        radial-gradient(circle at 85% 70%, rgba(255, 95, 0, 0.22), transparent 35%),
+        radial-gradient(
+          circle at 0% 20%,
+          rgba(0, 191, 255, 0.20),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 100% 75%,
+          rgba(255, 85, 0, 0.22),
+          transparent 32%
+        ),
         #050505;
 
       color: white;
-      font-family: Arial, Helvetica, sans-serif;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      padding-bottom: 95px;
     }
 
-    .app {
-      width: 100%;
-      max-width: 430px;
+
+    /* ---------------- HEADER ---------------- */
+
+    .header {
+      text-align: center;
+      padding: 34px 20px 20px;
+    }
+
+    .logo {
+      width: 145px;
+      height: 145px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      filter:
+        drop-shadow(0 0 12px rgba(51, 201, 255, 0.35))
+        drop-shadow(0 0 12px rgba(255, 92, 0, 0.30));
     }
 
     .title {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 900;
       letter-spacing: 2px;
-      margin-bottom: 8px;
 
-      background: linear-gradient(
-        90deg,
-        #dffaff 0%,
-        #69d8ff 45%,
-        #ff7a18 55%,
-        #ffb347 100%
-      );
+      background:
+        linear-gradient(
+          90deg,
+          #e9fbff 0%,
+          #63d8ff 47%,
+          #ff6414 53%,
+          #ffad3b 100%
+        );
 
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -59,121 +92,501 @@
     }
 
     .tagline {
-      font-size: 14px;
+      margin-top: 8px;
+      font-size: 11px;
       letter-spacing: 4px;
-      color: #d8d8d8;
-      margin-bottom: 45px;
+      color: #d5d5d5;
     }
 
-    .divider {
+    .line {
       width: 100%;
+      max-width: 430px;
       height: 2px;
-      margin-bottom: 45px;
+      margin: 25px auto 0;
 
-      background: linear-gradient(
-        90deg,
-        #63d7ff,
-        transparent,
-        #ff6a00
-      );
+      background:
+        linear-gradient(
+          90deg,
+          #4bd8ff,
+          transparent,
+          #ff6200
+        );
+    }
+
+
+    /* ---------------- MAIN ---------------- */
+
+    .main {
+      max-width: 520px;
+      margin: auto;
+      padding: 10px 18px 30px;
     }
 
     .welcome {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 14px;
+      text-align: center;
+      margin-bottom: 28px;
     }
 
-    .text {
-      color: #cfcfcf;
-      line-height: 1.6;
-      margin-bottom: 35px;
+    .welcome h2 {
+      font-size: 23px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
     }
 
-    .enter-button {
+    .welcome p {
+      color: #bdbdbd;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+
+    /* ---------------- CARDS ---------------- */
+
+    .card {
       display: block;
+      position: relative;
+
       width: 100%;
-      padding: 18px 20px;
 
-      border: 1px solid #67d8ff;
-      border-radius: 8px;
+      padding: 21px 19px;
+      margin-bottom: 14px;
 
-      background: linear-gradient(
-        90deg,
-        rgba(36, 166, 215, 0.25),
-        rgba(255, 91, 0, 0.25)
-      );
-
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
-      letter-spacing: 2px;
+      border-radius: 14px;
 
       text-decoration: none;
-      cursor: pointer;
+      color: white;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          105deg,
+          rgba(20, 145, 195, 0.18),
+          rgba(12, 12, 12, 0.86) 48%,
+          rgba(210, 68, 0, 0.18)
+        );
+
+      border: 1px solid rgba(255,255,255,0.13);
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,0.30);
     }
 
-    .enter-button:active {
-      transform: scale(0.98);
+    .card::before {
+      content: "";
+      position: absolute;
+
+      left: 0;
+      top: 0;
+      bottom: 0;
+
+      width: 3px;
+
+      background: #4bd7ff;
     }
 
-    .website {
-      margin-top: 28px;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      color: #888;
+    .card::after {
+      content: "";
+      position: absolute;
+
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      width: 3px;
+
+      background: #ff6200;
+    }
+
+    .card:active {
+      transform: scale(0.985);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .card-subtitle {
+      font-size: 12px;
+      color: #bdbdbd;
+      line-height: 1.4;
+    }
+
+    .arrow {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      font-size: 22px;
+      color: #ff7b20;
+    }
+
+
+    /* ---------------- WEBSITE BUTTON ---------------- */
+
+    .website-button {
+      display: block;
+
+      margin-top: 25px;
+      padding: 17px;
+
+      text-align: center;
+
+      border-radius: 10px;
+      border: 1px solid #53d8ff;
+
+      text-decoration: none;
+
+      color: white;
+      font-weight: bold;
+      letter-spacing: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(27, 156, 210, 0.20),
+          rgba(255, 90, 0, 0.20)
+        );
+    }
+
+    .website-address {
+      text-align: center;
+      margin-top: 12px;
+
+      font-size: 9px;
+      letter-spacing: 1.3px;
+      color: #777;
     }
 
     .ice {
-      color: #78ddff;
+      color: #5bd8ff;
     }
 
     .fire {
-      color: #ff7a18;
+      color: #ff7019;
     }
+
+
+    /* ---------------- BOTTOM NAV ---------------- */
+
+    .bottom-nav {
+      position: fixed;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 74px;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+
+      padding-bottom: env(safe-area-inset-bottom);
+
+      background:
+        rgba(4, 4, 4, 0.96);
+
+      border-top:
+        1px solid rgba(255,255,255,0.12);
+
+      backdrop-filter: blur(12px);
+
+      z-index: 100;
+    }
+
+    .nav-item {
+      text-decoration: none;
+      color: #929292;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 5px;
+
+      font-size: 9px;
+      font-weight: bold;
+      letter-spacing: .4px;
+    }
+
+    .nav-icon {
+      font-size: 20px;
+    }
+
+    .nav-item.active {
+      color: #66d9ff;
+    }
+
+    .nav-item.fire-nav {
+      color: #ff7620;
+    }
+
+
+    /* ---------------- LARGE PHONES ---------------- */
+
+    @media (min-width: 500px) {
+
+      .header {
+        padding-top: 45px;
+      }
+
+      .logo {
+        width: 170px;
+        height: 170px;
+      }
+
+      .title {
+        font-size: 37px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <main class="app">
+  <!-- HEADER -->
 
-    <h1 class="title">TEAM WOLFPACK</h1>
+  <header class="header">
 
-    <div class="tagline">
+    <img
+      src="icon-512.png"
+      alt="Team Wolfpack"
+      class="logo"
+    >
+
+    <h1 class="title">
+      TEAM WOLFPACK
+    </h1>
+
+    <p class="tagline">
       ONE PACK • ONE PURPOSE
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="welcome">
-      WELCOME TO THE PACK
-    </div>
-
-    <p class="text">
-      Fighters. Upcoming fights. The pack. Gallery. Merch.
-      Sponsors and everything Official Team Wolfpack.
     </p>
 
+    <div class="line"></div>
+
+  </header>
+
+
+
+  <!-- APP HOME -->
+
+  <main class="main">
+
+    <section class="welcome">
+
+      <h2>WELCOME TO THE PACK</h2>
+
+      <p>
+        Official Team Wolfpack mobile app.
+        Fighters, fights, the pack, gallery,
+        merchandise and more.
+      </p>
+
+    </section>
+
+
+    <!-- FIGHTERS -->
+
     <a
-      class="enter-button"
+      class="card"
       href="https://officialteamwolfpack.com/boxing"
     >
-      ENTER THE WOLFPACK
+
+      <div class="card-title">
+        FIGHTERS
+      </div>
+
+      <div class="card-subtitle">
+        Mrs Wolfie • Greig Sloan
+      </div>
+
+      <span class="arrow">›</span>
+
     </a>
 
-    <div class="website">
-      <span class="ice">OFFICIALTEAMWOLFPACK.COM</span><span class="fire">/BOXING</span>
+
+    <!-- UPCOMING FIGHTS -->
+
+    <a
+      class="card"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+
+      <div class="card-title">
+        UPCOMING FIGHTS
+      </div>
+
+      <div class="card-subtitle">
+        Fight cards • opponents • dates • venues
+      </div>
+
+      <span class="arrow">›</span>
+
+    </a>
+
+
+    <!-- GALLERY -->
+
+    <a
+      class="card"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+
+      <div class="card-title">
+        GALLERY
+      </div>
+
+      <div class="card-subtitle">
+        Team Wolfpack photos and fight nights
+      </div>
+
+      <span class="arrow">›</span>
+
+    </a>
+
+
+    <!-- PACK -->
+
+    <a
+      class="card"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+
+      <div class="card-title">
+        THE PACK
+      </div>
+
+      <div class="card-subtitle">
+        Meet the people behind Team Wolfpack
+      </div>
+
+      <span class="arrow">›</span>
+
+    </a>
+
+
+    <!-- MORE -->
+
+    <a
+      class="card"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+
+      <div class="card-title">
+        MORE
+      </div>
+
+      <div class="card-subtitle">
+        Merch • sponsors • about • contact • socials
+      </div>
+
+      <span class="arrow">›</span>
+
+    </a>
+
+
+    <a
+      class="website-button"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+      VISIT OFFICIAL WEBSITE
+    </a>
+
+
+    <div class="website-address">
+
+      <span class="ice">
+        OFFICIALTEAMWOLFPACK.COM
+      </span>
+
+      <span class="fire">
+        /BOXING
+      </span>
+
     </div>
 
   </main>
 
+
+
+  <!-- BOTTOM MOBILE NAVIGATION -->
+
+  <nav class="bottom-nav">
+
+    <a
+      class="nav-item active"
+      href="#"
+    >
+      <span class="nav-icon">⌂</span>
+      HOME
+    </a>
+
+
+    <a
+      class="nav-item"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+      <span class="nav-icon">♟</span>
+      FIGHTERS
+    </a>
+
+
+    <a
+      class="nav-item fire-nav"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+      <span class="nav-icon">♜</span>
+      FIGHTS
+    </a>
+
+
+    <a
+      class="nav-item"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+      <span class="nav-icon">▣</span>
+      GALLERY
+    </a>
+
+
+    <a
+      class="nav-item"
+      href="https://officialteamwolfpack.com/boxing"
+    >
+      <span class="nav-icon">☰</span>
+      MORE
+    </a>
+
+  </nav>
+
+
+
   <script>
+
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("service-worker.js");
-      });
+
+      window.addEventListener(
+        "load",
+        function () {
+
+          navigator.serviceWorker.register(
+            "service-worker.js"
+          );
+
+        }
+      );
+
     }
+
   </script>
 
 </body>
