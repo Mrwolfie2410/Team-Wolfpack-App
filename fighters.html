@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+
+<title>Fighters | Team Wolfpack</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding-bottom: 95px;
+
+  background:
+    radial-gradient(circle at 0% 20%,
+      rgba(0,190,255,.20),
+      transparent 35%),
+
+    radial-gradient(circle at 100% 75%,
+      rgba(255,90,0,.22),
+      transparent 35%),
+
+    #050505;
+}
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  padding: 28px 20px 15px;
+}
+
+.logo {
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.brand {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #73dcff,
+    #dffaff 45%,
+    #ff7218 55%,
+    #ffad42
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-title {
+  font-size: 31px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.page-title .ice {
+  color: #65d9ff;
+}
+
+.page-title .fire {
+  color: #ff751c;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.line {
+  max-width: 430px;
+  height: 2px;
+  margin: 22px auto;
+
+  background: linear-gradient(
+    90deg,
+    #48d6ff,
+    transparent,
+    #ff6200
+  );
+}
+
+/* CONTENT */
+
+.content {
+  max-width: 520px;
+  margin: auto;
+  padding: 0 18px 30px;
+}
+
+/* FIGHTER CARDS */
+
+.fighter {
+  display: block;
+  position: relative;
+
+  padding: 28px 22px;
+  margin-bottom: 18px;
+
+  text-decoration: none;
+  color: white;
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(22,155,210,.20),
+      rgba(12,12,12,.92) 48%,
+      rgba(225,73,0,.20)
+    );
+
+  border: 1px solid rgba(255,255,255,.14);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.4);
+}
+
+.fighter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #4dd8ff;
+}
+
+.fighter::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ff6500;
+}
+
+.team {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #67dbff;
+  margin-bottom: 7px;
+}
+
+.name {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.role {
+  margin-top: 7px;
+  color: #c4c4c4;
+  font-size: 13px;
+}
+
+.view {
+  margin-top: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ff7b22;
+}
+
+.arrow {
+  position: absolute;
+  right: 21px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff761b;
+  font-size: 30px;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 74px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  padding-bottom: env(safe-area-inset-bottom);
+
+  background: rgba(4,4,4,.97);
+
+  border-top: 1px solid rgba(255,255,255,.12);
+
+  backdrop-filter: blur(12px);
+
+  z-index: 100;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #888;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.nav-icon {
+  font-size: 20px;
+}
+
+.nav-item.active {
+  color: #63d9ff;
+}
+
+.fire-nav {
+  color: #ff7420;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <a href="index.html">
+    <img
+      src="icon-512.png"
+      class="logo"
+      alt="Team Wolfpack"
+    >
+  </a>
+
+  <div class="brand">
+    TEAM WOLFPACK
+  </div>
+
+  <h1 class="page-title">
+    <span class="ice">OUR</span>
+    <span class="fire"> FIGHTERS</span>
+  </h1>
+
+  <p class="subtitle">
+    Meet the fighters representing the pack.
+  </p>
+
+  <div class="line"></div>
+
+</header>
+
+
+<main class="content">
+
+  <!-- MRS WOLFIE -->
+
+  <a
+    class="fighter"
+    href="https://officialteamwolfpack.com/boxing"
+  >
+
+    <div class="team">
+      TEAM WOLFIE
+    </div>
+
+    <div class="name">
+      ZOEY “MRS WOLFIE” JAMES
+    </div>
+
+    <div class="role">
+      Boxer • Team Wolfpack
+    </div>
+
+    <div class="view">
+      VIEW FIGHTER PROFILE
+    </div>
+
+    <span class="arrow">›</span>
+
+  </a>
+
+
+  <!-- GREIG SLOAN -->
+
+  <a
+    class="fighter"
+    href="https://officialteamwolfpack.com/boxing"
+  >
+
+    <div class="team">
+      TEAM SLOAN
+    </div>
+
+    <div class="name">
+      GREIG SLOAN
+    </div>
+
+    <div class="role">
+      Boxer • Team Wolfpack
+    </div>
+
+    <div class="view">
+      VIEW FIGHTER PROFILE
+    </div>
+
+    <span class="arrow">›</span>
+
+  </a>
+
+</main>
+
+
+<nav class="bottom-nav">
+
+  <a class="nav-item" href="index.html">
+    <span class="nav-icon">⌂</span>
+    HOME
+  </a>
+
+  <a class="nav-item active" href="fighters.html">
+    <span class="nav-icon">♟</span>
+    FIGHTERS
+  </a>
+
+  <a
+    class="nav-item fire-nav"
+    href="https://officialteamwolfpack.com/boxing"
+  >
+    <span class="nav-icon">♜</span>
+    FIGHTS
+  </a>
+
+  <a
+    class="nav-item"
+    href="https://officialteamwolfpack.com/boxing"
+  >
+    <span class="nav-icon">▣</span>
+    GALLERY
+  </a>
+
+  <a
+    class="nav-item"
+    href="https://officialteamwolfpack.com/boxing"
+  >
+    <span class="nav-icon">☰</span>
+    MORE
+  </a>
+
+</nav>
+
+</body>
+</html>
