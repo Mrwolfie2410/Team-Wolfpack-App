@@ -11,119 +11,275 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   min-height:100vh;
   font-family:Arial,Helvetica,sans-serif;
-  color:#fff;
+  color:white;
   padding-bottom:95px;
   background:
-    radial-gradient(circle at 0% 15%,rgba(0,190,255,.20),transparent 30%),
-    radial-gradient(circle at 100% 70%,rgba(255,90,0,.22),transparent 32%),
-    #050505;
+    radial-gradient(circle at 0% 15%,rgba(0,190,255,.28),transparent 32%),
+    radial-gradient(circle at 100% 20%,rgba(255,85,0,.24),transparent 32%),
+    linear-gradient(115deg,#02090d 0%,#050505 50%,#140802 100%);
 }
 
-.header{
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
   text-align:center;
-  padding:25px 18px 15px;
+  padding:28px 18px 30px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,190,255,.10),transparent 45%,rgba(255,85,0,.10));
+  pointer-events:none;
 }
 
 .logo{
-  width:90px;
-  height:90px;
+  position:relative;
+  width:125px;
+  height:125px;
   object-fit:contain;
+  margin-bottom:10px;
+  filter:
+    drop-shadow(0 0 18px rgba(0,190,255,.35))
+    drop-shadow(0 0 18px rgba(255,85,0,.28));
 }
 
-.brand{
-  margin-top:5px;
+.team{
+  position:relative;
   font-size:12px;
   font-weight:900;
-  letter-spacing:3px;
-  color:#66d9ff;
+  letter-spacing:4px;
+  color:#6edfff;
 }
 
-.fighter-label{
-  margin-top:20px;
-  font-size:11px;
+.profile-label{
+  position:relative;
+  margin-top:10px;
+  font-size:10px;
   letter-spacing:3px;
-  color:#ff751c;
+  color:#ff7a20;
 }
 
 .name{
-  margin-top:7px;
-  font-size:29px;
+  position:relative;
+  margin-top:10px;
+  font-size:38px;
+  line-height:1;
   font-weight:900;
-  line-height:1.05;
+  letter-spacing:1px;
 }
 
-.name .ice{color:#67dcff}
-.name .fire{color:#ff751c}
+.ice{
+  color:#6bddff;
+}
 
-.line{
-  height:2px;
+.fire{
+  color:#ff741d;
+}
+
+.hero-line{
+  position:relative;
+  width:100%;
   max-width:430px;
+  height:2px;
   margin:22px auto 0;
-  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+  background:linear-gradient(90deg,#45d7ff,transparent,#ff6700);
+  box-shadow:
+    -30px 0 15px rgba(0,190,255,.25),
+    30px 0 15px rgba(255,90,0,.25);
 }
+
+/* MAIN */
 
 .content{
-  max-width:520px;
+  max-width:540px;
   margin:auto;
-  padding:12px 18px 35px;
+  padding:22px 18px 35px;
 }
 
 .section{
-  margin-bottom:28px;
+  margin-bottom:30px;
 }
 
 .section-title{
-  font-size:20px;
+  font-size:21px;
   font-weight:900;
   letter-spacing:1px;
   margin-bottom:14px;
 }
 
-.section-title .ice{color:#65d9ff}
-.section-title .fire{color:#ff751c}
+/* PROFILE CARD */
 
-.profile-box,
-.event,
-.upcoming{
+.profile-card{
   position:relative;
-  border-radius:14px;
+  overflow:hidden;
+  border-radius:18px;
+  padding:22px;
   border:1px solid rgba(255,255,255,.13);
   background:
     linear-gradient(
       110deg,
-      rgba(20,150,205,.16),
-      rgba(10,10,10,.92) 50%,
+      rgba(18,150,205,.17),
+      rgba(8,8,8,.94) 48%,
+      rgba(225,70,0,.18)
+    );
+  box-shadow:0 12px 35px rgba(0,0,0,.42);
+}
+
+.profile-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#4edaff;
+}
+
+.profile-card::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#ff6500;
+}
+
+.info-row{
+  padding:11px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.info-row:last-child{
+  border-bottom:none;
+}
+
+.label{
+  display:block;
+  font-size:9px;
+  letter-spacing:2px;
+  color:#ff7a20;
+  margin-bottom:5px;
+}
+
+.value{
+  font-size:15px;
+  font-weight:bold;
+  color:#e7fbff;
+}
+
+/* ABOUT */
+
+.about-card{
+  padding:20px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(8,8,8,.72);
+}
+
+.about{
+  color:#c9c9c9;
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.stat{
+  position:relative;
+  text-align:center;
+  overflow:hidden;
+  padding:20px 8px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(
+      160deg,
+      rgba(0,170,230,.11),
+      rgba(10,10,10,.92) 52%,
+      rgba(255,90,0,.11)
+    );
+}
+
+.stat::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:2px;
+  background:linear-gradient(90deg,#4dd9ff,#ff6500);
+}
+
+.stat-letter{
+  color:#69dcff;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.stat-number{
+  margin-top:4px;
+  font-size:36px;
+  font-weight:900;
+  color:#ff731b;
+}
+
+/* FIGHT CARDS */
+
+.fight-card{
+  position:relative;
+  overflow:hidden;
+  padding:20px;
+  margin-bottom:14px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.13);
+  background:
+    linear-gradient(
+      110deg,
+      rgba(20,150,205,.15),
+      rgba(8,8,8,.94) 50%,
       rgba(220,70,0,.16)
     );
-  overflow:hidden;
+  box-shadow:0 8px 28px rgba(0,0,0,.32);
 }
 
-.profile-box{
-  padding:20px;
-}
-
-.profile-box::before,
-.event::before,
-.upcoming::before{
+.fight-card::before{
   content:"";
   position:absolute;
   left:0;
   top:0;
   bottom:0;
   width:3px;
-  background:#4bd8ff;
+  background:#49d7ff;
 }
 
-.profile-box::after,
-.event::after,
-.upcoming::after{
+.fight-card::after{
   content:"";
   position:absolute;
   right:0;
@@ -133,125 +289,86 @@ body{
   background:#ff6500;
 }
 
-.info-row{
-  padding:10px 0;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.info-row:last-child{border-bottom:none}
-
-.label{
-  display:block;
-  font-size:9px;
-  letter-spacing:2px;
-  color:#ff751c;
-  margin-bottom:4px;
-}
-
-.value{
-  font-size:14px;
-  color:#dff8ff;
-  font-weight:bold;
-}
-
-.about{
-  color:#c8c8c8;
-  font-size:14px;
-  line-height:1.65;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-
-.stat{
-  text-align:center;
-  padding:17px 8px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:12px;
-  background:rgba(10,10,10,.7);
-}
-
-.stat-letter{
-  color:#67dcff;
-  font-size:15px;
-  font-weight:900;
-}
-
-.stat-number{
-  color:#ff751c;
-  font-size:31px;
-  font-weight:900;
-  margin-top:4px;
-}
-
-.event,
-.upcoming{
-  padding:17px 18px;
-  margin-bottom:12px;
-}
-
 .event-name{
-  color:#67dcff;
+  color:#69dcff;
   font-size:11px;
-  font-weight:bold;
+  font-weight:900;
   letter-spacing:1px;
 }
 
 .event-date{
-  color:#ff751c;
-  font-size:13px;
-  font-weight:900;
   margin-top:5px;
+  color:#ff751c;
+  font-size:14px;
+  font-weight:900;
 }
 
-.fight{
-  font-size:14px;
-  font-weight:bold;
-  margin-top:9px;
+.matchup{
+  margin-top:12px;
+  font-size:16px;
+  font-weight:900;
 }
 
 .venue{
+  margin-top:7px;
   color:#aaa;
   font-size:11px;
-  margin-top:6px;
+  letter-spacing:.4px;
 }
 
 .result{
   position:absolute;
-  right:16px;
-  top:16px;
+  right:18px;
+  top:18px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,117,28,.6);
   color:#ff751c;
-  font-size:22px;
+  font-size:18px;
   font-weight:900;
+  background:rgba(255,90,0,.08);
 }
 
-.upcoming-badge{
+.badge{
   display:inline-block;
-  padding:5px 8px;
-  border-radius:5px;
-  background:rgba(255,100,0,.14);
-  color:#ff751c;
+  margin-bottom:9px;
+  padding:5px 9px;
+  border-radius:20px;
   font-size:9px;
-  font-weight:bold;
+  font-weight:900;
   letter-spacing:1px;
-  margin-bottom:8px;
+  color:#ff751c;
+  border:1px solid rgba(255,117,28,.35);
+  background:rgba(255,90,0,.08);
 }
+
+/* BACK */
 
 .back{
   display:block;
-  padding:15px;
+  margin-top:8px;
+  padding:16px;
   text-align:center;
   text-decoration:none;
-  color:#fff;
-  border:1px solid #5bd9ff;
-  border-radius:10px;
+  color:white;
   font-size:12px;
-  font-weight:bold;
+  font-weight:900;
   letter-spacing:1px;
+  border:1px solid #59d9ff;
+  border-radius:12px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.12),
+      rgba(255,90,0,.12)
+    );
 }
+
+/* NAV */
 
 .bottom-nav{
   position:fixed;
@@ -264,6 +381,7 @@ body{
   padding-bottom:env(safe-area-inset-bottom);
   background:rgba(4,4,4,.97);
   border-top:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
   z-index:100;
 }
 
@@ -279,38 +397,47 @@ body{
   font-weight:bold;
 }
 
-.nav-icon{font-size:20px}
-.nav-item.active{color:#63d9ff}
-.fire-nav{color:#ff7420}
+.nav-icon{
+  font-size:20px;
+}
+
+.nav-item.active{
+  color:#61d9ff;
+}
+
+.fire-nav{
+  color:#ff7620;
+}
 </style>
 </head>
 
 <body>
 
-<header class="header">
+<header class="hero">
 
 <a href="index.html">
 <img src="icon-512.png" class="logo" alt="Team Wolfpack">
 </a>
 
-<div class="brand">TEAM SLOAN</div>
+<div class="team">TEAM SLOAN</div>
 
-<div class="fighter-label">FIGHTER PROFILE</div>
+<div class="profile-label">FIGHTER PROFILE</div>
 
 <h1 class="name">
 <span class="ice">GREIG</span>
 <span class="fire"> SLOAN</span>
 </h1>
 
-<div class="line"></div>
+<div class="hero-line"></div>
 
 </header>
+
 
 <main class="content">
 
 <section class="section">
 
-<div class="profile-box">
+<div class="profile-card">
 
 <div class="info-row">
 <span class="label">NAME</span>
@@ -344,11 +471,13 @@ body{
 <span class="fire"> GREIG SLOAN</span>
 </h2>
 
+<div class="about-card">
 <p class="about">
 Greig Sloan represents Team Sloan as part of Team Wolfpack.
 <br><br>
-His profile brings together his fight record, past events and upcoming appearances in one place inside the Team Wolfpack app.
+His fighter profile brings together his record, past events and upcoming appearances in one place inside the Team Wolfpack app.
 </p>
+</div>
 
 </section>
 
@@ -389,12 +518,28 @@ His profile brings together his fight record, past events and upcoming appearanc
 <span class="fire"> EVENTS</span>
 </h2>
 
-<div class="event">
-<div class="event-name">TRAIN4FIGHT PROMOTIONS</div>
-<div class="event-date">14 MARCH 2025</div>
-<div class="fight">GREIG SLOAN vs JORDAN REYNOLDS</div>
-<div class="venue">EASTHOUSES MINERS CLUB</div>
-<div class="result">D</div>
+<div class="fight-card">
+
+<div class="event-name">
+TRAIN4FIGHT PROMOTIONS
+</div>
+
+<div class="event-date">
+14 MARCH 2025
+</div>
+
+<div class="matchup">
+GREIG SLOAN vs JORDAN REYNOLDS
+</div>
+
+<div class="venue">
+EASTHOUSES MINERS CLUB
+</div>
+
+<div class="result">
+D
+</div>
+
 </div>
 
 </section>
@@ -407,12 +552,28 @@ His profile brings together his fight record, past events and upcoming appearanc
 <span class="fire"> FIGHTS</span>
 </h2>
 
-<div class="upcoming">
-<div class="upcoming-badge">UPCOMING</div>
-<div class="event-name">UNFINISHED BUSINESS</div>
-<div class="event-date">19 SEPTEMBER 2026</div>
-<div class="fight">GREIG SLOAN vs TBA</div>
-<div class="venue">HAMPDEN PARK</div>
+<div class="fight-card">
+
+<div class="badge">
+UPCOMING
+</div>
+
+<div class="event-name">
+UNFINISHED BUSINESS
+</div>
+
+<div class="event-date">
+19 SEPTEMBER 2026
+</div>
+
+<div class="matchup">
+GREIG SLOAN vs TBA
+</div>
+
+<div class="venue">
+HAMPDEN PARK
+</div>
+
 </div>
 
 </section>
