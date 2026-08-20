@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+
+<title>About Team Wolfpack</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:white;
+  padding-bottom:95px;
+
+  background:
+    radial-gradient(circle at 0% 12%,rgba(0,190,255,.24),transparent 30%),
+    radial-gradient(circle at 100% 30%,rgba(255,85,0,.23),transparent 30%),
+    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+}
+
+.header{
+  text-align:center;
+  padding:28px 18px 20px;
+}
+
+.logo{
+  width:120px;
+  height:120px;
+  object-fit:contain;
+}
+
+.brand{
+  margin-top:5px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:#67dcff;
+}
+
+.title{
+  margin-top:18px;
+  font-size:32px;
+  font-weight:900;
+  line-height:1.05;
+}
+
+.ice{color:#67dcff}
+.fire{color:#ff751c}
+
+.subtitle{
+  margin-top:10px;
+  color:#aaa;
+  font-size:13px;
+}
+
+.line{
+  width:100%;
+  max-width:430px;
+  height:2px;
+  margin:22px auto 0;
+  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+}
+
+.content{
+  max-width:540px;
+  margin:auto;
+  padding:10px 18px 35px;
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  padding:22px;
+  margin-bottom:18px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(20,150,205,.14),
+      rgba(8,8,8,.94) 50%,
+      rgba(220,70,0,.15)
+    );
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#4bd8ff;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#ff6500;
+}
+
+.section-title{
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.text{
+  color:#d0d0d0;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.highlight{
+  color:#67dcff;
+  font-weight:bold;
+}
+
+.highlight-fire{
+  color:#ff751c;
+  font-weight:bold;
+}
+
+.values{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.value-card{
+  padding:17px;
+  border-radius:13px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(8,8,8,.78);
+}
+
+.value-title{
+  font-size:15px;
+  font-weight:900;
+  color:#67dcff;
+}
+
+.value-text{
+  margin-top:5px;
+  color:#aaa;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.quote{
+  text-align:center;
+  padding:22px 18px;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:1px;
+  line-height:1.4;
+}
+
+.back{
+  display:block;
+  margin-top:6px;
+  padding:16px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  border:1px solid #59d9ff;
+  border-radius:12px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.12),
+      rgba(255,90,0,.12)
+    );
+}
+
+.bottom-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:74px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  padding-bottom:env(safe-area-inset-bottom);
+  background:rgba(4,4,4,.97);
+  border-top:1px solid rgba(255,255,255,.12);
+  z-index:100;
+}
+
+.nav-item{
+  text-decoration:none;
+  color:#888;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  font-size:9px;
+  font-weight:bold;
+}
+
+.nav-icon{
+  font-size:20px;
+}
+
+.fire-nav{
+  color:#ff751c;
+}
+
+.nav-item.active{
+  color:#67dcff;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+<a href="index.html">
+<img src="icon-512.png" class="logo" alt="Team Wolfpack">
+</a>
+
+<div class="brand">TEAM WOLFPACK</div>
+
+<h1 class="title">
+<span class="ice">ABOUT</span>
+<span class="fire"> THE PACK</span>
+</h1>
+
+<p class="subtitle">
+Strength. Loyalty. Unity. Purpose.
+</p>
+
+<div class="line"></div>
+
+</header>
+
+<main class="content">
+
+<section class="card">
+
+<h2 class="section-title">
+<span class="ice">WHO</span>
+<span class="fire"> WE ARE</span>
+</h2>
+
+<p class="text">
+Team Wolfpack is a boxing team built around strength,
+loyalty, unity and purpose.
+<br><br>
+Created by Co-Founders
+<span class="highlight">Chris “Mr Wolfie”</span>
+and
+<span class="highlight-fire">Zoey “Mrs Wolfie” James</span>,
+the team brings fighters, corner teams and supporters
+together under one identity.
+<br><br>
+The pack is about more than boxing. It is about standing
+together, supporting one another and giving people a place
+where they can grow in confidence, discipline and strength.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2 class="section-title">
+<span class="ice">WHAT</span>
+<span class="fire"> WE STAND FOR</span>
+</h2>
+
+<div class="values">
+
+<div class="value-card">
+<div class="value-title">STRENGTH</div>
+<div class="value-text">
+Finding the strength to keep moving forward, inside and outside the ring.
+</div>
+</div>
+
+<div class="value-card">
+<div class="value-title">LOYALTY</div>
+<div class="value-text">
+Standing beside the people who represent and support the pack.
+</div>
+</div>
+
+<div class="value-card">
+<div class="value-title">UNITY</div>
+<div class="value-text">
+Different fighters and teams, brought together as one Team Wolfpack.
+</div>
+</div>
+
+<div class="value-card">
+<div class="value-title">PURPOSE</div>
+<div class="value-text">
+Using boxing to build confidence, discipline and something worth fighting for.
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<div class="quote">
+<span class="ice">ONE PACK.</span><br>
+<span class="fire">ONE PURPOSE.</span>
+</div>
+
+</section>
+
+
+<a class="back" href="more.html">
+‹ BACK TO MORE
+</a>
+
+</main>
+
+
+<nav class="bottom-nav">
+
+<a class="nav-item" href="index.html">
+<span class="nav-icon">⌂</span>
+HOME
+</a>
+
+<a class="nav-item" href="fighters.html">
+<span class="nav-icon">♟</span>
+FIGHTERS
+</a>
+
+<a class="nav-item fire-nav" href="fights.html">
+<span class="nav-icon">♜</span>
+FIGHTS
+</a>
+
+<a class="nav-item" href="Gallery.html">
+<span class="nav-icon">▣</span>
+GALLERY
+</a>
+
+<a class="nav-item active" href="more.html">
+<span class="nav-icon">☰</span>
+MORE
+</a>
+
+</nav>
+
+</body>
+</html>
