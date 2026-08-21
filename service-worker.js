@@ -1,9 +1,22 @@
-const CACHE_NAME = "team-wolfpack-v2";
+const CACHE_NAME = "team-wolfpack-v3";
 
 const APP_FILES = [
   "./",
   "./index.html",
-  "./manifest.json"
+  "./fighters.html",
+  "./mrs-wolfie.html",
+  "./greig-sloan.html",
+  "./fights.html",
+  "./more.html",
+  "./about.html",
+  "./pack.html",
+  "./sponsors.html",
+  "./contact.html",
+  "./socials.html",
+  "./merch.html",
+  "./manifest.json",
+  "./icon-192.png",
+  "./icon-512.png"
 ];
 
 self.addEventListener("install", event => {
@@ -33,9 +46,26 @@ self.addEventListener("activate", event => {
 });
 
 self.addEventListener("fetch", event => {
+
+  if (event.request.method !== "GET") {
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      return cachedResponse || fetch(event.request);
-    })
+    fetch(event.request)
+      .then(response => {
+
+        const copy = response.clone();
+
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, copy);
+        });
+
+        return response;
+      })
+      .catch(() => {
+        return caches.match(event.request);
+      })
   );
+
 });
