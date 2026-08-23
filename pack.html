@@ -74,14 +74,17 @@ body{
 .content{
   max-width:540px;
   margin:auto;
-  padding:10px 18px 35px;
+  padding:10px 18px 110px;
 }
 
 .member-card{
   display:block;
   position:relative;
   overflow:hidden;
-  padding:22px 20px;
+
+  min-height:180px;
+
+  padding:24px 160px 24px 20px;
   margin-bottom:15px;
 
   border-radius:16px;
@@ -109,6 +112,7 @@ body{
   bottom:0;
   width:4px;
   background:#4bd8ff;
+  z-index:4;
 }
 
 .member-card::after{
@@ -119,6 +123,45 @@ body{
   bottom:0;
   width:4px;
   background:#ff6500;
+  z-index:4;
+}
+
+.member-photo{
+  position:absolute;
+  right:0;
+  top:0;
+
+  width:145px;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center top;
+
+  z-index:1;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to left,
+      rgba(0,0,0,1) 72%,
+      rgba(0,0,0,.9) 82%,
+      rgba(0,0,0,0) 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to left,
+      rgba(0,0,0,1) 72%,
+      rgba(0,0,0,.9) 82%,
+      rgba(0,0,0,0) 100%
+    );
+}
+
+.member-team,
+.member-name,
+.member-role,
+.view{
+  position:relative;
+  z-index:3;
 }
 
 .member-team{
@@ -130,9 +173,10 @@ body{
 }
 
 .member-name{
-  font-size:22px;
+  font-size:20px;
   font-weight:900;
   letter-spacing:.5px;
+  line-height:1.15;
 }
 
 .member-role{
@@ -140,7 +184,6 @@ body{
   color:#c7c7c7;
   font-size:12px;
   line-height:1.5;
-  padding-right:30px;
 }
 
 .view{
@@ -153,11 +196,12 @@ body{
 
 .arrow{
   position:absolute;
-  right:18px;
+  right:14px;
   top:50%;
   transform:translateY(-50%);
   color:#ff751c;
   font-size:27px;
+  z-index:5;
 }
 
 .back{
@@ -186,6 +230,7 @@ body{
   left:0;
   right:0;
   bottom:0;
+
   height:74px;
 
   display:grid;
@@ -199,6 +244,7 @@ body{
   backdrop-filter:blur(12px);
   z-index:100;
 }
+
 .nav-item{
   text-decoration:none;
   color:#888;
@@ -224,6 +270,28 @@ body{
 
 .nav-item.active{
   color:#67dcff;
+}
+
+@media(max-width:430px){
+
+  .member-card{
+    min-height:170px;
+    padding:22px 135px 22px 18px;
+  }
+
+  .member-photo{
+    width:120px;
+  }
+
+  .member-name{
+    font-size:18px;
+  }
+
+  .member-team{
+    font-size:9px;
+    letter-spacing:2px;
+  }
+
 }
 </style>
 </head>
@@ -257,6 +325,12 @@ The people behind Team Wolfpack.
 
 <div class="member-card">
 
+<img
+  class="member-photo"
+  src="mr-wolfie.jpg"
+  alt="Mr Wolfie"
+>
+
 <div class="member-team">
 TEAM WOLFPACK • TEAM WOLFIE
 </div>
@@ -276,6 +350,12 @@ Manager to Team Wolfie
 <!-- MRS WOLFIE -->
 
 <a class="member-card" href="mrs-wolfie.html">
+
+<img
+  class="member-photo"
+  src="zoey-james.jpg"
+  alt="Zoey Mrs Wolfie James"
+>
 
 <div class="member-team">
 TEAM WOLFIE
@@ -303,6 +383,12 @@ VIEW FIGHTER PROFILE
 
 <a class="member-card" href="greig-sloan.html">
 
+<img
+  class="member-photo"
+  src="greig-sloan.jpg"
+  alt="Greig Sloan"
+>
+
 <div class="member-team">
 TEAM SLOAN
 </div>
@@ -328,6 +414,12 @@ VIEW FIGHTER PROFILE
 
 <div class="member-card">
 
+<img
+  class="member-photo"
+  src="bry-kelly.jpg"
+  alt="Bry Kelly"
+>
+
 <div class="member-team">
 TEAM WOLFIE
 </div>
@@ -346,6 +438,12 @@ Corner Team
 <!-- BILLY BURTON -->
 
 <div class="member-card">
+
+<img
+  class="member-photo"
+  src="billy-burton.jpg"
+  alt="Billy Bossman Burton"
+>
 
 <div class="member-team">
 TEAM WOLFIE
@@ -386,9 +484,12 @@ FIGHTERS
 FIGHTS
 </a>
 
-<a class="nav-item" href="more.html">
+<a class="nav-item active" href="more.html">
 <span class="nav-icon">☰</span>
 MORE
 </a>
 
 </nav>
+
+</body>
+</html>
