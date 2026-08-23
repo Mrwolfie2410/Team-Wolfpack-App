@@ -11,20 +11,20 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
-  .fighter{
+.fighter{
   min-height:190px;
-  padding-right:180px;
+  padding:28px 190px 28px 22px;
 }
 
 .fighter-photo{
-  position:absolute;
-  right:0;
-  top:0;
-  width:165px;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
-
+ position:absolute;
+ right:0;
+ top:0;
+ width:155px;
+ height:100%;
+ object-fit:cover;
+ object-position:center top;
+}
   mask-image:linear-gradient(
     to left,
     rgba(0,0,0,1) 65%,
@@ -60,10 +60,15 @@
     padding-right:145px;
   }
 
-  .fighter-photo{
-    width:135px;
-  }
-
+ .fighter-photo{
+  position:absolute;
+  right:0;
+  top:0;
+  width:155px;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
   .name{
     font-size:21px;
   }
@@ -221,10 +226,12 @@ body {
   margin-bottom: 7px;
 }
 
-.name {
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: 1px;
+.name{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:1px;
+  line-height:1.15;
+  max-width:100%;
 }
 
 .role {
