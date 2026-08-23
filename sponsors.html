@@ -35,8 +35,8 @@ body{
 }
 
 .logo{
-  width:115px;
-  height:115px;
+  width:100px;
+  height:100px;
   object-fit:contain;
 }
 
@@ -52,11 +52,15 @@ body{
   margin-top:18px;
   font-size:31px;
   font-weight:900;
-  line-height:1.1;
 }
 
-.ice{color:#67dcff}
-.fire{color:#ff751c}
+.ice{
+  color:#67dcff;
+}
+
+.fire{
+  color:#ff751c;
+}
 
 .subtitle{
   margin-top:9px;
@@ -81,7 +85,7 @@ body{
 
 .intro{
   padding:20px;
-  margin-bottom:20px;
+  margin-bottom:26px;
   border-radius:16px;
   border:1px solid rgba(255,255,255,.12);
 
@@ -103,13 +107,13 @@ body{
 .section-title{
   font-size:20px;
   font-weight:900;
-  margin-bottom:14px;
+  margin:26px 0 14px;
 }
 
 .sponsor-card{
-  position:relative;
-  padding:22px 20px;
-  margin-bottom:14px;
+  overflow:hidden;
+  padding:18px;
+  margin-bottom:16px;
 
   border-radius:16px;
   border:1px solid rgba(255,255,255,.12);
@@ -118,39 +122,85 @@ body{
     linear-gradient(
       110deg,
       rgba(0,170,230,.12),
-      rgba(8,8,8,.92) 50%,
+      rgba(8,8,8,.94) 50%,
       rgba(255,90,0,.12)
     );
 }
 
+.sponsor-logo-box{
+  width:100%;
+  height:220px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:18px;
+
+  border-radius:12px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.sponsor-logo-box img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:12px;
+}
+
 .sponsor-name{
-  font-size:18px;
+  font-size:19px;
   font-weight:900;
 }
 
 .sponsor-type{
-  margin-top:5px;
+  margin-top:6px;
   color:#67dcff;
   font-size:10px;
   font-weight:900;
-  letter-spacing:2px;
+  letter-spacing:1.5px;
 }
 
 .sponsor-info{
   margin-top:10px;
   color:#aaa;
   font-size:12px;
-  line-height:1.5;
+  line-height:1.6;
 }
 
-.placeholder{
-  color:#777;
-  font-style:italic;
+.representing{
+  display:block;
+  margin-top:10px;
+  color:#67dcff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+.social-button{
+  display:block;
+
+  margin-top:15px;
+  padding:13px;
+
+  border:1px solid #59d9ff;
+  border-radius:10px;
+
+  text-align:center;
+  text-decoration:none;
+
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
 }
 
 .cta{
-  margin-top:24px;
+  margin-top:26px;
   padding:22px;
+
   text-align:center;
 
   border-radius:16px;
@@ -186,7 +236,7 @@ body{
   border:1px solid #59d9ff;
 
   text-decoration:none;
-  color:white;
+  color:#fff;
 
   font-size:11px;
   font-weight:900;
@@ -195,12 +245,14 @@ body{
 
 .back{
   display:block;
+
   margin-top:18px;
   padding:16px;
+
   text-align:center;
   text-decoration:none;
-  color:white;
 
+  color:#fff;
   border:1px solid #59d9ff;
   border-radius:12px;
 
@@ -254,30 +306,6 @@ body{
   color:#67dcff;
 }
 </style>
-.sponsor-logo-box{
-  width:100%;
-  height:220px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  margin-bottom:18px;
-
-  border-radius:12px;
-
-  background:#ffffff;
-
-  overflow:hidden;
-}
-
-.sponsor-logo-box img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-
-  padding:12px;
-}  
 </head>
 
 <body>
@@ -285,14 +313,14 @@ body{
 <header class="header">
 
 <a href="index.html">
-<img src="icon-512.png" class="logo" alt="Team Wolfpack">
+  <img src="icon-512.png" class="logo" alt="Team Wolfpack">
 </a>
 
 <div class="brand">TEAM WOLFPACK</div>
 
 <h1 class="title">
-<span class="ice">SPONSORS</span>
-<span class="fire">&amp; PARTNERS</span>
+  <span class="ice">SPONSORS</span>
+  <span class="fire">&amp; PARTNERS</span>
 </h1>
 
 <p class="subtitle">
@@ -302,6 +330,7 @@ Supporting the people, fighters and future of Team Wolfpack.
 <div class="line"></div>
 
 </header>
+
 
 <main class="content">
 
@@ -320,32 +349,19 @@ events, equipment and continued growth.
 
 
 <h2 class="section-title">
-<span class="ice">OUR</span>
+<span class="ice">TEAM WOLFPACK</span>
 <span class="fire"> SPONSORS</span>
 </h2>
 
 
 <div class="sponsor-card">
 
-<div class="sponsor-name">
-YOUR SPONSOR
-<div class="sponsor-card">
-
-<a
-  href="https://www.facebook.com/LukeMorganElectrical/"
-  target="_blank"
-  rel="noopener noreferrer"
-  style="text-decoration:none;color:inherit;"
->
-
+<div class="sponsor-logo-box">
 <img
- <div class="sponsor-logo-box">
-  <img
-    src="luke-morgan-electrical.jpg"
-    alt="Luke Morgan Electrical"
-  >
-</div>
+  src="luke-morgan-electrical.jpg"
+  alt="Luke Morgan Electrical"
 >
+</div>
 
 <div class="sponsor-name">
 LUKE MORGAN ELECTRICAL
@@ -359,41 +375,32 @@ OFFICIAL TEAM WOLFPACK SPONSOR
 Proud sponsor of Team Wolfpack.
 </div>
 
-<div style="
-  margin-top:14px;
-  padding:12px;
-  text-align:center;
-  border:1px solid #59d9ff;
-  border-radius:10px;
-  color:#fff;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1px;
-">
+<a
+  class="social-button"
+  href="https://www.facebook.com/LukeMorganElectrical/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 VISIT FACEBOOK ›
-</div>
-
 </a>
 
 </div>
-YOUR SPONSOR
+
+
+<h2 class="section-title">
+<span class="ice">TEAM SLOAN</span>
+<span class="fire"> SPONSORS</span>
+</h2>
+
+
 <div class="sponsor-card">
 
-<a
-  href="https://www.instagram.com/rhwelectrical?igsi=MXZwNDZ0ZmZtNnRwcg=="
-  target="_blank"
-  rel="noopener noreferrer"
-  style="text-decoration:none;color:inherit;"
->
-
+<div class="sponsor-logo-box">
 <img
-  <div class="sponsor-logo-box">
-  <img
-    src="rhw-electrical.jpg"
-    alt="RHW Electrical"
-  >
-</div>
+  src="rhw-electrical.jpg"
+  alt="RHW Electrical"
 >
+</div>
 
 <div class="sponsor-name">
 RHW ELECTRICAL
@@ -405,45 +412,32 @@ OFFICIAL TEAM SLOAN SPONSOR
 
 <div class="sponsor-info">
 Proud sponsor of Team Sloan.
-<br><br>
-<span style="color:#67dcff;font-weight:900;">
+
+<span class="representing">
 TEAM SLOAN • REPRESENTING TEAM WOLFPACK
 </span>
+
 </div>
 
-<div style="
-  margin-top:14px;
-  padding:12px;
-  text-align:center;
-  border:1px solid #59d9ff;
-  border-radius:10px;
-  color:#fff;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1px;
-">
+<a
+  class="social-button"
+  href="https://www.instagram.com/rhwelectrical?igsi=MXZwNDZ0ZmZtNnRwcg=="
+  target="_blank"
+  rel="noopener noreferrer"
+>
 VISIT INSTAGRAM ›
-</div>
-
 </a>
 
 </div>
-YOUR SPONSOR
+
+
 <div class="sponsor-card">
 
-<a
-  href="https://www.facebook.com/share/1Jz9fhahGf/"
-  target="_blank"
-  rel="noopener noreferrer"
-  style="text-decoration:none;color:inherit;"
->
-
-<img
 <div class="sponsor-logo-box">
-  <img
-    src="ruby-murrys.jpg"
-    alt="Ruby Murry's"
-  >
+<img
+  src="ruby-murrys.jpg"
+  alt="Ruby Murry's"
+>
 </div>
 
 <div class="sponsor-name">
@@ -456,34 +450,25 @@ OFFICIAL TEAM SLOAN SPONSOR
 
 <div class="sponsor-info">
 Proud sponsor of Team Sloan.
-<br><br>
 
-<span style="
-  color:#67dcff;
-  font-weight:900;
-">
+<span class="representing">
 TEAM SLOAN • REPRESENTING TEAM WOLFPACK
 </span>
 
 </div>
 
-<div style="
-  margin-top:14px;
-  padding:12px;
-  text-align:center;
-  border:1px solid #59d9ff;
-  border-radius:10px;
-  color:#fff;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1px;
-">
+<a
+  class="social-button"
+  href="https://www.facebook.com/share/1Jz9fhahGf/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 VISIT FACEBOOK ›
-</div>
-
 </a>
 
 </div>
+
+
 <div class="cta">
 
 <h2>
@@ -497,7 +482,10 @@ our fighters? Get in touch to discuss sponsorship and
 partnership opportunities.
 </p>
 
-<a class="cta-button" href="contact.html#sponsorship">
+<a
+  class="cta-button"
+  href="contact.html#sponsorship"
+>
 SPONSOR TEAM WOLFPACK
 </a>
 
