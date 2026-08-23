@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
 <meta name="theme-color" content="#050505">
 
 <title>Greig Sloan | Team Wolfpack</title>
@@ -24,182 +31,197 @@ html{
 
 body{
   min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
-  color:white;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color:#fff;
+
   padding-bottom:95px;
 
   background:
-    radial-gradient(circle at 0% 12%,
-      rgba(0,190,255,.25),
-      transparent 30%),
 
-    radial-gradient(circle at 100% 25%,
-      rgba(255,85,0,.23),
-      transparent 30%),
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.20),
+      transparent 30%
+    ),
 
-    linear-gradient(
-      115deg,
-      #02090d 0%,
-      #050505 50%,
-      #150802 100%
-    );
+    radial-gradient(
+      circle at 100% 70%,
+      rgba(255,90,0,.22),
+      transparent 32%
+    ),
+
+    #050505;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HEADER */
 
-.hero{
-  position:relative;
-  overflow:hidden;
+.header{
   text-align:center;
-  padding:28px 18px 30px;
-
-  border-bottom:
-    1px solid rgba(255,255,255,.08);
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0,190,255,.10),
-      transparent 45%,
-      rgba(255,85,0,.10)
-    );
-
-  pointer-events:none;
+  padding:25px 18px 15px;
 }
 
 .logo{
-  position:relative;
-
-  width:125px;
-  height:125px;
-
+  width:90px;
+  height:90px;
   object-fit:contain;
-
-  margin-bottom:10px;
-
-  filter:
-    drop-shadow(
-      0 0 18px rgba(0,190,255,.35)
-    )
-    drop-shadow(
-      0 0 18px rgba(255,85,0,.28)
-    );
 }
 
-.team{
-  position:relative;
-
+.brand{
+  margin-top:5px;
   font-size:12px;
   font-weight:900;
-
-  letter-spacing:4px;
-
-  color:#6edfff;
+  letter-spacing:3px;
+  color:#66d9ff;
 }
 
-.profile-label{
-  position:relative;
-
-  margin-top:10px;
-
-  font-size:10px;
-
+.fighter-label{
+  margin-top:20px;
+  font-size:11px;
+  font-weight:900;
   letter-spacing:3px;
-
-  color:#ff7a20;
+  color:#ff751c;
 }
 
 .name{
-  position:relative;
-
-  margin-top:10px;
-
-  font-size:38px;
-  line-height:1;
-
+  margin-top:7px;
+  font-size:29px;
   font-weight:900;
-
-  letter-spacing:1px;
+  line-height:1.05;
 }
 
-.ice{
-  color:#6bddff;
+.name .ice{
+  color:#67dcff;
 }
 
-.fire{
-  color:#ff741d;
+.name .fire{
+  color:#ff751c;
 }
 
-.hero-line{
-  position:relative;
-
+.line{
+  height:2px;
   width:100%;
   max-width:430px;
-
-  height:2px;
-
   margin:22px auto 0;
 
   background:
     linear-gradient(
       90deg,
-      #45d7ff,
+      #4bd8ff,
       transparent,
-      #ff6700
+      #ff6200
     );
 }
 
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* CONTENT */
 
 .content{
-  max-width:540px;
-
+  width:100%;
+  max-width:520px;
   margin:auto;
-
-  padding:
-    22px 18px
-    35px;
+  padding:12px 18px 35px;
 }
 
 .section{
-  margin-bottom:32px;
+  margin-bottom:28px;
 }
+
+
+/* GREIG PHOTO */
+
+.profile-photo-wrap{
+  position:relative;
+  width:100%;
+  height:300px;
+
+  margin:
+    0
+    auto
+    24px;
+
+  overflow:hidden;
+
+  border-radius:16px;
+
+  border:
+    1px solid rgba(255,255,255,.13);
+
+  border-left:
+    4px solid #4bd8ff;
+
+  border-right:
+    4px solid #ff6500;
+
+  background:#080808;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.45);
+}
+
+.profile-photo{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 24%;
+}
+
+.profile-photo-wrap::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:30%;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(5,5,5,.55)
+    );
+}
+
+
+/* SECTION TITLES */
 
 .section-title{
-  font-size:21px;
-
+  font-size:20px;
   font-weight:900;
-
   letter-spacing:1px;
+  margin-bottom:14px;
+}
 
-  margin-bottom:15px;
+.section-title .ice{
+  color:#65d9ff;
+}
+
+.section-title .fire{
+  color:#ff751c;
 }
 
 
-/* =========================
-   PROFILE INFORMATION
-========================= */
+/* CARDS */
 
-.profile-card{
+.profile-box,
+.event,
+.upcoming{
   position:relative;
 
   overflow:hidden;
 
-  border-radius:18px;
-
-  padding:22px;
+  border-radius:14px;
 
   border:
     1px solid rgba(255,255,255,.13);
@@ -207,16 +229,19 @@ body{
   background:
     linear-gradient(
       110deg,
-      rgba(18,150,205,.17),
-      rgba(8,8,8,.94) 48%,
-      rgba(225,70,0,.18)
+      rgba(20,150,205,.16),
+      rgba(10,10,10,.92) 50%,
+      rgba(220,70,0,.16)
     );
-
-  box-shadow:
-    0 12px 35px rgba(0,0,0,.42);
 }
 
-.profile-card::before{
+.profile-box{
+  padding:20px;
+}
+
+.profile-box::before,
+.event::before,
+.upcoming::before{
   content:"";
 
   position:absolute;
@@ -225,12 +250,14 @@ body{
   top:0;
   bottom:0;
 
-  width:4px;
+  width:3px;
 
-  background:#4edaff;
+  background:#4bd8ff;
 }
 
-.profile-card::after{
+.profile-box::after,
+.event::after,
+.upcoming::after{
   content:"";
 
   position:absolute;
@@ -239,13 +266,16 @@ body{
   top:0;
   bottom:0;
 
-  width:4px;
+  width:3px;
 
   background:#ff6500;
 }
 
+
+/* PROFILE INFO */
+
 .info-row{
-  padding:11px 0;
+  padding:10px 0;
 
   border-bottom:
     1px solid rgba(255,255,255,.08);
@@ -260,349 +290,192 @@ body{
 
   font-size:9px;
 
+  font-weight:900;
+
   letter-spacing:2px;
 
-  color:#ff7a20;
+  color:#ff751c;
 
-  margin-bottom:5px;
+  margin-bottom:4px;
 }
 
 .value{
-  font-size:15px;
-
+  font-size:14px;
+  color:#dff8ff;
   font-weight:bold;
-
-  color:#e7fbff;
 }
 
 
-/* =========================
-   ABOUT
-========================= */
-
-.about-card{
-  padding:21px;
-
-  border-radius:16px;
-
-  border:
-    1px solid rgba(255,255,255,.10);
-
-  background:
-    linear-gradient(
-      120deg,
-      rgba(0,170,230,.07),
-      rgba(8,8,8,.88),
-      rgba(255,90,0,.07)
-    );
-}
+/* ABOUT */
 
 .about{
-  color:#d0d0d0;
-
+  color:#c8c8c8;
   font-size:14px;
-
-  line-height:1.7;
+  line-height:1.65;
 }
 
 .highlight{
-  color:#62d9ff;
-
+  color:#67dcff;
   font-weight:bold;
 }
 
 .highlight-fire{
   color:#ff751c;
-
   font-weight:bold;
 }
 
 .message{
   display:block;
-
   margin-top:10px;
-
-  color:#61d9ff;
-
+  color:#67dcff;
   font-style:italic;
-
-  line-height:1.6;
 }
 
 
-/* =========================
-   BOXING STATISTICS
-========================= */
+/* STATS */
 
 .stats{
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:12px;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
 }
 
 .stat{
-  position:relative;
-
-  overflow:hidden;
-
   text-align:center;
 
-  padding:20px 8px;
-
-  border-radius:16px;
+  padding:
+    17px
+    8px;
 
   border:
     1px solid rgba(255,255,255,.12);
 
-  background:
-    linear-gradient(
-      160deg,
-      rgba(0,170,230,.11),
-      rgba(10,10,10,.92) 52%,
-      rgba(255,90,0,.11)
-    );
-}
-
-.stat::before{
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  right:0;
-  top:0;
-
-  height:2px;
+  border-radius:12px;
 
   background:
-    linear-gradient(
-      90deg,
-      #4dd9ff,
-      #ff6500
-    );
+    rgba(10,10,10,.7);
 }
 
 .stat-letter{
-  color:#69dcff;
-
-  font-size:16px;
-
+  color:#67dcff;
+  font-size:15px;
   font-weight:900;
 }
 
 .stat-number{
-  margin-top:5px;
-
-  font-size:38px;
-
+  color:#ff751c;
+  font-size:31px;
   font-weight:900;
-
-  color:#ff731b;
+  margin-top:4px;
 }
 
 
-/* =========================
-   FIGHT CARDS
-========================= */
+/* EVENTS */
 
-.fight-card{
-  position:relative;
-
-  overflow:hidden;
-
-  padding:20px;
-
-  margin-bottom:14px;
-
-  border-radius:16px;
-
-  border:
-    1px solid rgba(255,255,255,.13);
-
-  background:
-    linear-gradient(
-      110deg,
-      rgba(20,150,205,.15),
-      rgba(8,8,8,.94) 50%,
-      rgba(220,70,0,.16)
-    );
-
-  box-shadow:
-    0 8px 28px rgba(0,0,0,.32);
-}
-
-.fight-card::before{
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  top:0;
-  bottom:0;
-
-  width:3px;
-
-  background:#49d7ff;
-}
-
-.fight-card::after{
-  content:"";
-
-  position:absolute;
-
-  right:0;
-  top:0;
-  bottom:0;
-
-  width:3px;
-
-  background:#ff6500;
+.event,
+.upcoming{
+  padding:17px 18px;
+  margin-bottom:12px;
 }
 
 .event-name{
-  padding-right:48px;
-
-  color:#69dcff;
-
+  color:#67dcff;
   font-size:11px;
-
-  font-weight:900;
-
+  font-weight:bold;
   letter-spacing:1px;
 }
 
 .event-date{
-  margin-top:6px;
-
   color:#ff751c;
-
-  font-size:14px;
-
+  font-size:13px;
   font-weight:900;
+  margin-top:5px;
 }
 
-.matchup{
-  margin-top:12px;
-
-  padding-right:42px;
-
-  font-size:15px;
-
-  font-weight:900;
+.fight{
+  font-size:14px;
+  font-weight:bold;
+  margin-top:9px;
+  padding-right:25px;
 }
 
 .venue{
-  margin-top:7px;
-
   color:#aaa;
-
   font-size:11px;
-
-  letter-spacing:.4px;
+  margin-top:6px;
+  line-height:1.4;
 }
 
 .result{
   position:absolute;
-
-  right:17px;
-  top:17px;
-
-  width:39px;
-  height:39px;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  border-radius:50%;
-
-  border:
-    1px solid rgba(255,117,28,.6);
+  right:16px;
+  top:16px;
 
   color:#ff751c;
 
-  font-size:19px;
+  font-size:22px;
 
   font-weight:900;
-
-  background:
-    rgba(255,90,0,.08);
 }
 
-
-/* =========================
-   UPCOMING
-========================= */
-
-.badge{
+.upcoming-badge{
   display:inline-block;
 
-  margin-bottom:10px;
+  padding:
+    5px
+    8px;
 
-  padding:5px 10px;
+  border-radius:5px;
 
-  border-radius:20px;
+  background:
+    rgba(255,100,0,.14);
+
+  color:#ff751c;
 
   font-size:9px;
 
-  font-weight:900;
+  font-weight:bold;
 
   letter-spacing:1px;
 
-  color:#ff751c;
-
-  border:
-    1px solid rgba(255,117,28,.35);
-
-  background:
-    rgba(255,90,0,.08);
+  margin-bottom:8px;
 }
 
 
-/* =========================
-   BACK BUTTON
-========================= */
+/* BACK */
 
 .back{
   display:block;
 
-  margin-top:8px;
-
-  padding:16px;
+  padding:15px;
 
   text-align:center;
 
   text-decoration:none;
 
-  color:white;
+  color:#fff;
+
+  border:
+    1px solid #5bd9ff;
+
+  border-radius:10px;
 
   font-size:12px;
 
-  font-weight:900;
+  font-weight:bold;
 
   letter-spacing:1px;
-
-  border:
-    1px solid #59d9ff;
-
-  border-radius:12px;
 
   background:
     linear-gradient(
       90deg,
-      rgba(0,160,220,.12),
-      rgba(255,90,0,.12)
+      rgba(0,160,220,.10),
+      rgba(255,90,0,.10)
     );
 }
 
 
-/* =========================
-   BOTTOM NAVIGATION
-========================= */
+/* BOTTOM NAV */
 
 .bottom-nav{
   position:fixed;
@@ -616,7 +489,7 @@ body{
   display:grid;
 
   grid-template-columns:
-    repeat(5,1fr);
+    repeat(4,1fr);
 
   padding-bottom:
     env(safe-area-inset-bottom);
@@ -643,6 +516,7 @@ body{
   flex-direction:column;
 
   align-items:center;
+
   justify-content:center;
 
   gap:5px;
@@ -657,489 +531,533 @@ body{
 }
 
 .nav-item.active{
-  color:#61d9ff;
+  color:#63d9ff;
 }
 
 .fire-nav{
-  color:#ff7620;
+  color:#ff7420;
+}
+
+
+/* SMALL PHONES */
+
+@media(max-width:400px){
+
+  .profile-photo-wrap{
+    height:260px;
+  }
+
+  .name{
+    font-size:26px;
+  }
+
+  .section-title{
+    font-size:18px;
+  }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<header class="header">
 
-<header class="hero">
+  <a href="index.html">
 
-<a href="index.html">
+    <img
+      src="icon-512.png"
+      class="logo"
+      alt="Team Wolfpack"
+    >
 
-<img
-  src="icon-512.png"
-  class="logo"
-  alt="Team Wolfpack"
->
+  </a>
 
-</a>
+  <div class="brand">
+    TEAM SLOAN
+  </div>
 
-<div class="team">
-TEAM SLOAN
-</div>
+  <div class="fighter-label">
+    FIGHTER PROFILE
+  </div>
 
-<div class="profile-label">
-FIGHTER PROFILE
-</div>
+  <h1 class="name">
 
-<h1 class="name">
+    <span class="ice">
+      GREIG
+    </span>
 
-<span class="ice">
-GREIG
-</span>
+    <span class="fire">
+      SLOAN
+    </span>
 
-<span class="fire">
-SLOAN
-</span>
+  </h1>
 
-</h1>
-
-<div class="hero-line"></div>
+  <div class="line"></div>
 
 </header>
-
 
 
 <main class="content">
 
 
-<!-- =========================
-     PROFILE DETAILS
-========================= -->
+<!-- GREIG PHOTO -->
+
+<div class="profile-photo-wrap">
+
+  <img
+    src="greig-sloan.jpg"
+    alt="Greig Sloan"
+    class="profile-photo"
+  >
+
+</div>
+
+
+<!-- PROFILE -->
 
 <section class="section">
 
-<div class="profile-card">
+  <div class="profile-box">
 
-<div class="info-row">
+    <div class="info-row">
 
-<span class="label">
-NAME
-</span>
+      <span class="label">
+        NAME
+      </span>
 
-<span class="value">
-Greig Sloan
-</span>
+      <span class="value">
+        Greig Sloan
+      </span>
 
-</div>
+    </div>
 
+    <div class="info-row">
 
-<div class="info-row">
+      <span class="label">
+        TEAM
+      </span>
 
-<span class="label">
-TEAM
-</span>
+      <span class="value">
+        Team Sloan
+      </span>
 
-<span class="value">
-Team Sloan
-</span>
+    </div>
 
-</div>
+    <div class="info-row">
 
+      <span class="label">
+        ROLE
+      </span>
 
-<div class="info-row">
+      <span class="value">
+        Boxer
+      </span>
 
-<span class="label">
-ROLE
-</span>
+    </div>
 
-<span class="value">
-Boxer
-</span>
+    <div class="info-row">
 
-</div>
+      <span class="label">
+        REPRESENTING
+      </span>
 
+      <span class="value">
+        Team Wolfpack
+      </span>
 
-<div class="info-row">
+    </div>
 
-<span class="label">
-REPRESENTING
-</span>
-
-<span class="value">
-Team Wolfpack
-</span>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-
-<!-- =========================
-     ABOUT GREIG
-========================= -->
+<!-- ABOUT -->
 
 <section class="section">
 
-<h2 class="section-title">
+  <h2 class="section-title">
 
-<span class="ice">
-ABOUT
-</span>
+    <span class="ice">
+      ABOUT
+    </span>
 
-<span class="fire">
-GREIG SLOAN
-</span>
+    <span class="fire">
+      GREIG SLOAN
+    </span>
 
-</h2>
+  </h2>
 
 
-<div class="about-card">
+  <p class="about">
 
-<p class="about">
+    He started boxing to survive his past — to fight through
+    the shadows of hardship and rebuild the parts of himself
+    that had been broken.
 
-He started boxing to survive his past — to fight
-through the shadows of hardship and rebuild the
-parts of himself that had been broken.
+    <br><br>
 
-<br><br>
+    Boxing became more than a sport.
 
-Boxing became more than a sport.
+    <span class="highlight">
+      It became his lifeline.
+    </span>
 
-<span class="highlight">
-It became his lifeline.
-</span>
+    <br><br>
 
-<br><br>
+    With every round, his confidence grew. With every punch,
+    he felt himself coming back.
 
-With every round, his confidence grew.
-With every punch, he felt himself coming back.
+    <br><br>
 
-<br><br>
+    With the people by his side and boxing in his corner,
+    Greig discovered a strength within himself that could no
+    longer be taken away.
 
-With the people by his side and boxing in his
-corner, Greig discovered a strength within himself
-that could no longer be taken away.
+    <br><br>
 
-<br><br>
+    Today, Greig proudly represents his own team and is a
+    proud member of
 
-Today, Greig proudly represents his own team and
-is a proud member of
+    <span class="highlight">
+      Team Wolfpack.
+    </span>
 
-<span class="highlight">
-Team Wolfpack.
-</span>
+    <br><br>
 
-<br><br>
+    Team Wolfpack is built on strength, loyalty and unity,
+    and was solely created by Co-Founders
 
-Team Wolfpack is built on strength, loyalty and
-unity, and was solely created by Co-Founders
+    <span class="highlight">
+      Chris “Mr Wolfie”
+    </span>
 
-<span class="highlight">
-Chris “Mr Wolfie”
-</span>
+    and
 
-and
+    <span class="highlight-fire">
+      Zoey “Mrs Wolfie”.
+    </span>
 
-<span class="highlight-fire">
-Zoey “Mrs Wolfie”.
-</span>
+    <br><br>
 
-<br><br>
+    Today, Greig’s mission is bigger than his own journey.
 
-Today, Greig's mission is bigger than his own
-journey.
+    <br><br>
 
-<br><br>
+    He wants to encourage others to step into the ring —
+    not simply to fight, but to rise. To discover their
+    confidence, their strength and what they are capable of
+    becoming.
 
-He wants to encourage others to step into the
-ring — not simply to fight, but to rise. To
-discover their confidence, their strength and
-what they are capable of becoming.
+    <br><br>
 
-<br><br>
+    His message is simple:
 
-His message is simple:
+    <span class="message">
+      No matter what you have been through, and no matter
+      what you are facing today, your past does not have
+      to define your future.
+    </span>
 
-<span class="message">
-No matter what you have been through, and no
-matter what you are facing today, your past does
-not have to define your future.
-</span>
-
-</p>
-
-</div>
+  </p>
 
 </section>
 
 
-
-<!-- =========================
-     BOXING STATISTICS
-========================= -->
+<!-- STATS -->
 
 <section class="section">
 
-<h2 class="section-title">
+  <h2 class="section-title">
 
-<span class="ice">
-BOXING
-</span>
+    <span class="ice">
+      BOXING
+    </span>
 
-<span class="fire">
-STATISTICS
-</span>
+    <span class="fire">
+      STATISTICS
+    </span>
 
-</h2>
-
-
-<div class="stats">
+  </h2>
 
 
-<div class="stat">
+  <div class="stats">
 
-<div class="stat-letter">
-W
-</div>
+    <div class="stat">
 
-<div class="stat-number">
-0
-</div>
+      <div class="stat-letter">
+        W
+      </div>
 
-</div>
+      <div class="stat-number">
+        0
+      </div>
 
+    </div>
 
-<div class="stat">
+    <div class="stat">
 
-<div class="stat-letter">
-L
-</div>
+      <div class="stat-letter">
+        L
+      </div>
 
-<div class="stat-number">
-1
-</div>
+      <div class="stat-number">
+        1
+      </div>
 
-</div>
+    </div>
 
+    <div class="stat">
 
-<div class="stat">
+      <div class="stat-letter">
+        D
+      </div>
 
-<div class="stat-letter">
-D
-</div>
+      <div class="stat-number">
+        2
+      </div>
 
-<div class="stat-number">
-2
-</div>
+    </div>
 
-</div>
-
-
-</div>
+  </div>
 
 </section>
 
 
-
-<!-- =========================
-     PAST EVENTS
-========================= -->
+<!-- PAST EVENTS -->
 
 <section class="section">
 
-<h2 class="section-title">
+  <h2 class="section-title">
 
-<span class="ice">
-PAST
-</span>
+    <span class="ice">
+      PAST
+    </span>
 
-<span class="fire">
-EVENTS
-</span>
+    <span class="fire">
+      EVENTS
+    </span>
 
-</h2>
-
-
-<!-- FIGHT 1 -->
-
-<div class="fight-card">
-
-<div class="event-name">
-TRAIN4FIGHT PROMOTIONS
-</div>
-
-<div class="event-date">
-14 MARCH 2026
-</div>
-
-<div class="matchup">
-GREIG SLOAN vs JORDAN REYNOLDS
-</div>
-
-<div class="venue">
-EASTHOUSES MINERS CLUB
-</div>
-
-<div class="result">
-D
-</div>
-
-</div>
+  </h2>
 
 
+  <div class="event">
 
-<!-- FIGHT 2 -->
+    <div class="event-name">
+      TRAIN4FIGHT PROMOTIONS
+    </div>
 
-<div class="fight-card">
+    <div class="event-date">
+      14 MARCH 2026
+    </div>
 
-<div class="event-name">
-ULTIMATE BOXING CHALLENGE
-</div>
+    <div class="fight">
+      GREIG SLOAN vs JORDAN REYNOLDS
+    </div>
 
-<div class="event-date">
-21 MARCH 2026
-</div>
+    <div class="venue">
+      EASTHOUSES MINERS CLUB
+    </div>
 
-<div class="matchup">
-GREIG SLOAN vs DANIEL KENNEDY
-</div>
+    <div class="result">
+      D
+    </div>
 
-<div class="venue">
-NORMANDY HOTEL
-</div>
-
-<div class="result">
-D
-</div>
-
-</div>
+  </div>
 
 
+  <div class="event">
 
-<!-- FIGHT 3 -->
+    <div class="event-name">
+      ULTIMATE BOXING CHALLENGE
+    </div>
 
-<div class="fight-card">
+    <div class="event-date">
+      21 MARCH 2026
+    </div>
 
-<div class="event-name">
-FSG PROMOTIONS
-</div>
+    <div class="fight">
+      GREIG SLOAN vs DANIEL KENNEDY
+    </div>
 
-<div class="event-date">
-06 JUNE 2026
-</div>
+    <div class="venue">
+      NORMANDY HOTEL
+    </div>
 
-<div class="matchup">
-GREIG SLOAN vs TOM SKIMIS
-</div>
+    <div class="result">
+      D
+    </div>
 
-<div class="venue">
-HAMPDEN PARK
-</div>
+  </div>
 
-<div class="result">
-L
-</div>
 
-</div>
+  <div class="event">
 
+    <div class="event-name">
+      FSG PROMOTIONS
+    </div>
+
+    <div class="event-date">
+      06 JUNE 2026
+    </div>
+
+    <div class="fight">
+      GREIG SLOAN vs TOM SKIMIS
+    </div>
+
+    <div class="venue">
+      HAMPDEN PARK
+    </div>
+
+    <div class="result">
+      L
+    </div>
+
+  </div>
 
 </section>
 
 
-
-<!-- =========================
-     UPCOMING FIGHTS
-========================= -->
+<!-- UPCOMING -->
 
 <section class="section">
 
-<h2 class="section-title">
+  <h2 class="section-title">
 
-<span class="ice">
-UPCOMING
-</span>
+    <span class="ice">
+      UPCOMING
+    </span>
 
-<span class="fire">
-FIGHTS
-</span>
+    <span class="fire">
+      FIGHTS
+    </span>
 
-</h2>
+  </h2>
 
 
-<div class="fight-card">
+  <div class="upcoming">
 
-<div class="badge">
-UPCOMING
-</div>
+    <div class="upcoming-badge">
+      UPCOMING
+    </div>
 
-<div class="event-name">
-UNFINISHED BUSINESS
-</div>
+    <div class="event-name">
+      UNFINISHED BUSINESS
+    </div>
 
-<div class="event-date">
-19 SEPTEMBER 2026
-</div>
+    <div class="event-date">
+      19 SEPTEMBER 2026
+    </div>
 
-<div class="matchup">
-GREIG SLOAN vs TBA
-</div>
+    <div class="fight">
+      GREIG SLOAN vs TBA
+    </div>
 
-<div class="venue">
-HAMPDEN PARK
-</div>
+    <div class="venue">
+      HAMPDEN PARK
+    </div>
 
-</div>
-
+  </div>
 
 </section>
 
-
-
-<!-- BACK -->
 
 <a
   class="back"
   href="fighters.html"
 >
-‹ BACK TO FIGHTERS
+  ‹ BACK TO FIGHTERS
 </a>
 
 
 </main>
 
 
-
-<!-- =========================
-     BOTTOM NAVIGATION
-========================= -->
-
 <nav class="bottom-nav">
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
-HOME
-</a>
+  <a
+    class="nav-item"
+    href="index.html"
+  >
 
-<a class="nav-item" href="fighters.html">
-<span class="nav-icon">♟</span>
-FIGHTERS
-</a>
+    <span class="nav-icon">
+      ⌂
+    </span>
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
-FIGHTS
-</a>
+    HOME
 
-<a class="nav-item" href="more.html">
-<span class="nav-icon">☰</span>
-MORE
-</a>
+  </a>
+
+
+  <a
+    class="nav-item active"
+    href="fighters.html"
+  >
+
+    <span class="nav-icon">
+      ♟
+    </span>
+
+    FIGHTERS
+
+  </a>
+
+
+  <a
+    class="nav-item fire-nav"
+    href="fights.html"
+  >
+
+    <span class="nav-icon">
+      ♜
+    </span>
+
+    FIGHTS
+
+  </a>
+
+
+  <a
+    class="nav-item"
+    href="more.html"
+  >
+
+    <span class="nav-icon">
+      ☰
+    </span>
+
+    MORE
+
+  </a>
 
 </nav>
+
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
