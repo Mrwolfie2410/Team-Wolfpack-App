@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
 <meta name="theme-color" content="#050505">
 
 <title>Fighters | Team Wolfpack</title>
@@ -11,419 +18,614 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
-.fighter{
-  min-height:190px;
-  padding:28px 165px 28px 22px;
-}
-.fighter-photo{
-  width:145px;
-}
-  linear-gradient(
-    to left,
-    rgba(0,0,0,1) 65%,
-    rgba(0,0,0,.85) 78%,
-    rgba(0,0,0,0) 100%
-  );
 
-  -webkit-mask-image:linear-gradient(
-    to left,
-    rgba(0,0,0,1) 65%,
-    rgba(0,0,0,.85) 78%,
-    rgba(0,0,0,0) 100%
-  );
-
-  z-index:0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-.fighter .team,
-.fighter .name,
-.fighter .role,
-.fighter .view{
-  position:relative;
-  z-index:2;
+html{
+  scroll-behavior:smooth;
 }
 
-.fighter .arrow{
-  z-index:3;
-}
+body{
+  min-height:100vh;
 
-@media (max-width:520px){
-  .fighter{
-    min-height:175px;
-    padding-right:145px;
-  }
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
- .fighter-photo{
-  position:absolute;
-  right:0;
-  top:0;
-  width:155px;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
-}
- .name{
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:.5px;
-  line-height:1.15;
-  max-width:100%;
-  overflow-wrap:break-word;
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  color:#fff;
 
-body {
-  min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  padding-bottom: 95px;
+  padding-bottom:95px;
 
   background:
-    radial-gradient(circle at 0% 20%,
+    radial-gradient(
+      circle at 0% 20%,
       rgba(0,190,255,.20),
-      transparent 35%),
-
-    radial-gradient(circle at 100% 75%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 100% 75%,
       rgba(255,90,0,.22),
-      transparent 35%),
-
+      transparent 35%
+    ),
     #050505;
 }
 
+
 /* HEADER */
 
-.header {
-  text-align: center;
-  padding: 28px 20px 15px;
+.header{
+  text-align:center;
+  padding:28px 20px 15px;
 }
 
-.logo {
-  width: 105px;
-  height: 105px;
-  object-fit: contain;
-  margin-bottom: 8px;
+.logo{
+  width:105px;
+  height:105px;
+  object-fit:contain;
+  margin-bottom:8px;
 }
 
-.brand {
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: 3px;
+.brand{
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:3px;
 
-  background: linear-gradient(
-    90deg,
-    #73dcff,
-    #dffaff 45%,
-    #ff7218 55%,
-    #ffad42
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #73dcff,
+      #dffaff 45%,
+      #ff7218 55%,
+      #ffad42
+    );
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
 }
 
-.page-title {
-  font-size: 31px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  margin-top: 20px;
+.page-title{
+  font-size:31px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-top:20px;
 }
 
-.page-title .ice {
-  color: #65d9ff;
+.page-title .ice{
+  color:#65d9ff;
 }
 
-.page-title .fire {
-  color: #ff751c;
+.page-title .fire{
+  color:#ff751c;
 }
 
-.subtitle {
-  margin-top: 8px;
-  color: #aaa;
-  font-size: 13px;
+.subtitle{
+  margin-top:8px;
+  color:#aaa;
+  font-size:13px;
 }
 
-.line {
-  max-width: 430px;
-  height: 2px;
-  margin: 22px auto;
+.line{
+  max-width:430px;
+  height:2px;
+  margin:22px auto;
 
-  background: linear-gradient(
-    90deg,
-    #48d6ff,
-    transparent,
-    #ff6200
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #48d6ff,
+      transparent,
+      #ff6200
+    );
 }
+
 
 /* CONTENT */
 
-.content {
-  max-width: 520px;
-  margin: auto;
-  padding: 0 18px 30px;
+.content{
+  width:100%;
+  max-width:540px;
+  margin:auto;
+  padding:0 18px 110px;
 }
+
 
 /* FIGHTER CARDS */
 
-.fighter {
-  display: block;
-  position: relative;
+.fighter{
+  display:block;
+  position:relative;
 
-  padding: 28px 22px;
-  margin-bottom: 18px;
+  width:100%;
+  min-height:190px;
 
-  text-decoration: none;
-  color: white;
+  padding:
+    28px
+    165px
+    28px
+    22px;
 
-  border-radius: 16px;
-  overflow: hidden;
+  margin-bottom:18px;
+
+  text-decoration:none;
+  color:#fff;
+
+  border-radius:16px;
+  overflow:hidden;
 
   background:
     linear-gradient(
       110deg,
       rgba(22,155,210,.20),
-      rgba(12,12,12,.92) 48%,
+      rgba(12,12,12,.94) 48%,
       rgba(225,73,0,.20)
     );
 
-  border: 1px solid rgba(255,255,255,.14);
+  border:
+    1px solid rgba(255,255,255,.14);
 
   box-shadow:
     0 10px 30px rgba(0,0,0,.4);
 }
 
-.fighter::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #4dd8ff;
+.fighter::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:4px;
+
+  background:#4dd8ff;
+
+  z-index:4;
 }
 
-.fighter::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #ff6500;
+.fighter::after{
+  content:"";
+
+  position:absolute;
+
+  right:0;
+  top:0;
+  bottom:0;
+
+  width:4px;
+
+  background:#ff6500;
+
+  z-index:4;
 }
 
-.team {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #67dbff;
-  margin-bottom: 7px;
+
+/* FIGHTER PHOTOS */
+
+.fighter-photo{
+  position:absolute;
+
+  right:0;
+  top:0;
+
+  width:145px;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+  object-position:center top;
+
+  z-index:1;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to left,
+      rgba(0,0,0,1) 72%,
+      rgba(0,0,0,.9) 82%,
+      rgba(0,0,0,0) 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to left,
+      rgba(0,0,0,1) 72%,
+      rgba(0,0,0,.9) 82%,
+      rgba(0,0,0,0) 100%
+    );
+}
+
+
+/* TEXT */
+
+.team,
+.name,
+.role,
+.view{
+  position:relative;
+  z-index:3;
+}
+
+.team{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:#67dbff;
+  margin-bottom:8px;
 }
 
 .name{
-  font-size:22px;
+  font-size:20px;
   font-weight:900;
-  letter-spacing:1px;
+  letter-spacing:.5px;
   line-height:1.15;
-  max-width:100%;
 }
 
-.role {
-  margin-top: 7px;
-  color: #c4c4c4;
-  font-size: 13px;
+.role{
+  margin-top:8px;
+
+  color:#d0d0d0;
+
+  font-size:13px;
+  line-height:1.4;
 }
 
-.view {
-  margin-top: 20px;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #ff7b22;
+.view{
+  margin-top:20px;
+
+  font-size:10px;
+  font-weight:900;
+
+  letter-spacing:1.5px;
+
+  color:#ff7b22;
 }
 
-.arrow {
-  position: absolute;
-  right: 21px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #ff761b;
-  font-size: 30px;
+.arrow{
+  position:absolute;
+
+  right:14px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  z-index:5;
+
+  color:#ff761b;
+
+  font-size:28px;
 }
 
-/* BOTTOM NAVIGATION */
 
-.bottom-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+/* BOTTOM NAV */
 
-  height: 74px;
+.bottom-nav{
+  position:fixed;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  left:0;
+  right:0;
+  bottom:0;
 
-  padding-bottom: env(safe-area-inset-bottom);
+  height:74px;
 
-  background: rgba(4,4,4,.97);
+  display:grid;
 
-  border-top: 1px solid rgba(255,255,255,.12);
+  grid-template-columns:
+    repeat(4,1fr);
 
-  backdrop-filter: blur(12px);
+  padding-bottom:
+    env(safe-area-inset-bottom);
 
-  z-index: 100;
+  background:
+    rgba(4,4,4,.97);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(12px);
+
+  z-index:100;
 }
 
-.nav-item {
-  text-decoration: none;
-  color: #888;
+.nav-item{
+  text-decoration:none;
 
-  display: flex;
-  flex-direction: column;
+  color:#888;
 
-  align-items: center;
-  justify-content: center;
+  display:flex;
 
-  gap: 5px;
+  flex-direction:column;
 
-  font-size: 9px;
-  font-weight: bold;
+  align-items:center;
+  justify-content:center;
+
+  gap:5px;
+
+  font-size:9px;
+
+  font-weight:bold;
 }
 
-.nav-icon {
-  font-size: 20px;
+.nav-icon{
+  font-size:20px;
 }
 
-.nav-item.active {
-  color: #63d9ff;
+.nav-item.active{
+  color:#63d9ff;
 }
 
-.fire-nav {
-  color: #ff7420;
+.fire-nav{
+  color:#ff7420;
 }
+
+
+/* SMALL PHONES */
+
+@media(max-width:430px){
+
+  .fighter{
+    min-height:175px;
+
+    padding:
+      24px
+      142px
+      24px
+      18px;
+  }
+
+  .fighter-photo{
+    width:128px;
+  }
+
+  .name{
+    font-size:18px;
+  }
+
+  .team{
+    font-size:9px;
+    letter-spacing:2px;
+  }
+
+  .role{
+    font-size:12px;
+  }
+
+  .view{
+    font-size:9px;
+  }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <header class="header">
 
-  <a href="index.html">
-    <img
-      src="icon-512.png"
-      class="logo"
-      alt="Team Wolfpack"
-    >
-  </a>
+<a href="index.html">
 
-  <div class="brand">
-    TEAM WOLFPACK
-  </div>
-
-  <h1 class="page-title">
-    <span class="ice">OUR</span>
-    <span class="fire"> FIGHTERS</span>
-  </h1>
-
-  <p class="subtitle">
-    Meet the fighters representing the pack.
-  </p>
-
-  <div class="line"></div>
-
-</header>
-
-<main class="content">
-
-  <!-- MRS WOLFIE -->
-
-<a class="fighter" href="mrs-wolfie.html">
-
-  <img
-    class="fighter-photo"
-    src="zoey-james.jpg"
-    alt="Zoey Mrs Wolfie James"
-  >
-
-  <div class="team">
-    TEAM WOLFIE
-  </div>
-
-  <div class="name">
-    ZOEY “MRS WOLFIE” JAMES
-  </div>
-
-  <div class="role">
-    Boxer • Team Wolfpack
-  </div>
-
-  <div class="view">
-    VIEW FIGHTER PROFILE
-  </div>
-
-  <span class="arrow">›</span>
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
 
 </a>
 
-  <!-- GREIG SLOAN -->
 
-<a class="fighter" href="greig-sloan.html">
+<div class="brand">
+TEAM WOLFPACK
+</div>
 
-  <img
+
+<h1 class="page-title">
+
+<span class="ice">
+OUR
+</span>
+
+<span class="fire">
+FIGHTERS
+</span>
+
+</h1>
+
+
+<p class="subtitle">
+Meet the fighters representing the pack.
+</p>
+
+
+<div class="line"></div>
+
+</header>
+
+
+
+<main class="content">
+
+
+<!-- MRS WOLFIE -->
+
+<a
+  class="fighter"
+  href="mrs-wolfie.html"
+>
+
+<img
+  class="fighter-photo"
+  src="zoey-james.jpg"
+  alt="Zoey Mrs Wolfie James"
+>
+
+
+<div class="team">
+TEAM WOLFIE
+</div>
+
+
+<div class="name">
+ZOEY “MRS WOLFIE” JAMES
+</div>
+
+
+<div class="role">
+Boxer • Team Wolfpack
+</div>
+
+
+<div class="view">
+VIEW FIGHTER PROFILE
+</div>
+
+
+<span class="arrow">
+›
+</span>
+
+</a>
+
+
+
+<!-- GREIG SLOAN -->
+
+<a
+  class="fighter"
+  href="greig-sloan.html"
+>
+
+<img
   class="fighter-photo"
   src="greig-sloan.jpg"
   alt="Greig Sloan"
 >
 
-  <div class="team">
-    TEAM SLOAN
-  </div>
 
-  <div class="name">
-    GREIG SLOAN
-  </div>
+<div class="team">
+TEAM SLOAN
+</div>
 
-  <div class="role">
-    Boxer • Team Wolfpack
-  </div>
 
-  <div class="view">
-    VIEW FIGHTER PROFILE
-  </div>
+<div class="name">
+GREIG SLOAN
+</div>
 
-  <span class="arrow">›</span>
+
+<div class="role">
+Boxer • Team Wolfpack
+</div>
+
+
+<div class="view">
+VIEW FIGHTER PROFILE
+</div>
+
+
+<span class="arrow">
+›
+</span>
 
 </a>
+
+
 </main>
+
 
 
 <nav class="bottom-nav">
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+
+<span class="nav-icon">
+⌂
+</span>
+
 HOME
+
 </a>
 
-<a class="nav-item active" href="fighters.html">
-<span class="nav-icon">♟</span>
+
+<a
+  class="nav-item active"
+  href="fighters.html"
+>
+
+<span class="nav-icon">
+♟
+</span>
+
 FIGHTERS
+
 </a>
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
+
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
+
+<span class="nav-icon">
+♜
+</span>
+
 FIGHTS
+
 </a>
 
-<a class="nav-item" href="more.html">
-<span class="nav-icon">☰</span>
+
+<a
+  class="nav-item"
+  href="more.html"
+>
+
+<span class="nav-icon">
+☰
+</span>
+
 MORE
+
 </a>
+
 
 </nav>
 
+
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
 </body>
+
 </html>
