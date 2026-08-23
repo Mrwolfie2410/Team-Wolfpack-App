@@ -273,60 +273,29 @@
 
     /* ---------------- BOTTOM NAV ---------------- */
 
-    .bottom-nav {
-      position: fixed;
+   <nav class="bottom-nav">
 
-      left: 0;
-      right: 0;
-      bottom: 0;
+<a class="nav-item" href="index.html">
+<span class="nav-icon">⌂</span>
+HOME
+</a>
 
-      height: 74px;
+<a class="nav-item" href="fighters.html">
+<span class="nav-icon">♟</span>
+FIGHTERS
+</a>
 
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+<a class="nav-item fire-nav" href="fights.html">
+<span class="nav-icon">♜</span>
+FIGHTS
+</a>
 
-      padding-bottom: env(safe-area-inset-bottom);
+<a class="nav-item" href="more.html">
+<span class="nav-icon">☰</span>
+MORE
+</a>
 
-      background:
-        rgba(4, 4, 4, 0.96);
-
-      border-top:
-        1px solid rgba(255,255,255,0.12);
-
-      backdrop-filter: blur(12px);
-
-      z-index: 100;
-    }
-
-    .nav-item {
-      text-decoration: none;
-      color: #929292;
-
-      display: flex;
-      flex-direction: column;
-
-      align-items: center;
-      justify-content: center;
-
-      gap: 5px;
-
-      font-size: 9px;
-      font-weight: bold;
-      letter-spacing: .4px;
-    }
-
-    .nav-icon {
-      font-size: 20px;
-    }
-
-    .nav-item.active {
-      color: #66d9ff;
-    }
-
-    .nav-item.fire-nav {
-      color: #ff7620;
-    }
-
+</nav>
 
     /* ---------------- LARGE PHONES ---------------- */
 
