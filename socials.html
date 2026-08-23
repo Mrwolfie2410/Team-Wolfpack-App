@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
 <meta name="theme-color" content="#050505">
 
 <title>Follow The Pack | Team Wolfpack</title>
@@ -10,23 +17,54 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 
+
+<style>
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color:#fff;
+
   padding-bottom:95px;
 
   background:
-    radial-gradient(circle at 0% 15%,rgba(0,190,255,.22),transparent 30%),
-    radial-gradient(circle at 100% 35%,rgba(255,85,0,.22),transparent 30%),
-    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.22),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 100% 35%,
+      rgba(255,85,0,.22),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
 }
+
+
+/* HEADER */
 
 .header{
   text-align:center;
@@ -36,29 +74,41 @@ body{
 .logo{
   width:115px;
   height:115px;
+
   object-fit:contain;
 }
 
 .brand{
   margin-top:5px;
+
   font-size:12px;
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
+
   font-size:32px;
   font-weight:900;
 }
 
-.ice{color:#67dcff}
-.fire{color:#ff751c}
+.ice{
+  color:#67dcff;
+}
+
+.fire{
+  color:#ff751c;
+}
 
 .subtitle{
   margin-top:9px;
+
   color:#aaa;
+
   font-size:13px;
   line-height:1.5;
 }
@@ -66,28 +116,53 @@ body{
 .line{
   width:100%;
   max-width:430px;
+
   height:2px;
+
   margin:22px auto 0;
-  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
 }
+
+
+/* CONTENT */
 
 .content{
   max-width:540px;
+
   margin:auto;
-  padding:10px 18px 35px;
+
+  padding:
+    10px 18px 110px;
 }
+
+
+/* SOCIAL CARDS */
 
 .social-card{
   display:block;
+
   position:relative;
+
   overflow:hidden;
+
   padding:22px 20px;
+
   margin-bottom:15px;
 
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.13);
+
+  border:
+    1px solid rgba(255,255,255,.13);
 
   text-decoration:none;
+
   color:#fff;
 
   background:
@@ -97,77 +172,139 @@ body{
       rgba(8,8,8,.94) 50%,
       rgba(220,70,0,.17)
     );
+
+  box-shadow:
+    0 8px 28px rgba(0,0,0,.32);
 }
+
+
+/* ICE LEFT EDGE */
 
 .social-card::before{
   content:"";
+
   position:absolute;
+
   left:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#4bd8ff;
 }
 
+
+/* FIRE RIGHT EDGE */
+
 .social-card::after{
   content:"";
+
   position:absolute;
+
   right:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#ff6500;
 }
 
+
 .platform{
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:3px;
+
   color:#67dcff;
 }
 
 .username{
   margin-top:7px;
+
   font-size:19px;
+
   font-weight:900;
 }
 
 .description{
   margin-top:6px;
-  color:#aaa;
-  font-size:12px;
-  line-height:1.5;
+
   padding-right:30px;
+
+  color:#aaa;
+
+  font-size:12px;
+
+  line-height:1.5;
 }
 
 .arrow{
   position:absolute;
+
   right:18px;
+
   top:50%;
-  transform:translateY(-50%);
+
+  transform:
+    translateY(-50%);
+
   color:#ff751c;
+
   font-size:26px;
 }
 
+
+/* TAP EFFECT */
+
+.social-card:active{
+  transform:scale(.98);
+}
+
+
+/* BACK BUTTON */
+
 .back{
   display:block;
+
   margin-top:18px;
+
   padding:16px;
 
   text-align:center;
+
   text-decoration:none;
 
   color:white;
-  border:1px solid #59d9ff;
+
+  border:
+    1px solid #59d9ff;
+
   border-radius:12px;
 
   font-size:12px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.12),
+      rgba(255,90,0,.12)
+    );
 }
+
+
+/* BOTTOM NAVIGATION */
 
 .bottom-nav{
   position:fixed;
+
   left:0;
   right:0;
   bottom:0;
@@ -175,28 +312,42 @@ body{
   height:74px;
 
   display:grid;
-  grid-template-columns:repeat(5,1fr);
 
-  padding-bottom:env(safe-area-inset-bottom);
+  grid-template-columns:
+    repeat(4,1fr);
 
-  background:rgba(4,4,4,.97);
-  border-top:1px solid rgba(255,255,255,.12);
+  padding-bottom:
+    env(safe-area-inset-bottom);
+
+  background:
+    rgba(4,4,4,.97);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(12px);
 
   z-index:100;
 }
 
 .nav-item{
   text-decoration:none;
+
   color:#888;
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
   gap:5px;
 
   font-size:9px;
+
   font-weight:bold;
 }
 
@@ -211,35 +362,72 @@ body{
 .nav-item.active{
   color:#67dcff;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header class="header">
 
 <a href="index.html">
-<img src="icon-512.png" class="logo" alt="Team Wolfpack">
+
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
+
 </a>
 
-<div class="brand">TEAM WOLFPACK</div>
+
+<div class="brand">
+TEAM WOLFPACK
+</div>
+
 
 <h1 class="title">
-<span class="ice">FOLLOW</span>
-<span class="fire"> THE PACK</span>
+
+<span class="ice">
+FOLLOW
+</span>
+
+<span class="fire">
+THE PACK
+</span>
+
 </h1>
+
 
 <p class="subtitle">
 Follow Team Wolfpack across our social channels.
 </p>
 
+
 <div class="line"></div>
 
 </header>
 
+
+
+<!-- CONTENT -->
+
 <main class="content">
 
-<a class="social-card" href="https://www.tiktok.com/">
+
+<!-- MR WOLFIE TIKTOK -->
+
+<a
+  class="social-card"
+  href="https://www.tiktok.com/@mrwolfie2410?_r=1&amp;_t=ZN-99881Lzqxog"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 
 <div class="platform">
 TIKTOK
@@ -250,15 +438,25 @@ MRWOLFIE2410
 </div>
 
 <div class="description">
-Mr Wolfie on TikTok
+Follow Mr Wolfie on TikTok
 </div>
 
-<span class="arrow">›</span>
+<span class="arrow">
+›
+</span>
 
 </a>
 
 
-<a class="social-card" href="https://www.tiktok.com/">
+
+<!-- MRS WOLFIE TIKTOK -->
+
+<a
+  class="social-card"
+  href="https://www.tiktok.com/@mrswolfie2410?_r=1&amp;_t=ZN-99883R7fY06"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 
 <div class="platform">
 TIKTOK
@@ -269,15 +467,25 @@ MRSWOLFIE2410
 </div>
 
 <div class="description">
-Mrs Wolfie on TikTok
+Follow Mrs Wolfie on TikTok
 </div>
 
-<span class="arrow">›</span>
+<span class="arrow">
+›
+</span>
 
 </a>
 
 
-<a class="social-card" href="https://www.instagram.com/">
+
+<!-- TEAM WOLFPACK INSTAGRAM -->
+
+<a
+  class="social-card"
+  href="https://www.instagram.com/teamwolfpack2410?igsi=bzUwb21kYzFrNjBw"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 
 <div class="platform">
 INSTAGRAM
@@ -288,41 +496,118 @@ TEAMWOLFPACK2410
 </div>
 
 <div class="description">
-Official Team Wolfpack Instagram
+Follow Official Team Wolfpack on Instagram
 </div>
 
-<span class="arrow">›</span>
+<span class="arrow">
+›
+</span>
 
 </a>
 
 
-<a class="back" href="more.html">
+
+<!-- BACK TO MORE -->
+
+<a
+  class="back"
+  href="more.html"
+>
 ‹ BACK TO MORE
 </a>
+
 
 </main>
 
 
+
+<!-- BOTTOM NAVIGATION -->
+
 <nav class="bottom-nav">
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+
+<span class="nav-icon">
+⌂
+</span>
+
 HOME
+
 </a>
 
-<a class="nav-item" href="fighters.html">
-<span class="nav-icon">♟</span>
+
+
+<a
+  class="nav-item"
+  href="fighters.html"
+>
+
+<span class="nav-icon">
+♟
+</span>
+
 FIGHTERS
+
 </a>
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
+
+
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
+
+<span class="nav-icon">
+♜
+</span>
+
 FIGHTS
+
 </a>
 
-<a class="nav-item" href="more.html">
-<span class="nav-icon">☰</span>
+
+
+<a
+  class="nav-item active"
+  href="more.html"
+>
+
+<span class="nav-icon">
+☰
+</span>
+
 MORE
+
 </a>
+
 
 </nav>
+
+
+<script>
+
+if ("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
