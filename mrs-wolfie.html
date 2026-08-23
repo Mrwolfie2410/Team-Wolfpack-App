@@ -16,7 +16,7 @@
   width:100%;
   max-width:480px;
   height:300px;
-  margin:0 auto 22px;
+  margin:0 auto 24px;
   border-radius:16px;
   overflow:hidden;
   position:relative;
@@ -26,8 +26,15 @@
 
   background:#080808;
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.45);
+  box-shadow:0 10px 30px rgba(0,0,0,.45);
+}
+
+.profile-photo{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 20%;
 }
 
 .profile-photo{
@@ -354,7 +361,13 @@ body{
 </header>
 
 <main class="content">
-
+<div class="profile-photo-wrap">
+  <img
+    src="zoey-james.jpg"
+    alt="Zoey Mrs Wolfie James"
+    class="profile-photo"
+  >
+</div>
 <section class="section">
 
 <div class="profile-box">
