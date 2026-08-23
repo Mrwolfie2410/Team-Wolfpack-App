@@ -13,12 +13,9 @@
   <title>TEAM WOLFPACK</title>
 
   <link rel="manifest" href="manifest.json">
-
   <link rel="apple-touch-icon" href="icon-192.png">
+
   <style>
-.bottom-nav{
-  grid-template-columns:repeat(4,1fr) !important;
-}
 
     * {
       box-sizing: border-box;
@@ -57,7 +54,7 @@
     }
 
 
-    /* ---------------- HEADER ---------------- */
+    /* HEADER */
 
     .header {
       text-align: center;
@@ -69,6 +66,7 @@
       height: 145px;
       object-fit: contain;
       margin-bottom: 12px;
+
       filter:
         drop-shadow(0 0 12px rgba(51, 201, 255, 0.35))
         drop-shadow(0 0 12px rgba(255, 92, 0, 0.30));
@@ -116,7 +114,7 @@
     }
 
 
-    /* ---------------- MAIN ---------------- */
+    /* MAIN */
 
     .main {
       max-width: 520px;
@@ -142,7 +140,7 @@
     }
 
 
-    /* ---------------- CARDS ---------------- */
+    /* CARDS */
 
     .card {
       display: block;
@@ -177,26 +175,20 @@
     .card::before {
       content: "";
       position: absolute;
-
       left: 0;
       top: 0;
       bottom: 0;
-
       width: 3px;
-
       background: #4bd7ff;
     }
 
     .card::after {
       content: "";
       position: absolute;
-
       right: 0;
       top: 0;
       bottom: 0;
-
       width: 3px;
-
       background: #ff6200;
     }
 
@@ -215,6 +207,7 @@
       font-size: 12px;
       color: #bdbdbd;
       line-height: 1.4;
+      padding-right: 28px;
     }
 
     .arrow {
@@ -222,13 +215,12 @@
       right: 18px;
       top: 50%;
       transform: translateY(-50%);
-
       font-size: 22px;
       color: #ff7b20;
     }
 
 
-    /* ---------------- WEBSITE BUTTON ---------------- */
+    /* WEBSITE BUTTON */
 
     .website-button {
       display: block;
@@ -273,33 +265,66 @@
     }
 
 
-    /* ---------------- BOTTOM NAV ---------------- */
+    /* BOTTOM NAV */
 
-   <nav class="bottom-nav">
+    .bottom-nav {
+      position: fixed;
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
-HOME
-</a>
+      left: 0;
+      right: 0;
+      bottom: 0;
 
-<a class="nav-item" href="fighters.html">
-<span class="nav-icon">♟</span>
-FIGHTERS
-</a>
+      height: 74px;
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
-FIGHTS
-</a>
+      display: grid;
 
-<a class="nav-item" href="more.html">
-<span class="nav-icon">☰</span>
-MORE
-</a>
+      /* FOUR BUTTONS */
+      grid-template-columns: repeat(4, 1fr);
 
-</nav>
+      padding-bottom: env(safe-area-inset-bottom);
 
-    /* ---------------- LARGE PHONES ---------------- */
+      background:
+        rgba(4, 4, 4, 0.96);
+
+      border-top:
+        1px solid rgba(255,255,255,0.12);
+
+      backdrop-filter: blur(12px);
+
+      z-index: 100;
+    }
+
+    .nav-item {
+      text-decoration: none;
+      color: #929292;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 5px;
+
+      font-size: 9px;
+      font-weight: bold;
+      letter-spacing: .4px;
+    }
+
+    .nav-icon {
+      font-size: 20px;
+    }
+
+    .nav-item.active {
+      color: #66d9ff;
+    }
+
+    .nav-item.fire-nav {
+      color: #ff7620;
+    }
+
+
+    /* LARGE PHONES */
 
     @media (min-width: 500px) {
 
@@ -317,14 +342,13 @@ MORE
       }
 
     }
-.bottom-nav{
-  grid-template-columns:repeat(4,1fr) !important;
-}
-</style>
-  
+
+  </style>
 </head>
 
+
 <body>
+
 
   <!-- HEADER -->
 
@@ -349,19 +373,20 @@ MORE
   </header>
 
 
-
-  <!-- APP HOME -->
+  <!-- HOME -->
 
   <main class="main">
 
     <section class="welcome">
 
-      <h2>WELCOME TO THE PACK</h2>
+      <h2>
+        WELCOME TO THE PACK
+      </h2>
 
       <p>
         Official Team Wolfpack mobile app.
-        Fighters, fights, the pack, gallery,
-        merchandise and more.
+        Fighters, fights, the pack,
+        merchandise, sponsors and more.
       </p>
 
     </section>
@@ -387,7 +412,7 @@ MORE
     </a>
 
 
-    <!-- UPCOMING FIGHTS -->
+    <!-- FIGHTS -->
 
     <a
       class="card"
@@ -407,31 +432,11 @@ MORE
     </a>
 
 
-    <!-- GALLERY -->
+    <!-- THE PACK -->
 
     <a
       class="card"
-      href="gallery.html"
-    >
-
-      <div class="card-title">
-        GALLERY
-      </div>
-
-      <div class="card-subtitle">
-        Team Wolfpack photos and fight nights
-      </div>
-
-      <span class="arrow">›</span>
-
-    </a>
-
-
-    <!-- PACK -->
-
-    <a
-      class="card"
-      href="https://officialteamwolfpack.com/boxing"
+      href="pack.html"
     >
 
       <div class="card-title">
@@ -467,9 +472,13 @@ MORE
     </a>
 
 
+    <!-- WEBSITE -->
+
     <a
       class="website-button"
       href="https://officialteamwolfpack.com/boxing"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       VISIT OFFICIAL WEBSITE
     </a>
@@ -490,14 +499,13 @@ MORE
   </main>
 
 
-
-  <!-- BOTTOM MOBILE NAVIGATION -->
+  <!-- BOTTOM NAVIGATION -->
 
   <nav class="bottom-nav">
 
     <a
       class="nav-item active"
-      href="#"
+      href="index.html"
     >
       <span class="nav-icon">⌂</span>
       HOME
@@ -506,10 +514,7 @@ MORE
 
     <a
       class="nav-item"
-      <a class="nav-item" href="more.html">
-<span class="nav-icon">☰</span>
-MORE
-</a>
+      href="fighters.html"
     >
       <span class="nav-icon">♟</span>
       FIGHTERS
@@ -518,7 +523,7 @@ MORE
 
     <a
       class="nav-item fire-nav"
-      href="fighters.html"
+      href="fights.html"
     >
       <span class="nav-icon">♜</span>
       FIGHTS
@@ -527,23 +532,13 @@ MORE
 
     <a
       class="nav-item"
-      href="https://officialteamwolfpack.com/boxing"
-    >
-      <span class="nav-icon">▣</span>
-      GALLERY
-    </a>
-
-
-    <a
-      class="nav-item"
-      href="gallery.html"
+      href="more.html"
     >
       <span class="nav-icon">☰</span>
       MORE
     </a>
-href="more.html"
-  </nav>
 
+  </nav>
 
 
   <script>
