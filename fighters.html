@@ -11,6 +11,63 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
+  .fighter{
+  min-height:190px;
+  padding-right:180px;
+}
+
+.fighter-photo{
+  position:absolute;
+  right:0;
+  top:0;
+  width:165px;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+
+  mask-image:linear-gradient(
+    to left,
+    rgba(0,0,0,1) 65%,
+    rgba(0,0,0,.85) 78%,
+    rgba(0,0,0,0) 100%
+  );
+
+  -webkit-mask-image:linear-gradient(
+    to left,
+    rgba(0,0,0,1) 65%,
+    rgba(0,0,0,.85) 78%,
+    rgba(0,0,0,0) 100%
+  );
+
+  z-index:0;
+}
+
+.fighter .team,
+.fighter .name,
+.fighter .role,
+.fighter .view{
+  position:relative;
+  z-index:2;
+}
+
+.fighter .arrow{
+  z-index:3;
+}
+
+@media (max-width:520px){
+  .fighter{
+    min-height:175px;
+    padding-right:145px;
+  }
+
+  .fighter-photo{
+    width:135px;
+  }
+
+  .name{
+    font-size:21px;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -280,28 +337,33 @@ body {
 
   <!-- MRS WOLFIE -->
 
-  <a class="fighter" href="mrs-wolfie.html">
+<a class="fighter" href="mrs-wolfie.html">
 
-    <div class="team">
-      TEAM WOLFIE
-    </div>
+  <img
+    class="fighter-photo"
+    src="zoey-james.jpg"
+    alt="Zoey Mrs Wolfie James"
+  >
 
-    <div class="name">
-      ZOEY “MRS WOLFIE” JAMES
-    </div>
+  <div class="team">
+    TEAM WOLFIE
+  </div>
 
-    <div class="role">
-      Boxer • Team Wolfpack
-    </div>
+  <div class="name">
+    ZOEY “MRS WOLFIE” JAMES
+  </div>
 
-    <div class="view">
-      VIEW FIGHTER PROFILE
-    </div>
+  <div class="role">
+    Boxer • Team Wolfpack
+  </div>
 
-    <span class="arrow">›</span>
+  <div class="view">
+    VIEW FIGHTER PROFILE
+  </div>
 
-  </a>
+  <span class="arrow">›</span>
 
+</a>
 
   <!-- GREIG SLOAN -->
 
