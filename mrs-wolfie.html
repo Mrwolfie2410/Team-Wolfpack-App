@@ -12,7 +12,48 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+.profile-photo-wrap{
+  width:100%;
+  max-width:480px;
+  height:300px;
+  margin:0 auto 22px;
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
 
+  border-left:4px solid #4bd8ff;
+  border-right:4px solid #ff6500;
+
+  background:#080808;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.45);
+}
+
+.profile-photo{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 22%;
+}
+
+.profile-photo-wrap::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:35%;
+
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    rgba(5,5,5,.75)
+  );
+
+  pointer-events:none;
+}
 html{scroll-behavior:smooth}
 
 body{
@@ -25,7 +66,13 @@ body{
     radial-gradient(circle at 100% 70%,rgba(255,90,0,.22),transparent 32%),
     #050505;
 }
-
+<div class="profile-photo-wrap">
+  <img
+    src="zoey-james.jpg"
+    alt="Zoey Mrs Wolfie James"
+    class="profile-photo"
+  >
+</div>
 .header{
   text-align:center;
   padding:25px 18px 15px;
