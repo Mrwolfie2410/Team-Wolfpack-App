@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <!-- Google Analytics - Team Wolfpack App -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
@@ -14,34 +16,77 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
-</script>  
+</script>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
 <meta name="theme-color" content="#050505">
+
+<!-- PWA / iPHONE -->
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>Meet The Pack | Team Wolfpack</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 
+
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color:#fff;
+
   padding-bottom:95px;
 
   background:
-    radial-gradient(circle at 0% 15%,rgba(0,190,255,.22),transparent 30%),
-    radial-gradient(circle at 100% 35%,rgba(255,85,0,.22),transparent 30%),
-    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.22),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 100% 35%,
+      rgba(255,85,0,.22),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
 }
+
+
+/* ==============================
+   HEADER
+============================== */
 
 .header{
   text-align:center;
@@ -51,60 +96,112 @@ body{
 .logo{
   width:115px;
   height:115px;
+
   object-fit:contain;
+
+  filter:
+    drop-shadow(0 0 10px rgba(75,216,255,.20))
+    drop-shadow(0 0 10px rgba(255,101,0,.18));
 }
 
 .brand{
   margin-top:5px;
+
   font-size:12px;
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
+
   font-size:32px;
   font-weight:900;
 }
 
-.ice{color:#67dcff}
-.fire{color:#ff751c}
+.ice{
+  color:#67dcff;
+}
+
+.fire{
+  color:#ff751c;
+}
 
 .subtitle{
   margin-top:8px;
+
   color:#aaa;
+
   font-size:13px;
 }
 
 .line{
   width:100%;
   max-width:430px;
+
   height:2px;
+
   margin:22px auto 0;
-  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
 }
 
+
+/* ==============================
+   CONTENT
+============================== */
+
 .content{
+  width:100%;
   max-width:540px;
+
   margin:auto;
-  padding:10px 18px 110px;
+
+  padding:
+    10px
+    18px
+    110px;
 }
+
+
+/* ==============================
+   MEMBER CARDS
+============================== */
 
 .member-card{
   display:block;
+
   position:relative;
+
   overflow:hidden;
 
+  width:100%;
   min-height:180px;
 
-  padding:24px 160px 24px 20px;
+  padding:
+    24px
+    160px
+    24px
+    20px;
+
   margin-bottom:15px;
 
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.13);
+
+  border:
+    1px solid rgba(255,255,255,.13);
 
   text-decoration:none;
+
   color:white;
 
   background:
@@ -115,38 +212,70 @@ body{
       rgba(220,70,0,.17)
     );
 
-  box-shadow:0 8px 28px rgba(0,0,0,.32);
+  box-shadow:
+    0 8px 28px rgba(0,0,0,.32);
 }
+
+
+/* ICE LEFT EDGE */
 
 .member-card::before{
   content:"";
+
   position:absolute;
+
   left:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#4bd8ff;
+
   z-index:4;
 }
+
+
+/* FIRE RIGHT EDGE */
 
 .member-card::after{
   content:"";
+
   position:absolute;
+
   right:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#ff6500;
+
   z-index:4;
 }
 
+
+/* CLICK EFFECT */
+
+a.member-card:active{
+  transform:scale(.985);
+}
+
+
+/* ==============================
+   MEMBER PHOTOS
+============================== */
+
 .member-photo{
   position:absolute;
+
   right:0;
   top:0;
 
   width:145px;
   height:100%;
+
+  display:block;
 
   object-fit:cover;
   object-position:center top;
@@ -156,19 +285,24 @@ body{
   -webkit-mask-image:
     linear-gradient(
       to left,
-      rgba(0,0,0,1) 72%,
-      rgba(0,0,0,.9) 82%,
+      rgba(0,0,0,1) 70%,
+      rgba(0,0,0,.9) 80%,
       rgba(0,0,0,0) 100%
     );
 
   mask-image:
     linear-gradient(
       to left,
-      rgba(0,0,0,1) 72%,
-      rgba(0,0,0,.9) 82%,
+      rgba(0,0,0,1) 70%,
+      rgba(0,0,0,.9) 80%,
       rgba(0,0,0,0) 100%
     );
 }
+
+
+/* ==============================
+   MEMBER TEXT
+============================== */
 
 .member-team,
 .member-name,
@@ -180,55 +314,91 @@ body{
 
 .member-team{
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:3px;
+
   color:#67dcff;
+
   margin-bottom:7px;
 }
 
 .member-name{
   font-size:20px;
+
   font-weight:900;
+
   letter-spacing:.5px;
+
   line-height:1.15;
 }
 
 .member-role{
   margin-top:7px;
+
   color:#c7c7c7;
+
   font-size:12px;
+
   line-height:1.5;
 }
 
 .view{
   margin-top:14px;
+
   color:#ff751c;
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:1px;
 }
 
 .arrow{
   position:absolute;
+
   right:14px;
+
   top:50%;
+
   transform:translateY(-50%);
+
   color:#ff751c;
+
   font-size:27px;
+
   z-index:5;
 }
 
+
+/* ==============================
+   BACK BUTTON
+============================== */
+
 .back{
   display:block;
+
   margin-top:8px;
+
   padding:16px;
+
   text-align:center;
+
   text-decoration:none;
+
   color:#fff;
-  border:1px solid #59d9ff;
+
+  border:
+    1px solid #59d9ff;
+
   border-radius:12px;
+
   font-size:12px;
+
   font-weight:900;
+
   letter-spacing:1px;
 
   background:
@@ -239,8 +409,18 @@ body{
     );
 }
 
+.back:active{
+  transform:scale(.985);
+}
+
+
+/* ==============================
+   BOTTOM NAVIGATION
+============================== */
+
 .bottom-nav{
   position:fixed;
+
   left:0;
   right:0;
   bottom:0;
@@ -248,29 +428,42 @@ body{
   height:74px;
 
   display:grid;
-  grid-template-columns:repeat(4,1fr);
 
-  padding-bottom:env(safe-area-inset-bottom);
+  grid-template-columns:
+    repeat(4,1fr);
 
-  background:rgba(4,4,4,.97);
-  border-top:1px solid rgba(255,255,255,.12);
+  padding-bottom:
+    env(safe-area-inset-bottom);
 
-  backdrop-filter:blur(12px);
+  background:
+    rgba(4,4,4,.97);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(12px);
+
   z-index:100;
 }
 
 .nav-item{
   text-decoration:none;
+
   color:#888;
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
   gap:5px;
 
   font-size:9px;
+
   font-weight:bold;
 }
 
@@ -286,11 +479,21 @@ body{
   color:#67dcff;
 }
 
+
+/* ==============================
+   SMALL PHONES
+============================== */
+
 @media(max-width:430px){
 
   .member-card{
     min-height:170px;
-    padding:22px 135px 22px 18px;
+
+    padding:
+      22px
+      135px
+      22px
+      18px;
   }
 
   .member-photo{
@@ -303,39 +506,84 @@ body{
 
   .member-team{
     font-size:9px;
+
     letter-spacing:2px;
   }
 
+  .member-role{
+    font-size:11px;
+  }
+
+  .view{
+    font-size:9px;
+  }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- ==============================
+     HEADER
+============================== -->
 
 <header class="header">
 
 <a href="index.html">
-<img src="icon-512.png" class="logo" alt="Team Wolfpack">
+
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
+
 </a>
 
-<div class="brand">TEAM WOLFPACK</div>
+
+<div class="brand">
+TEAM WOLFPACK
+</div>
+
 
 <h1 class="title">
-<span class="ice">MEET</span>
-<span class="fire"> THE PACK</span>
+
+<span class="ice">
+MEET
+</span>
+
+<span class="fire">
+THE PACK
+</span>
+
 </h1>
+
 
 <p class="subtitle">
 The people behind Team Wolfpack.
 </p>
 
+
 <div class="line"></div>
 
 </header>
 
+
+
+<!-- ==============================
+     PACK MEMBERS
+============================== -->
+
 <main class="content">
 
-<!-- MR WOLFIE -->
+
+<!-- ==============================
+     MR WOLFIE
+============================== -->
 
 <div class="member-card">
 
@@ -345,25 +593,43 @@ The people behind Team Wolfpack.
   alt="Mr Wolfie"
 >
 
+
 <div class="member-team">
 TEAM WOLFPACK • TEAM WOLFIE
 </div>
+
 
 <div class="member-name">
 MR WOLFIE
 </div>
 
+
 <div class="member-role">
-Co-Founder &amp; Joint Owner of Team Wolfpack<br>
+Co-Founder &amp; Joint Owner of Team Wolfpack
+<br>
 Manager to Team Wolfie
 </div>
 
+
 </div>
 
 
-<!-- MRS WOLFIE -->
 
-<a class="member-card" href="mrs-wolfie.html">
+<!-- ==============================
+     MRS WOLFIE
+============================== -->
+
+<a
+  class="member-card"
+  href="mrs-wolfie.html"
+
+  onclick="gtag('event','pack_member_click',{
+    'member':'Mrs Wolfie',
+    'team':'Team Wolfie',
+    'destination':'Fighter Profile'
+  });"
+>
+
 
 <img
   class="member-photo"
@@ -371,31 +637,53 @@ Manager to Team Wolfie
   alt="Zoey Mrs Wolfie James"
 >
 
+
 <div class="member-team">
 TEAM WOLFIE
 </div>
+
 
 <div class="member-name">
 ZOEY “MRS WOLFIE” JAMES
 </div>
 
+
 <div class="member-role">
-Co-Founder &amp; Joint Owner of Team Wolfpack<br>
+Co-Founder &amp; Joint Owner of Team Wolfpack
+<br>
 Boxer • Team Wolfie
 </div>
+
 
 <div class="view">
 VIEW FIGHTER PROFILE
 </div>
 
-<span class="arrow">›</span>
+
+<span class="arrow">
+›
+</span>
+
 
 </a>
 
 
-<!-- GREIG SLOAN -->
 
-<a class="member-card" href="greig-sloan.html">
+<!-- ==============================
+     GREIG SLOAN
+============================== -->
+
+<a
+  class="member-card"
+  href="greig-sloan.html"
+
+  onclick="gtag('event','pack_member_click',{
+    'member':'Greig Sloan',
+    'team':'Team Sloan',
+    'destination':'Fighter Profile'
+  });"
+>
+
 
 <img
   class="member-photo"
@@ -403,30 +691,42 @@ VIEW FIGHTER PROFILE
   alt="Greig Sloan"
 >
 
+
 <div class="member-team">
 TEAM SLOAN
 </div>
+
 
 <div class="member-name">
 GREIG SLOAN
 </div>
 
+
 <div class="member-role">
 Boxer • Team Sloan
 </div>
+
 
 <div class="view">
 VIEW FIGHTER PROFILE
 </div>
 
-<span class="arrow">›</span>
+
+<span class="arrow">
+›
+</span>
+
 
 </a>
 
 
-<!-- BRY KELLY -->
+
+<!-- ==============================
+     BRY KELLY
+============================== -->
 
 <div class="member-card">
+
 
 <img
   class="member-photo"
@@ -434,24 +734,32 @@ VIEW FIGHTER PROFILE
   alt="Bry Kelly"
 >
 
+
 <div class="member-team">
 TEAM WOLFIE
 </div>
+
 
 <div class="member-name">
 BRY KELLY
 </div>
 
+
 <div class="member-role">
 Corner Team
 </div>
 
+
 </div>
 
 
-<!-- BILLY BURTON -->
+
+<!-- ==============================
+     BILLY BURTON
+============================== -->
 
 <div class="member-card">
+
 
 <img
   class="member-photo"
@@ -459,51 +767,141 @@ Corner Team
   alt="Billy Bossman Burton"
 >
 
+
 <div class="member-team">
 TEAM WOLFIE
 </div>
+
 
 <div class="member-name">
 BILLY “BOSSMAN” BURTON
 </div>
 
+
 <div class="member-role">
 Corner Team
 </div>
 
+
 </div>
 
 
-<a class="back" href="more.html">
+
+<!-- BACK -->
+
+<a
+  class="back"
+  href="more.html"
+
+  onclick="gtag('event','navigation_click',{
+    'destination':'More',
+    'source':'Meet The Pack'
+  });"
+>
+
 ‹ BACK TO MORE
+
 </a>
+
 
 </main>
 
 
+
+<!-- ==============================
+     BOTTOM NAVIGATION
+============================== -->
+
 <nav class="bottom-nav">
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+
+<span class="nav-icon">
+⌂
+</span>
+
 HOME
+
 </a>
 
-<a class="nav-item" href="fighters.html">
-<span class="nav-icon">♟</span>
+
+
+<a
+  class="nav-item"
+  href="fighters.html"
+>
+
+<span class="nav-icon">
+♟
+</span>
+
 FIGHTERS
+
 </a>
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
+
+
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
+
+<span class="nav-icon">
+♜
+</span>
+
 FIGHTS
+
 </a>
 
-<a class="nav-item active" href="more.html">
-<span class="nav-icon">☰</span>
+
+
+<a
+  class="nav-item active"
+  href="more.html"
+>
+
+<span class="nav-icon">
+☰
+</span>
+
 MORE
+
 </a>
+
 
 </nav>
 
+
+
+<!-- ==============================
+     SERVICE WORKER
+============================== -->
+
+<script>
+
+if ("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
 </body>
+
 </html>
