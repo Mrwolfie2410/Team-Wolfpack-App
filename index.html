@@ -3,385 +3,427 @@
 
 <head>
 
-  <!-- Google Analytics - Team Wolfpack App -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(){
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-M973P0B4F0');
-  </script>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  >
-
-  <meta name="theme-color" content="#050505">
-
-  <!-- iPhone / PWA -->
-  <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <title>TEAM WOLFPACK</title>
-
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icon-192.png">
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-
-      background:
-        radial-gradient(
-          circle at 0% 20%,
-          rgba(0, 191, 255, 0.20),
-          transparent 32%
-        ),
-        radial-gradient(
-          circle at 100% 75%,
-          rgba(255, 85, 0, 0.22),
-          transparent 32%
-        ),
-        #050505;
-
-      color: white;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      padding-bottom: 95px;
-    }
-
-
-    /* HEADER */
-
-    .header {
-      text-align: center;
-      padding: 34px 20px 20px;
-    }
-
-    .logo {
-      width: 145px;
-      height: 145px;
-      object-fit: contain;
-      margin-bottom: 12px;
-
-      filter:
-        drop-shadow(0 0 12px rgba(51, 201, 255, 0.35))
-        drop-shadow(0 0 12px rgba(255, 92, 0, 0.30));
-    }
-
-    .title {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: 2px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #e9fbff 0%,
-          #63d8ff 47%,
-          #ff6414 53%,
-          #ffad3b 100%
-        );
+<!-- Google Analytics - Team Wolfpack App -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .tagline {
-      margin-top: 8px;
-      font-size: 11px;
-      letter-spacing: 4px;
-      color: #d5d5d5;
-    }
+<script>
+  window.dataLayer = window.dataLayer || [];
 
-    .line {
-      width: 100%;
-      max-width: 430px;
-      height: 2px;
-      margin: 25px auto 0;
+  function gtag(){
+    dataLayer.push(arguments);
+  }
 
-      background:
-        linear-gradient(
-          90deg,
-          #4bd8ff,
-          transparent,
-          #ff6200
-        );
-    }
-
-
-    /* MAIN */
-
-    .main {
-      max-width: 520px;
-      margin: auto;
-      padding: 10px 18px 110px;
-    }
-
-    .welcome {
-      text-align: center;
-      margin-bottom: 28px;
-    }
+  gtag('js', new Date());
 
-    .welcome h2 {
-      font-size: 23px;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
+  gtag('config', 'G-M973P0B4F0');
+</script>
 
-    .welcome p {
-      color: #bdbdbd;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+<meta charset="UTF-8">
 
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
 
-    /* CARDS */
+<meta name="theme-color" content="#050505">
 
-    .card {
-      display: block;
-      position: relative;
+<!-- iPhone / PWA -->
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-      width: 100%;
+<title>TEAM WOLFPACK</title>
 
-      padding: 21px 19px;
-      margin-bottom: 14px;
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
 
-      border-radius: 14px;
+<style>
 
-      text-decoration: none;
-      color: white;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-      overflow: hidden;
+html{
+  scroll-behavior:smooth;
+}
 
-      background:
-        linear-gradient(
-          105deg,
-          rgba(20, 145, 195, 0.18),
-          rgba(12, 12, 12, 0.86) 48%,
-          rgba(210, 68, 0, 0.18)
-        );
+body{
+  min-height:100vh;
 
-      border: 1px solid rgba(255,255,255,0.13);
+  background:
+    radial-gradient(
+      circle at 0% 20%,
+      rgba(0,191,255,.20),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 100% 75%,
+      rgba(255,85,0,.22),
+      transparent 32%
+    ),
+    #050505;
 
-      box-shadow:
-        0 8px 25px rgba(0,0,0,0.30);
-    }
+  color:#fff;
 
-    .card::before {
-      content: "";
-      position: absolute;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-      left: 0;
-      top: 0;
-      bottom: 0;
+  padding-bottom:95px;
+}
 
-      width: 3px;
 
-      background: #4bd7ff;
-    }
+/* HEADER */
 
-    .card::after {
-      content: "";
-      position: absolute;
+.header{
+  text-align:center;
+  padding:34px 20px 20px;
+}
 
-      right: 0;
-      top: 0;
-      bottom: 0;
+.logo{
+  width:145px;
+  height:145px;
 
-      width: 3px;
+  object-fit:contain;
 
-      background: #ff6200;
-    }
+  margin-bottom:12px;
 
-    .card:active {
-      transform: scale(0.985);
-    }
+  filter:
+    drop-shadow(0 0 12px rgba(51,201,255,.35))
+    drop-shadow(0 0 12px rgba(255,92,0,.30));
+}
 
-    .card-title {
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
+.title{
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:2px;
 
-    .card-subtitle {
-      font-size: 12px;
-      color: #bdbdbd;
-      line-height: 1.4;
-      padding-right: 28px;
-    }
+  background:
+    linear-gradient(
+      90deg,
+      #e9fbff 0%,
+      #63d8ff 47%,
+      #ff6414 53%,
+      #ffad3b 100%
+    );
 
-    .arrow {
-      position: absolute;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
 
-      right: 18px;
-      top: 50%;
+.tagline{
+  margin-top:8px;
 
-      transform: translateY(-50%);
+  font-size:11px;
+  letter-spacing:4px;
 
-      font-size: 22px;
+  color:#d5d5d5;
+}
 
-      color: #ff7b20;
-    }
+.line{
+  width:100%;
+  max-width:430px;
 
+  height:2px;
 
-    /* WEBSITE BUTTON */
+  margin:25px auto 0;
 
-    .website-button {
-      display: block;
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
+}
 
-      margin-top: 25px;
-      padding: 17px;
 
-      text-align: center;
+/* MAIN */
 
-      border-radius: 10px;
-      border: 1px solid #53d8ff;
+.main{
+  max-width:520px;
 
-      text-decoration: none;
+  margin:auto;
 
-      color: white;
-      font-weight: bold;
-      letter-spacing: 1px;
+  padding:
+    10px
+    18px
+    110px;
+}
 
-      background:
-        linear-gradient(
-          90deg,
-          rgba(27, 156, 210, 0.20),
-          rgba(255, 90, 0, 0.20)
-        );
-    }
+.welcome{
+  text-align:center;
 
-    .website-button:active {
-      transform: scale(0.985);
-    }
+  margin-bottom:28px;
+}
 
-    .website-address {
-      text-align: center;
-      margin-top: 12px;
+.welcome h2{
+  font-size:23px;
 
-      font-size: 9px;
-      letter-spacing: 1.3px;
-      color: #777;
-    }
+  letter-spacing:1px;
 
-    .ice {
-      color: #5bd8ff;
-    }
+  margin-bottom:8px;
+}
 
-    .fire {
-      color: #ff7019;
-    }
+.welcome p{
+  color:#bdbdbd;
 
+  font-size:14px;
 
-    /* BOTTOM NAV */
+  line-height:1.5;
+}
 
-    .bottom-nav {
-      position: fixed;
 
-      left: 0;
-      right: 0;
-      bottom: 0;
+/* CARDS */
 
-      height: 74px;
+.card{
+  display:block;
 
-      display: grid;
+  position:relative;
 
-      grid-template-columns: repeat(4, 1fr);
+  width:100%;
 
-      padding-bottom: env(safe-area-inset-bottom);
+  padding:21px 19px;
 
-      background:
-        rgba(4, 4, 4, 0.96);
+  margin-bottom:14px;
 
-      border-top:
-        1px solid rgba(255,255,255,0.12);
+  border-radius:14px;
 
-      backdrop-filter: blur(12px);
+  text-decoration:none;
 
-      z-index: 100;
-    }
+  color:#fff;
 
-    .nav-item {
-      text-decoration: none;
+  overflow:hidden;
 
-      color: #929292;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(20,145,195,.18),
+      rgba(12,12,12,.86) 48%,
+      rgba(210,68,0,.18)
+    );
 
-      display: flex;
+  border:
+    1px solid rgba(255,255,255,.13);
 
-      flex-direction: column;
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.30);
+}
 
-      align-items: center;
-      justify-content: center;
+.card::before{
+  content:"";
 
-      gap: 5px;
+  position:absolute;
 
-      font-size: 9px;
-      font-weight: bold;
+  left:0;
+  top:0;
+  bottom:0;
 
-      letter-spacing: .4px;
-    }
+  width:3px;
 
-    .nav-icon {
-      font-size: 20px;
-    }
+  background:#4bd7ff;
+}
 
-    .nav-item.active {
-      color: #66d9ff;
-    }
+.card::after{
+  content:"";
 
-    .nav-item.fire-nav {
-      color: #ff7620;
-    }
+  position:absolute;
 
+  right:0;
+  top:0;
+  bottom:0;
 
-    /* LARGE PHONES */
+  width:3px;
 
-    @media (min-width: 500px) {
+  background:#ff6200;
+}
 
-      .header {
-        padding-top: 45px;
-      }
+.card:active{
+  transform:scale(.985);
+}
 
-      .logo {
-        width: 170px;
-        height: 170px;
-      }
+.card-title{
+  font-size:18px;
 
-      .title {
-        font-size: 37px;
-      }
+  font-weight:900;
 
-    }
+  letter-spacing:1px;
 
-  </style>
+  margin-bottom:5px;
+}
+
+.card-subtitle{
+  font-size:12px;
+
+  color:#bdbdbd;
+
+  line-height:1.4;
+
+  padding-right:28px;
+}
+
+.arrow{
+  position:absolute;
+
+  right:18px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  font-size:22px;
+
+  color:#ff7b20;
+}
+
+
+/* WEBSITE BUTTON */
+
+.website-button{
+  display:block;
+
+  margin-top:25px;
+
+  padding:17px;
+
+  text-align:center;
+
+  border-radius:10px;
+
+  border:
+    1px solid #53d8ff;
+
+  text-decoration:none;
+
+  color:#fff;
+
+  font-weight:bold;
+
+  letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(27,156,210,.20),
+      rgba(255,90,0,.20)
+    );
+}
+
+.website-button:active{
+  transform:scale(.985);
+}
+
+.website-address{
+  text-align:center;
+
+  margin-top:12px;
+
+  font-size:9px;
+
+  letter-spacing:1.3px;
+
+  color:#777;
+}
+
+.ice{
+  color:#5bd8ff;
+}
+
+.fire{
+  color:#ff7019;
+}
+
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+  position:fixed;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:74px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  padding-bottom:
+    env(safe-area-inset-bottom);
+
+  background:
+    rgba(4,4,4,.96);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(12px);
+
+  z-index:100;
+}
+
+.nav-item{
+  text-decoration:none;
+
+  color:#929292;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:5px;
+
+  font-size:9px;
+
+  font-weight:bold;
+
+  letter-spacing:.4px;
+}
+
+.nav-icon{
+  font-size:20px;
+}
+
+.nav-item.active{
+  color:#66d9ff;
+}
+
+.nav-item.fire-nav{
+  color:#ff7620;
+}
+
+
+/* LARGE PHONES */
+
+@media(min-width:500px){
+
+  .header{
+    padding-top:45px;
+  }
+
+  .logo{
+    width:170px;
+    height:170px;
+  }
+
+  .title{
+    font-size:37px;
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -389,262 +431,274 @@
 <body>
 
 
-  <!-- HEADER -->
+<!-- HEADER -->
 
-  <header class="header">
+<header class="header">
 
-    <img
-      src="icon-512.png"
-      alt="Team Wolfpack"
-      class="logo"
-    >
+<img
+  src="icon-512.png"
+  alt="Team Wolfpack"
+  class="logo"
+>
 
-    <h1 class="title">
-      TEAM WOLFPACK
-    </h1>
+<h1 class="title">
+TEAM WOLFPACK
+</h1>
 
-    <p class="tagline">
-      ONE PACK • ONE PURPOSE
-    </p>
+<p class="tagline">
+ONE PACK • ONE PURPOSE
+</p>
 
-    <div class="line"></div>
+<div class="line"></div>
 
-  </header>
+</header>
 
 
-  <!-- HOME -->
 
-  <main class="main">
+<!-- HOME -->
 
-    <section class="welcome">
+<main class="main">
 
-      <h2>
-        WELCOME TO THE PACK
-      </h2>
 
-      <p>
-        Official Team Wolfpack mobile app.
-        Fighters, fights, merchandise,
-        sponsors and more.
-      </p>
+<section class="welcome">
 
-    </section>
+<h2>
+WELCOME TO THE PACK
+</h2>
 
+<p>
+Official Team Wolfpack mobile app.
+Fighters, fights, merchandise,
+sponsors and more.
+</p>
 
-    <!-- FIGHTERS -->
+</section>
 
-    <a
-      class="card"
-      href="fighters.html"
-      onclick="gtag('event','home_card_click',{
-        'section':'Fighters'
-      });"
-    >
 
-      <div class="card-title">
-        FIGHTERS
-      </div>
 
-      <div class="card-subtitle">
-        Mrs Wolfie • Greig Sloan
-      </div>
+<!-- FIGHTERS -->
 
-      <span class="arrow">
-        ›
-      </span>
+<a
+  class="card"
+  href="fighters.html"
+  onclick="gtag('event','home_card_click',{
+    section:'Fighters'
+  });"
+>
 
-    </a>
+<div class="card-title">
+FIGHTERS
+</div>
 
+<div class="card-subtitle">
+Mrs Wolfie • Greig Sloan
+</div>
 
-    <!-- UPCOMING FIGHTS -->
+<span class="arrow">
+›
+</span>
 
-    <a
-      class="card"
-      href="fights.html"
-      onclick="gtag('event','home_card_click',{
-        'section':'Upcoming Fights'
-      });"
-    >
+</a>
 
-      <div class="card-title">
-        UPCOMING FIGHTS
-      </div>
 
-      <div class="card-subtitle">
-        Fight cards • opponents • dates • venues
-      </div>
 
-      <span class="arrow">
-        ›
-      </span>
+<!-- UPCOMING FIGHTS -->
 
-    </a>
+<a
+  class="card"
+  href="fights.html"
+  onclick="gtag('event','home_card_click',{
+    section:'Upcoming Fights'
+  });"
+>
 
+<div class="card-title">
+UPCOMING FIGHTS
+</div>
 
-    <!-- SPONSORS -->
+<div class="card-subtitle">
+Fight cards • opponents • dates • venues
+</div>
 
-    <a
-      class="card"
-      href="sponsors.html"
-      onclick="gtag('event','home_card_click',{
-        'section':'Sponsors and Partners'
-      });"
-    >
+<span class="arrow">
+›
+</span>
 
-      <div class="card-title">
-        SPONSORS &amp; PARTNERS
-      </div>
+</a>
 
-      <div class="card-subtitle">
-        Meet the sponsors supporting Team Wolfpack and Team Sloan
-      </div>
 
-      <span class="arrow">
-        ›
-      </span>
 
-    </a>
+<!-- SPONSORS -->
 
+<a
+  class="card"
+  href="sponsors.html"
+  onclick="gtag('event','home_card_click',{
+    section:'Sponsors and Partners'
+  });"
+>
 
-    <!-- MORE -->
+<div class="card-title">
+SPONSORS &amp; PARTNERS
+</div>
 
-    <a
-      class="card"
-      href="more.html"
-      onclick="gtag('event','home_card_click',{
-        'section':'More'
-      });"
-    >
+<div class="card-subtitle">
+Meet the sponsors supporting Team Wolfpack and Team Sloan
+</div>
 
-      <div class="card-title">
-        MORE
-      </div>
+<span class="arrow">
+›
+</span>
 
-      <div class="card-subtitle">
-        Merch • meet the pack • about • contact • socials
-      </div>
+</a>
 
-      <span class="arrow">
-        ›
-      </span>
 
-    </a>
 
+<!-- MORE -->
 
-    <!-- OFFICIAL WEBSITE -->
+<a
+  class="card"
+  href="more.html"
+  onclick="gtag('event','home_card_click',{
+    section:'More'
+  });"
+>
 
-    <a
-      class="website-button"
-      href="https://officialteamwolfpack.com/boxing"
-      target="_blank"
-      rel="noopener noreferrer"
-      onclick="gtag('event','official_website_click',{
-        'source':'App Home'
-      });"
-    >
-      VISIT OFFICIAL WEBSITE
-    </a>
+<div class="card-title">
+MORE
+</div>
 
+<div class="card-subtitle">
+Merch • meet the pack • about • contact • socials
+</div>
 
-    <div class="website-address">
+<span class="arrow">
+›
+</span>
 
-      <span class="ice">
-        OFFICIALTEAMWOLFPACK.COM
-      </span>
+</a>
 
-      <span class="fire">
-        /BOXING
-      </span>
 
-    </div>
 
-  </main>
+<!-- OFFICIAL WEBSITE -->
 
+<a
+  class="website-button"
+  href="https://officialteamwolfpack.com/boxing"
+  target="_blank"
+  rel="noopener noreferrer"
+  onclick="gtag('event','official_website_click',{
+    source:'App Home'
+  });"
+>
 
-  <!-- BOTTOM NAVIGATION -->
+VISIT OFFICIAL WEBSITE
 
-  <nav class="bottom-nav">
+</a>
 
 
-    <a
-      class="nav-item active"
-      href="index.html"
-    >
+<div class="website-address">
 
-      <span class="nav-icon">
-        ⌂
-      </span>
+<span class="ice">
+OFFICIALTEAMWOLFPACK.COM
+</span>
 
-      HOME
+<span class="fire">
+/BOXING
+</span>
 
-    </a>
+</div>
 
 
-    <a
-      class="nav-item"
-      href="fighters.html"
-    >
+</main>
 
-      <span class="nav-icon">
-        ♟
-      </span>
 
-      FIGHTERS
 
-    </a>
+<!-- BOTTOM NAVIGATION -->
 
+<nav class="bottom-nav">
 
-    <a
-      class="nav-item fire-nav"
-      href="fights.html"
-    >
 
-      <span class="nav-icon">
-        ♜
-      </span>
+<a
+  class="nav-item active"
+  href="index.html"
+>
 
-      FIGHTS
+<span class="nav-icon">
+⌂
+</span>
 
-    </a>
+HOME
 
+</a>
 
-    <a
-      class="nav-item"
-      href="more.html"
-    >
 
-      <span class="nav-icon">
-        ☰
-      </span>
+<a
+  class="nav-item"
+  href="fighters.html"
+>
 
-      MORE
+<span class="nav-icon">
+♟
+</span>
 
-    </a>
+FIGHTERS
 
+</a>
 
-  </nav>
 
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
 
-  <!-- SERVICE WORKER -->
+<span class="nav-icon">
+♜
+</span>
 
-  <script>
+FIGHTS
 
-    if ("serviceWorker" in navigator) {
+</a>
 
-      window.addEventListener(
-        "load",
-        function () {
 
-          navigator.serviceWorker.register(
-            "service-worker.js"
-          );
+<a
+  class="nav-item"
+  href="more.html"
+>
 
-        }
+<span class="nav-icon">
+☰
+</span>
+
+MORE
+
+</a>
+
+
+</nav>
+
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
       );
 
     }
+  );
 
-  </script>
+}
+
+</script>
 
 
 </body>
