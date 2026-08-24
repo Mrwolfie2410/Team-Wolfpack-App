@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <!-- Google Analytics - Team Wolfpack App -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
@@ -15,7 +16,15 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
+
+  window.addEventListener('load', function(){
+    gtag('event','fighter_profile_view',{
+      'fighter':'Mrs Wolfie',
+      'team':'Team Wolfie'
+    });
+  });
 </script>
+
 <meta charset="UTF-8">
 
 <meta
@@ -25,16 +34,16 @@
 
 <meta name="theme-color" content="#050505">
 
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
 <title>Mrs Wolfie | Team Wolfpack</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
-
-/* =========================================
-   RESET
-========================================= */
 
 *{
   box-sizing:border-box;
@@ -46,13 +55,7 @@ html{
   scroll-behavior:smooth;
 }
 
-
-/* =========================================
-   BODY
-========================================= */
-
 body{
-
   min-height:100vh;
 
   font-family:
@@ -65,7 +68,6 @@ body{
   padding-bottom:95px;
 
   background:
-
     radial-gradient(
       circle at 0% 15%,
       rgba(0,190,255,.20),
@@ -82,32 +84,20 @@ body{
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* HEADER */
 
 .header{
-
   text-align:center;
-
-  padding:
-    25px
-    18px
-    15px;
+  padding:25px 18px 15px;
 }
 
-
 .logo{
-
   width:90px;
   height:90px;
-
   object-fit:contain;
 }
 
-
 .brand{
-
   margin-top:5px;
 
   font-size:12px;
@@ -118,13 +108,10 @@ body{
   color:#66d9ff;
 }
 
-
 .fighter-label{
-
   margin-top:20px;
 
   font-size:11px;
-
   font-weight:900;
 
   letter-spacing:3px;
@@ -132,41 +119,30 @@ body{
   color:#ff751c;
 }
 
-
 .name{
-
   margin-top:7px;
 
   font-size:29px;
-
   font-weight:900;
 
   line-height:1.05;
 }
 
-
 .name .ice{
   color:#67dcff;
 }
-
 
 .name .fire{
   color:#ff751c;
 }
 
-
 .line{
-
   height:2px;
 
   width:100%;
-
   max-width:430px;
 
-  margin:
-    22px
-    auto
-    0;
+  margin:22px auto 0;
 
   background:
     linear-gradient(
@@ -178,14 +154,10 @@ body{
 }
 
 
-/* =========================================
-   MAIN CONTENT
-========================================= */
+/* MAIN CONTENT */
 
 .content{
-
   width:100%;
-
   max-width:520px;
 
   margin:auto;
@@ -193,22 +165,17 @@ body{
   padding:
     12px
     18px
-    35px;
+    110px;
 }
 
-
 .section{
-
   margin-bottom:28px;
 }
 
 
-/* =========================================
-   ZOEY PROFILE PHOTO
-========================================= */
+/* PROFILE PHOTO */
 
 .profile-photo-wrap{
-
   position:relative;
 
   width:100%;
@@ -225,19 +192,13 @@ body{
   border-radius:16px;
 
   border:
-    1px
-    solid
-    rgba(255,255,255,.13);
+    1px solid rgba(255,255,255,.13);
 
   border-left:
-    4px
-    solid
-    #4bd8ff;
+    4px solid #4bd8ff;
 
   border-right:
-    4px
-    solid
-    #ff6500;
+    4px solid #ff6500;
 
   background:#080808;
 
@@ -248,23 +209,17 @@ body{
     rgba(0,0,0,.45);
 }
 
-
 .profile-photo{
-
   display:block;
 
   width:100%;
-
   height:100%;
 
   object-fit:cover;
-
   object-position:center 22%;
 }
 
-
 .profile-photo-wrap::after{
-
   content:"";
 
   position:absolute;
@@ -286,12 +241,9 @@ body{
 }
 
 
-/* =========================================
-   SECTION TITLES
-========================================= */
+/* SECTION TITLES */
 
 .section-title{
-
   font-size:20px;
 
   font-weight:900;
@@ -301,25 +253,20 @@ body{
   margin-bottom:14px;
 }
 
-
 .section-title .ice{
   color:#65d9ff;
 }
-
 
 .section-title .fire{
   color:#ff751c;
 }
 
 
-/* =========================================
-   PROFILE / EVENT CARDS
-========================================= */
+/* PROFILE / EVENT CARDS */
 
 .profile-box,
 .event,
 .upcoming{
-
   position:relative;
 
   overflow:hidden;
@@ -327,12 +274,9 @@ body{
   border-radius:14px;
 
   border:
-    1px
-    solid
-    rgba(255,255,255,.13);
+    1px solid rgba(255,255,255,.13);
 
   background:
-
     linear-gradient(
       110deg,
       rgba(20,150,205,.16),
@@ -341,17 +285,13 @@ body{
     );
 }
 
-
 .profile-box{
-
   padding:20px;
 }
-
 
 .profile-box::before,
 .event::before,
 .upcoming::before{
-
   content:"";
 
   position:absolute;
@@ -365,11 +305,9 @@ body{
   background:#4bd8ff;
 }
 
-
 .profile-box::after,
 .event::after,
 .upcoming::after{
-
   content:"";
 
   position:absolute;
@@ -384,31 +322,20 @@ body{
 }
 
 
-/* =========================================
-   PROFILE INFORMATION
-========================================= */
+/* PROFILE INFORMATION */
 
 .info-row{
-
-  padding:
-    10px
-    0;
+  padding:10px 0;
 
   border-bottom:
-    1px
-    solid
-    rgba(255,255,255,.08);
+    1px solid rgba(255,255,255,.08);
 }
 
-
 .info-row:last-child{
-
   border-bottom:none;
 }
 
-
 .label{
-
   display:block;
 
   font-size:9px;
@@ -422,9 +349,7 @@ body{
   margin-bottom:4px;
 }
 
-
 .value{
-
   font-size:14px;
 
   color:#dff8ff;
@@ -433,12 +358,9 @@ body{
 }
 
 
-/* =========================================
-   ABOUT
-========================================= */
+/* ABOUT */
 
 .about{
-
   color:#c8c8c8;
 
   font-size:14px;
@@ -447,12 +369,9 @@ body{
 }
 
 
-/* =========================================
-   BOXING STATISTICS
-========================================= */
+/* BOXING STATISTICS */
 
 .stats{
-
   display:grid;
 
   grid-template-columns:
@@ -461,9 +380,7 @@ body{
   gap:10px;
 }
 
-
 .stat{
-
   text-align:center;
 
   padding:
@@ -471,9 +388,7 @@ body{
     8px;
 
   border:
-    1px
-    solid
-    rgba(255,255,255,.12);
+    1px solid rgba(255,255,255,.12);
 
   border-radius:12px;
 
@@ -481,9 +396,7 @@ body{
     rgba(10,10,10,.7);
 }
 
-
 .stat-letter{
-
   color:#67dcff;
 
   font-size:15px;
@@ -491,9 +404,7 @@ body{
   font-weight:900;
 }
 
-
 .stat-number{
-
   color:#ff751c;
 
   font-size:31px;
@@ -504,13 +415,10 @@ body{
 }
 
 
-/* =========================================
-   EVENTS
-========================================= */
+/* EVENTS */
 
 .event,
 .upcoming{
-
   padding:
     17px
     18px;
@@ -518,9 +426,7 @@ body{
   margin-bottom:12px;
 }
 
-
 .event-name{
-
   color:#67dcff;
 
   font-size:11px;
@@ -530,9 +436,7 @@ body{
   letter-spacing:1px;
 }
 
-
 .event-date{
-
   color:#ff751c;
 
   font-size:13px;
@@ -542,9 +446,7 @@ body{
   margin-top:5px;
 }
 
-
 .fight{
-
   font-size:14px;
 
   font-weight:bold;
@@ -554,9 +456,7 @@ body{
   padding-right:25px;
 }
 
-
 .venue{
-
   color:#aaa;
 
   font-size:11px;
@@ -566,13 +466,10 @@ body{
   line-height:1.4;
 }
 
-
 .result{
-
   position:absolute;
 
   right:16px;
-
   top:16px;
 
   color:#ff751c;
@@ -583,12 +480,9 @@ body{
 }
 
 
-/* =========================================
-   UPCOMING
-========================================= */
+/* UPCOMING */
 
 .upcoming-badge{
-
   display:inline-block;
 
   padding:
@@ -612,12 +506,9 @@ body{
 }
 
 
-/* =========================================
-   BACK BUTTON
-========================================= */
+/* BACK BUTTON */
 
 .back{
-
   display:block;
 
   padding:15px;
@@ -629,9 +520,7 @@ body{
   color:#fff;
 
   border:
-    1px
-    solid
-    #5bd9ff;
+    1px solid #5bd9ff;
 
   border-radius:10px;
 
@@ -642,7 +531,6 @@ body{
   letter-spacing:1px;
 
   background:
-
     linear-gradient(
       90deg,
       rgba(0,160,220,.10),
@@ -650,13 +538,14 @@ body{
     );
 }
 
+.back:active{
+  transform:scale(.985);
+}
 
-/* =========================================
-   BOTTOM NAVIGATION
-========================================= */
+
+/* BOTTOM NAVIGATION */
 
 .bottom-nav{
-
   position:fixed;
 
   left:0;
@@ -666,8 +555,6 @@ body{
   height:74px;
 
   display:grid;
-
-  /* FOUR BUTTONS = FOUR COLUMNS */
 
   grid-template-columns:
     repeat(4,1fr);
@@ -679,9 +566,7 @@ body{
     rgba(4,4,4,.97);
 
   border-top:
-    1px
-    solid
-    rgba(255,255,255,.12);
+    1px solid rgba(255,255,255,.12);
 
   backdrop-filter:
     blur(12px);
@@ -689,9 +574,7 @@ body{
   z-index:100;
 }
 
-
 .nav-item{
-
   text-decoration:none;
 
   color:#888;
@@ -711,28 +594,20 @@ body{
   font-weight:bold;
 }
 
-
 .nav-icon{
-
   font-size:20px;
 }
 
-
 .nav-item.active{
-
   color:#63d9ff;
 }
 
-
 .fire-nav{
-
   color:#ff7420;
 }
 
 
-/* =========================================
-   SMALL PHONES
-========================================= */
+/* SMALL PHONES */
 
 @media(max-width:400px){
 
@@ -758,55 +633,51 @@ body{
 <body>
 
 
-<!-- ========================================
-     HEADER
-======================================== -->
+<!-- HEADER -->
 
 <header class="header">
 
-  <a href="index.html">
+<a href="index.html">
 
-    <img
-      src="icon-512.png"
-      class="logo"
-      alt="Team Wolfpack"
-    >
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
 
-  </a>
-
-
-  <div class="brand">
-    TEAM WOLFIE
-  </div>
+</a>
 
 
-  <div class="fighter-label">
-    FIGHTER PROFILE
-  </div>
+<div class="brand">
+TEAM WOLFIE
+</div>
 
 
-  <h1 class="name">
-
-    <span class="ice">
-      MRS
-    </span>
-
-    <span class="fire">
-      WOLFIE
-    </span>
-
-  </h1>
+<div class="fighter-label">
+FIGHTER PROFILE
+</div>
 
 
-  <div class="line"></div>
+<h1 class="name">
+
+<span class="ice">
+MRS
+</span>
+
+<span class="fire">
+WOLFIE
+</span>
+
+</h1>
+
+
+<div class="line"></div>
 
 </header>
 
 
 
-<!-- ========================================
-     MAIN PROFILE
-======================================== -->
+<!-- MAIN PROFILE -->
 
 <main class="content">
 
@@ -815,11 +686,11 @@ body{
 
 <div class="profile-photo-wrap">
 
-  <img
-    src="zoey-james.jpg"
-    alt="Zoey Mrs Wolfie James"
-    class="profile-photo"
-  >
+<img
+  src="zoey-james.jpg"
+  alt="Zoey Mrs Wolfie James"
+  class="profile-photo"
+>
 
 </div>
 
@@ -829,408 +700,399 @@ body{
 
 <section class="section">
 
-  <div class="profile-box">
+<div class="profile-box">
 
 
-    <div class="info-row">
+<div class="info-row">
 
-      <span class="label">
-        NAME
-      </span>
+<span class="label">
+NAME
+</span>
 
-      <span class="value">
-        Zoey “Mrs Wolfie” James
-      </span>
+<span class="value">
+Zoey “Mrs Wolfie” James
+</span>
 
-    </div>
-
-
-    <div class="info-row">
-
-      <span class="label">
-        TEAM
-      </span>
-
-      <span class="value">
-        Team Wolfie
-      </span>
-
-    </div>
+</div>
 
 
-    <div class="info-row">
+<div class="info-row">
 
-      <span class="label">
-        ROLE
-      </span>
+<span class="label">
+TEAM
+</span>
 
-      <span class="value">
-        Boxer
-      </span>
+<span class="value">
+Team Wolfie
+</span>
 
-    </div>
-
-
-    <div class="info-row">
-
-      <span class="label">
-        REPRESENTING
-      </span>
-
-      <span class="value">
-        Team Wolfpack
-      </span>
-
-    </div>
+</div>
 
 
-  </div>
+<div class="info-row">
+
+<span class="label">
+ROLE
+</span>
+
+<span class="value">
+Boxer
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<span class="label">
+REPRESENTING
+</span>
+
+<span class="value">
+Team Wolfpack
+</span>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 
-<!-- ========================================
-     ABOUT MRS WOLFIE
-======================================== -->
+<!-- ABOUT MRS WOLFIE -->
 
 <section class="section">
 
+<h2 class="section-title">
 
-  <h2 class="section-title">
+<span class="ice">
+ABOUT
+</span>
 
-    <span class="ice">
-      ABOUT
-    </span>
+<span class="fire">
+MRS WOLFIE
+</span>
 
-    <span class="fire">
-      MRS WOLFIE
-    </span>
-
-  </h2>
+</h2>
 
 
-  <p class="about">
+<p class="about">
 
-    She started boxing to survive her past — to fight through
-    the shadows of domestic violence and rebuild the parts of
-    herself that had been taken from her.
+She started boxing to survive her past — to fight through the
+shadows of domestic violence and rebuild the parts of herself
+that had been taken from her.
 
-    <br><br>
+<br><br>
 
-    Boxing became more than a sport. It became her lifeline.
+Boxing became more than a sport. It became her lifeline.
 
-    <br><br>
+<br><br>
 
-    With every round, her confidence grew. With every punch,
-    she felt herself coming back. With Chris “Mr Wolfie” by
-    her side, Zoey discovered a strength within herself that
-    could no longer be taken away.
+With every round, her confidence grew. With every punch,
+she felt herself coming back. With Chris “Mr Wolfie” by
+her side, Zoey discovered a strength within herself that
+could no longer be taken away.
 
-    <br><br>
+<br><br>
 
-    Together, Zoey and Chris co-founded Team Wolfpack,
-    building something driven by strength, unity and purpose.
+Together, Zoey and Chris co-founded Team Wolfpack,
+building something driven by strength, unity and purpose.
 
-  </p>
-
+</p>
 
 </section>
 
 
 
-<!-- ========================================
-     BOXING STATISTICS
-======================================== -->
+<!-- BOXING STATISTICS -->
 
 <section class="section">
 
+<h2 class="section-title">
 
-  <h2 class="section-title">
+<span class="ice">
+BOXING
+</span>
 
-    <span class="ice">
-      BOXING
-    </span>
+<span class="fire">
+STATISTICS
+</span>
 
-    <span class="fire">
-      STATISTICS
-    </span>
-
-  </h2>
-
-
-  <div class="stats">
+</h2>
 
 
-    <div class="stat">
-
-      <div class="stat-letter">
-        W
-      </div>
-
-      <div class="stat-number">
-        1
-      </div>
-
-    </div>
+<div class="stats">
 
 
-    <div class="stat">
+<div class="stat">
 
-      <div class="stat-letter">
-        L
-      </div>
+<div class="stat-letter">
+W
+</div>
 
-      <div class="stat-number">
-        2
-      </div>
+<div class="stat-number">
+1
+</div>
 
-    </div>
-
-
-    <div class="stat">
-
-      <div class="stat-letter">
-        D
-      </div>
-
-      <div class="stat-number">
-        0
-      </div>
-
-    </div>
+</div>
 
 
-  </div>
+<div class="stat">
 
+<div class="stat-letter">
+L
+</div>
+
+<div class="stat-number">
+2
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-letter">
+D
+</div>
+
+<div class="stat-number">
+0
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 
-<!-- ========================================
-     PAST EVENTS
-======================================== -->
+<!-- PAST EVENTS -->
 
 <section class="section">
 
+<h2 class="section-title">
 
-  <h2 class="section-title">
+<span class="ice">
+PAST
+</span>
 
-    <span class="ice">
-      PAST
-    </span>
+<span class="fire">
+EVENTS
+</span>
 
-    <span class="fire">
-      EVENTS
-    </span>
-
-  </h2>
-
+</h2>
 
 
-  <!-- EVENT 1 -->
+<!-- EVENT 1 -->
 
-  <div class="event">
+<div class="event">
 
-    <div class="event-name">
-      ESSEX BOXING ORGANISATION
-    </div>
+<div class="event-name">
+ESSEX BOXING ORGANISATION
+</div>
 
-    <div class="event-date">
-      25 MAY 2025
-    </div>
+<div class="event-date">
+25 MAY 2025
+</div>
 
-    <div class="fight">
-      MRS WOLFIE vs DEMI WISE
-    </div>
+<div class="fight">
+MRS WOLFIE vs DEMI WISE
+</div>
 
-    <div class="venue">
-      TRILOGY NIGHTCLUB
-    </div>
+<div class="venue">
+TRILOGY NIGHTCLUB
+</div>
 
-    <div class="result">
-      L
-    </div>
+<div class="result">
+L
+</div>
 
-  </div>
+</div>
 
 
 
-  <!-- EVENT 2 -->
+<!-- EVENT 2 -->
 
-  <div class="event">
+<div class="event">
 
-    <div class="event-name">
-      ESSEX BOXING ORGANISATION
-    </div>
+<div class="event-name">
+ESSEX BOXING ORGANISATION
+</div>
 
-    <div class="event-date">
-      05 JULY 2025
-    </div>
+<div class="event-date">
+05 JULY 2025
+</div>
 
-    <div class="fight">
-      MRS WOLFIE vs BRY KELLY
-    </div>
+<div class="fight">
+MRS WOLFIE vs BRY KELLY
+</div>
 
-    <div class="venue">
-      TRILOGY NIGHTCLUB
-    </div>
+<div class="venue">
+TRILOGY NIGHTCLUB
+</div>
 
-    <div class="result">
-      L
-    </div>
+<div class="result">
+L
+</div>
 
-  </div>
-
-
-
-  <!-- EVENT 3 -->
-
-  <div class="event">
-
-    <div class="event-name">
-      TRAIN 4 FIGHT PROMOTIONS
-    </div>
-
-    <div class="event-date">
-      14 MARCH 2026
-    </div>
-
-    <div class="fight">
-      MRS WOLFIE vs KATIE FAE THE BING
-    </div>
-
-    <div class="venue">
-      EASTHOUSES MINERS CLUB
-    </div>
-
-    <div class="result">
-      W
-    </div>
-
-  </div>
+</div>
 
 
 
-  <!-- EVENT 4 -->
+<!-- EVENT 3 -->
 
-  <div class="event">
+<div class="event">
 
-    <div class="event-name">
-      BEAUTY &amp; BEAST
-    </div>
+<div class="event-name">
+TRAIN 4 FIGHT PROMOTIONS
+</div>
 
-    <div class="event-date">
-      10 JULY 2026
-    </div>
+<div class="event-date">
+14 MARCH 2026
+</div>
 
-    <div class="fight">
-      MRS WOLFIE vs KATIE O’DONELL
-    </div>
+<div class="fight">
+MRS WOLFIE vs KATIE FAE THE BING
+</div>
 
-    <div class="venue">
-      THE VENUE
-    </div>
+<div class="venue">
+EASTHOUSES MINERS CLUB
+</div>
 
-    <div class="result">
-      --
-    </div>
+<div class="result">
+W
+</div>
 
-  </div>
+</div>
+
+
+
+<!-- EVENT 4 -->
+
+<div class="event">
+
+<div class="event-name">
+BEAUTY &amp; BEAST
+</div>
+
+<div class="event-date">
+10 JULY 2026
+</div>
+
+<div class="fight">
+MRS WOLFIE vs KATIE O’DONELL
+</div>
+
+<div class="venue">
+THE VENUE
+</div>
+
+<div class="result">
+--
+</div>
+
+</div>
 
 
 </section>
 
 
 
-<!-- ========================================
-     UPCOMING FIGHTS
-======================================== -->
+<!-- UPCOMING FIGHTS -->
 
 <section class="section">
 
+<h2 class="section-title">
 
-  <h2 class="section-title">
+<span class="ice">
+UPCOMING
+</span>
 
-    <span class="ice">
-      UPCOMING
-    </span>
+<span class="fire">
+FIGHTS
+</span>
 
-    <span class="fire">
-      FIGHTS
-    </span>
-
-  </h2>
-
-
-
-  <!-- AYRSHIRE -->
-
-  <div class="upcoming">
-
-    <div class="upcoming-badge">
-      UPCOMING
-    </div>
-
-    <div class="event-name">
-      AYRSHIRE BOXING • THE LAUNCH
-    </div>
-
-    <div class="event-date">
-      17 OCTOBER 2026
-    </div>
-
-    <div class="fight">
-      MRS WOLFIE vs COLLEEN LEYDEN
-    </div>
-
-    <div class="venue">
-      AYR RACECOURSE • FIGHT TYPE: DEBUT
-    </div>
-
-  </div>
+</h2>
 
 
 
-  <!-- EASTHOUSES -->
+<!-- AYRSHIRE -->
 
-  <div class="upcoming">
+<div class="upcoming">
 
-    <div class="upcoming-badge">
-      UPCOMING
-    </div>
+<div class="upcoming-badge">
+UPCOMING
+</div>
 
-    <div class="event-name">
-      EASTHOUSES BOXING CLUB
-    </div>
+<div class="event-name">
+AYRSHIRE BOXING • THE LAUNCH
+</div>
 
-    <div class="event-date">
-      NOVEMBER 2026
-    </div>
+<div class="event-date">
+17 OCTOBER 2026
+</div>
 
-    <div class="fight">
-      MRS WOLFIE vs TBA
-    </div>
+<div class="fight">
+MRS WOLFIE vs COLLEEN LEYDEN
+</div>
 
-    <div class="venue">
-      EASTHOUSES MINERS CLUB • SUPER MIDDLEWEIGHT TITLE
-    </div>
+<div class="venue">
+AYR RACECOURSE • FIGHT TYPE: DEBUT
+</div>
 
-  </div>
+</div>
+
+
+
+<!-- EASTHOUSES -->
+
+<div class="upcoming">
+
+<div class="upcoming-badge">
+UPCOMING
+</div>
+
+<div class="event-name">
+EASTHOUSES BOXING CLUB
+</div>
+
+<div class="event-date">
+NOVEMBER 2026
+</div>
+
+<div class="fight">
+MRS WOLFIE vs TBA
+</div>
+
+<div class="venue">
+EASTHOUSES MINERS CLUB • SUPER MIDDLEWEIGHT TITLE
+</div>
+
+</div>
 
 
 </section>
 
 
 
-<!-- BACK -->
+<!-- BACK TO FIGHTERS -->
 
 <a
   class="back"
   href="fighters.html"
+  onclick="gtag('event','fighter_profile_back_click',{
+    'fighter':'Mrs Wolfie',
+    'destination':'Fighters'
+  });"
 >
-  ‹ BACK TO FIGHTERS
+
+‹ BACK TO FIGHTERS
+
 </a>
 
 
@@ -1238,79 +1100,75 @@ body{
 
 
 
-<!-- ========================================
-     BOTTOM NAVIGATION
-======================================== -->
+<!-- BOTTOM NAVIGATION -->
 
 <nav class="bottom-nav">
 
 
-  <a
-    class="nav-item"
-    href="index.html"
-  >
+<a
+  class="nav-item"
+  href="index.html"
+>
 
-    <span class="nav-icon">
-      ⌂
-    </span>
+<span class="nav-icon">
+⌂
+</span>
 
-    HOME
+HOME
 
-  </a>
-
-
-
-  <a
-    class="nav-item active"
-    href="fighters.html"
-  >
-
-    <span class="nav-icon">
-      ♟
-    </span>
-
-    FIGHTERS
-
-  </a>
+</a>
 
 
 
-  <a
-    class="nav-item fire-nav"
-    href="fights.html"
-  >
+<a
+  class="nav-item active"
+  href="fighters.html"
+>
 
-    <span class="nav-icon">
-      ♜
-    </span>
+<span class="nav-icon">
+♟
+</span>
 
-    FIGHTS
+FIGHTERS
 
-  </a>
+</a>
 
 
 
-  <a
-    class="nav-item"
-    href="more.html"
-  >
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
 
-    <span class="nav-icon">
-      ☰
-    </span>
+<span class="nav-icon">
+♜
+</span>
 
-    MORE
+FIGHTS
 
-  </a>
+</a>
+
+
+
+<a
+  class="nav-item"
+  href="more.html"
+>
+
+<span class="nav-icon">
+☰
+</span>
+
+MORE
+
+</a>
 
 
 </nav>
 
 
 
-<!-- ========================================
-     SERVICE WORKER
-======================================== -->
+<!-- SERVICE WORKER -->
 
 <script>
 
