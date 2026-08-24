@@ -628,18 +628,28 @@ HAMPDEN PARK
   class="profile-link"
   href="greig-sloan.html"
 
-  onclick="gtag('event','fight_profile_click',{
-    'fighter':'Greig Sloan',
-    'team':'Team Sloan',
-    'event_name_detail':'Unfinished Business',
-    'fight_date':'19 September 2026',
-    'opponent':'TBA',
-    'source':'Fights Page'
-  });"
+  onclick="
+    event.preventDefault();
+
+    gtag('event','fight_profile_click',{
+      'fighter':'Greig Sloan',
+      'team':'Team Sloan',
+      'event_name_detail':'Unfinished Business',
+      'fight_date':'19 September 2026',
+      'opponent':'TBA',
+      'source':'Fights Page',
+      'event_callback': function(){
+        window.location.href='greig-sloan.html';
+      },
+      'event_timeout': 1000
+    });
+
+    setTimeout(function(){
+      window.location.href='greig-sloan.html';
+    },1200);
+  "
 >
-
 VIEW GREIG SLOAN PROFILE ›
-
 </a>
 
 </div>
