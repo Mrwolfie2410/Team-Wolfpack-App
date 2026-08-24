@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <!-- Google Analytics - Team Wolfpack App -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
@@ -14,34 +16,77 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
-</script>  
+
+  window.addEventListener('load', function(){
+    gtag('event','sponsors_page_view',{
+      'section':'Sponsors and Partners'
+    });
+  });
+</script>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
 <meta name="theme-color" content="#050505">
 
-<title>Sponsors & Partners | Team Wolfpack</title>
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<title>Sponsors &amp; Partners | Team Wolfpack</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color:#fff;
+
   padding-bottom:95px;
 
   background:
-    radial-gradient(circle at 0% 15%,rgba(0,190,255,.22),transparent 30%),
-    radial-gradient(circle at 100% 35%,rgba(255,85,0,.22),transparent 30%),
-    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 35%,
+      rgba(255,85,0,.22),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
 }
+
+
+/* HEADER */
 
 .header{
   text-align:center;
@@ -56,15 +101,20 @@ body{
 
 .brand{
   margin-top:5px;
+
   font-size:12px;
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
+
   font-size:31px;
+
   font-weight:900;
 }
 
@@ -78,30 +128,60 @@ body{
 
 .subtitle{
   margin-top:9px;
+
   color:#aaa;
+
   font-size:13px;
+
   line-height:1.5;
 }
 
 .line{
   width:100%;
+
   max-width:430px;
+
   height:2px;
+
   margin:22px auto 0;
-  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
 }
 
+
+/* CONTENT */
+
 .content{
+  width:100%;
+
   max-width:540px;
+
   margin:auto;
-  padding:10px 18px 35px;
+
+  padding:
+    10px
+    18px
+    110px;
 }
+
+
+/* INTRO */
 
 .intro{
   padding:20px;
+
   margin-bottom:26px;
+
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.12);
+
+  border:
+    1px solid rgba(255,255,255,.12);
 
   background:
     linear-gradient(
@@ -114,23 +194,40 @@ body{
 
 .intro p{
   color:#d0d0d0;
+
   font-size:14px;
+
   line-height:1.7;
 }
 
+
+/* SECTION TITLES */
+
 .section-title{
   font-size:20px;
+
   font-weight:900;
-  margin:26px 0 14px;
+
+  margin:
+    26px
+    0
+    14px;
 }
+
+
+/* SPONSOR CARDS */
 
 .sponsor-card{
   overflow:hidden;
+
   padding:18px;
+
   margin-bottom:16px;
 
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.12);
+
+  border:
+    1px solid rgba(255,255,255,.12);
 
   background:
     linear-gradient(
@@ -139,86 +236,142 @@ body{
       rgba(8,8,8,.94) 50%,
       rgba(255,90,0,.12)
     );
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.25);
 }
+
+
+/* SPONSOR LOGOS */
 
 .sponsor-logo-box{
   width:100%;
+
   height:220px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   margin-bottom:18px;
 
   border-radius:12px;
+
   background:#fff;
+
   overflow:hidden;
 }
 
 .sponsor-logo-box img{
   display:block;
+
   width:100%;
+
   height:100%;
+
   object-fit:contain;
+
   padding:12px;
 }
 
+
 .sponsor-name{
   font-size:19px;
+
   font-weight:900;
 }
 
 .sponsor-type{
   margin-top:6px;
+
   color:#67dcff;
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:1.5px;
 }
 
 .sponsor-info{
   margin-top:10px;
+
   color:#aaa;
+
   font-size:12px;
+
   line-height:1.6;
 }
 
 .representing{
   display:block;
+
   margin-top:10px;
+
   color:#67dcff;
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:.5px;
 }
+
+
+/* SPONSOR SOCIAL BUTTONS */
 
 .social-button{
   display:block;
 
   margin-top:15px;
+
   padding:13px;
 
-  border:1px solid #59d9ff;
+  border:
+    1px solid #59d9ff;
+
   border-radius:10px;
 
   text-align:center;
+
   text-decoration:none;
 
   color:#fff;
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.10),
+      rgba(255,90,0,.10)
+    );
 }
+
+.social-button:active{
+  transform:scale(.985);
+}
+
+
+/* CTA */
 
 .cta{
   margin-top:26px;
+
   padding:22px;
 
   text-align:center;
 
   border-radius:16px;
-  border:1px solid rgba(255,117,28,.35);
+
+  border:
+    1px solid rgba(255,117,28,.35);
 
   background:
     linear-gradient(
@@ -231,51 +384,97 @@ body{
 
 .cta h2{
   font-size:21px;
+
   font-weight:900;
 }
 
 .cta p{
   margin-top:9px;
+
   color:#aaa;
+
   font-size:12px;
+
   line-height:1.5;
 }
 
 .cta-button{
   display:block;
+
   margin-top:16px;
+
   padding:15px;
 
   border-radius:10px;
-  border:1px solid #59d9ff;
+
+  border:
+    1px solid #59d9ff;
 
   text-decoration:none;
+
   color:#fff;
 
   font-size:11px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.10),
+      rgba(255,90,0,.10)
+    );
 }
+
+.cta-button:active{
+  transform:scale(.985);
+}
+
+
+/* BACK */
 
 .back{
   display:block;
 
   margin-top:18px;
+
   padding:16px;
 
   text-align:center;
+
   text-decoration:none;
 
   color:#fff;
-  border:1px solid #59d9ff;
+
+  border:
+    1px solid #59d9ff;
+
   border-radius:12px;
 
   font-size:12px;
+
   font-weight:900;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.10),
+      rgba(255,90,0,.10)
+    );
 }
+
+.back:active{
+  transform:scale(.985);
+}
+
+
+/* BOTTOM NAVIGATION */
 
 .bottom-nav{
   position:fixed;
+
   left:0;
   right:0;
   bottom:0;
@@ -283,28 +482,42 @@ body{
   height:74px;
 
   display:grid;
-  grid-template-columns:repeat(5,1fr);
 
-  padding-bottom:env(safe-area-inset-bottom);
+  grid-template-columns:
+    repeat(4,1fr);
 
-  background:rgba(4,4,4,.97);
-  border-top:1px solid rgba(255,255,255,.12);
+  padding-bottom:
+    env(safe-area-inset-bottom);
+
+  background:
+    rgba(4,4,4,.97);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(12px);
 
   z-index:100;
 }
 
 .nav-item{
   text-decoration:none;
+
   color:#888;
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
   gap:5px;
 
   font-size:9px;
+
   font-weight:bold;
 }
 
@@ -319,116 +532,192 @@ body{
 .nav-item.active{
   color:#67dcff;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header class="header">
 
 <a href="index.html">
-  <img src="icon-512.png" class="logo" alt="Team Wolfpack">
+
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
+
 </a>
 
-<div class="brand">TEAM WOLFPACK</div>
+
+<div class="brand">
+TEAM WOLFPACK
+</div>
+
 
 <h1 class="title">
-  <span class="ice">SPONSORS</span>
-  <span class="fire">&amp; PARTNERS</span>
+
+<span class="ice">
+SPONSORS
+</span>
+
+<span class="fire">
+&amp; PARTNERS
+</span>
+
 </h1>
+
 
 <p class="subtitle">
 Supporting the people, fighters and future of Team Wolfpack.
 </p>
+
 
 <div class="line"></div>
 
 </header>
 
 
+
 <main class="content">
+
+
+<!-- INTRO -->
 
 <div class="intro">
 
 <p>
+
 Team Wolfpack is proud to work alongside businesses,
 organisations and individuals who believe in what the pack
 stands for.
+
 <br><br>
+
 Our sponsors and partners help support our fighters,
 events, equipment and continued growth.
+
 </p>
 
 </div>
 
 
+
+<!-- TEAM WOLFPACK SPONSORS -->
+
 <h2 class="section-title">
-<span class="ice">TEAM WOLFPACK</span>
-<span class="fire"> SPONSORS</span>
+
+<span class="ice">
+TEAM WOLFPACK
+</span>
+
+<span class="fire">
+SPONSORS
+</span>
+
 </h2>
 
+
+
+<!-- LUKE MORGAN ELECTRICAL -->
 
 <div class="sponsor-card">
 
 <div class="sponsor-logo-box">
+
 <img
   src="luke-morgan-electrical.jpg"
   alt="Luke Morgan Electrical"
 >
+
 </div>
+
 
 <div class="sponsor-name">
 LUKE MORGAN ELECTRICAL
 </div>
 
+
 <div class="sponsor-type">
 OFFICIAL TEAM WOLFPACK SPONSOR
 </div>
 
+
 <div class="sponsor-info">
 Proud sponsor of Team Wolfpack.
 </div>
+
 
 <a
   class="social-button"
   href="https://www.facebook.com/LukeMorganElectrical/"
   target="_blank"
   rel="noopener noreferrer"
+
   onclick="gtag('event','sponsor_click',{
     'sponsor':'Luke Morgan Electrical',
     'team':'Team Wolfpack',
     'platform':'Facebook'
   });"
 >
+
 VISIT FACEBOOK ›
+
 </a>
+
+
 </div>
 
 
+
+<!-- TEAM SLOAN SPONSORS -->
+
 <h2 class="section-title">
-<span class="ice">TEAM SLOAN</span>
-<span class="fire"> SPONSORS</span>
+
+<span class="ice">
+TEAM SLOAN
+</span>
+
+<span class="fire">
+SPONSORS
+</span>
+
 </h2>
 
+
+
+<!-- RHW ELECTRICAL -->
 
 <div class="sponsor-card">
 
 <div class="sponsor-logo-box">
+
 <img
   src="rhw-electrical.jpg"
   alt="RHW Electrical"
 >
+
 </div>
+
 
 <div class="sponsor-name">
 RHW ELECTRICAL
 </div>
 
+
 <div class="sponsor-type">
 OFFICIAL TEAM SLOAN SPONSOR
 </div>
 
+
 <div class="sponsor-info">
+
 Proud sponsor of Team Sloan.
 
 <span class="representing">
@@ -436,41 +725,56 @@ TEAM SLOAN • REPRESENTING TEAM WOLFPACK
 </span>
 
 </div>
+
 
 <a
   class="social-button"
   href="https://www.instagram.com/rhwelectrical?igsi=MXZwNDZ0ZmZtNnRwcg=="
   target="_blank"
   rel="noopener noreferrer"
+
   onclick="gtag('event','sponsor_click',{
     'sponsor':'RHW Electrical',
     'team':'Team Sloan',
     'platform':'Instagram'
   });"
 >
+
 VISIT INSTAGRAM ›
+
 </a>
+
+
 </div>
 
+
+
+<!-- RUBY MURRY'S -->
 
 <div class="sponsor-card">
 
 <div class="sponsor-logo-box">
+
 <img
   src="ruby-murrys.jpg"
   alt="Ruby Murry's"
 >
+
 </div>
+
 
 <div class="sponsor-name">
 RUBY MURRY'S
 </div>
 
+
 <div class="sponsor-type">
 OFFICIAL TEAM SLOAN SPONSOR
 </div>
 
+
 <div class="sponsor-info">
+
 Proud sponsor of Team Sloan.
 
 <span class="representing">
@@ -479,74 +783,186 @@ TEAM SLOAN • REPRESENTING TEAM WOLFPACK
 
 </div>
 
+
 <a
   class="social-button"
   href="https://www.facebook.com/share/1Jz9fhahGf/"
   target="_blank"
   rel="noopener noreferrer"
+
   onclick="gtag('event','sponsor_click',{
     'sponsor':'Ruby Murrys',
     'team':'Team Sloan',
     'platform':'Facebook'
   });"
 >
+
 VISIT FACEBOOK ›
+
 </a>
+
+
 </div>
 
 
+
+<!-- SPONSORSHIP CTA -->
+
 <div class="cta">
 
+
 <h2>
-<span class="ice">JOIN</span>
-<span class="fire"> THE PACK</span>
+
+<span class="ice">
+JOIN
+</span>
+
+<span class="fire">
+THE PACK
+</span>
+
 </h2>
 
+
 <p>
+
 Interested in sponsoring Team Wolfpack or supporting one of
 our fighters? Get in touch to discuss sponsorship and
 partnership opportunities.
+
 </p>
+
+
 <a
-  class="sponsor-button"
+  class="cta-button"
   href="contact.html#sponsorship"
+
   onclick="gtag('event','become_sponsor_click',{
     'source':'Sponsors Page',
     'destination':'Sponsorship Enquiry'
   });"
 >
+
 SPONSOR TEAM WOLFPACK
+
 </a>
+
+
 </div>
 
 
-<a class="back" href="more.html">
+
+<!-- BACK -->
+
+<a
+  class="back"
+  href="more.html"
+
+  onclick="gtag('event','navigation_click',{
+    'source':'Sponsors Page',
+    'destination':'More'
+  });"
+>
+
 ‹ BACK TO MORE
+
 </a>
+
 
 </main>
 
 
+
+<!-- BOTTOM NAVIGATION -->
+
 <nav class="bottom-nav">
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+
+<span class="nav-icon">
+⌂
+</span>
+
 HOME
+
 </a>
 
-<a class="nav-item" href="fighters.html">
-<span class="nav-icon">♟</span>
+
+
+<a
+  class="nav-item"
+  href="fighters.html"
+>
+
+<span class="nav-icon">
+♟
+</span>
+
 FIGHTERS
+
 </a>
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
+
+
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
+
+<span class="nav-icon">
+♜
+</span>
+
 FIGHTS
+
 </a>
 
-<a class="nav-item" href="more.html">
-<span class="nav-icon">☰</span>
+
+
+<a
+  class="nav-item active"
+  href="more.html"
+>
+
+<span class="nav-icon">
+☰
+</span>
+
 MORE
+
 </a>
+
 
 </nav>
+
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+if ("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
