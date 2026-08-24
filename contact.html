@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <!-- Google Analytics - Team Wolfpack App -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
@@ -14,10 +16,26 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
+
+  window.addEventListener('load', function(){
+    gtag('event','contact_page_view',{
+      'section':'Contact Us'
+    });
+  });
 </script>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
 <meta name="theme-color" content="#050505">
+
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>Contact Us | Team Wolfpack</title>
 
@@ -44,9 +62,22 @@ body{
   padding-bottom:95px;
 
   background:
-    radial-gradient(circle at 0% 15%,rgba(0,190,255,.22),transparent 30%),
-    radial-gradient(circle at 100% 35%,rgba(255,85,0,.22),transparent 30%),
-    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 35%,
+      rgba(255,85,0,.22),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
 }
 
 
@@ -192,7 +223,7 @@ body{
 }
 
 
-/* BUTTONS */
+/* CONTACT BUTTONS */
 
 .contact-button{
   position:relative;
@@ -211,7 +242,7 @@ body{
   text-decoration:none;
   text-align:center;
 
-  color:white;
+  color:#fff;
 
   font-size:11px;
   font-weight:900;
@@ -268,7 +299,7 @@ body{
 }
 
 
-/* EMAIL DISPLAY */
+/* EMAIL */
 
 .email-box{
   margin-top:18px;
@@ -298,7 +329,7 @@ body{
   text-align:center;
   text-decoration:none;
 
-  color:white;
+  color:#fff;
 
   border:1px solid #59d9ff;
 
@@ -316,6 +347,10 @@ body{
     );
 }
 
+.back:active{
+  transform:scale(.98);
+}
+
 
 /* BOTTOM NAVIGATION */
 
@@ -330,7 +365,8 @@ body{
 
   display:grid;
 
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:
+    repeat(4,1fr);
 
   padding-bottom:
     env(safe-area-inset-bottom);
@@ -428,16 +464,12 @@ Questions, sponsorship enquiries, fight opportunities and Team Wolfpack contact.
 
 <!-- GENERAL ENQUIRIES -->
 
-<a
-  class="contact-button"
-  href="mailto:Teamwolfpack2026@hotmail.com?subject=Team%20Wolfpack%20Fight%20%2F%20Event%20Enquiry"
-  onclick="gtag('event','fight_enquiry_click',{
-    'event_category':'contact',
-    'event_label':'Fight Event Enquiry'
-  });"
->
-FIGHT ENQUIRY
-</a>
+<div class="contact-card">
+
+<div class="contact-title">
+GENERAL ENQUIRIES
+</div>
+
 <div class="contact-text">
 Contact Team Wolfpack for general questions and information.
 </div>
@@ -445,6 +477,11 @@ Contact Team Wolfpack for general questions and information.
 <a
   class="contact-button"
   href="mailto:Teamwolfpack2026@hotmail.com?subject=Team%20Wolfpack%20General%20Enquiry"
+
+  onclick="gtag('event','general_enquiry_click',{
+    'event_category':'contact',
+    'event_label':'General Enquiry'
+  });"
 >
 CONTACT TEAM WOLFPACK
 </a>
@@ -471,6 +508,7 @@ Interested in sponsoring Team Wolfpack, a fighter or an upcoming event?
 <a
   class="contact-button"
   href="mailto:Teamwolfpack2026@hotmail.com?subject=Team%20Wolfpack%20Sponsorship%20Enquiry"
+
   onclick="gtag('event','sponsorship_enquiry_click',{
     'event_category':'contact',
     'event_label':'Sponsorship Enquiry'
@@ -498,6 +536,11 @@ For boxing opportunities, event enquiries and fighter-related contact.
 <a
   class="contact-button"
   href="mailto:Teamwolfpack2026@hotmail.com?subject=Team%20Wolfpack%20Fight%20%2F%20Event%20Enquiry"
+
+  onclick="gtag('event','fight_enquiry_click',{
+    'event_category':'contact',
+    'event_label':'Fight Event Enquiry'
+  });"
 >
 FIGHT ENQUIRY
 </a>
@@ -521,32 +564,56 @@ Follow Team Wolfpack, Mr Wolfie and Mrs Wolfie on social media.
 
 <!-- MR WOLFIE TIKTOK -->
 
-onclick="gtag('event','social_click',{
-  'event_category':'social',
-  'event_label':'Mr Wolfie TikTok'
-});"
+<a
+  class="social-button"
+  href="https://www.tiktok.com/@mrwolfie2410?_r=1&amp;_t=ZN-99881Lzqxog"
+  target="_blank"
+  rel="noopener noreferrer"
+
+  onclick="gtag('event','social_click',{
+    'event_category':'social',
+    'event_label':'Mr Wolfie TikTok'
+  });"
+>
 TIKTOK • MR WOLFIE
 </a>
 
 
+
 <!-- MRS WOLFIE TIKTOK -->
 
-onclick="gtag('event','social_click',{
-  'event_category':'social',
-  'event_label':'Mrs Wolfie TikTok'
-});"
+<a
+  class="social-button"
+  href="https://www.tiktok.com/@mrswolfie2410?_r=1&amp;_t=ZN-99883R7fY06"
+  target="_blank"
+  rel="noopener noreferrer"
+
+  onclick="gtag('event','social_click',{
+    'event_category':'social',
+    'event_label':'Mrs Wolfie TikTok'
+  });"
+>
 TIKTOK • MRS WOLFIE
 </a>
 
 
+
 <!-- TEAM WOLFPACK INSTAGRAM -->
 
-onclick="gtag('event','social_click',{
-  'event_category':'social',
-  'event_label':'Team Wolfpack Instagram'
-});"
+<a
+  class="social-button"
+  href="https://www.instagram.com/teamwolfpack2410?igsi=bzUwb21kYzFrNjBw"
+  target="_blank"
+  rel="noopener noreferrer"
+
+  onclick="gtag('event','social_click',{
+    'event_category':'social',
+    'event_label':'Team Wolfpack Instagram'
+  });"
+>
 INSTAGRAM • TEAM WOLFPACK
 </a>
+
 
 </div>
 
@@ -573,6 +640,11 @@ Teamwolfpack2026@hotmail.com
 <a
   class="back"
   href="more.html"
+
+  onclick="gtag('event','navigation_click',{
+    'source':'Contact Page',
+    'destination':'More'
+  });"
 >
 ‹ BACK TO MORE
 </a>
@@ -646,6 +718,9 @@ MORE
 </nav>
 
 
+
+<!-- SERVICE WORKER -->
+
 <script>
 
 if ("serviceWorker" in navigator) {
@@ -667,4 +742,5 @@ if ("serviceWorker" in navigator) {
 
 
 </body>
+
 </html>
