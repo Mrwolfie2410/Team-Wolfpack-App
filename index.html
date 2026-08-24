@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <!-- Google Analytics - Team Wolfpack App -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  function gtag(){
-    dataLayer.push(arguments);
-  }
+    function gtag(){
+      dataLayer.push(arguments);
+    }
 
-  gtag('js', new Date());
+    gtag('js', new Date());
 
-  gtag('config', 'G-M973P0B4F0');
-</script>
+    gtag('config', 'G-M973P0B4F0');
+  </script>
+
   <meta charset="UTF-8">
 
   <meta
@@ -23,6 +26,11 @@
   >
 
   <meta name="theme-color" content="#050505">
+
+  <!-- iPhone / PWA -->
+  <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <title>TEAM WOLFPACK</title>
 
@@ -133,7 +141,7 @@
     .main {
       max-width: 520px;
       margin: auto;
-      padding: 10px 18px 30px;
+      padding: 10px 18px 110px;
     }
 
     .welcome {
@@ -189,20 +197,26 @@
     .card::before {
       content: "";
       position: absolute;
+
       left: 0;
       top: 0;
       bottom: 0;
+
       width: 3px;
+
       background: #4bd7ff;
     }
 
     .card::after {
       content: "";
       position: absolute;
+
       right: 0;
       top: 0;
       bottom: 0;
+
       width: 3px;
+
       background: #ff6200;
     }
 
@@ -226,10 +240,14 @@
 
     .arrow {
       position: absolute;
+
       right: 18px;
       top: 50%;
+
       transform: translateY(-50%);
+
       font-size: 22px;
+
       color: #ff7b20;
     }
 
@@ -259,6 +277,10 @@
           rgba(27, 156, 210, 0.20),
           rgba(255, 90, 0, 0.20)
         );
+    }
+
+    .website-button:active {
+      transform: scale(0.985);
     }
 
     .website-address {
@@ -292,7 +314,6 @@
 
       display: grid;
 
-      /* FOUR BUTTONS */
       grid-template-columns: repeat(4, 1fr);
 
       padding-bottom: env(safe-area-inset-bottom);
@@ -310,9 +331,11 @@
 
     .nav-item {
       text-decoration: none;
+
       color: #929292;
 
       display: flex;
+
       flex-direction: column;
 
       align-items: center;
@@ -322,6 +345,7 @@
 
       font-size: 9px;
       font-weight: bold;
+
       letter-spacing: .4px;
     }
 
@@ -358,6 +382,7 @@
     }
 
   </style>
+
 </head>
 
 
@@ -399,8 +424,8 @@
 
       <p>
         Official Team Wolfpack mobile app.
-        Fighters, fights, the pack,
-        merchandise, sponsors and more.
+        Fighters, fights, merchandise,
+        sponsors and more.
       </p>
 
     </section>
@@ -411,6 +436,9 @@
     <a
       class="card"
       href="fighters.html"
+      onclick="gtag('event','home_card_click',{
+        'section':'Fighters'
+      });"
     >
 
       <div class="card-title">
@@ -421,16 +449,21 @@
         Mrs Wolfie • Greig Sloan
       </div>
 
-      <span class="arrow">›</span>
+      <span class="arrow">
+        ›
+      </span>
 
     </a>
 
 
-    <!-- FIGHTS -->
+    <!-- UPCOMING FIGHTS -->
 
     <a
       class="card"
       href="fights.html"
+      onclick="gtag('event','home_card_click',{
+        'section':'Upcoming Fights'
+      });"
     >
 
       <div class="card-title">
@@ -441,35 +474,46 @@
         Fight cards • opponents • dates • venues
       </div>
 
-      <span class="arrow">›</span>
+      <span class="arrow">
+        ›
+      </span>
 
     </a>
 
 
     <!-- SPONSORS -->
 
-<a
-  class="card"
-  href="sponsors.html"
->
+    <a
+      class="card"
+      href="sponsors.html"
+      onclick="gtag('event','home_card_click',{
+        'section':'Sponsors and Partners'
+      });"
+    >
 
-  <div class="card-title">
-    SPONSORS &amp; PARTNERS
-  </div>
+      <div class="card-title">
+        SPONSORS &amp; PARTNERS
+      </div>
 
-  <div class="card-subtitle">
-    Meet the sponsors supporting Team Wolfpack and Team Sloan
-  </div>
+      <div class="card-subtitle">
+        Meet the sponsors supporting Team Wolfpack and Team Sloan
+      </div>
 
-  <span class="arrow">›</span>
+      <span class="arrow">
+        ›
+      </span>
 
-</a>
+    </a>
+
 
     <!-- MORE -->
 
     <a
       class="card"
       href="more.html"
+      onclick="gtag('event','home_card_click',{
+        'section':'More'
+      });"
     >
 
       <div class="card-title">
@@ -477,21 +521,26 @@
       </div>
 
       <div class="card-subtitle">
-        Merch • sponsors • about • contact • socials
+        Merch • meet the pack • about • contact • socials
       </div>
 
-      <span class="arrow">›</span>
+      <span class="arrow">
+        ›
+      </span>
 
     </a>
 
 
-    <!-- WEBSITE -->
+    <!-- OFFICIAL WEBSITE -->
 
     <a
       class="website-button"
       href="https://officialteamwolfpack.com/boxing"
       target="_blank"
       rel="noopener noreferrer"
+      onclick="gtag('event','official_website_click',{
+        'source':'App Home'
+      });"
     >
       VISIT OFFICIAL WEBSITE
     </a>
@@ -516,12 +565,18 @@
 
   <nav class="bottom-nav">
 
+
     <a
       class="nav-item active"
       href="index.html"
     >
-      <span class="nav-icon">⌂</span>
+
+      <span class="nav-icon">
+        ⌂
+      </span>
+
       HOME
+
     </a>
 
 
@@ -529,8 +584,13 @@
       class="nav-item"
       href="fighters.html"
     >
-      <span class="nav-icon">♟</span>
+
+      <span class="nav-icon">
+        ♟
+      </span>
+
       FIGHTERS
+
     </a>
 
 
@@ -538,8 +598,13 @@
       class="nav-item fire-nav"
       href="fights.html"
     >
-      <span class="nav-icon">♜</span>
+
+      <span class="nav-icon">
+        ♜
+      </span>
+
       FIGHTS
+
     </a>
 
 
@@ -547,12 +612,20 @@
       class="nav-item"
       href="more.html"
     >
-      <span class="nav-icon">☰</span>
+
+      <span class="nav-icon">
+        ☰
+      </span>
+
       MORE
+
     </a>
+
 
   </nav>
 
+
+  <!-- SERVICE WORKER -->
 
   <script>
 
@@ -573,5 +646,7 @@
 
   </script>
 
+
 </body>
+
 </html>
