@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <!-- Google Analytics - Team Wolfpack App -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
@@ -16,6 +17,7 @@
 
   gtag('config', 'G-M973P0B4F0');
 </script>
+
 <meta charset="UTF-8">
 
 <meta
@@ -24,6 +26,12 @@
 >
 
 <meta name="theme-color" content="#050505">
+
+<!-- PWA / MOBILE -->
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>Fighters | Team Wolfpack</title>
 
@@ -424,6 +432,8 @@ body{
 <body>
 
 
+<!-- HEADER -->
+
 <header class="header">
 
 <a href="index.html">
@@ -436,11 +446,9 @@ body{
 
 </a>
 
-
 <div class="brand">
 TEAM WOLFPACK
 </div>
-
 
 <h1 class="page-title">
 
@@ -454,17 +462,17 @@ FIGHTERS
 
 </h1>
 
-
 <p class="subtitle">
 Meet the fighters representing the pack.
 </p>
-
 
 <div class="line"></div>
 
 </header>
 
 
+
+<!-- CONTENT -->
 
 <main class="content">
 
@@ -475,8 +483,9 @@ Meet the fighters representing the pack.
   class="fighter"
   href="mrs-wolfie.html"
   onclick="gtag('event','fighter_profile_click',{
-    'fighter':'Mrs Wolfie',
-    'team':'Team Wolfie'
+    fighter:'Mrs Wolfie',
+    team:'Team Wolfie',
+    source:'Fighters Page'
   });"
 >
 
@@ -486,26 +495,21 @@ Meet the fighters representing the pack.
   alt="Zoey Mrs Wolfie James"
 >
 
-
 <div class="team">
 TEAM WOLFIE
 </div>
-
 
 <div class="name">
 ZOEY “MRS WOLFIE” JAMES
 </div>
 
-
 <div class="role">
 Boxer • Team Wolfpack
 </div>
 
-
 <div class="view">
 VIEW FIGHTER PROFILE
 </div>
-
 
 <span class="arrow">
 ›
@@ -521,8 +525,9 @@ VIEW FIGHTER PROFILE
   class="fighter"
   href="greig-sloan.html"
   onclick="gtag('event','fighter_profile_click',{
-    'fighter':'Greig Sloan',
-    'team':'Team Sloan'
+    fighter:'Greig Sloan',
+    team:'Team Sloan',
+    source:'Fighters Page'
   });"
 >
 
@@ -532,26 +537,21 @@ VIEW FIGHTER PROFILE
   alt="Greig Sloan"
 >
 
-
 <div class="team">
 TEAM SLOAN
 </div>
-
 
 <div class="name">
 GREIG SLOAN
 </div>
 
-
 <div class="role">
 Boxer • Team Wolfpack
 </div>
 
-
 <div class="view">
 VIEW FIGHTER PROFILE
 </div>
-
 
 <span class="arrow">
 ›
@@ -563,6 +563,8 @@ VIEW FIGHTER PROFILE
 </main>
 
 
+
+<!-- BOTTOM NAVIGATION -->
 
 <nav class="bottom-nav">
 
@@ -626,6 +628,8 @@ MORE
 </nav>
 
 
+
+<!-- SERVICE WORKER -->
 
 <script>
 
