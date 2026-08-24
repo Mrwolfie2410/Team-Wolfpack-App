@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <!-- Google Analytics - Team Wolfpack App -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
@@ -14,10 +16,20 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
-</script>  
+</script>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
 <meta name="theme-color" content="#050505">
+
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>More | Team Wolfpack</title>
 
@@ -25,22 +37,50 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color:#fff;
+
   padding-bottom:95px;
+
   background:
-    radial-gradient(circle at 0% 15%,rgba(0,190,255,.22),transparent 30%),
-    radial-gradient(circle at 100% 35%,rgba(255,85,0,.22),transparent 30%),
-    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 35%,
+      rgba(255,85,0,.22),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
 }
+
+
+/* HEADER */
 
 .header{
   text-align:center;
@@ -55,15 +95,20 @@ body{
 
 .brand{
   margin-top:5px;
+
   font-size:12px;
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
+
   font-size:32px;
+
   font-weight:900;
 }
 
@@ -77,34 +122,67 @@ body{
 
 .subtitle{
   margin-top:8px;
+
   color:#aaa;
+
   font-size:13px;
 }
 
 .line{
   width:100%;
+
   max-width:430px;
+
   height:2px;
+
   margin:22px auto 0;
-  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
 }
+
+
+/* CONTENT */
 
 .content{
   max-width:540px;
+
   margin:auto;
-  padding:10px 18px 35px;
+
+  padding:
+    10px
+    18px
+    110px;
 }
+
+
+/* MENU CARDS */
 
 .menu-card{
   display:block;
+
   position:relative;
+
   overflow:hidden;
+
   padding:20px;
+
   margin-bottom:14px;
+
   border-radius:15px;
-  border:1px solid rgba(255,255,255,.13);
+
+  border:
+    1px solid rgba(255,255,255,.13);
+
   text-decoration:none;
+
   color:#fff;
+
   background:
     linear-gradient(
       110deg,
@@ -112,82 +190,139 @@ body{
       rgba(8,8,8,.94) 50%,
       rgba(220,70,0,.17)
     );
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.28);
 }
 
 .menu-card::before{
   content:"";
+
   position:absolute;
+
   left:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#4bd8ff;
 }
 
 .menu-card::after{
   content:"";
+
   position:absolute;
+
   right:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#ff6500;
+}
+
+.menu-card:active{
+  transform:scale(.985);
 }
 
 .menu-title{
   font-size:18px;
+
   font-weight:900;
 }
 
 .menu-subtitle{
   margin-top:5px;
+
   color:#aaa;
+
   font-size:12px;
+
   line-height:1.4;
+
   padding-right:30px;
 }
 
 .arrow{
   position:absolute;
+
   right:18px;
+
   top:50%;
+
   transform:translateY(-50%);
+
   color:#ff751c;
+
   font-size:24px;
 }
 
+
+/* WEBSITE */
+
 .website{
   margin-top:24px;
+
   text-align:center;
+
   font-size:10px;
+
   letter-spacing:1px;
+
   color:#777;
 }
 
+
+/* BOTTOM NAVIGATION */
+
 .bottom-nav{
   position:fixed;
+
   left:0;
   right:0;
   bottom:0;
+
   height:74px;
+
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  padding-bottom:env(safe-area-inset-bottom);
-  background:rgba(4,4,4,.97);
-  border-top:1px solid rgba(255,255,255,.12);
-  backdrop-filter:blur(12px);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  padding-bottom:
+    env(safe-area-inset-bottom);
+
+  background:
+    rgba(4,4,4,.97);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(12px);
+
   z-index:100;
 }
 
 .nav-item{
   text-decoration:none;
+
   color:#888;
+
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
+
   gap:5px;
+
   font-size:9px;
+
   font-weight:bold;
 }
 
@@ -202,102 +337,347 @@ body{
 .fire-nav{
   color:#ff751c;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header class="header">
 
 <a href="index.html">
-<img src="icon-512.png" class="logo" alt="Team Wolfpack">
+
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
+
 </a>
 
-<div class="brand">TEAM WOLFPACK</div>
+
+<div class="brand">
+TEAM WOLFPACK
+</div>
+
 
 <h1 class="title">
-<span class="ice">MORE</span>
-<span class="fire"> FROM THE PACK</span>
+
+<span class="ice">
+MORE
+</span>
+
+<span class="fire">
+FROM THE PACK
+</span>
+
 </h1>
+
 
 <p class="subtitle">
 Everything else Team Wolfpack in one place.
 </p>
 
+
 <div class="line"></div>
 
 </header>
 
+
+
+<!-- CONTENT -->
+
 <main class="content">
 
-<a <a class="menu-card" href="about.html">
-  <div class="menu-title">ABOUT TEAM WOLFPACK</div>
-  <div class="menu-subtitle">Our story, values and what the pack stands for.</div>
-  <span class="arrow">›</span>
+
+<!-- ABOUT -->
+
+<a
+  class="menu-card"
+  href="about.html"
+  onclick="gtag('event','more_menu_click',{
+    'section':'About Team Wolfpack'
+  });"
+>
+
+<div class="menu-title">
+ABOUT TEAM WOLFPACK
+</div>
+
+<div class="menu-subtitle">
+Our story, values and what the pack stands for.
+</div>
+
+<span class="arrow">
+›
+</span>
+
 </a>
 
-<a class="menu-card" href="pack.html">
-  <div class="menu-title">MEET THE PACK</div>
-  <div class="menu-subtitle">Meet the people behind Team Wolfpack.</div>
-  <span class="arrow">›</span>
-</a>
-  
-<a class="menu-card" href="merch.html">
-  <div class="menu-title">MERCH</div>
-  <div class="menu-subtitle">Team Wolfpack clothing and merchandise.</div>
-  <span class="arrow">›</span>
+
+
+<!-- MEET THE PACK -->
+
+<a
+  class="menu-card"
+  href="pack.html"
+  onclick="gtag('event','more_menu_click',{
+    'section':'Meet The Pack'
+  });"
+>
+
+<div class="menu-title">
+MEET THE PACK
+</div>
+
+<div class="menu-subtitle">
+Meet the people behind Team Wolfpack.
+</div>
+
+<span class="arrow">
+›
+</span>
+
 </a>
 
-<a class="menu-card" href="sponsors.html">
-  <div class="menu-title">SPONSORS &amp; PARTNERS</div>
-  <div class="menu-subtitle">Support the pack and view our sponsors.</div>
-  <span class="arrow">›</span>
+
+
+<!-- MERCH -->
+
+<a
+  class="menu-card"
+  href="merch.html"
+  onclick="gtag('event','more_menu_click',{
+    'section':'Merch'
+  });"
+>
+
+<div class="menu-title">
+MERCH
+</div>
+
+<div class="menu-subtitle">
+Team Wolfpack clothing and merchandise.
+</div>
+
+<span class="arrow">
+›
+</span>
+
 </a>
 
-<a class="menu-card" href="contact.html">
-  <div class="menu-title">CONTACT US</div>
-  <div class="menu-subtitle">Get in touch with Team Wolfpack.</div>
-  <span class="arrow">›</span>
+
+
+<!-- SPONSORS -->
+
+<a
+  class="menu-card"
+  href="sponsors.html"
+  onclick="gtag('event','more_menu_click',{
+    'section':'Sponsors and Partners'
+  });"
+>
+
+<div class="menu-title">
+SPONSORS &amp; PARTNERS
+</div>
+
+<div class="menu-subtitle">
+Support the pack and view our sponsors.
+</div>
+
+<span class="arrow">
+›
+</span>
+
 </a>
 
-<a class="menu-card" href="socials.html">
-  <div class="menu-title">FOLLOW THE PACK</div>
-  <div class="menu-subtitle">TikTok, Instagram and Team Wolfpack socials.</div>
-  <span class="arrow">›</span>
+
+
+<!-- CONTACT -->
+
+<a
+  class="menu-card"
+  href="contact.html"
+  onclick="gtag('event','more_menu_click',{
+    'section':'Contact Us'
+  });"
+>
+
+<div class="menu-title">
+CONTACT US
+</div>
+
+<div class="menu-subtitle">
+Get in touch with Team Wolfpack.
+</div>
+
+<span class="arrow">
+›
+</span>
+
 </a>
 
-<a class="menu-card" href="https://officialteamwolfpack.com/boxing">
-  <div class="menu-title">VISIT FULL WEBSITE</div>
-  <div class="menu-subtitle">Open officialteamwolfpack.com/boxing.</div>
-  <span class="arrow">›</span>
+
+
+<!-- SOCIALS -->
+
+<a
+  class="menu-card"
+  href="socials.html"
+  onclick="gtag('event','more_menu_click',{
+    'section':'Follow The Pack'
+  });"
+>
+
+<div class="menu-title">
+FOLLOW THE PACK
+</div>
+
+<div class="menu-subtitle">
+TikTok, Instagram and Team Wolfpack socials.
+</div>
+
+<span class="arrow">
+›
+</span>
+
 </a>
+
+
+
+<!-- FULL WEBSITE -->
+
+<a
+  class="menu-card"
+  href="https://officialteamwolfpack.com/boxing"
+  target="_blank"
+  rel="noopener noreferrer"
+  onclick="gtag('event','official_website_click',{
+    'source':'More Page'
+  });"
+>
+
+<div class="menu-title">
+VISIT FULL WEBSITE
+</div>
+
+<div class="menu-subtitle">
+Open officialteamwolfpack.com/boxing.
+</div>
+
+<span class="arrow">
+›
+</span>
+
+</a>
+
+
 
 <div class="website">
 OFFICIALTEAMWOLFPACK.COM/BOXING
 </div>
 
+
 </main>
+
+
+
+<!-- BOTTOM NAVIGATION -->
 
 <nav class="bottom-nav">
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+
+<span class="nav-icon">
+⌂
+</span>
+
 HOME
+
 </a>
 
-<a class="nav-item" href="fighters.html">
-<span class="nav-icon">♟</span>
+
+
+<a
+  class="nav-item"
+  href="fighters.html"
+>
+
+<span class="nav-icon">
+♟
+</span>
+
 FIGHTERS
+
 </a>
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
+
+
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
+
+<span class="nav-icon">
+♜
+</span>
+
 FIGHTS
+
 </a>
 
-<a class="nav-item" href="more.html">
-<span class="nav-icon">☰</span>
+
+
+<a
+  class="nav-item active"
+  href="more.html"
+>
+
+<span class="nav-icon">
+☰
+</span>
+
 MORE
+
 </a>
+
 
 </nav>
+
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+if ("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
