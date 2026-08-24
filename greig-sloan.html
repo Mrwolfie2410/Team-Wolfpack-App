@@ -15,12 +15,14 @@
 
   gtag('js', new Date());
 
-  gtag('config', 'G-M973P0B4F0');
+  gtag('config', 'G-M973P0B4F0', {
+    debug_mode: true
+  });
 
   window.addEventListener('load', function(){
-    gtag('event','fighter_profile_view',{
-      'fighter':'Greig Sloan',
-      'team':'Team Sloan'
+    gtag('event', 'fighter_profile_view', {
+      fighter: 'Greig Sloan',
+      team: 'Team Sloan'
     });
   });
 </script>
@@ -36,6 +38,7 @@
 
 <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>Greig Sloan | Team Wolfpack</title>
@@ -589,7 +592,6 @@ body{
 </head>
 
 
-
 <body>
 
 
@@ -632,7 +634,6 @@ SLOAN
 </header>
 
 
-
 <main class="content">
 
 
@@ -649,13 +650,11 @@ SLOAN
 </div>
 
 
-
 <!-- PROFILE -->
 
 <section class="section">
 
 <div class="profile-box">
-
 
 <div class="info-row">
 
@@ -708,11 +707,9 @@ Team Wolfpack
 
 </div>
 
-
 </div>
 
 </section>
-
 
 
 <!-- ABOUT -->
@@ -730,7 +727,6 @@ GREIG SLOAN
 </span>
 
 </h2>
-
 
 <p class="about">
 
@@ -807,7 +803,6 @@ to define your future.
 </section>
 
 
-
 <!-- STATS -->
 
 <section class="section">
@@ -823,7 +818,6 @@ STATISTICS
 </span>
 
 </h2>
-
 
 <div class="stats">
 
@@ -868,7 +862,6 @@ D
 </div>
 
 </section>
-
 
 
 <!-- PAST EVENTS -->
@@ -965,7 +958,6 @@ L
 </section>
 
 
-
 <!-- UPCOMING -->
 
 <section class="section">
@@ -1010,15 +1002,14 @@ HAMPDEN PARK
 </section>
 
 
-
 <!-- BACK TO FIGHTERS -->
 
 <a
   class="back"
   href="fighters.html"
   onclick="gtag('event','fighter_profile_back_click',{
-    'fighter':'Greig Sloan',
-    'destination':'Fighters'
+    fighter:'Greig Sloan',
+    destination:'Fighters'
   });"
 >
 
@@ -1028,7 +1019,6 @@ HAMPDEN PARK
 
 
 </main>
-
 
 
 <!-- BOTTOM NAV -->
@@ -1091,7 +1081,6 @@ MORE
 </a>
 
 </nav>
-
 
 
 <!-- SERVICE WORKER -->
