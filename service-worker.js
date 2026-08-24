@@ -1,4 +1,4 @@
-const CACHE_NAME = "team-wolfpack-v5";
+const CACHE_NAME = "team-wolfpack-v6";
 
 const APP_FILES = [
   "./",
@@ -24,10 +24,33 @@ const APP_FILES = [
 self.addEventListener("install", event => {
 
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(APP_FILES);
-      })
+
+    caches.open(CACHE_NAME).then(async cache => {
+
+      console.log("Team Wolfpack: creating cache", CACHE_NAME);
+
+      for (const file of APP_FILES) {
+
+        try {
+
+          await cache.add(file);
+
+          console.log("Cached:", file);
+
+        } catch (error) {
+
+          console.error(
+            "Failed to cache:",
+            file,
+            error
+          );
+
+        }
+
+      }
+
+    })
+
   );
 
   self.skipWaiting();
@@ -48,7 +71,14 @@ self.addEventListener("activate", event => {
         cacheNames.map(cacheName => {
 
           if (cacheName !== CACHE_NAME) {
+
+            console.log(
+              "Deleting old cache:",
+              cacheName
+            );
+
             return caches.delete(cacheName);
+
           }
 
         })
@@ -72,21 +102,27 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  const requestURL = new URL(event.request.url);
+  const requestURL =
+    new URL(event.request.url);
 
 
-  /*
-    MANIFEST
-    Always request the latest manifest from the network.
-    Do not store manifest.json in the app cache.
-  */
+  /* MANIFEST — ALWAYS NETWORK */
 
-  if (requestURL.pathname.endsWith("/manifest.json")) {
+  if (
+    requestURL.pathname.endsWith(
+      "/manifest.json"
+    )
+  ) {
 
     event.respondWith(
-      fetch(event.request, {
-        cache: "no-store"
-      })
+
+      fetch(
+        event.request,
+        {
+          cache: "no-store"
+        }
+      )
+
     );
 
     return;
@@ -94,25 +130,35 @@ self.addEventListener("fetch", event => {
   }
 
 
-  /*
-    HTML / NAVIGATION
-    Network first so app updates appear immediately.
-  */
+  /* HTML NAVIGATION — NETWORK FIRST */
 
-  if (event.request.mode === "navigate") {
+  if (
+    event.request.mode === "navigate"
+  ) {
 
     event.respondWith(
 
       fetch(event.request)
+
         .then(response => {
 
-          if (response && response.ok) {
+          if (
+            response &&
+            response.ok
+          ) {
 
-            const copy = response.clone();
+            const copy =
+              response.clone();
 
-            caches.open(CACHE_NAME)
+            caches
+              .open(CACHE_NAME)
               .then(cache => {
-                cache.put(event.request, copy);
+
+                cache.put(
+                  event.request,
+                  copy
+                );
+
               });
 
           }
@@ -120,18 +166,21 @@ self.addEventListener("fetch", event => {
           return response;
 
         })
-        .catch(() => {
 
-          return caches.match(event.request)
-            .then(cachedResponse => {
+        .catch(async () => {
 
-              if (cachedResponse) {
-                return cachedResponse;
-              }
+          const cached =
+            await caches.match(
+              event.request
+            );
 
-              return caches.match("./index.html");
+          if (cached) {
+            return cached;
+          }
 
-            });
+          return caches.match(
+            "./index.html"
+          );
 
         })
 
@@ -142,27 +191,33 @@ self.addEventListener("fetch", event => {
   }
 
 
-  /*
-    OTHER APP FILES
-    Network first with cached fallback.
-  */
+  /* STATIC FILES — NETWORK FIRST */
 
   event.respondWith(
 
     fetch(event.request)
+
       .then(response => {
 
         if (
           response &&
           response.ok &&
-          requestURL.origin === self.location.origin
+          requestURL.origin ===
+            self.location.origin
         ) {
 
-          const copy = response.clone();
+          const copy =
+            response.clone();
 
-          caches.open(CACHE_NAME)
+          caches
+            .open(CACHE_NAME)
             .then(cache => {
-              cache.put(event.request, copy);
+
+              cache.put(
+                event.request,
+                copy
+              );
+
             });
 
         }
@@ -170,9 +225,12 @@ self.addEventListener("fetch", event => {
         return response;
 
       })
+
       .catch(() => {
 
-        return caches.match(event.request);
+        return caches.match(
+          event.request
+        );
 
       })
 
