@@ -1,4 +1,4 @@
-const CACHE_NAME = "team-wolfpack-v6";
+const CACHE_NAME = "team-wolfpack-v7";
 
 const APP_FILES = [
   "./",
@@ -27,7 +27,10 @@ self.addEventListener("install", event => {
 
     caches.open(CACHE_NAME).then(async cache => {
 
-      console.log("Team Wolfpack: creating cache", CACHE_NAME);
+      console.log(
+        "Team Wolfpack: creating cache",
+        CACHE_NAME
+      );
 
       for (const file of APP_FILES) {
 
@@ -35,7 +38,10 @@ self.addEventListener("install", event => {
 
           await cache.add(file);
 
-          console.log("Cached:", file);
+          console.log(
+            "Cached:",
+            file
+          );
 
         } catch (error) {
 
@@ -70,10 +76,13 @@ self.addEventListener("activate", event => {
 
         cacheNames.map(cacheName => {
 
-          if (cacheName !== CACHE_NAME) {
+          if (
+            cacheName !== CACHE_NAME &&
+            cacheName.startsWith("team-wolfpack-")
+          ) {
 
             console.log(
-              "Deleting old cache:",
+              "Deleting old Team Wolfpack cache:",
               cacheName
             );
 
@@ -106,7 +115,11 @@ self.addEventListener("fetch", event => {
     new URL(event.request.url);
 
 
-  /* MANIFEST — ALWAYS NETWORK */
+  /*
+    MANIFEST
+    Always fetch the latest manifest.
+    Never serve a stale cached manifest.
+  */
 
   if (
     requestURL.pathname.endsWith(
@@ -130,7 +143,12 @@ self.addEventListener("fetch", event => {
   }
 
 
-  /* HTML NAVIGATION — NETWORK FIRST */
+  /*
+    HTML NAVIGATION
+    Network first.
+    Update the cache whenever the newest
+    HTML page is successfully downloaded.
+  */
 
   if (
     event.request.mode === "navigate"
@@ -159,6 +177,14 @@ self.addEventListener("fetch", event => {
                   copy
                 );
 
+              })
+              .catch(error => {
+
+                console.error(
+                  "Navigation cache update failed:",
+                  error
+                );
+
               });
 
           }
@@ -169,13 +195,13 @@ self.addEventListener("fetch", event => {
 
         .catch(async () => {
 
-          const cached =
+          const cachedResponse =
             await caches.match(
               event.request
             );
 
-          if (cached) {
-            return cached;
+          if (cachedResponse) {
+            return cachedResponse;
           }
 
           return caches.match(
@@ -191,49 +217,65 @@ self.addEventListener("fetch", event => {
   }
 
 
-  /* STATIC FILES — NETWORK FIRST */
+  /*
+    SAME-ORIGIN STATIC FILES
+    Network first with cached fallback.
+  */
 
-  event.respondWith(
+  if (
+    requestURL.origin ===
+    self.location.origin
+  ) {
 
-    fetch(event.request)
+    event.respondWith(
 
-      .then(response => {
+      fetch(event.request)
 
-        if (
-          response &&
-          response.ok &&
-          requestURL.origin ===
-            self.location.origin
-        ) {
+        .then(response => {
 
-          const copy =
-            response.clone();
+          if (
+            response &&
+            response.ok
+          ) {
 
-          caches
-            .open(CACHE_NAME)
-            .then(cache => {
+            const copy =
+              response.clone();
 
-              cache.put(
-                event.request,
-                copy
-              );
+            caches
+              .open(CACHE_NAME)
+              .then(cache => {
 
-            });
+                cache.put(
+                  event.request,
+                  copy
+                );
 
-        }
+              })
+              .catch(error => {
 
-        return response;
+                console.error(
+                  "Static cache update failed:",
+                  error
+                );
 
-      })
+              });
 
-      .catch(() => {
+          }
 
-        return caches.match(
-          event.request
-        );
+          return response;
 
-      })
+        })
 
-  );
+        .catch(() => {
+
+          return caches.match(
+            event.request
+          );
+
+        })
+
+    );
+
+  }
 
 });
