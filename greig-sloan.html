@@ -15,7 +15,8 @@
 
   gtag('js', new Date());
 
-gtag('config', 'G-M973P0B4F0');
+  gtag('config', 'G-M973P0B4F0');
+
   window.addEventListener('load', function(){
     gtag('event', 'fighter_profile_view', {
       fighter: 'Greig Sloan',
@@ -33,6 +34,7 @@ gtag('config', 'G-M973P0B4F0');
 
 <meta name="theme-color" content="#050505">
 
+<!-- PWA / MOBILE -->
 <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -97,24 +99,33 @@ body{
 
 .brand{
   margin-top:5px;
+
   font-size:12px;
   font-weight:900;
+
   letter-spacing:3px;
+
   color:#66d9ff;
 }
 
 .fighter-label{
   margin-top:20px;
+
   font-size:11px;
   font-weight:900;
+
   letter-spacing:3px;
+
   color:#ff751c;
 }
 
 .name{
   margin-top:7px;
+
   font-size:29px;
+
   font-weight:900;
+
   line-height:1.05;
 }
 
@@ -128,8 +139,10 @@ body{
 
 .line{
   height:2px;
+
   width:100%;
   max-width:430px;
+
   margin:22px auto 0;
 
   background:
@@ -147,8 +160,13 @@ body{
 .content{
   width:100%;
   max-width:520px;
+
   margin:auto;
-  padding:12px 18px 110px;
+
+  padding:
+    12px
+    18px
+    110px;
 }
 
 .section{
@@ -160,6 +178,7 @@ body{
 
 .profile-photo-wrap{
   position:relative;
+
   width:100%;
   height:300px;
 
@@ -189,8 +208,10 @@ body{
 
 .profile-photo{
   display:block;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
   object-position:center 24%;
 }
@@ -221,8 +242,11 @@ body{
 
 .section-title{
   font-size:20px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
   margin-bottom:14px;
 }
 
@@ -324,7 +348,9 @@ body{
 
 .value{
   font-size:14px;
+
   color:#dff8ff;
+
   font-weight:bold;
 }
 
@@ -333,24 +359,31 @@ body{
 
 .about{
   color:#c8c8c8;
+
   font-size:14px;
+
   line-height:1.65;
 }
 
 .highlight{
   color:#67dcff;
+
   font-weight:bold;
 }
 
 .highlight-fire{
   color:#ff751c;
+
   font-weight:bold;
 }
 
 .message{
   display:block;
+
   margin-top:10px;
+
   color:#67dcff;
+
   font-style:italic;
 }
 
@@ -359,7 +392,10 @@ body{
 
 .stats{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:10px;
 }
 
@@ -381,14 +417,19 @@ body{
 
 .stat-letter{
   color:#67dcff;
+
   font-size:15px;
+
   font-weight:900;
 }
 
 .stat-number{
   color:#ff751c;
+
   font-size:31px;
+
   font-weight:900;
+
   margin-top:4px;
 }
 
@@ -397,40 +438,56 @@ body{
 
 .event,
 .upcoming{
-  padding:17px 18px;
+  padding:
+    17px
+    18px;
+
   margin-bottom:12px;
 }
 
 .event-name{
   color:#67dcff;
+
   font-size:11px;
+
   font-weight:bold;
+
   letter-spacing:1px;
 }
 
 .event-date{
   color:#ff751c;
+
   font-size:13px;
+
   font-weight:900;
+
   margin-top:5px;
 }
 
 .fight{
   font-size:14px;
+
   font-weight:bold;
+
   margin-top:9px;
+
   padding-right:25px;
 }
 
 .venue{
   color:#aaa;
+
   font-size:11px;
+
   margin-top:6px;
+
   line-height:1.4;
 }
 
 .result{
   position:absolute;
+
   right:16px;
   top:16px;
 
@@ -596,7 +653,15 @@ body{
 
 <header class="header">
 
-<a href="index.html">
+<a
+  href="index.html"
+  aria-label="Team Wolfpack Home"
+  onclick="gtag('event','navigation_click',{
+    source:'Greig Sloan Profile',
+    destination:'Home',
+    navigation_type:'Logo'
+  });"
+>
 
 <img
   src="icon-512.png"
@@ -606,13 +671,16 @@ body{
 
 </a>
 
+
 <div class="brand">
 TEAM SLOAN
 </div>
 
+
 <div class="fighter-label">
 FIGHTER PROFILE
 </div>
+
 
 <h1 class="name">
 
@@ -626,10 +694,14 @@ SLOAN
 
 </h1>
 
+
 <div class="line"></div>
 
 </header>
 
+
+
+<!-- MAIN -->
 
 <main class="content">
 
@@ -647,11 +719,13 @@ SLOAN
 </div>
 
 
+
 <!-- PROFILE -->
 
 <section class="section">
 
 <div class="profile-box">
+
 
 <div class="info-row">
 
@@ -704,9 +778,11 @@ Team Wolfpack
 
 </div>
 
+
 </div>
 
 </section>
+
 
 
 <!-- ABOUT -->
@@ -724,6 +800,7 @@ GREIG SLOAN
 </span>
 
 </h2>
+
 
 <p class="about">
 
@@ -800,6 +877,7 @@ to define your future.
 </section>
 
 
+
 <!-- STATS -->
 
 <section class="section">
@@ -816,7 +894,9 @@ STATISTICS
 
 </h2>
 
+
 <div class="stats">
+
 
 <div class="stat">
 
@@ -856,9 +936,11 @@ D
 
 </div>
 
+
 </div>
 
 </section>
+
 
 
 <!-- PAST EVENTS -->
@@ -877,6 +959,9 @@ EVENTS
 
 </h2>
 
+
+
+<!-- TRAIN4FIGHT -->
 
 <div class="event">
 
@@ -903,6 +988,9 @@ D
 </div>
 
 
+
+<!-- ULTIMATE BOXING CHALLENGE -->
+
 <div class="event">
 
 <div class="event-name">
@@ -928,6 +1016,9 @@ D
 </div>
 
 
+
+<!-- FSG PROMOTIONS -->
+
 <div class="event">
 
 <div class="event-name">
@@ -952,10 +1043,12 @@ L
 
 </div>
 
+
 </section>
 
 
-<!-- UPCOMING -->
+
+<!-- UPCOMING FIGHTS -->
 
 <section class="section">
 
@@ -971,6 +1064,9 @@ FIGHTS
 
 </h2>
 
+
+
+<!-- UNFINISHED BUSINESS -->
 
 <div class="upcoming">
 
@@ -996,7 +1092,9 @@ HAMPDEN PARK
 
 </div>
 
+
 </section>
+
 
 
 <!-- BACK TO FIGHTERS -->
@@ -1004,9 +1102,11 @@ HAMPDEN PARK
 <a
   class="back"
   href="fighters.html"
+  aria-label="Back to Fighters"
   onclick="gtag('event','fighter_profile_back_click',{
     fighter:'Greig Sloan',
-    destination:'Fighters'
+    destination:'Fighters',
+    source:'Greig Sloan Profile'
   });"
 >
 
@@ -1018,13 +1118,20 @@ HAMPDEN PARK
 </main>
 
 
+
 <!-- BOTTOM NAV -->
 
 <nav class="bottom-nav">
 
+
 <a
   class="nav-item"
   href="index.html"
+  aria-label="Home"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Greig Sloan Profile',
+    destination:'Home'
+  });"
 >
 
 <span class="nav-icon">
@@ -1039,6 +1146,12 @@ HOME
 <a
   class="nav-item active"
   href="fighters.html"
+  aria-label="Fighters"
+  aria-current="page"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Greig Sloan Profile',
+    destination:'Fighters'
+  });"
 >
 
 <span class="nav-icon">
@@ -1053,6 +1166,11 @@ FIGHTERS
 <a
   class="nav-item fire-nav"
   href="fights.html"
+  aria-label="Fights"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Greig Sloan Profile',
+    destination:'Fights'
+  });"
 >
 
 <span class="nav-icon">
@@ -1067,6 +1185,11 @@ FIGHTS
 <a
   class="nav-item"
   href="more.html"
+  aria-label="More"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Greig Sloan Profile',
+    destination:'More'
+  });"
 >
 
 <span class="nav-icon">
@@ -1077,7 +1200,9 @@ MORE
 
 </a>
 
+
 </nav>
+
 
 
 <!-- SERVICE WORKER -->
