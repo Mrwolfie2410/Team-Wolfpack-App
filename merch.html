@@ -16,6 +16,12 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
+
+  window.addEventListener('load', function(){
+    gtag('event', 'merch_page_view', {
+      section: 'Merch'
+    });
+  });
 </script>
 
 <meta charset="UTF-8">
@@ -26,6 +32,12 @@
 >
 
 <meta name="theme-color" content="#050505">
+
+<!-- PWA / MOBILE -->
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>Merch | Team Wolfpack</title>
 
@@ -91,20 +103,15 @@ body{
 
 .brand{
   margin-top:5px;
-
   font-size:12px;
   font-weight:900;
-
   letter-spacing:4px;
-
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
-
   font-size:32px;
-
   font-weight:900;
 }
 
@@ -118,21 +125,15 @@ body{
 
 .subtitle{
   margin-top:9px;
-
   color:#aaa;
-
   font-size:13px;
-
   line-height:1.5;
 }
 
 .line{
   width:100%;
-
   max-width:430px;
-
   height:2px;
-
   margin:22px auto 0;
 
   background:
@@ -149,13 +150,8 @@ body{
 
 .content{
   max-width:540px;
-
   margin:auto;
-
-  padding:
-    10px
-    18px
-    110px;
+  padding:10px 18px 110px;
 }
 
 
@@ -163,7 +159,6 @@ body{
 
 .intro{
   padding:20px;
-
   margin-bottom:20px;
 
   border-radius:16px;
@@ -182,9 +177,7 @@ body{
 
 .intro p{
   color:#d0d0d0;
-
   font-size:14px;
-
   line-height:1.7;
 }
 
@@ -193,9 +186,7 @@ body{
 
 .section-title{
   font-size:20px;
-
   font-weight:900;
-
   margin-bottom:14px;
 }
 
@@ -204,10 +195,7 @@ body{
 
 .merch-grid{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:12px;
 }
 
@@ -216,9 +204,7 @@ body{
 
 .merch-card{
   display:block;
-
   position:relative;
-
   overflow:hidden;
 
   border-radius:16px;
@@ -227,7 +213,6 @@ body{
     1px solid rgba(255,255,255,.12);
 
   text-decoration:none;
-
   color:#fff;
 
   background:
@@ -244,29 +229,21 @@ body{
 
 .merch-card::before{
   content:"";
-
   position:absolute;
-
   left:0;
   top:0;
   bottom:0;
-
   width:3px;
-
   background:#4bd8ff;
 }
 
 .merch-card::after{
   content:"";
-
   position:absolute;
-
   right:0;
   top:0;
   bottom:0;
-
   width:3px;
-
   background:#ff6500;
 }
 
@@ -281,9 +258,7 @@ body{
   aspect-ratio:1 / 1;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   text-align:center;
@@ -292,7 +267,6 @@ body{
     1px solid rgba(255,255,255,.08);
 
   color:#67dcff;
-
   font-size:34px;
 
   background:
@@ -318,31 +292,22 @@ body{
 
 .product-name{
   font-size:14px;
-
   font-weight:900;
-
   line-height:1.25;
 }
 
 .product-type{
   margin-top:5px;
-
   color:#aaa;
-
   font-size:10px;
-
   line-height:1.4;
 }
 
 .status{
   margin-top:10px;
-
   color:#ff751c;
-
   font-size:9px;
-
   font-weight:900;
-
   letter-spacing:1px;
 }
 
@@ -351,7 +316,6 @@ body{
 
 .cta{
   margin-top:22px;
-
   padding:22px;
 
   border-radius:16px;
@@ -372,17 +336,13 @@ body{
 
 .cta h2{
   font-size:20px;
-
   font-weight:900;
 }
 
 .cta p{
   margin-top:8px;
-
   color:#aaa;
-
   font-size:12px;
-
   line-height:1.5;
 }
 
@@ -390,7 +350,6 @@ body{
   display:block;
 
   margin-top:15px;
-
   padding:14px;
 
   border:
@@ -400,12 +359,10 @@ body{
 
   text-decoration:none;
 
-  color:white;
+  color:#fff;
 
   font-size:11px;
-
   font-weight:900;
-
   letter-spacing:1px;
 
   background:
@@ -427,14 +384,13 @@ body{
   display:block;
 
   margin-top:18px;
-
   padding:16px;
 
   text-align:center;
 
   text-decoration:none;
 
-  color:white;
+  color:#fff;
 
   border:
     1px solid #59d9ff;
@@ -442,7 +398,6 @@ body{
   border-radius:12px;
 
   font-size:12px;
-
   font-weight:900;
 
   background:
@@ -451,6 +406,10 @@ body{
       rgba(0,160,220,.10),
       rgba(255,90,0,.10)
     );
+}
+
+.back:active{
+  transform:scale(.98);
 }
 
 
@@ -495,7 +454,6 @@ body{
   flex-direction:column;
 
   align-items:center;
-
   justify-content:center;
 
   gap:5px;
@@ -550,11 +508,9 @@ body{
 
 </a>
 
-
 <div class="brand">
 TEAM WOLFPACK
 </div>
-
 
 <h1 class="title">
 
@@ -568,11 +524,9 @@ MERCH
 
 </h1>
 
-
 <p class="subtitle">
 Official Team Wolfpack clothing and merchandise.
 </p>
-
 
 <div class="line"></div>
 
@@ -626,8 +580,9 @@ COLLECTION
   class="merch-card"
   href="contact.html"
   onclick="gtag('event','merch_click',{
-    'product':'Team Wolfpack T-Shirt',
-    'category':'Clothing'
+    product:'Team Wolfpack T-Shirt',
+    category:'Clothing',
+    source:'Merch Page'
   });"
 >
 
@@ -661,8 +616,9 @@ COMING SOON
   class="merch-card"
   href="contact.html"
   onclick="gtag('event','merch_click',{
-    'product':'Team Wolfie Top',
-    'category':'Fight Wear'
+    product:'Team Wolfie Top',
+    category:'Fight Wear',
+    source:'Merch Page'
   });"
 >
 
@@ -696,8 +652,9 @@ COMING SOON
   class="merch-card"
   href="contact.html"
   onclick="gtag('event','merch_click',{
-    'product':'Boxing Shorts',
-    'category':'Boxing Wear'
+    product:'Boxing Shorts',
+    category:'Boxing Wear',
+    source:'Merch Page'
   });"
 >
 
@@ -731,8 +688,9 @@ COMING SOON
   class="merch-card"
   href="contact.html"
   onclick="gtag('event','merch_click',{
-    'product':'Supporter Merch',
-    'category':'Supporter Gear'
+    product:'Supporter Merch',
+    category:'Supporter Gear',
+    source:'Merch Page'
   });"
 >
 
@@ -779,18 +737,16 @@ TEAM WOLFPACK MERCH?
 
 </h2>
 
-
 <p>
 Contact Team Wolfpack for current merchandise availability,
 sizes and ordering information.
 </p>
 
-
 <a
   class="cta-button"
   href="contact.html"
   onclick="gtag('event','merch_enquiry_click',{
-    'source':'Merch Page'
+    source:'Merch Page'
   });"
 >
 CONTACT TEAM WOLFPACK
@@ -805,6 +761,10 @@ CONTACT TEAM WOLFPACK
 <a
   class="back"
   href="more.html"
+  onclick="gtag('event','navigation_click',{
+    source:'Merch Page',
+    destination:'More'
+  });"
 >
 ‹ BACK TO MORE
 </a>
@@ -833,7 +793,6 @@ HOME
 </a>
 
 
-
 <a
   class="nav-item"
   href="fighters.html"
@@ -848,7 +807,6 @@ FIGHTERS
 </a>
 
 
-
 <a
   class="nav-item fire-nav"
   href="fights.html"
@@ -861,7 +819,6 @@ FIGHTERS
 FIGHTS
 
 </a>
-
 
 
 <a
