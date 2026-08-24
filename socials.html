@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <!-- Google Analytics - Team Wolfpack App -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
@@ -15,7 +16,14 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
+
+  window.addEventListener('load', function(){
+    gtag('event','socials_page_view',{
+      'section':'Follow The Pack'
+    });
+  });
 </script>
+
 <meta charset="UTF-8">
 
 <meta
@@ -25,11 +33,14 @@
 
 <meta name="theme-color" content="#050505">
 
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
 <title>Follow The Pack | Team Wolfpack</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-
 
 <style>
 
@@ -87,24 +98,19 @@ body{
 .logo{
   width:115px;
   height:115px;
-
   object-fit:contain;
 }
 
 .brand{
   margin-top:5px;
-
   font-size:12px;
   font-weight:900;
-
   letter-spacing:4px;
-
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
-
   font-size:32px;
   font-weight:900;
 }
@@ -119,9 +125,7 @@ body{
 
 .subtitle{
   margin-top:9px;
-
   color:#aaa;
-
   font-size:13px;
   line-height:1.5;
 }
@@ -129,9 +133,7 @@ body{
 .line{
   width:100%;
   max-width:430px;
-
   height:2px;
-
   margin:22px auto 0;
 
   background:
@@ -148,11 +150,8 @@ body{
 
 .content{
   max-width:540px;
-
   margin:auto;
-
-  padding:
-    10px 18px 110px;
+  padding:10px 18px 110px;
 }
 
 
@@ -160,13 +159,10 @@ body{
 
 .social-card{
   display:block;
-
   position:relative;
-
   overflow:hidden;
 
   padding:22px 20px;
-
   margin-bottom:15px;
 
   border-radius:16px;
@@ -175,7 +171,6 @@ body{
     1px solid rgba(255,255,255,.13);
 
   text-decoration:none;
-
   color:#fff;
 
   background:
@@ -189,9 +184,6 @@ body{
   box-shadow:
     0 8px 28px rgba(0,0,0,.32);
 }
-
-
-/* ICE LEFT EDGE */
 
 .social-card::before{
   content:"";
@@ -207,9 +199,6 @@ body{
   background:#4bd8ff;
 }
 
-
-/* FIRE RIGHT EDGE */
-
 .social-card::after{
   content:"";
 
@@ -224,34 +213,30 @@ body{
   background:#ff6500;
 }
 
+.social-card:active{
+  transform:scale(.98);
+}
 
 .platform{
   font-size:10px;
-
   font-weight:900;
-
   letter-spacing:3px;
-
   color:#67dcff;
 }
 
 .username{
   margin-top:7px;
-
   font-size:19px;
-
   font-weight:900;
 }
 
 .description{
   margin-top:6px;
-
   padding-right:30px;
 
   color:#aaa;
 
   font-size:12px;
-
   line-height:1.5;
 }
 
@@ -259,11 +244,9 @@ body{
   position:absolute;
 
   right:18px;
-
   top:50%;
 
-  transform:
-    translateY(-50%);
+  transform:translateY(-50%);
 
   color:#ff751c;
 
@@ -271,20 +254,12 @@ body{
 }
 
 
-/* TAP EFFECT */
-
-.social-card:active{
-  transform:scale(.98);
-}
-
-
-/* BACK BUTTON */
+/* BACK */
 
 .back{
   display:block;
 
   margin-top:18px;
-
   padding:16px;
 
   text-align:center;
@@ -310,6 +285,10 @@ body{
       rgba(0,160,220,.12),
       rgba(255,90,0,.12)
     );
+}
+
+.back:active{
+  transform:scale(.98);
 }
 
 
@@ -398,11 +377,9 @@ body{
 
 </a>
 
-
 <div class="brand">
 TEAM WOLFPACK
 </div>
-
 
 <h1 class="title">
 
@@ -416,19 +393,15 @@ THE PACK
 
 </h1>
 
-
 <p class="subtitle">
 Follow Team Wolfpack across our social channels.
 </p>
-
 
 <div class="line"></div>
 
 </header>
 
 
-
-<!-- CONTENT -->
 
 <main class="content">
 
@@ -440,6 +413,12 @@ Follow Team Wolfpack across our social channels.
   href="https://www.tiktok.com/@mrwolfie2410?_r=1&amp;_t=ZN-99881Lzqxog"
   target="_blank"
   rel="noopener noreferrer"
+
+  onclick="gtag('event','social_click',{
+    'event_category':'social',
+    'event_label':'Mr Wolfie TikTok',
+    'source':'Follow The Pack Page'
+  });"
 >
 
 <div class="platform">
@@ -469,6 +448,12 @@ Follow Mr Wolfie on TikTok
   href="https://www.tiktok.com/@mrswolfie2410?_r=1&amp;_t=ZN-99883R7fY06"
   target="_blank"
   rel="noopener noreferrer"
+
+  onclick="gtag('event','social_click',{
+    'event_category':'social',
+    'event_label':'Mrs Wolfie TikTok',
+    'source':'Follow The Pack Page'
+  });"
 >
 
 <div class="platform">
@@ -498,6 +483,12 @@ Follow Mrs Wolfie on TikTok
   href="https://www.instagram.com/teamwolfpack2410?igsi=bzUwb21kYzFrNjBw"
   target="_blank"
   rel="noopener noreferrer"
+
+  onclick="gtag('event','social_click',{
+    'event_category':'social',
+    'event_label':'Team Wolfpack Instagram',
+    'source':'Follow The Pack Page'
+  });"
 >
 
 <div class="platform">
@@ -525,6 +516,11 @@ Follow Official Team Wolfpack on Instagram
 <a
   class="back"
   href="more.html"
+
+  onclick="gtag('event','navigation_click',{
+    'source':'Follow The Pack Page',
+    'destination':'More'
+  });"
 >
 ‹ BACK TO MORE
 </a>
@@ -553,7 +549,6 @@ HOME
 </a>
 
 
-
 <a
   class="nav-item"
   href="fighters.html"
@@ -568,7 +563,6 @@ FIGHTERS
 </a>
 
 
-
 <a
   class="nav-item fire-nav"
   href="fights.html"
@@ -581,7 +575,6 @@ FIGHTERS
 FIGHTS
 
 </a>
-
 
 
 <a
@@ -600,6 +593,9 @@ MORE
 
 </nav>
 
+
+
+<!-- SERVICE WORKER -->
 
 <script>
 
