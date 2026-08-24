@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <!-- Google Analytics - Team Wolfpack App -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
@@ -14,10 +16,26 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
+
+  window.addEventListener('load', function(){
+    gtag('event','about_page_view',{
+      'section':'About Team Wolfpack'
+    });
+  });
 </script>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
 <meta name="theme-color" content="#050505">
+
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>About Team Wolfpack</title>
 
@@ -25,10 +43,15 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -38,10 +61,26 @@ body{
   padding-bottom:95px;
 
   background:
-    radial-gradient(circle at 0% 12%,rgba(0,190,255,.24),transparent 30%),
-    radial-gradient(circle at 100% 30%,rgba(255,85,0,.23),transparent 30%),
-    linear-gradient(115deg,#02090d 0%,#050505 50%,#150802 100%);
+    radial-gradient(
+      circle at 0% 12%,
+      rgba(0,190,255,.24),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 30%,
+      rgba(255,85,0,.23),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
 }
+
+
+/* HEADER */
 
 .header{
   text-align:center;
@@ -69,8 +108,13 @@ body{
   line-height:1.05;
 }
 
-.ice{color:#67dcff}
-.fire{color:#ff751c}
+.ice{
+  color:#67dcff;
+}
+
+.fire{
+  color:#ff751c;
+}
 
 .subtitle{
   margin-top:10px;
@@ -83,22 +127,39 @@ body{
   max-width:430px;
   height:2px;
   margin:22px auto 0;
-  background:linear-gradient(90deg,#4bd8ff,transparent,#ff6200);
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
 }
+
+
+/* CONTENT */
 
 .content{
   max-width:540px;
   margin:auto;
-  padding:10px 18px 35px;
+  padding:10px 18px 110px;
 }
+
+
+/* CARDS */
 
 .card{
   position:relative;
   overflow:hidden;
+
   padding:22px;
   margin-bottom:18px;
+
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.12);
+
+  border:
+    1px solid rgba(255,255,255,.12);
 
   background:
     linear-gradient(
@@ -107,27 +168,41 @@ body{
       rgba(8,8,8,.94) 50%,
       rgba(220,70,0,.15)
     );
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.25);
 }
 
 .card::before{
   content:"";
+
   position:absolute;
+
   left:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#4bd8ff;
 }
 
 .card::after{
   content:"";
+
   position:absolute;
+
   right:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#ff6500;
 }
+
+
+/* TEXT */
 
 .section-title{
   font-size:20px;
@@ -151,6 +226,9 @@ body{
   font-weight:bold;
 }
 
+
+/* VALUES */
+
 .values{
   display:grid;
   grid-template-columns:1fr;
@@ -159,9 +237,14 @@ body{
 
 .value-card{
   padding:17px;
+
   border-radius:13px;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(8,8,8,.78);
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  background:
+    rgba(8,8,8,.78);
 }
 
 .value-title{
@@ -177,6 +260,9 @@ body{
   line-height:1.5;
 }
 
+
+/* QUOTE */
+
 .quote{
   text-align:center;
   padding:22px 18px;
@@ -186,18 +272,29 @@ body{
   line-height:1.4;
 }
 
+
+/* BACK */
+
 .back{
   display:block;
+
   margin-top:6px;
   padding:16px;
+
   text-align:center;
   text-decoration:none;
+
   color:white;
+
   font-size:12px;
   font-weight:900;
   letter-spacing:1px;
-  border:1px solid #59d9ff;
+
+  border:
+    1px solid #59d9ff;
+
   border-radius:12px;
+
   background:
     linear-gradient(
       90deg,
@@ -206,28 +303,53 @@ body{
     );
 }
 
+.back:active{
+  transform:scale(.98);
+}
+
+
+/* BOTTOM NAV */
+
 .bottom-nav{
   position:fixed;
   left:0;
   right:0;
   bottom:0;
+
   height:74px;
+
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  padding-bottom:env(safe-area-inset-bottom);
-  background:rgba(4,4,4,.97);
-  border-top:1px solid rgba(255,255,255,.12);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  padding-bottom:
+    env(safe-area-inset-bottom);
+
+  background:
+    rgba(4,4,4,.97);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(12px);
+
   z-index:100;
 }
 
 .nav-item{
   text-decoration:none;
   color:#888;
+
   display:flex;
   flex-direction:column;
+
   align-items:center;
   justify-content:center;
+
   gap:5px;
+
   font-size:9px;
   font-weight:bold;
 }
@@ -243,22 +365,43 @@ body{
 .nav-item.active{
   color:#67dcff;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header class="header">
 
 <a href="index.html">
-<img src="icon-512.png" class="logo" alt="Team Wolfpack">
+
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
+
 </a>
 
-<div class="brand">TEAM WOLFPACK</div>
+<div class="brand">
+TEAM WOLFPACK
+</div>
 
 <h1 class="title">
-<span class="ice">ABOUT</span>
-<span class="fire"> THE PACK</span>
+
+<span class="ice">
+ABOUT
+</span>
+
+<span class="fire">
+THE PACK
+</span>
+
 </h1>
 
 <p class="subtitle">
@@ -269,113 +412,270 @@ Strength. Loyalty. Unity. Purpose.
 
 </header>
 
+
+
 <main class="content">
+
+
+<!-- WHO WE ARE -->
 
 <section class="card">
 
 <h2 class="section-title">
-<span class="ice">WHO</span>
-<span class="fire"> WE ARE</span>
+
+<span class="ice">
+WHO
+</span>
+
+<span class="fire">
+WE ARE
+</span>
+
 </h2>
 
+
 <p class="text">
+
 Team Wolfpack is a boxing team built around strength,
 loyalty, unity and purpose.
+
 <br><br>
+
 Created by Co-Founders
-<span class="highlight">Chris “Mr Wolfie”</span>
+
+<span class="highlight">
+Chris “Mr Wolfie”
+</span>
+
 and
-<span class="highlight-fire">Zoey “Mrs Wolfie” James</span>,
+
+<span class="highlight-fire">
+Zoey “Mrs Wolfie” James
+</span>,
+
 the team brings fighters, corner teams and supporters
 together under one identity.
+
 <br><br>
+
 The pack is about more than boxing. It is about standing
 together, supporting one another and giving people a place
 where they can grow in confidence, discipline and strength.
+
 </p>
 
 </section>
 
 
+
+<!-- WHAT WE STAND FOR -->
+
 <section class="card">
 
 <h2 class="section-title">
-<span class="ice">WHAT</span>
-<span class="fire"> WE STAND FOR</span>
+
+<span class="ice">
+WHAT
+</span>
+
+<span class="fire">
+WE STAND FOR
+</span>
+
 </h2>
+
 
 <div class="values">
 
+
 <div class="value-card">
-<div class="value-title">STRENGTH</div>
+
+<div class="value-title">
+STRENGTH
+</div>
+
 <div class="value-text">
 Finding the strength to keep moving forward, inside and outside the ring.
 </div>
+
 </div>
 
+
 <div class="value-card">
-<div class="value-title">LOYALTY</div>
+
+<div class="value-title">
+LOYALTY
+</div>
+
 <div class="value-text">
 Standing beside the people who represent and support the pack.
 </div>
+
 </div>
 
+
 <div class="value-card">
-<div class="value-title">UNITY</div>
+
+<div class="value-title">
+UNITY
+</div>
+
 <div class="value-text">
 Different fighters and teams, brought together as one Team Wolfpack.
 </div>
+
 </div>
 
+
 <div class="value-card">
-<div class="value-title">PURPOSE</div>
+
+<div class="value-title">
+PURPOSE
+</div>
+
 <div class="value-text">
 Using boxing to build confidence, discipline and something worth fighting for.
 </div>
+
 </div>
+
 
 </div>
 
 </section>
 
+
+
+<!-- QUOTE -->
 
 <section class="card">
 
 <div class="quote">
-<span class="ice">ONE PACK.</span><br>
-<span class="fire">ONE PURPOSE.</span>
+
+<span class="ice">
+ONE PACK.
+</span>
+
+<br>
+
+<span class="fire">
+ONE PURPOSE.
+</span>
+
 </div>
 
 </section>
 
 
-<a class="back" href="more.html">
+
+<!-- BACK -->
+
+<a
+  class="back"
+  href="more.html"
+
+  onclick="gtag('event','navigation_click',{
+    'source':'About Page',
+    'destination':'More'
+  });"
+>
+
 ‹ BACK TO MORE
+
 </a>
+
 
 </main>
 
 
+
+<!-- BOTTOM NAVIGATION -->
+
 <nav class="bottom-nav">
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+
+<span class="nav-icon">
+⌂
+</span>
+
 HOME
+
 </a>
 
-<a class="nav-item" href="fighters.html">
-<span class="nav-icon">♟</span>
+
+<a
+  class="nav-item"
+  href="fighters.html"
+>
+
+<span class="nav-icon">
+♟
+</span>
+
 FIGHTERS
+
 </a>
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
+
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
+
+<span class="nav-icon">
+♜
+</span>
+
 FIGHTS
+
 </a>
 
-<a class="nav-item" href="more.html">
-<span class="nav-icon">☰</span>
+
+<a
+  class="nav-item active"
+  href="more.html"
+>
+
+<span class="nav-icon">
+☰
+</span>
+
 MORE
+
 </a>
+
 
 </nav>
+
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+if ("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
