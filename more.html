@@ -16,6 +16,12 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
+
+  window.addEventListener('load', function(){
+    gtag('event', 'more_page_view', {
+      section: 'More'
+    });
+  });
 </script>
 
 <meta charset="UTF-8">
@@ -27,8 +33,10 @@
 
 <meta name="theme-color" content="#050505">
 
+<!-- PWA / MOBILE -->
 <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>More | Team Wolfpack</title>
@@ -401,7 +409,7 @@ Everything else Team Wolfpack in one place.
   class="menu-card"
   href="about.html"
   onclick="gtag('event','more_menu_click',{
-    'section':'About Team Wolfpack'
+    section:'About Team Wolfpack'
   });"
 >
 
@@ -427,7 +435,7 @@ Our story, values and what the pack stands for.
   class="menu-card"
   href="pack.html"
   onclick="gtag('event','more_menu_click',{
-    'section':'Meet The Pack'
+    section:'Meet The Pack'
   });"
 >
 
@@ -453,7 +461,7 @@ Meet the people behind Team Wolfpack.
   class="menu-card"
   href="merch.html"
   onclick="gtag('event','more_menu_click',{
-    'section':'Merch'
+    section:'Merch'
   });"
 >
 
@@ -479,7 +487,7 @@ Team Wolfpack clothing and merchandise.
   class="menu-card"
   href="sponsors.html"
   onclick="gtag('event','more_menu_click',{
-    'section':'Sponsors and Partners'
+    section:'Sponsors and Partners'
   });"
 >
 
@@ -505,7 +513,7 @@ Support the pack and view our sponsors.
   class="menu-card"
   href="contact.html"
   onclick="gtag('event','more_menu_click',{
-    'section':'Contact Us'
+    section:'Contact Us'
   });"
 >
 
@@ -531,7 +539,7 @@ Get in touch with Team Wolfpack.
   class="menu-card"
   href="socials.html"
   onclick="gtag('event','more_menu_click',{
-    'section':'Follow The Pack'
+    section:'Follow The Pack'
   });"
 >
 
@@ -559,7 +567,7 @@ TikTok, Instagram and Team Wolfpack socials.
   target="_blank"
   rel="noopener noreferrer"
   onclick="gtag('event','official_website_click',{
-    'source':'More Page'
+    source:'More Page'
   });"
 >
 
