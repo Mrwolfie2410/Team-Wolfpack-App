@@ -18,9 +18,9 @@
   gtag('config', 'G-M973P0B4F0');
 
   window.addEventListener('load', function(){
-    gtag('event','fighter_profile_view',{
-      'fighter':'Mrs Wolfie',
-      'team':'Team Wolfie'
+    gtag('event', 'fighter_profile_view', {
+      fighter: 'Mrs Wolfie',
+      team: 'Team Wolfie'
     });
   });
 </script>
@@ -34,6 +34,7 @@
 
 <meta name="theme-color" content="#050505">
 
+<!-- PWA / MOBILE -->
 <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -74,13 +75,11 @@ body{
       rgba(0,190,255,.20),
       transparent 30%
     ),
-
     radial-gradient(
       circle at 100% 70%,
       rgba(255,90,0,.22),
       transparent 32%
     ),
-
     #050505;
 }
 
@@ -124,6 +123,7 @@ body{
   margin-top:7px;
 
   font-size:29px;
+
   font-weight:900;
 
   line-height:1.05;
@@ -180,7 +180,6 @@ body{
   position:relative;
 
   width:100%;
-
   height:300px;
 
   margin:
@@ -204,10 +203,7 @@ body{
   background:#080808;
 
   box-shadow:
-    0
-    10px
-    30px
-    rgba(0,0,0,.45);
+    0 10px 30px rgba(0,0,0,.45);
 }
 
 .profile-photo{
@@ -367,6 +363,18 @@ body{
   font-size:14px;
 
   line-height:1.65;
+}
+
+.highlight{
+  color:#67dcff;
+
+  font-weight:bold;
+}
+
+.highlight-fire{
+  color:#ff751c;
+
+  font-weight:bold;
 }
 
 
@@ -638,7 +646,15 @@ body{
 
 <header class="header">
 
-<a href="index.html">
+<a
+  href="index.html"
+  aria-label="Team Wolfpack Home"
+  onclick="gtag('event','navigation_click',{
+    source:'Mrs Wolfie Profile',
+    destination:'Home',
+    navigation_type:'Logo'
+  });"
+>
 
 <img
   src="icon-512.png"
@@ -787,7 +803,11 @@ that had been taken from her.
 
 <br><br>
 
-Boxing became more than a sport. It became her lifeline.
+Boxing became more than a sport.
+
+<span class="highlight">
+It became her lifeline.
+</span>
 
 <br><br>
 
@@ -798,8 +818,20 @@ could no longer be taken away.
 
 <br><br>
 
-Together, Zoey and Chris co-founded Team Wolfpack,
-building something driven by strength, unity and purpose.
+Together,
+
+<span class="highlight-fire">
+Zoey “Mrs Wolfie” James
+</span>
+
+and
+
+<span class="highlight">
+Chris “Mr Wolfie”
+</span>
+
+co-founded Team Wolfpack, building something driven by
+strength, unity and purpose.
 
 </p>
 
@@ -887,6 +919,7 @@ EVENTS
 </span>
 
 </h2>
+
 
 
 <!-- EVENT 1 -->
@@ -1086,9 +1119,11 @@ EASTHOUSES MINERS CLUB • SUPER MIDDLEWEIGHT TITLE
 <a
   class="back"
   href="fighters.html"
+  aria-label="Back to Fighters"
   onclick="gtag('event','fighter_profile_back_click',{
-    'fighter':'Mrs Wolfie',
-    'destination':'Fighters'
+    fighter:'Mrs Wolfie',
+    destination:'Fighters',
+    source:'Mrs Wolfie Profile'
   });"
 >
 
@@ -1109,6 +1144,11 @@ EASTHOUSES MINERS CLUB • SUPER MIDDLEWEIGHT TITLE
 <a
   class="nav-item"
   href="index.html"
+  aria-label="Home"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Mrs Wolfie Profile',
+    destination:'Home'
+  });"
 >
 
 <span class="nav-icon">
@@ -1120,10 +1160,15 @@ HOME
 </a>
 
 
-
 <a
   class="nav-item active"
   href="fighters.html"
+  aria-label="Fighters"
+  aria-current="page"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Mrs Wolfie Profile',
+    destination:'Fighters'
+  });"
 >
 
 <span class="nav-icon">
@@ -1135,10 +1180,14 @@ FIGHTERS
 </a>
 
 
-
 <a
   class="nav-item fire-nav"
   href="fights.html"
+  aria-label="Fights"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Mrs Wolfie Profile',
+    destination:'Fights'
+  });"
 >
 
 <span class="nav-icon">
@@ -1150,10 +1199,14 @@ FIGHTS
 </a>
 
 
-
 <a
   class="nav-item"
   href="more.html"
+  aria-label="More"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Mrs Wolfie Profile',
+    destination:'More'
+  });"
 >
 
 <span class="nav-icon">
