@@ -16,6 +16,12 @@
   gtag('js', new Date());
 
   gtag('config', 'G-M973P0B4F0');
+
+  window.addEventListener('load', function(){
+    gtag('event', 'pack_page_view', {
+      section: 'Meet The Pack'
+    });
+  });
 </script>
 
 <meta charset="UTF-8">
@@ -27,16 +33,16 @@
 
 <meta name="theme-color" content="#050505">
 
-<!-- PWA / iPHONE -->
+<!-- PWA / MOBILE -->
 <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>Meet The Pack | Team Wolfpack</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-
 
 <style>
 
@@ -68,13 +74,11 @@ body{
       rgba(0,190,255,.22),
       transparent 30%
     ),
-
     radial-gradient(
       circle at 100% 35%,
       rgba(255,85,0,.22),
       transparent 30%
     ),
-
     linear-gradient(
       115deg,
       #02090d 0%,
@@ -84,9 +88,7 @@ body{
 }
 
 
-/* ==============================
-   HEADER
-============================== */
+/* HEADER */
 
 .header{
   text-align:center;
@@ -119,6 +121,7 @@ body{
   margin-top:18px;
 
   font-size:32px;
+
   font-weight:900;
 }
 
@@ -156,9 +159,7 @@ body{
 }
 
 
-/* ==============================
-   CONTENT
-============================== */
+/* CONTENT */
 
 .content{
   width:100%;
@@ -173,9 +174,7 @@ body{
 }
 
 
-/* ==============================
-   MEMBER CARDS
-============================== */
+/* MEMBER CARDS */
 
 .member-card{
   display:block;
@@ -185,6 +184,7 @@ body{
   overflow:hidden;
 
   width:100%;
+
   min-height:180px;
 
   padding:
@@ -202,7 +202,7 @@ body{
 
   text-decoration:none;
 
-  color:white;
+  color:#fff;
 
   background:
     linear-gradient(
@@ -262,9 +262,7 @@ a.member-card:active{
 }
 
 
-/* ==============================
-   MEMBER PHOTOS
-============================== */
+/* MEMBER PHOTOS */
 
 .member-photo{
   position:absolute;
@@ -300,9 +298,7 @@ a.member-card:active{
 }
 
 
-/* ==============================
-   MEMBER TEXT
-============================== */
+/* MEMBER TEXT */
 
 .member-team,
 .member-name,
@@ -373,9 +369,7 @@ a.member-card:active{
 }
 
 
-/* ==============================
-   BACK BUTTON
-============================== */
+/* BACK BUTTON */
 
 .back{
   display:block;
@@ -414,9 +408,7 @@ a.member-card:active{
 }
 
 
-/* ==============================
-   BOTTOM NAVIGATION
-============================== */
+/* BOTTOM NAVIGATION */
 
 .bottom-nav{
   position:fixed;
@@ -480,9 +472,7 @@ a.member-card:active{
 }
 
 
-/* ==============================
-   SMALL PHONES
-============================== */
+/* SMALL PHONES */
 
 @media(max-width:430px){
 
@@ -528,13 +518,19 @@ a.member-card:active{
 <body>
 
 
-<!-- ==============================
-     HEADER
-============================== -->
+<!-- HEADER -->
 
 <header class="header">
 
-<a href="index.html">
+<a
+  href="index.html"
+  aria-label="Team Wolfpack Home"
+  onclick="gtag('event','navigation_click',{
+    source:'Meet The Pack',
+    destination:'Home',
+    navigation_type:'Logo'
+  });"
+>
 
 <img
   src="icon-512.png"
@@ -574,35 +570,28 @@ The people behind Team Wolfpack.
 
 
 
-<!-- ==============================
-     PACK MEMBERS
-============================== -->
+<!-- PACK MEMBERS -->
 
 <main class="content">
 
 
-<!-- ==============================
-     MR WOLFIE
-============================== -->
+<!-- MR WOLFIE -->
 
 <div class="member-card">
 
 <img
   class="member-photo"
   src="mr-wolfie.jpg"
-  alt="Mr Wolfie"
+  alt="Chris Mr Wolfie"
 >
-
 
 <div class="member-team">
 TEAM WOLFPACK • TEAM WOLFIE
 </div>
 
-
 <div class="member-name">
 MR WOLFIE
 </div>
-
 
 <div class="member-role">
 Co-Founder &amp; Joint Owner of Team Wolfpack
@@ -610,26 +599,23 @@ Co-Founder &amp; Joint Owner of Team Wolfpack
 Manager to Team Wolfie
 </div>
 
-
 </div>
 
 
 
-<!-- ==============================
-     MRS WOLFIE
-============================== -->
+<!-- MRS WOLFIE -->
 
 <a
   class="member-card"
   href="mrs-wolfie.html"
-
+  aria-label="View Mrs Wolfie fighter profile"
   onclick="gtag('event','pack_member_click',{
-    'member':'Mrs Wolfie',
-    'team':'Team Wolfie',
-    'destination':'Fighter Profile'
+    member:'Mrs Wolfie',
+    team:'Team Wolfie',
+    destination:'Fighter Profile',
+    source:'Meet The Pack'
   });"
 >
-
 
 <img
   class="member-photo"
@@ -637,16 +623,13 @@ Manager to Team Wolfie
   alt="Zoey Mrs Wolfie James"
 >
 
-
 <div class="member-team">
 TEAM WOLFIE
 </div>
 
-
 <div class="member-name">
 ZOEY “MRS WOLFIE” JAMES
 </div>
-
 
 <div class="member-role">
 Co-Founder &amp; Joint Owner of Team Wolfpack
@@ -654,36 +637,31 @@ Co-Founder &amp; Joint Owner of Team Wolfpack
 Boxer • Team Wolfie
 </div>
 
-
 <div class="view">
 VIEW FIGHTER PROFILE
 </div>
-
 
 <span class="arrow">
 ›
 </span>
 
-
 </a>
 
 
 
-<!-- ==============================
-     GREIG SLOAN
-============================== -->
+<!-- GREIG SLOAN -->
 
 <a
   class="member-card"
   href="greig-sloan.html"
-
+  aria-label="View Greig Sloan fighter profile"
   onclick="gtag('event','pack_member_click',{
-    'member':'Greig Sloan',
-    'team':'Team Sloan',
-    'destination':'Fighter Profile'
+    member:'Greig Sloan',
+    team:'Team Sloan',
+    destination:'Fighter Profile',
+    source:'Meet The Pack'
   });"
 >
-
 
 <img
   class="member-photo"
@@ -691,42 +669,33 @@ VIEW FIGHTER PROFILE
   alt="Greig Sloan"
 >
 
-
 <div class="member-team">
 TEAM SLOAN
 </div>
-
 
 <div class="member-name">
 GREIG SLOAN
 </div>
 
-
 <div class="member-role">
 Boxer • Team Sloan
 </div>
-
 
 <div class="view">
 VIEW FIGHTER PROFILE
 </div>
 
-
 <span class="arrow">
 ›
 </span>
-
 
 </a>
 
 
 
-<!-- ==============================
-     BRY KELLY
-============================== -->
+<!-- BRY KELLY -->
 
 <div class="member-card">
-
 
 <img
   class="member-photo"
@@ -734,32 +703,25 @@ VIEW FIGHTER PROFILE
   alt="Bry Kelly"
 >
 
-
 <div class="member-team">
 TEAM WOLFIE
 </div>
-
 
 <div class="member-name">
 BRY KELLY
 </div>
 
-
 <div class="member-role">
 Corner Team
 </div>
 
-
 </div>
 
 
 
-<!-- ==============================
-     BILLY BURTON
-============================== -->
+<!-- BILLY BURTON -->
 
 <div class="member-card">
-
 
 <img
   class="member-photo"
@@ -767,21 +729,17 @@ Corner Team
   alt="Billy Bossman Burton"
 >
 
-
 <div class="member-team">
 TEAM WOLFIE
 </div>
-
 
 <div class="member-name">
 BILLY “BOSSMAN” BURTON
 </div>
 
-
 <div class="member-role">
 Corner Team
 </div>
-
 
 </div>
 
@@ -792,10 +750,11 @@ Corner Team
 <a
   class="back"
   href="more.html"
-
+  aria-label="Back to More"
   onclick="gtag('event','navigation_click',{
-    'destination':'More',
-    'source':'Meet The Pack'
+    source:'Meet The Pack',
+    destination:'More',
+    navigation_type:'Back Button'
   });"
 >
 
@@ -808,9 +767,7 @@ Corner Team
 
 
 
-<!-- ==============================
-     BOTTOM NAVIGATION
-============================== -->
+<!-- BOTTOM NAVIGATION -->
 
 <nav class="bottom-nav">
 
@@ -818,6 +775,11 @@ Corner Team
 <a
   class="nav-item"
   href="index.html"
+  aria-label="Home"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Meet The Pack',
+    destination:'Home'
+  });"
 >
 
 <span class="nav-icon">
@@ -829,10 +791,14 @@ HOME
 </a>
 
 
-
 <a
   class="nav-item"
   href="fighters.html"
+  aria-label="Fighters"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Meet The Pack',
+    destination:'Fighters'
+  });"
 >
 
 <span class="nav-icon">
@@ -844,10 +810,14 @@ FIGHTERS
 </a>
 
 
-
 <a
   class="nav-item fire-nav"
   href="fights.html"
+  aria-label="Fights"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Meet The Pack',
+    destination:'Fights'
+  });"
 >
 
 <span class="nav-icon">
@@ -859,10 +829,15 @@ FIGHTS
 </a>
 
 
-
 <a
   class="nav-item active"
   href="more.html"
+  aria-label="More"
+  aria-current="page"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'Meet The Pack',
+    destination:'More'
+  });"
 >
 
 <span class="nav-icon">
@@ -878,9 +853,7 @@ MORE
 
 
 
-<!-- ==============================
-     SERVICE WORKER
-============================== -->
+<!-- SERVICE WORKER -->
 
 <script>
 
