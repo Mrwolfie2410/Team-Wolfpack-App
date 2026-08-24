@@ -18,8 +18,8 @@
   gtag('config', 'G-M973P0B4F0');
 
   window.addEventListener('load', function(){
-    gtag('event','about_page_view',{
-      'section':'About Team Wolfpack'
+    gtag('event', 'about_page_view', {
+      section: 'About Team Wolfpack'
     });
   });
 </script>
@@ -33,8 +33,10 @@
 
 <meta name="theme-color" content="#050505">
 
+<!-- PWA / MOBILE -->
 <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>About Team Wolfpack</title>
@@ -56,8 +58,14 @@ html{
 
 body{
   min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
-  color:white;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color:#fff;
+
   padding-bottom:95px;
 
   background:
@@ -95,16 +103,22 @@ body{
 
 .brand{
   margin-top:5px;
+
   font-size:12px;
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
+
   font-size:32px;
+
   font-weight:900;
+
   line-height:1.05;
 }
 
@@ -118,14 +132,19 @@ body{
 
 .subtitle{
   margin-top:10px;
+
   color:#aaa;
+
   font-size:13px;
 }
 
 .line{
   width:100%;
+
   max-width:430px;
+
   height:2px;
+
   margin:22px auto 0;
 
   background:
@@ -142,8 +161,13 @@ body{
 
 .content{
   max-width:540px;
+
   margin:auto;
-  padding:10px 18px 110px;
+
+  padding:
+    10px
+    18px
+    110px;
 }
 
 
@@ -151,9 +175,11 @@ body{
 
 .card{
   position:relative;
+
   overflow:hidden;
 
   padding:22px;
+
   margin-bottom:18px;
 
   border-radius:16px;
@@ -206,23 +232,29 @@ body{
 
 .section-title{
   font-size:20px;
+
   font-weight:900;
+
   margin-bottom:12px;
 }
 
 .text{
   color:#d0d0d0;
+
   font-size:14px;
+
   line-height:1.7;
 }
 
 .highlight{
   color:#67dcff;
+
   font-weight:bold;
 }
 
 .highlight-fire{
   color:#ff751c;
+
   font-weight:bold;
 }
 
@@ -231,7 +263,9 @@ body{
 
 .values{
   display:grid;
+
   grid-template-columns:1fr;
+
   gap:12px;
 }
 
@@ -249,14 +283,19 @@ body{
 
 .value-title{
   font-size:15px;
+
   font-weight:900;
+
   color:#67dcff;
 }
 
 .value-text{
   margin-top:5px;
+
   color:#aaa;
+
   font-size:12px;
+
   line-height:1.5;
 }
 
@@ -265,10 +304,15 @@ body{
 
 .quote{
   text-align:center;
+
   padding:22px 18px;
+
   font-size:18px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
   line-height:1.4;
 }
 
@@ -279,15 +323,19 @@ body{
   display:block;
 
   margin-top:6px;
+
   padding:16px;
 
   text-align:center;
+
   text-decoration:none;
 
-  color:white;
+  color:#fff;
 
   font-size:12px;
+
   font-weight:900;
+
   letter-spacing:1px;
 
   border:
@@ -312,6 +360,7 @@ body{
 
 .bottom-nav{
   position:fixed;
+
   left:0;
   right:0;
   bottom:0;
@@ -340,17 +389,21 @@ body{
 
 .nav-item{
   text-decoration:none;
+
   color:#888;
 
   display:flex;
+
   flex-direction:column;
 
   align-items:center;
+
   justify-content:center;
 
   gap:5px;
 
   font-size:9px;
+
   font-weight:bold;
 }
 
@@ -378,7 +431,15 @@ body{
 
 <header class="header">
 
-<a href="index.html">
+<a
+  href="index.html"
+  aria-label="Team Wolfpack Home"
+  onclick="gtag('event','navigation_click',{
+    source:'About Page',
+    destination:'Home',
+    navigation_type:'Logo'
+  });"
+>
 
 <img
   src="icon-512.png"
@@ -388,9 +449,11 @@ body{
 
 </a>
 
+
 <div class="brand">
 TEAM WOLFPACK
 </div>
+
 
 <h1 class="title">
 
@@ -404,15 +467,19 @@ THE PACK
 
 </h1>
 
+
 <p class="subtitle">
 Strength. Loyalty. Unity. Purpose.
 </p>
+
 
 <div class="line"></div>
 
 </header>
 
 
+
+<!-- MAIN CONTENT -->
 
 <main class="content">
 
@@ -573,10 +640,11 @@ ONE PURPOSE.
 <a
   class="back"
   href="more.html"
-
+  aria-label="Back to More"
   onclick="gtag('event','navigation_click',{
-    'source':'About Page',
-    'destination':'More'
+    source:'About Page',
+    destination:'More',
+    navigation_type:'Back Button'
   });"
 >
 
@@ -597,6 +665,11 @@ ONE PURPOSE.
 <a
   class="nav-item"
   href="index.html"
+  aria-label="Home"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'About Page',
+    destination:'Home'
+  });"
 >
 
 <span class="nav-icon">
@@ -611,6 +684,11 @@ HOME
 <a
   class="nav-item"
   href="fighters.html"
+  aria-label="Fighters"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'About Page',
+    destination:'Fighters'
+  });"
 >
 
 <span class="nav-icon">
@@ -625,6 +703,11 @@ FIGHTERS
 <a
   class="nav-item fire-nav"
   href="fights.html"
+  aria-label="Fights"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'About Page',
+    destination:'Fights'
+  });"
 >
 
 <span class="nav-icon">
@@ -639,6 +722,12 @@ FIGHTS
 <a
   class="nav-item active"
   href="more.html"
+  aria-label="More"
+  aria-current="page"
+  onclick="gtag('event','bottom_navigation_click',{
+    source:'About Page',
+    destination:'More'
+  });"
 >
 
 <span class="nav-icon">
