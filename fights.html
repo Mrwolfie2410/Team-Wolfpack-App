@@ -15,7 +15,13 @@
 
   gtag('js', new Date());
 
-gtag('config', 'G-M973P0B4F0');
+  gtag('config', 'G-M973P0B4F0');
+
+  window.addEventListener('load', function(){
+    gtag('event', 'fights_page_view', {
+      section: 'Upcoming Fights'
+    });
+  });
 </script>
 
 <meta charset="UTF-8">
@@ -27,8 +33,10 @@ gtag('config', 'G-M973P0B4F0');
 
 <meta name="theme-color" content="#050505">
 
+<!-- PWA / MOBILE -->
 <meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>Fights | Team Wolfpack</title>
@@ -493,18 +501,16 @@ AYR RACECOURSE
 FIGHT TYPE: DEBUT
 </div>
 
-
 <a
   class="profile-link"
   href="mrs-wolfie.html"
-
   onclick="gtag('event','fight_profile_click',{
-    'fighter':'Mrs Wolfie',
-    'team':'Team Wolfie',
-    'event_name_detail':'Ayrshire Boxing - The Launch',
-    'fight_date':'17 October 2026',
-    'opponent':'Colleen Leyden',
-    'source':'Fights Page'
+    fighter:'Mrs Wolfie',
+    team:'Team Wolfie',
+    event_name_detail:'Ayrshire Boxing - The Launch',
+    fight_date:'17 October 2026',
+    opponent:'Colleen Leyden',
+    source:'Fights Page'
   });"
 >
 
@@ -548,18 +554,16 @@ EASTHOUSES MINERS CLUB
 SUPER MIDDLEWEIGHT TITLE
 </div>
 
-
 <a
   class="profile-link"
   href="mrs-wolfie.html"
-
   onclick="gtag('event','fight_profile_click',{
-    'fighter':'Mrs Wolfie',
-    'team':'Team Wolfie',
-    'event_name_detail':'Easthouses Boxing Club',
-    'fight_date':'November 2026',
-    'opponent':'TBA',
-    'source':'Fights Page'
+    fighter:'Mrs Wolfie',
+    team:'Team Wolfie',
+    event_name_detail:'Easthouses Boxing Club',
+    fight_date:'November 2026',
+    opponent:'TBA',
+    source:'Fights Page'
   });"
 >
 
@@ -615,33 +619,21 @@ GREIG SLOAN vs TBA
 HAMPDEN PARK
 </div>
 
-
 <a
   class="profile-link"
   href="greig-sloan.html"
-
-  onclick="
-    event.preventDefault();
-
-    gtag('event','fight_profile_click',{
-      'fighter':'Greig Sloan',
-      'team':'Team Sloan',
-      'event_name_detail':'Unfinished Business',
-      'fight_date':'19 September 2026',
-      'opponent':'TBA',
-      'source':'Fights Page',
-      'event_callback': function(){
-        window.location.href='greig-sloan.html';
-      },
-      'event_timeout': 1000
-    });
-
-    setTimeout(function(){
-      window.location.href='greig-sloan.html';
-    },1200);
-  "
+  onclick="gtag('event','fight_profile_click',{
+    fighter:'Greig Sloan',
+    team:'Team Sloan',
+    event_name_detail:'Unfinished Business',
+    fight_date:'19 September 2026',
+    opponent:'TBA',
+    source:'Fights Page'
+  });"
 >
+
 VIEW GREIG SLOAN PROFILE ›
+
 </a>
 
 </div>
