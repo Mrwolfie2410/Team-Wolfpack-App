@@ -58,6 +58,7 @@ html{
 
 body{
   min-height:100vh;
+  min-height:100dvh;
 
   font-family:
     Arial,
@@ -160,12 +161,12 @@ body{
 
   max-width:540px;
 
-  margin:0 auto;
+  margin:auto;
 
   padding:
     10px
     18px
-    calc(150px + env(safe-area-inset-bottom));
+    calc(160px + env(safe-area-inset-bottom));
 }
 
 
@@ -236,12 +237,18 @@ body{
 }
 
 .menu-title{
+  position:relative;
+  z-index:2;
+
   font-size:18px;
 
   font-weight:900;
 }
 
 .menu-subtitle{
+  position:relative;
+  z-index:2;
+
   margin-top:5px;
 
   color:#aaa;
@@ -265,6 +272,51 @@ body{
   color:#ff751c;
 
   font-size:24px;
+
+  z-index:2;
+}
+
+
+/* PACK CHAT SPECIAL */
+
+.chat-card{
+  border:
+    1px solid rgba(103,220,255,.28);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(0,170,230,.20),
+      rgba(8,8,8,.95) 48%,
+      rgba(255,90,0,.22)
+    );
+
+  box-shadow:
+    0 8px 28px rgba(0,0,0,.35);
+}
+
+.chat-card .menu-title{
+  color:#fff;
+}
+
+.chat-tag{
+  display:inline-block;
+
+  margin-bottom:7px;
+
+  padding:4px 7px;
+
+  border-radius:20px;
+
+  color:#050505;
+
+  background:#67dcff;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
 }
 
 
@@ -272,6 +324,8 @@ body{
 
 .website{
   margin-top:24px;
+
+  margin-bottom:20px;
 
   text-align:center;
 
@@ -292,7 +346,7 @@ body{
   right:0;
   bottom:0;
 
-  height:calc(74px + env(safe-area-inset-bottom));
+  min-height:74px;
 
   display:grid;
 
@@ -308,16 +362,18 @@ body{
   border-top:
     1px solid rgba(255,255,255,.12);
 
-  backdrop-filter:
+  -webkit-backdrop-filter:
     blur(12px);
 
-  -webkit-backdrop-filter:
+  backdrop-filter:
     blur(12px);
 
   z-index:1000;
 }
 
 .nav-item{
+  min-height:74px;
+
   text-decoration:none;
 
   color:#888;
@@ -354,22 +410,16 @@ body{
 
 @media(max-width:400px){
 
-  .logo{
-    width:90px;
-    height:90px;
-  }
-
   .title{
-    font-size:27px;
+    font-size:28px;
   }
 
   .menu-title{
     font-size:16px;
   }
 
-  .content{
-    padding-bottom:
-      calc(160px + env(safe-area-inset-bottom));
+  .menu-subtitle{
+    font-size:11px;
   }
 
 }
@@ -389,11 +439,6 @@ body{
 <a
   href="index.html"
   aria-label="Team Wolfpack Home"
-  onclick="gtag('event','navigation_click',{
-    source:'More Page',
-    destination:'Home',
-    navigation_type:'Logo'
-  });"
 >
 
 <img
@@ -595,6 +640,44 @@ TikTok, Instagram and Team Wolfpack socials.
 
 
 
+<!-- PACK CHAT -->
+
+<a
+  class="menu-card chat-card"
+  href="chat-rules.html"
+  onclick="gtag('event','more_menu_click',{
+    section:'Pack Chat'
+  });"
+>
+
+<div class="chat-tag">
+COMMUNITY
+</div>
+
+<div class="menu-title">
+
+<span class="ice">
+PACK
+</span>
+
+<span class="fire">
+CHAT
+</span>
+
+</div>
+
+<div class="menu-subtitle">
+Join the Team Wolfpack community and chat with the pack.
+</div>
+
+<span class="arrow">
+›
+</span>
+
+</a>
+
+
+
 <!-- FULL WEBSITE -->
 
 <a
@@ -623,6 +706,9 @@ Open officialteamwolfpack.com/boxing.
 
 
 
+<div class="website">
+OFFICIALTEAMWOLFPACK.COM/BOXING
+</div>
 
 
 </main>
@@ -637,11 +723,6 @@ Open officialteamwolfpack.com/boxing.
 <a
   class="nav-item"
   href="index.html"
-  aria-label="Home"
-  onclick="gtag('event','bottom_navigation_click',{
-    source:'More Page',
-    destination:'Home'
-  });"
 >
 
 <span class="nav-icon">
@@ -657,11 +738,6 @@ HOME
 <a
   class="nav-item"
   href="fighters.html"
-  aria-label="Fighters"
-  onclick="gtag('event','bottom_navigation_click',{
-    source:'More Page',
-    destination:'Fighters'
-  });"
 >
 
 <span class="nav-icon">
@@ -677,11 +753,6 @@ FIGHTERS
 <a
   class="nav-item fire-nav"
   href="fights.html"
-  aria-label="Fights"
-  onclick="gtag('event','bottom_navigation_click',{
-    source:'More Page',
-    destination:'Fights'
-  });"
 >
 
 <span class="nav-icon">
@@ -697,12 +768,7 @@ FIGHTS
 <a
   class="nav-item active"
   href="more.html"
-  aria-label="More"
   aria-current="page"
-  onclick="gtag('event','bottom_navigation_click',{
-    source:'More Page',
-    destination:'More'
-  });"
 >
 
 <span class="nav-icon">
@@ -728,9 +794,20 @@ if ("serviceWorker" in navigator){
     "load",
     function(){
 
-      navigator.serviceWorker.register(
-        "service-worker.js"
-      );
+      navigator.serviceWorker
+        .register(
+          "service-worker.js"
+        )
+        .catch(
+          function(error){
+
+            console.error(
+              "Service worker error:",
+              error
+            );
+
+          }
+        );
 
     }
   );
