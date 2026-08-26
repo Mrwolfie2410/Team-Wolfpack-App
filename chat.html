@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag("js", new Date());
+gtag("config", "G-M973P0B4F0");
+
+window.addEventListener("load", function(){
+  gtag("event", "chat_page_view", {
+    section: "Pack Chat"
+  });
+});
+</script>
+
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<meta name="theme-color" content="#050505">
+
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<title>Pack Chat | Team Wolfpack</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color:#fff;
+
+  padding-bottom:95px;
+
+  background:
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.22),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 100% 35%,
+      rgba(255,85,0,.22),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
+}
+
+
+/* HEADER */
+
+.header{
+  text-align:center;
+  padding:25px 18px 18px;
+}
+
+.logo{
+  width:95px;
+  height:95px;
+  object-fit:contain;
+}
+
+.brand{
+  margin-top:5px;
+
+  font-size:12px;
+  font-weight:900;
+
+  letter-spacing:4px;
+
+  color:#67dcff;
+}
+
+.title{
+  margin-top:18px;
+
+  font-size:31px;
+  font-weight:900;
+}
+
+.ice{
+  color:#67dcff;
+}
+
+.fire{
+  color:#ff751c;
+}
+
+.subtitle{
+  margin-top:8px;
+
+  color:#aaa;
+
+  font-size:12px;
+  line-height:1.5;
+}
+
+.line{
+  width:100%;
+  max-width:430px;
+
+  height:2px;
+
+  margin:20px auto 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
+}
+
+
+/* MAIN */
+
+.content{
+  width:100%;
+  max-width:540px;
+
+  margin:auto;
+
+  padding:
+    8px
+    16px
+    110px;
+}
+
+
+/* STATUS */
+
+.status{
+  text-align:center;
+
+  margin-bottom:12px;
+
+  font-size:10px;
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  color:#aaa;
+}
+
+.status.connected{
+  color:#67dcff;
+}
+
+.status.error{
+  color:#ff751c;
+}
+
+
+/* NAME SETUP */
+
+.name-box{
+  padding:18px;
+
+  margin-bottom:14px;
+
+  border-radius:15px;
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(20,150,205,.15),
+      rgba(8,8,8,.94) 50%,
+      rgba(220,70,0,.15)
+    );
+}
+
+.name-title{
+  font-size:14px;
+
+  font-weight:900;
+
+  color:#67dcff;
+
+  margin-bottom:6px;
+}
+
+.name-info{
+  color:#aaa;
+
+  font-size:11px;
+
+  line-height:1.5;
+
+  margin-bottom:12px;
+}
+
+.name-row{
+  display:flex;
+  gap:8px;
+}
+
+
+/* INPUTS */
+
+input,
+textarea,
+button{
+  font-family:inherit;
+}
+
+.name-input{
+  flex:1;
+
+  min-width:0;
+
+  padding:13px;
+
+  border-radius:9px;
+
+  border:
+    1px solid rgba(255,255,255,.16);
+
+  outline:none;
+
+  color:white;
+
+  background:#080808;
+
+  font-size:13px;
+}
+
+.name-input:focus{
+  border-color:#67dcff;
+}
+
+.save-name{
+  border:none;
+
+  border-radius:9px;
+
+  padding:0 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #42cfff,
+      #0784b0
+    );
+
+  color:#00131b;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+
+/* CHAT */
+
+.chat-shell{
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:16px;
+
+  border:
+    1px solid rgba(255,255,255,.13);
+
+  background:
+    rgba(5,5,5,.88);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35);
+}
+
+.chat-shell::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:4px;
+
+  background:#4bd8ff;
+}
+
+.chat-shell::after{
+  content:"";
+
+  position:absolute;
+
+  right:0;
+  top:0;
+  bottom:0;
+
+  width:4px;
+
+  background:#ff6500;
+}
+
+
+/* CHAT HEADER */
+
+.chat-header{
+  position:relative;
+  z-index:2;
+
+  padding:15px 17px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.10);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.10),
+      rgba(255,90,0,.10)
+    );
+}
+
+.chat-header-title{
+  font-size:14px;
+
+  font-weight:900;
+}
+
+.chat-header-info{
+  margin-top:4px;
+
+  color:#888;
+
+  font-size:10px;
+}
+
+
+/* MESSAGES */
+
+.messages{
+  position:relative;
+  z-index:2;
+
+  height:430px;
+
+  overflow-y:auto;
+
+  padding:17px 14px;
+
+  scroll-behavior:smooth;
+}
+
+.empty-message{
+  text-align:center;
+
+  padding:60px 20px;
+
+  color:#777;
+
+  font-size:12px;
+
+  line-height:1.6;
+}
+
+.message{
+  max-width:84%;
+
+  margin-bottom:13px;
+}
+
+.message.mine{
+  margin-left:auto;
+}
+
+.message-name{
+  margin-bottom:4px;
+
+  color:#67dcff;
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:.5px;
+}
+
+.message.mine .message-name{
+  text-align:right;
+
+  color:#ff751c;
+}
+
+.message-bubble{
+  padding:
+    10px
+    12px;
+
+  border-radius:
+    4px
+    13px
+    13px
+    13px;
+
+  color:#e9e9e9;
+
+  background:
+    rgba(35,35,35,.95);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  font-size:13px;
+
+  line-height:1.5;
+
+  overflow-wrap:anywhere;
+}
+
+.message.mine .message-bubble{
+  border-radius:
+    13px
+    4px
+    13px
+    13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,150,210,.20),
+      rgba(255,90,0,.15)
+    );
+
+  border-color:
+    rgba(103,220,255,.22);
+}
+
+.message-time{
+  margin-top:4px;
+
+  color:#666;
+
+  font-size:8px;
+}
+
+.message.mine .message-time{
+  text-align:right;
+}
+
+
+/* COMPOSER */
+
+.composer{
+  position:relative;
+  z-index:2;
+
+  padding:12px;
+
+  border-top:
+    1px solid rgba(255,255,255,.10);
+
+  display:flex;
+
+  gap:8px;
+
+  align-items:flex-end;
+
+  background:
+    rgba(8,8,8,.98);
+}
+
+.message-input{
+  flex:1;
+
+  min-width:0;
+
+  height:46px;
+  max-height:100px;
+
+  resize:none;
+
+  padding:
+    13px
+    12px;
+
+  border-radius:10px;
+
+  border:
+    1px solid rgba(255,255,255,.14);
+
+  outline:none;
+
+  color:white;
+
+  background:#111;
+
+  font-size:13px;
+}
+
+.message-input:focus{
+  border-color:#67dcff;
+}
+
+.message-input:disabled{
+  opacity:.45;
+}
+
+.send-button{
+  height:46px;
+
+  padding:0 16px;
+
+  border:none;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  color:#fff;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:.5px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff751c,
+      #bd4000
+    );
+}
+
+.send-button:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
+
+.character-count{
+  position:relative;
+  z-index:2;
+
+  padding:
+    0
+    14px
+    10px;
+
+  text-align:right;
+
+  color:#666;
+
+  background:#080808;
+
+  font-size:8px;
+}
+
+
+/* SAFETY NOTE */
+
+.safety{
+  margin-top:14px;
+
+  padding:14px;
+
+  text-align:center;
+
+  border-radius:12px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  color:#888;
+
+  background:
+    rgba(8,8,8,.72);
+
+  font-size:10px;
+
+  line-height:1.5;
+}
+
+
+/* BACK */
+
+.back{
+  display:block;
+
+  margin-top:15px;
+
+  padding:15px;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  color:#fff;
+
+  border:
+    1px solid #59d9ff;
+
+  border-radius:11px;
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.10),
+      rgba(255,90,0,.10)
+    );
+}
+
+.back:active{
+  transform:scale(.985);
+}
+
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+  position:fixed;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:74px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  padding-bottom:
+    env(safe-area-inset-bottom);
+
+  background:
+    rgba(4,4,4,.97);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(12px);
+
+  z-index:100;
+}
+
+.nav-item{
+  text-decoration:none;
+
+  color:#888;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:5px;
+
+  font-size:9px;
+
+  font-weight:bold;
+}
+
+.nav-icon{
+  font-size:20px;
+}
+
+.fire-nav{
+  color:#ff751c;
+}
+
+.nav-item.active{
+  color:#67dcff;
+}
+
+
+/* SMALL PHONES */
+
+@media(max-width:400px){
+
+  .messages{
+    height:380px;
+  }
+
+  .title{
+    font-size:28px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<a href="index.html">
+
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
+
+</a>
+
+<div class="brand">
+TEAM WOLFPACK
+</div>
+
+<h1 class="title">
+
+<span class="ice">
+PACK
+</span>
+
+<span class="fire">
+CHAT
+</span>
+
+</h1>
+
+<p class="subtitle">
+Connect with the Team Wolfpack community.
+</p>
+
+<div class="line"></div>
+
+</header>
+
+
+<main class="content">
+
+
+<!-- CONNECTION STATUS -->
+
+<div
+  id="status"
+  class="status"
+>
+CONNECTING TO THE PACK...
+</div>
+
+
+<!-- NAME -->
+
+<div class="name-box">
+
+<div class="name-title">
+YOUR PACK NAME
+</div>
+
+<div class="name-info">
+Choose the name you want other people in Pack Chat to see.
+</div>
+
+<div class="name-row">
+
+<input
+  id="nameInput"
+  class="name-input"
+  type="text"
+  maxlength="30"
+  placeholder="Enter your name"
+  autocomplete="nickname"
+>
+
+<button
+  id="saveName"
+  class="save-name"
+  type="button"
+>
+SAVE
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CHAT -->
+
+<div class="chat-shell">
+
+<div class="chat-header">
+
+<div class="chat-header-title">
+
+<span class="ice">
+LIVE
+</span>
+
+<span class="fire">
+PACK CHAT
+</span>
+
+</div>
+
+<div class="chat-header-info">
+Messages from the Team Wolfpack community
+</div>
+
+</div>
+
+
+<div
+  id="messages"
+  class="messages"
+>
+
+<div class="empty-message">
+Connecting to Pack Chat...
+</div>
+
+</div>
+
+
+<div class="composer">
+
+<textarea
+  id="messageInput"
+  class="message-input"
+  maxlength="500"
+  placeholder="Choose your Pack Name first..."
+  disabled
+></textarea>
+
+<button
+  id="sendButton"
+  class="send-button"
+  type="button"
+  disabled
+>
+SEND
+</button>
+
+</div>
+
+<div
+  id="characterCount"
+  class="character-count"
+>
+0 / 500
+</div>
+
+</div>
+
+
+<div class="safety">
+Please keep Pack Chat respectful. Do not share private information such as your address, passwords or financial details.
+</div>
+
+
+<a
+  class="back"
+  href="more.html"
+  onclick="gtag('event','navigation_click',{
+    source:'Pack Chat',
+    destination:'More'
+  });"
+>
+‹ BACK TO MORE
+</a>
+
+
+</main>
+
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottom-nav">
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+<span class="nav-icon">⌂</span>
+HOME
+</a>
+
+<a
+  class="nav-item"
+  href="fighters.html"
+>
+<span class="nav-icon">♟</span>
+FIGHTERS
+</a>
+
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
+<span class="nav-icon">♜</span>
+FIGHTS
+</a>
+
+<a
+  class="nav-item active"
+  href="more.html"
+>
+<span class="nav-icon">☰</span>
+MORE
+</a>
+
+</nav>
+
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+import {
+  getAuth,
+  signInAnonymously,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  limit,
+  onSnapshot,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
+const firebaseConfig = {
+
+  apiKey:
+    "AIzaSyC06RDrqpXddbYBJqyeGvRkmtxQ0apaaPY",
+
+  authDomain:
+    "team-wolfpack-app.firebaseapp.com",
+
+  projectId:
+    "team-wolfpack-app",
+
+  storageBucket:
+    "team-wolfpack-app.firebasestorage.app",
+
+  messagingSenderId:
+    "1070414578856",
+
+  appId:
+    "1:1070414578856:web:df14e7d387e658eeae2e9d",
+
+  measurementId:
+    "G-6JTCE2N9LZ"
+
+};
+
+
+const app =
+  initializeApp(firebaseConfig);
+
+const auth =
+  getAuth(app);
+
+const db =
+  getFirestore(app);
+
+
+const status =
+  document.getElementById("status");
+
+const messages =
+  document.getElementById("messages");
+
+const nameInput =
+  document.getElementById("nameInput");
+
+const saveName =
+  document.getElementById("saveName");
+
+const messageInput =
+  document.getElementById("messageInput");
+
+const sendButton =
+  document.getElementById("sendButton");
+
+const characterCount =
+  document.getElementById("characterCount");
+
+
+let currentUser = null;
+
+let packName =
+  localStorage.getItem("teamWolfpackChatName") || "";
+
+let sending = false;
+
+
+if(packName){
+
+  nameInput.value =
+    packName;
+
+}
+
+
+function updateComposer(){
+
+  const ready =
+    currentUser &&
+    packName.trim().length > 0;
+
+  messageInput.disabled =
+    !ready;
+
+  sendButton.disabled =
+    !ready;
+
+  messageInput.placeholder =
+    ready
+      ? "Write a message..."
+      : "Choose your Pack Name first...";
+
+}
+
+
+saveName.addEventListener(
+  "click",
+  function(){
+
+    const newName =
+      nameInput.value.trim();
+
+    if(
+      newName.length < 1 ||
+      newName.length > 30
+    ){
+      return;
+    }
+
+    packName =
+      newName;
+
+    localStorage.setItem(
+      "teamWolfpackChatName",
+      packName
+    );
+
+    updateComposer();
+
+    messageInput.focus();
+
+    gtag(
+      "event",
+      "chat_name_saved"
+    );
+
+  }
+);
+
+
+nameInput.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Enter"){
+
+      event.preventDefault();
+
+      saveName.click();
+
+    }
+
+  }
+);
+
+
+messageInput.addEventListener(
+  "input",
+  function(){
+
+    characterCount.textContent =
+      messageInput.value.length +
+      " / 500";
+
+  }
+);
+
+
+messageInput.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      event.key === "Enter" &&
+      !event.shiftKey
+    ){
+
+      event.preventDefault();
+
+      sendMessage();
+
+    }
+
+  }
+);
+
+
+sendButton.addEventListener(
+  "click",
+  sendMessage
+);
+
+
+async function sendMessage(){
+
+  if(
+    !currentUser ||
+    !packName ||
+    sending
+  ){
+    return;
+  }
+
+  const text =
+    messageInput.value.trim();
+
+  if(
+    text.length < 1 ||
+    text.length > 500
+  ){
+    return;
+  }
+
+  sending = true;
+
+  sendButton.disabled = true;
+
+
+  try{
+
+    await addDoc(
+      collection(db, "messages"),
+      {
+        uid:
+          currentUser.uid,
+
+        name:
+          packName,
+
+        text:
+          text,
+
+        createdAt:
+          serverTimestamp()
+      }
+    );
+
+
+    messageInput.value = "";
+
+    characterCount.textContent =
+      "0 / 500";
+
+
+    gtag(
+      "event",
+      "chat_message_sent"
+    );
+
+
+  }catch(error){
+
+    console.error(
+      "Unable to send message:",
+      error
+    );
+
+    status.textContent =
+      "MESSAGE COULD NOT BE SENT";
+
+    status.className =
+      "status error";
+
+  }finally{
+
+    sending = false;
+
+    updateComposer();
+
+    messageInput.focus();
+
+  }
+
+}
+
+
+function escapeHTML(value){
+
+  const element =
+    document.createElement("div");
+
+  element.textContent =
+    value;
+
+  return element.innerHTML;
+
+}
+
+
+function displayTime(timestamp){
+
+  if(!timestamp){
+    return "Sending...";
+  }
+
+  try{
+
+    return timestamp
+      .toDate()
+      .toLocaleTimeString(
+        [],
+        {
+          hour:"2-digit",
+          minute:"2-digit"
+        }
+      );
+
+  }catch(error){
+
+    return "";
+
+  }
+
+}
+
+
+function startMessages(){
+
+  const messagesQuery =
+    query(
+      collection(db, "messages"),
+      orderBy("createdAt", "asc"),
+      limit(100)
+    );
+
+
+  onSnapshot(
+    messagesQuery,
+
+    function(snapshot){
+
+      if(snapshot.empty){
+
+        messages.innerHTML =
+          '<div class="empty-message">' +
+          'No messages yet.<br>' +
+          'Be the first to say hello to the pack.' +
+          '</div>';
+
+        return;
+      }
+
+
+      let html = "";
+
+
+      snapshot.forEach(
+        function(documentSnapshot){
+
+          const data =
+            documentSnapshot.data();
+
+          const mine =
+            currentUser &&
+            data.uid === currentUser.uid;
+
+
+          html +=
+            '<div class="message ' +
+            (mine ? "mine" : "") +
+            '">' +
+
+            '<div class="message-name">' +
+            escapeHTML(data.name || "Pack Member") +
+            '</div>' +
+
+            '<div class="message-bubble">' +
+            escapeHTML(data.text || "") +
+            '</div>' +
+
+            '<div class="message-time">' +
+            displayTime(data.createdAt) +
+            '</div>' +
+
+            '</div>';
+
+        }
+      );
+
+
+      messages.innerHTML =
+        html;
+
+
+      messages.scrollTop =
+        messages.scrollHeight;
+
+    },
+
+    function(error){
+
+      console.error(
+        "Chat listener error:",
+        error
+      );
+
+      status.textContent =
+        "PACK CHAT CONNECTION ERROR";
+
+      status.className =
+        "status error";
+
+    }
+  );
+
+}
+
+
+onAuthStateChanged(
+  auth,
+  function(user){
+
+    if(user){
+
+      currentUser =
+        user;
+
+      status.textContent =
+        "● PACK CHAT CONNECTED";
+
+      status.className =
+        "status connected";
+
+      updateComposer();
+
+      startMessages();
+
+    }
+
+  }
+);
+
+
+signInAnonymously(auth)
+  .catch(
+    function(error){
+
+      console.error(
+        "Anonymous sign-in failed:",
+        error
+      );
+
+      status.textContent =
+        "UNABLE TO CONNECT TO PACK CHAT";
+
+      status.className =
+        "status error";
+
+    }
+  );
+
+
+</script>
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+if("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
