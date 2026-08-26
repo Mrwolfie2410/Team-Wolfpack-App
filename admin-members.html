@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<meta name="theme-color" content="#050505">
+
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<title>Member Moderation | Team Wolfpack</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color:#fff;
+
+  padding-bottom:40px;
+
+  background:
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 35%,
+      rgba(255,85,0,.22),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
+}
+
+
+/* HEADER */
+
+.header{
+  text-align:center;
+
+  padding:
+    25px
+    18px
+    18px;
+}
+
+.logo{
+  width:95px;
+  height:95px;
+
+  object-fit:contain;
+}
+
+.brand{
+  margin-top:5px;
+
+  font-size:12px;
+
+  font-weight:900;
+
+  letter-spacing:4px;
+
+  color:#67dcff;
+}
+
+.title{
+  margin-top:18px;
+
+  font-size:28px;
+
+  font-weight:900;
+}
+
+.ice{
+  color:#67dcff;
+}
+
+.fire{
+  color:#ff751c;
+}
+
+.subtitle{
+  margin-top:8px;
+
+  color:#999;
+
+  font-size:11px;
+
+  line-height:1.5;
+}
+
+.line{
+  width:100%;
+
+  max-width:430px;
+
+  height:2px;
+
+  margin:
+    20px
+    auto
+    0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
+}
+
+
+/* CONTENT */
+
+.content{
+  width:100%;
+
+  max-width:600px;
+
+  margin:auto;
+
+  padding:
+    8px
+    16px
+    50px;
+}
+
+
+/* STATUS */
+
+.status{
+  text-align:center;
+
+  margin-bottom:15px;
+
+  padding:10px;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  color:#aaa;
+}
+
+.status.admin{
+  color:#ff751c;
+}
+
+.status.error{
+  color:#ff751c;
+}
+
+
+/* ACCESS DENIED */
+
+.access-denied{
+  display:none;
+
+  padding:
+    25px
+    18px;
+
+  border-radius:14px;
+
+  text-align:center;
+
+  border:
+    1px solid rgba(255,117,28,.35);
+
+  background:
+    rgba(50,10,0,.35);
+}
+
+.access-denied.show{
+  display:block;
+}
+
+.access-title{
+  color:#ff751c;
+
+  font-size:18px;
+
+  font-weight:900;
+}
+
+.access-text{
+  margin-top:10px;
+
+  color:#aaa;
+
+  font-size:11px;
+
+  line-height:1.6;
+}
+
+
+/* ADMIN BAR */
+
+.admin-bar{
+  display:none;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+  margin-bottom:15px;
+
+  padding:
+    14px
+    16px;
+
+  border-radius:12px;
+
+  border:
+    1px solid rgba(255,117,28,.35);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,150,210,.12),
+      rgba(255,90,0,.16)
+    );
+}
+
+.admin-bar.show{
+  display:flex;
+}
+
+.admin-name{
+  font-size:11px;
+
+  font-weight:900;
+}
+
+.admin-badge{
+  display:inline-block;
+
+  margin-left:6px;
+
+  padding:
+    4px
+    7px;
+
+  border-radius:20px;
+
+  background:#ff751c;
+
+  color:#050505;
+
+  font-size:8px;
+
+  font-weight:900;
+}
+
+
+/* SUMMARY */
+
+.summary{
+  display:none;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:8px;
+
+  margin-bottom:16px;
+}
+
+.summary.show{
+  display:grid;
+}
+
+.summary-card{
+  padding:
+    14px
+    8px;
+
+  text-align:center;
+
+  border-radius:11px;
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  background:
+    rgba(8,8,8,.78);
+}
+
+.summary-number{
+  font-size:24px;
+
+  font-weight:900;
+
+  color:#ff751c;
+}
+
+.summary-label{
+  margin-top:4px;
+
+  color:#67dcff;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:.5px;
+}
+
+
+/* MEMBER LIST */
+
+.members{
+  display:none;
+}
+
+.members.show{
+  display:block;
+}
+
+.empty{
+  padding:
+    35px
+    20px;
+
+  text-align:center;
+
+  border-radius:14px;
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  background:
+    rgba(8,8,8,.75);
+
+  color:#777;
+
+  font-size:12px;
+
+  line-height:1.6;
+}
+
+
+/* MEMBER CARD */
+
+.member-card{
+  margin-bottom:14px;
+
+  padding:17px;
+
+  border-radius:14px;
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(0,150,210,.08),
+      rgba(8,8,8,.95) 48%,
+      rgba(255,90,0,.10)
+    );
+}
+
+.member-top{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:10px;
+}
+
+.member-name{
+  font-size:15px;
+
+  font-weight:900;
+}
+
+.status-badge{
+  display:inline-block;
+
+  padding:
+    5px
+    8px;
+
+  border-radius:20px;
+
+  font-size:8px;
+
+  font-weight:900;
+}
+
+.status-badge.muted{
+  color:#050505;
+
+  background:#ffb347;
+}
+
+.status-badge.blocked{
+  color:#fff;
+
+  background:#b52600;
+}
+
+.status-badge.active{
+  color:#00131b;
+
+  background:#67dcff;
+}
+
+.label{
+  margin-top:13px;
+
+  color:#67dcff;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+.value{
+  margin-top:4px;
+
+  color:#aaa;
+
+  font-size:10px;
+
+  line-height:1.5;
+
+  word-break:break-all;
+}
+
+
+/* ACTIONS */
+
+.actions{
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:8px;
+
+  margin-top:15px;
+}
+
+.unmute-button,
+.unblock-button,
+.remove-button{
+  padding:
+    11px
+    8px;
+
+  border-radius:9px;
+
+  cursor:pointer;
+
+  font-size:9px;
+
+  font-weight:900;
+}
+
+.unmute-button{
+  border:
+    1px solid rgba(255,180,71,.35);
+
+  color:#ffb347;
+
+  background:
+    rgba(100,60,0,.08);
+}
+
+.unblock-button{
+  border:
+    1px solid rgba(255,80,50,.45);
+
+  color:#ff7957;
+
+  background:
+    rgba(100,20,0,.12);
+}
+
+.remove-button{
+  grid-column:
+    1
+    /
+    -1;
+
+  border:
+    1px solid rgba(103,220,255,.30);
+
+  color:#67dcff;
+
+  background:
+    rgba(0,150,210,.06);
+}
+
+button:disabled{
+  opacity:.4;
+
+  cursor:not-allowed;
+}
+
+
+/* NAV BUTTONS */
+
+.nav-grid{
+  display:none;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:8px;
+
+  margin-top:16px;
+}
+
+.nav-grid.show{
+  display:grid;
+}
+
+.nav-button{
+  display:block;
+
+  padding:14px;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  color:#fff;
+
+  border:
+    1px solid #59d9ff;
+
+  border-radius:11px;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.10),
+      rgba(255,90,0,.10)
+    );
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<a href="index.html">
+
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
+
+</a>
+
+<div class="brand">
+TEAM WOLFPACK
+</div>
+
+<h1 class="title">
+
+<span class="ice">
+MEMBER
+</span>
+
+<span class="fire">
+MODERATION
+</span>
+
+</h1>
+
+<p class="subtitle">
+Manage muted and blocked Pack Chat members.
+</p>
+
+<div class="line"></div>
+
+</header>
+
+
+<main class="content">
+
+
+<div
+  id="status"
+  class="status"
+>
+CHECKING ADMIN ACCESS...
+</div>
+
+
+<!-- ACCESS DENIED -->
+
+<div
+  id="accessDenied"
+  class="access-denied"
+>
+
+<div class="access-title">
+ADMIN ACCESS REQUIRED
+</div>
+
+<div class="access-text">
+Sign into Pack Chat using an authorised Team Wolfpack administrator account before opening Member Moderation.
+</div>
+
+<div
+  class="nav-grid show"
+>
+
+<a
+  class="nav-button"
+  href="chat.html"
+>
+PACK CHAT
+</a>
+
+<a
+  class="nav-button"
+  href="admin-reports.html"
+>
+ADMIN REPORTS
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ADMIN -->
+
+<div
+  id="adminBar"
+  class="admin-bar"
+>
+
+<div class="admin-name">
+
+<span id="adminName"></span>
+
+<span class="admin-badge">
+ADMIN
+</span>
+
+</div>
+
+<div>
+MEMBER MANAGEMENT
+</div>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<div
+  id="summary"
+  class="summary"
+>
+
+<div class="summary-card">
+
+<div
+  id="totalCount"
+  class="summary-number"
+>
+0
+</div>
+
+<div class="summary-label">
+RESTRICTED
+</div>
+
+</div>
+
+
+<div class="summary-card">
+
+<div
+  id="mutedCount"
+  class="summary-number"
+>
+0
+</div>
+
+<div class="summary-label">
+MUTED
+</div>
+
+</div>
+
+
+<div class="summary-card">
+
+<div
+  id="blockedCount"
+  class="summary-number"
+>
+0
+</div>
+
+<div class="summary-label">
+BLOCKED
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MEMBERS -->
+
+<div
+  id="members"
+  class="members"
+></div>
+
+
+<!-- ADMIN NAV -->
+
+<div
+  id="adminNavigation"
+  class="nav-grid"
+>
+
+<a
+  class="nav-button"
+  href="chat.html"
+>
+‹ PACK CHAT
+</a>
+
+<a
+  class="nav-button"
+  href="admin-reports.html"
+>
+ADMIN REPORTS
+</a>
+
+</div>
+
+
+</main>
+
+
+<script type="module">
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+
+import {
+  getAuth,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+import {
+  getFirestore,
+  collection,
+  onSnapshot,
+  setDoc,
+  deleteDoc,
+  doc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
+const firebaseConfig = {
+
+  apiKey:
+    "AIzaSyC06RDrqpXodbYBJqyeGvRkmtxQGapaaPY",
+
+  authDomain:
+    "team-wolfpack-app.firebaseapp.com",
+
+  projectId:
+    "team-wolfpack-app",
+
+  storageBucket:
+    "team-wolfpack-app.firebasestorage.app",
+
+  messagingSenderId:
+    "1070414578856",
+
+  appId:
+    "1:1070414578856:web:df14e7d387e658eeae2e9d",
+
+  measurementId:
+    "G-6JTCE2N9LZ"
+
+};
+
+
+/* ADMINS */
+
+const ADMINS = {
+
+  "PRGa9TsCW0QDn1QtoUXyYjEi7YB3":
+    "MR WOLFIE",
+
+  "SlpEQYl94DaH6j42QUyl8Kv2ujJ3":
+    "MRS WOLFIE"
+
+};
+
+
+const app =
+  initializeApp(
+    firebaseConfig
+  );
+
+
+const auth =
+  getAuth(
+    app
+  );
+
+
+const db =
+  getFirestore(
+    app
+  );
+
+
+/* ELEMENTS */
+
+const status =
+  document.getElementById(
+    "status"
+  );
+
+
+const accessDenied =
+  document.getElementById(
+    "accessDenied"
+  );
+
+
+const adminBar =
+  document.getElementById(
+    "adminBar"
+  );
+
+
+const adminName =
+  document.getElementById(
+    "adminName"
+  );
+
+
+const summary =
+  document.getElementById(
+    "summary"
+  );
+
+
+const totalCount =
+  document.getElementById(
+    "totalCount"
+  );
+
+
+const mutedCount =
+  document.getElementById(
+    "mutedCount"
+  );
+
+
+const blockedCount =
+  document.getElementById(
+    "blockedCount"
+  );
+
+
+const members =
+  document.getElementById(
+    "members"
+  );
+
+
+const adminNavigation =
+  document.getElementById(
+    "adminNavigation"
+  );
+
+
+let currentAdmin =
+  null;
+
+
+let unsubscribeModeration =
+  null;
+
+
+/* ESCAPE */
+
+function escapeHTML(
+  value
+){
+
+  const element =
+    document.createElement(
+      "div"
+    );
+
+
+  element.textContent =
+    value || "";
+
+
+  return element.innerHTML;
+
+}
+
+
+/* UPDATE MODERATION */
+
+async function updateModeration(
+  uid,
+  name,
+  muted,
+  blocked
+){
+
+  if(
+    !currentAdmin ||
+    ADMINS[uid]
+  ){
+
+    return;
+
+  }
+
+
+  try{
+
+    await setDoc(
+      doc(
+        db,
+        "moderation",
+        uid
+      ),
+      {
+
+        uid:
+          uid,
+
+        name:
+          name || "Pack Member",
+
+        muted:
+          Boolean(
+            muted
+          ),
+
+        blocked:
+          Boolean(
+            blocked
+          ),
+
+        updatedAt:
+          serverTimestamp(),
+
+        updatedBy:
+          currentAdmin.uid
+
+      }
+    );
+
+
+  }catch(error){
+
+    console.error(
+      error
+    );
+
+
+    window.alert(
+      "Unable to update this Pack member."
+    );
+
+  }
+
+}
+
+
+/* UNMUTE */
+
+async function unmuteMember(
+  uid,
+  name,
+  blocked
+){
+
+  const confirmed =
+    window.confirm(
+      "Unmute " +
+      name +
+      "?"
+    );
+
+
+  if(
+    !confirmed
+  ){
+
+    return;
+
+  }
+
+
+  await updateModeration(
+    uid,
+    name,
+    false,
+    blocked
+  );
+
+}
+
+
+/* UNBLOCK */
+
+async function unblockMember(
+  uid,
+  name,
+  muted
+){
+
+  const confirmed =
+    window.confirm(
+      "Unblock " +
+      name +
+      "?"
+    );
+
+
+  if(
+    !confirmed
+  ){
+
+    return;
+
+  }
+
+
+  await updateModeration(
+    uid,
+    name,
+    muted,
+    false
+  );
+
+}
+
+
+/* REMOVE RECORD */
+
+async function removeModeration(
+  uid,
+  name
+){
+
+  const confirmed =
+    window.confirm(
+      "Remove all moderation restrictions for " +
+      name +
+      "?"
+    );
+
+
+  if(
+    !confirmed
+  ){
+
+    return;
+
+  }
+
+
+  try{
+
+    await deleteDoc(
+      doc(
+        db,
+        "moderation",
+        uid
+      )
+    );
+
+
+  }catch(error){
+
+    console.error(
+      error
+    );
+
+
+    window.alert(
+      "Unable to remove the moderation record."
+    );
+
+  }
+
+}
+
+
+/* RENDER */
+
+function renderMembers(
+  records
+){
+
+  let muted =
+    0;
+
+
+  let blocked =
+    0;
+
+
+  const restricted =
+    records.filter(
+      function(record){
+
+        return (
+          record.muted === true ||
+          record.blocked === true
+        );
+
+      }
+    );
+
+
+  restricted.forEach(
+    function(record){
+
+      if(
+        record.muted === true
+      ){
+
+        muted++;
+
+      }
+
+
+      if(
+        record.blocked === true
+      ){
+
+        blocked++;
+
+      }
+
+    }
+  );
+
+
+  totalCount.textContent =
+    restricted.length;
+
+
+  mutedCount.textContent =
+    muted;
+
+
+  blockedCount.textContent =
+    blocked;
+
+
+  if(
+    restricted.length === 0
+  ){
+
+    members.innerHTML =
+      '<div class="empty">' +
+      'NO RESTRICTED MEMBERS<br><br>' +
+      'There are currently no muted or blocked Pack Chat members.' +
+      '</div>';
+
+
+    return;
+
+  }
+
+
+  let html =
+    "";
+
+
+  restricted.forEach(
+    function(record){
+
+      let statusClass =
+        "active";
+
+
+      let statusText =
+        "ACTIVE";
+
+
+      if(
+        record.blocked
+      ){
+
+        statusClass =
+          "blocked";
+
+
+        statusText =
+          "BLOCKED";
+
+      }else if(
+        record.muted
+      ){
+
+        statusClass =
+          "muted";
+
+
+        statusText =
+          "MUTED";
+
+      }
+
+
+      html +=
+
+        '<div class="member-card">' +
+
+
+        '<div class="member-top">' +
+
+
+        '<div class="member-name">' +
+        escapeHTML(
+          record.name ||
+          "Pack Member"
+        ) +
+        '</div>' +
+
+
+        '<div class="status-badge ' +
+        statusClass +
+        '">' +
+        statusText +
+        '</div>' +
+
+
+        '</div>' +
+
+
+        '<div class="label">' +
+        'MEMBER UID' +
+        '</div>' +
+
+
+        '<div class="value">' +
+        escapeHTML(
+          record.uid
+        ) +
+        '</div>' +
+
+
+        '<div class="actions">';
+
+
+      if(
+        record.muted
+      ){
+
+        html +=
+
+          '<button ' +
+          'class="unmute-button" ' +
+          'type="button" ' +
+          'data-action="unmute" ' +
+          'data-uid="' +
+          escapeHTML(
+            record.uid
+          ) +
+          '" ' +
+          'data-name="' +
+          escapeHTML(
+            record.name ||
+            "Pack Member"
+          ) +
+          '" ' +
+          'data-blocked="' +
+          (
+            record.blocked
+              ? "true"
+              : "false"
+          ) +
+          '">' +
+          'UNMUTE MEMBER' +
+          '</button>';
+
+      }
+
+
+      if(
+        record.blocked
+      ){
+
+        html +=
+
+          '<button ' +
+          'class="unblock-button" ' +
+          'type="button" ' +
+          'data-action="unblock" ' +
+          'data-uid="' +
+          escapeHTML(
+            record.uid
+          ) +
+          '" ' +
+          'data-name="' +
+          escapeHTML(
+            record.name ||
+            "Pack Member"
+          ) +
+          '" ' +
+          'data-muted="' +
+          (
+            record.muted
+              ? "true"
+              : "false"
+          ) +
+          '">' +
+          'UNBLOCK MEMBER' +
+          '</button>';
+
+      }
+
+
+      html +=
+
+        '<button ' +
+        'class="remove-button" ' +
+        'type="button" ' +
+        'data-action="remove" ' +
+        'data-uid="' +
+        escapeHTML(
+          record.uid
+        ) +
+        '" ' +
+        'data-name="' +
+        escapeHTML(
+          record.name ||
+          "Pack Member"
+        ) +
+        '">' +
+        'REMOVE ALL RESTRICTIONS' +
+        '</button>' +
+
+
+        '</div>' +
+
+
+        '</div>';
+
+    }
+  );
+
+
+  members.innerHTML =
+    html;
+
+
+  /* UNMUTE */
+
+  members
+    .querySelectorAll(
+      '[data-action="unmute"]'
+    )
+    .forEach(
+      function(button){
+
+        button.addEventListener(
+          "click",
+          function(){
+
+            unmuteMember(
+
+              button.dataset.uid,
+
+              button.dataset.name,
+
+              button.dataset.blocked ===
+                "true"
+
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* UNBLOCK */
+
+  members
+    .querySelectorAll(
+      '[data-action="unblock"]'
+    )
+    .forEach(
+      function(button){
+
+        button.addEventListener(
+          "click",
+          function(){
+
+            unblockMember(
+
+              button.dataset.uid,
+
+              button.dataset.name,
+
+              button.dataset.muted ===
+                "true"
+
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* REMOVE */
+
+  members
+    .querySelectorAll(
+      '[data-action="remove"]'
+    )
+    .forEach(
+      function(button){
+
+        button.addEventListener(
+          "click",
+          function(){
+
+            removeModeration(
+
+              button.dataset.uid,
+
+              button.dataset.name
+
+            );
+
+          }
+        );
+
+      }
+    );
+
+}
+
+
+/* START MODERATION */
+
+function startModeration(){
+
+  if(
+    unsubscribeModeration
+  ){
+
+    unsubscribeModeration();
+
+  }
+
+
+  unsubscribeModeration =
+    onSnapshot(
+      collection(
+        db,
+        "moderation"
+      ),
+
+
+      function(snapshot){
+
+        const records =
+          [];
+
+
+        snapshot.forEach(
+          function(item){
+
+            records.push(
+              item.data()
+            );
+
+          }
+        );
+
+
+        renderMembers(
+          records
+        );
+
+      },
+
+
+      function(error){
+
+        console.error(
+          error
+        );
+
+
+        status.textContent =
+          "UNABLE TO LOAD MEMBER MODERATION";
+
+
+        status.className =
+          "status error";
+
+      }
+
+    );
+
+}
+
+
+/* AUTH */
+
+onAuthStateChanged(
+  auth,
+  function(user){
+
+    if(
+      user &&
+      ADMINS[
+        user.uid
+      ]
+    ){
+
+      currentAdmin =
+        user;
+
+
+      const name =
+        ADMINS[
+          user.uid
+        ];
+
+
+      status.textContent =
+        "● " +
+        name +
+        " • ADMIN CONNECTED";
+
+
+      status.className =
+        "status admin";
+
+
+      adminName.textContent =
+        name;
+
+
+      accessDenied.classList.remove(
+        "show"
+      );
+
+
+      adminBar.classList.add(
+        "show"
+      );
+
+
+      summary.classList.add(
+        "show"
+      );
+
+
+      members.classList.add(
+        "show"
+      );
+
+
+      adminNavigation.classList.add(
+        "show"
+      );
+
+
+      startModeration();
+
+
+      return;
+
+    }
+
+
+    currentAdmin =
+      null;
+
+
+    status.textContent =
+      "ADMIN ACCESS REQUIRED";
+
+
+    status.className =
+      "status error";
+
+
+    accessDenied.classList.add(
+      "show"
+    );
+
+
+    adminBar.classList.remove(
+      "show"
+    );
+
+
+    summary.classList.remove(
+      "show"
+    );
+
+
+    members.classList.remove(
+      "show"
+    );
+
+
+    adminNavigation.classList.remove(
+      "show"
+    );
+
+  }
+);
+
+</script>
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+if(
+  "serviceWorker"
+  in navigator
+){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
