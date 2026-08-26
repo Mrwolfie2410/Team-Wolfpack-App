@@ -1,4 +1,4 @@
-const CACHE_NAME = "team-wolfpack-v7";
+const CACHE_NAME = "team-wolfpack-v8";
 
 const APP_FILES = [
   "./",
@@ -14,12 +14,18 @@ const APP_FILES = [
   "./contact.html",
   "./socials.html",
   "./merch.html",
+  "./chat.html",
+  "./chat-rules.html",
+  "./admin-reports.html",
+  "./admin-members.html",
   "./icon-192.png",
   "./icon-512.png"
 ];
 
 
-/* INSTALL */
+/* ========================================
+   INSTALL
+======================================== */
 
 self.addEventListener("install", event => {
 
@@ -36,17 +42,31 @@ self.addEventListener("install", event => {
 
         try {
 
-          await cache.add(file);
-
-          console.log(
-            "Cached:",
-            file
+          const response = await fetch(
+            file,
+            {
+              cache: "reload"
+            }
           );
+
+          if (response.ok) {
+
+            await cache.put(
+              file,
+              response
+            );
+
+            console.log(
+              "Cached:",
+              file
+            );
+
+          }
 
         } catch (error) {
 
-          console.error(
-            "Failed to cache:",
+          console.warn(
+            "Could not cache:",
             file,
             error
           );
@@ -64,21 +84,26 @@ self.addEventListener("install", event => {
 });
 
 
-/* ACTIVATE */
+/* ========================================
+   ACTIVATE
+======================================== */
 
 self.addEventListener("activate", event => {
 
   event.waitUntil(
 
-    caches.keys().then(cacheNames => {
+    (async () => {
 
-      return Promise.all(
+      const cacheNames =
+        await caches.keys();
+
+      await Promise.all(
 
         cacheNames.map(cacheName => {
 
           if (
-            cacheName !== CACHE_NAME &&
-            cacheName.startsWith("team-wolfpack-")
+            cacheName.startsWith("team-wolfpack-") &&
+            cacheName !== CACHE_NAME
           ) {
 
             console.log(
@@ -86,7 +111,9 @@ self.addEventListener("activate", event => {
               cacheName
             );
 
-            return caches.delete(cacheName);
+            return caches.delete(
+              cacheName
+            );
 
           }
 
@@ -94,32 +121,56 @@ self.addEventListener("activate", event => {
 
       );
 
-    })
+      await self.clients.claim();
+
+      console.log(
+        "Team Wolfpack service worker activated:",
+        CACHE_NAME
+      );
+
+    })()
 
   );
-
-  self.clients.claim();
 
 });
 
 
-/* FETCH */
+/* ========================================
+   FETCH
+======================================== */
 
 self.addEventListener("fetch", event => {
 
-  if (event.request.method !== "GET") {
+  if (
+    event.request.method !== "GET"
+  ) {
     return;
   }
+
 
   const requestURL =
     new URL(event.request.url);
 
 
-  /*
-    MANIFEST
-    Always fetch the latest manifest.
-    Never serve a stale cached manifest.
-  */
+  /* ======================================
+     IGNORE FIREBASE / GOOGLE REQUESTS
+     Let browser handle them normally
+  ====================================== */
+
+  if (
+    requestURL.origin !==
+    self.location.origin
+  ) {
+
+    return;
+
+  }
+
+
+  /* ======================================
+     MANIFEST
+     ALWAYS GET NEWEST VERSION
+  ====================================== */
 
   if (
     requestURL.pathname.endsWith(
@@ -143,22 +194,36 @@ self.addEventListener("fetch", event => {
   }
 
 
-  /*
-    HTML NAVIGATION
-    Network first.
-    Update the cache whenever the newest
-    HTML page is successfully downloaded.
-  */
+  /* ======================================
+     HTML PAGES
+
+     ALWAYS TRY NETWORK FIRST.
+
+     cache:"no-store" prevents the browser's
+     normal HTTP cache from returning an
+     older copy before the service worker
+     sees it.
+  ====================================== */
 
   if (
-    event.request.mode === "navigate"
+    event.request.mode === "navigate" ||
+    requestURL.pathname.endsWith(".html")
   ) {
 
     event.respondWith(
 
-      fetch(event.request)
+      (async () => {
 
-        .then(response => {
+        try {
+
+          const response =
+            await fetch(
+              event.request,
+              {
+                cache: "no-store"
+              }
+            );
+
 
           if (
             response &&
@@ -168,47 +233,72 @@ self.addEventListener("fetch", event => {
             const copy =
               response.clone();
 
-            caches
-              .open(CACHE_NAME)
-              .then(cache => {
 
-                cache.put(
-                  event.request,
-                  copy
-                );
+            const cache =
+              await caches.open(
+                CACHE_NAME
+              );
 
-              })
-              .catch(error => {
 
-                console.error(
-                  "Navigation cache update failed:",
-                  error
-                );
-
-              });
+            await cache.put(
+              event.request,
+              copy
+            );
 
           }
 
+
           return response;
 
-        })
 
-        .catch(async () => {
+        } catch (error) {
 
-          const cachedResponse =
+          console.warn(
+            "Network unavailable. Trying cached page.",
+            error
+          );
+
+
+          const cached =
             await caches.match(
               event.request
             );
 
-          if (cachedResponse) {
-            return cachedResponse;
+
+          if (cached) {
+
+            return cached;
+
           }
 
-          return caches.match(
-            "./index.html"
+
+          const home =
+            await caches.match(
+              "./index.html"
+            );
+
+
+          if (home) {
+
+            return home;
+
+          }
+
+
+          return new Response(
+            "Team Wolfpack is currently offline.",
+            {
+              status: 503,
+              headers: {
+                "Content-Type":
+                  "text/plain"
+              }
+            }
           );
 
-        })
+        }
+
+      })()
 
     );
 
@@ -217,65 +307,102 @@ self.addEventListener("fetch", event => {
   }
 
 
-  /*
-    SAME-ORIGIN STATIC FILES
-    Network first with cached fallback.
-  */
+  /* ======================================
+     SERVICE WORKER FILE ITSELF
+
+     NEVER CACHE IT
+  ====================================== */
 
   if (
-    requestURL.origin ===
-    self.location.origin
+    requestURL.pathname.endsWith(
+      "/service-worker.js"
+    )
   ) {
 
     event.respondWith(
 
-      fetch(event.request)
-
-        .then(response => {
-
-          if (
-            response &&
-            response.ok
-          ) {
-
-            const copy =
-              response.clone();
-
-            caches
-              .open(CACHE_NAME)
-              .then(cache => {
-
-                cache.put(
-                  event.request,
-                  copy
-                );
-
-              })
-              .catch(error => {
-
-                console.error(
-                  "Static cache update failed:",
-                  error
-                );
-
-              });
-
-          }
-
-          return response;
-
-        })
-
-        .catch(() => {
-
-          return caches.match(
-            event.request
-          );
-
-        })
+      fetch(
+        event.request,
+        {
+          cache: "no-store"
+        }
+      )
 
     );
 
+    return;
+
   }
+
+
+  /* ======================================
+     STATIC FILES
+     NETWORK FIRST
+  ====================================== */
+
+  event.respondWith(
+
+    (async () => {
+
+      try {
+
+        const response =
+          await fetch(
+            event.request,
+            {
+              cache: "no-cache"
+            }
+          );
+
+
+        if (
+          response &&
+          response.ok
+        ) {
+
+          const copy =
+            response.clone();
+
+
+          const cache =
+            await caches.open(
+              CACHE_NAME
+            );
+
+
+          await cache.put(
+            event.request,
+            copy
+          );
+
+        }
+
+
+        return response;
+
+
+      } catch (error) {
+
+
+        const cached =
+          await caches.match(
+            event.request
+          );
+
+
+        if (cached) {
+
+          return cached;
+
+        }
+
+
+        throw error;
+
+      }
+
+    })()
+
+  );
 
 });
