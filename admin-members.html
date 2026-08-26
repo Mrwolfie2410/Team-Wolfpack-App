@@ -22,7 +22,6 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 
-
 <style>
 
 *{
@@ -70,37 +69,26 @@ body{
 
 .header{
   text-align:center;
-
-  padding:
-    25px
-    18px
-    18px;
+  padding:25px 18px 18px;
 }
 
 .logo{
   width:95px;
   height:95px;
-
   object-fit:contain;
 }
 
 .brand{
   margin-top:5px;
-
   font-size:12px;
-
   font-weight:900;
-
   letter-spacing:4px;
-
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
-
   font-size:29px;
-
   font-weight:900;
 }
 
@@ -114,25 +102,16 @@ body{
 
 .subtitle{
   margin-top:8px;
-
   color:#999;
-
   font-size:11px;
-
   line-height:1.5;
 }
 
 .line{
   width:100%;
-
   max-width:470px;
-
   height:2px;
-
-  margin:
-    20px
-    auto
-    0;
+  margin:20px auto 0;
 
   background:
     linear-gradient(
@@ -148,15 +127,9 @@ body{
 
 .content{
   width:100%;
-
   max-width:660px;
-
   margin:auto;
-
-  padding:
-    8px
-    16px
-    70px;
+  padding:8px 16px 70px;
 }
 
 
@@ -164,17 +137,11 @@ body{
 
 .status{
   text-align:center;
-
   margin-bottom:15px;
-
   padding:10px;
-
   font-size:10px;
-
   font-weight:900;
-
   letter-spacing:1px;
-
   color:#aaa;
 }
 
@@ -191,20 +158,11 @@ body{
 
 .access-denied{
   display:none;
-
-  padding:
-    25px
-    18px;
-
+  padding:25px 18px;
   border-radius:14px;
-
   text-align:center;
-
-  border:
-    1px solid rgba(255,117,28,.35);
-
-  background:
-    rgba(50,10,0,.35);
+  border:1px solid rgba(255,117,28,.35);
+  background:rgba(50,10,0,.35);
 }
 
 .access-denied.show{
@@ -213,19 +171,14 @@ body{
 
 .access-title{
   color:#ff751c;
-
   font-size:18px;
-
   font-weight:900;
 }
 
 .access-text{
   margin-top:10px;
-
   color:#aaa;
-
   font-size:11px;
-
   line-height:1.6;
 }
 
@@ -234,23 +187,13 @@ body{
 
 .admin-bar{
   display:none;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:10px;
-
   margin-bottom:15px;
-
-  padding:
-    14px
-    16px;
-
+  padding:14px 16px;
   border-radius:12px;
-
-  border:
-    1px solid rgba(255,117,28,.35);
+  border:1px solid rgba(255,117,28,.35);
 
   background:
     linear-gradient(
@@ -266,35 +209,23 @@ body{
 
 .admin-name{
   font-size:11px;
-
   font-weight:900;
 }
 
 .admin-badge{
   display:inline-block;
-
   margin-left:6px;
-
-  padding:
-    4px
-    7px;
-
+  padding:4px 7px;
   border-radius:20px;
-
   background:#ff751c;
-
   color:#050505;
-
   font-size:8px;
-
   font-weight:900;
 }
 
 .admin-label{
   color:#67dcff;
-
   font-size:9px;
-
   font-weight:900;
 }
 
@@ -303,12 +234,8 @@ body{
 
 .summary{
   display:none;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns:repeat(5,1fr);
   gap:8px;
-
   margin-bottom:16px;
 }
 
@@ -317,26 +244,16 @@ body{
 }
 
 .summary-card{
-  padding:
-    14px
-    6px;
-
+  padding:14px 6px;
   text-align:center;
-
   border-radius:11px;
-
-  border:
-    1px solid rgba(255,255,255,.10);
-
-  background:
-    rgba(8,8,8,.78);
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(8,8,8,.78);
 }
 
 .summary-number{
   font-size:24px;
-
   font-weight:900;
-
   color:#ff751c;
 }
 
@@ -344,15 +261,15 @@ body{
   color:#67dcff;
 }
 
+.summary-card.reserved-summary .summary-number{
+  color:#ffb347;
+}
+
 .summary-label{
   margin-top:4px;
-
   color:#aaa;
-
   font-size:8px;
-
   font-weight:900;
-
   letter-spacing:.5px;
 }
 
@@ -361,18 +278,11 @@ body{
 
 .controls{
   display:none;
-
   margin-bottom:16px;
-
   padding:14px;
-
   border-radius:13px;
-
-  border:
-    1px solid rgba(255,255,255,.10);
-
-  background:
-    rgba(8,8,8,.72);
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(8,8,8,.72);
 }
 
 .controls.show{
@@ -381,22 +291,12 @@ body{
 
 .search-input{
   width:100%;
-
-  padding:
-    13px
-    14px;
-
+  padding:13px 14px;
   color:#fff;
-
   outline:none;
-
   border-radius:10px;
-
-  border:
-    1px solid rgba(255,255,255,.14);
-
+  border:1px solid rgba(255,255,255,.14);
   background:#090909;
-
   font-size:12px;
 }
 
@@ -406,40 +306,29 @@ body{
 
 .filter-row{
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns:repeat(5,1fr);
   gap:6px;
-
   margin-top:10px;
 }
 
 .filter-button{
-  padding:
-    9px
-    5px;
-
+  padding:9px 5px;
   border-radius:8px;
-
-  border:
-    1px solid rgba(255,255,255,.10);
-
+  border:1px solid rgba(255,255,255,.10);
   background:#111;
-
   color:#888;
-
   font-size:8px;
-
   font-weight:900;
-
   cursor:pointer;
 }
 
 .filter-button.active{
   color:#050505;
-
   background:#67dcff;
+}
+
+.filter-button.reserved-filter.active{
+  background:#ffb347;
 }
 
 
@@ -454,24 +343,13 @@ body{
 }
 
 .empty{
-  padding:
-    35px
-    20px;
-
+  padding:35px 20px;
   text-align:center;
-
   border-radius:14px;
-
-  border:
-    1px solid rgba(255,255,255,.10);
-
-  background:
-    rgba(8,8,8,.75);
-
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(8,8,8,.75);
   color:#777;
-
   font-size:12px;
-
   line-height:1.6;
 }
 
@@ -480,17 +358,11 @@ body{
 
 .member-card{
   position:relative;
-
   overflow:hidden;
-
   margin-bottom:14px;
-
   padding:17px;
-
   border-radius:14px;
-
-  border:
-    1px solid rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.12);
 
   background:
     linear-gradient(
@@ -503,119 +375,126 @@ body{
 
 .member-card::before{
   content:"";
-
   position:absolute;
-
   left:0;
   top:0;
   bottom:0;
-
   width:3px;
-
   background:#4bd8ff;
 }
 
 .member-card::after{
   content:"";
-
   position:absolute;
-
   right:0;
   top:0;
   bottom:0;
-
   width:3px;
-
   background:#ff6500;
+}
+
+.member-card.reserved-member{
+  border-color:rgba(255,180,71,.38);
+}
+
+.member-card.reserved-member::before{
+  background:#ffb347;
 }
 
 .member-top{
   position:relative;
-
   z-index:2;
-
   display:flex;
-
-  align-items:center;
-
+  align-items:flex-start;
   justify-content:space-between;
-
   gap:10px;
+}
+
+.member-name-area{
+  min-width:0;
 }
 
 .member-name{
   font-size:15px;
-
   font-weight:900;
+}
+
+.member-flags{
+  margin-top:6px;
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+}
+
+.legacy-badge{
+  display:inline-block;
+  padding:4px 7px;
+  border-radius:20px;
+  color:#050505;
+  background:#ffb347;
+  font-size:7px;
+  font-weight:900;
+}
+
+.reserved-warning{
+  margin-top:11px;
+  padding:10px 11px;
+  border-radius:9px;
+  border:1px solid rgba(255,180,71,.28);
+  background:rgba(110,65,0,.14);
+  color:#ffcf81;
+  font-size:9px;
+  line-height:1.5;
+  font-weight:700;
 }
 
 .status-badge{
   display:inline-block;
-
   flex-shrink:0;
-
-  padding:
-    5px
-    8px;
-
+  padding:5px 8px;
   border-radius:20px;
-
   font-size:8px;
-
   font-weight:900;
 }
 
 .status-badge.muted{
   color:#050505;
-
   background:#ffb347;
 }
 
 .status-badge.blocked{
   color:#fff;
-
   background:#b52600;
 }
 
 .status-badge.active{
   color:#00131b;
-
   background:#67dcff;
 }
 
 .member-details{
   position:relative;
-
   z-index:2;
 }
 
 .label{
   margin-top:13px;
-
   color:#67dcff;
-
   font-size:8px;
-
   font-weight:900;
-
   letter-spacing:1px;
 }
 
 .value{
   margin-top:4px;
-
   color:#aaa;
-
   font-size:10px;
-
   line-height:1.5;
-
   word-break:break-all;
 }
 
 .message-count{
   color:#ff751c;
-
   font-weight:900;
 }
 
@@ -624,92 +503,62 @@ body{
 
 .actions{
   position:relative;
-
   z-index:2;
-
   display:grid;
-
-  grid-template-columns:
-    1fr
-    1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:8px;
-
   margin-top:15px;
 }
 
 .action-button{
   min-height:40px;
-
-  padding:
-    10px
-    7px;
-
+  padding:10px 7px;
   border-radius:9px;
-
   cursor:pointer;
-
   font-size:8px;
-
   font-weight:900;
 }
 
 .mute-button{
-  border:
-    1px solid rgba(255,180,71,.40);
-
+  border:1px solid rgba(255,180,71,.40);
   color:#ffb347;
-
-  background:
-    rgba(100,60,0,.08);
+  background:rgba(100,60,0,.08);
 }
 
 .block-button{
-  border:
-    1px solid rgba(255,80,50,.45);
-
+  border:1px solid rgba(255,80,50,.45);
   color:#ff7957;
-
-  background:
-    rgba(100,20,0,.12);
+  background:rgba(100,20,0,.12);
 }
 
 .unmute-button{
-  border:
-    1px solid rgba(255,180,71,.40);
-
+  border:1px solid rgba(255,180,71,.40);
   color:#050505;
-
   background:#ffb347;
 }
 
 .unblock-button{
-  border:
-    1px solid rgba(255,80,50,.50);
-
+  border:1px solid rgba(255,80,50,.50);
   color:#fff;
-
   background:#8f2208;
 }
 
 .clear-button{
-  grid-column:
-    1
-    /
-    -1;
-
-  border:
-    1px solid rgba(103,220,255,.35);
-
+  grid-column:1 / -1;
+  border:1px solid rgba(103,220,255,.35);
   color:#67dcff;
+  background:rgba(0,150,210,.07);
+}
 
-  background:
-    rgba(0,150,210,.07);
+.block-reserved-button{
+  grid-column:1 / -1;
+  border:1px solid rgba(255,180,71,.42);
+  color:#ffcf81;
+  background:rgba(100,60,0,.10);
 }
 
 button:disabled{
   opacity:.4;
-
   cursor:not-allowed;
 }
 
@@ -718,12 +567,8 @@ button:disabled{
 
 .nav-grid{
   display:none;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:8px;
-
   margin-top:17px;
 }
 
@@ -733,30 +578,16 @@ button:disabled{
 
 .nav-button{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   min-height:46px;
-
-  padding:
-    12px
-    8px;
-
+  padding:12px 8px;
   text-align:center;
-
   text-decoration:none;
-
   color:#fff;
-
-  border:
-    1px solid #59d9ff;
-
+  border:1px solid #59d9ff;
   border-radius:11px;
-
   font-size:9px;
-
   font-weight:900;
 
   background:
@@ -770,7 +601,7 @@ button:disabled{
 
 /* MOBILE */
 
-@media(max-width:500px){
+@media(max-width:560px){
 
   .summary{
     grid-template-columns:
@@ -783,8 +614,7 @@ button:disabled{
   }
 
   .nav-grid{
-    grid-template-columns:
-      1fr;
+    grid-template-columns:1fr;
   }
 
 }
@@ -809,11 +639,9 @@ button:disabled{
 
 </a>
 
-
 <div class="brand">
 TEAM WOLFPACK
 </div>
-
 
 <h1 class="title">
 
@@ -827,16 +655,13 @@ MEMBERS
 
 </h1>
 
-
 <p class="subtitle">
-Manage Pack Chat members, mute access and blocked accounts.
+Manage Pack Chat members, reserved identities, mute access and blocked accounts.
 </p>
-
 
 <div class="line"></div>
 
 </header>
-
 
 
 <main class="content">
@@ -864,7 +689,6 @@ ADMIN ACCESS REQUIRED
 <div class="access-text">
 Sign into Pack Chat using an authorised Team Wolfpack administrator account before opening Member Management.
 </div>
-
 
 <div class="nav-grid show">
 
@@ -981,6 +805,22 @@ BLOCKED
 
 </div>
 
+
+<div class="summary-card reserved-summary">
+
+<div
+  id="reservedCount"
+  class="summary-number"
+>
+0
+</div>
+
+<div class="summary-label">
+RESERVED
+</div>
+
+</div>
+
 </div>
 
 
@@ -1034,6 +874,14 @@ MUTED
 BLOCKED
 </button>
 
+<button
+  class="filter-button reserved-filter"
+  type="button"
+  data-filter="reserved"
+>
+RESERVED
+</button>
+
 </div>
 
 </div>
@@ -1081,20 +929,16 @@ MORE
 </main>
 
 
-
 <script type="module">
-
 
 import {
   initializeApp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
-
 import {
   getAuth,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
 
 import {
   getFirestore,
@@ -1105,7 +949,6 @@ import {
   doc,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-
 
 
 /* FIREBASE CONFIG */
@@ -1132,7 +975,6 @@ const firebaseConfig = {
 
   measurementId:
     "G-6JTCE2N9LZ"
-
 };
 
 
@@ -1147,6 +989,41 @@ const ADMINS = {
     "MRS WOLFIE"
 
 };
+
+
+/* RESERVED IDENTITIES */
+
+const RESERVED_NAMES = [
+  "mr wolfie",
+  "mrwolfie",
+  "mr wolfie 2410",
+  "mrwolfie2410",
+  "mrs wolfie",
+  "mrswolfie",
+  "mrs wolfie 2410",
+  "mrswolfie2410",
+  "team wolfpack",
+  "teamwolfpack",
+  "official team wolfpack",
+  "officialteamwolfpack",
+  "team wolfie",
+  "teamwolfie",
+  "team sloan",
+  "teamsloan",
+  "admin",
+  "administrator",
+  "moderator",
+  "mod",
+  "team wolfpack admin",
+  "team wolfpack moderator",
+  "official",
+  "official account",
+  "official team",
+  "chris",
+  "chris james",
+  "zoey",
+  "zoey james"
+];
 
 
 const app =
@@ -1214,6 +1091,11 @@ const blockedCount =
     "blockedCount"
   );
 
+const reservedCount =
+  document.getElementById(
+    "reservedCount"
+  );
+
 const controls =
   document.getElementById(
     "controls"
@@ -1266,6 +1148,91 @@ function escapeHTML(value){
     value || "";
 
   return element.innerHTML;
+
+}
+
+
+/* NORMALIZE NAME */
+
+function normalizeName(value){
+
+  return String(
+    value || ""
+  )
+  .trim()
+  .toLowerCase()
+  .replace(
+    /[\s_.-]+/g,
+    " "
+  );
+
+}
+
+
+/* RESERVED NAME CHECK */
+
+function isReservedName(name){
+
+  const normalized =
+    normalizeName(
+      name
+    );
+
+
+  if(
+    !normalized
+  ){
+
+    return false;
+
+  }
+
+
+  if(
+    RESERVED_NAMES.includes(
+      normalized
+    )
+  ){
+
+    return true;
+
+  }
+
+
+  if(
+    normalized.includes(
+      "mr wolfie"
+    )
+  ){
+
+    return true;
+
+  }
+
+
+  if(
+    normalized.includes(
+      "mrs wolfie"
+    )
+  ){
+
+    return true;
+
+  }
+
+
+  if(
+    normalized.includes(
+      "team wolfpack"
+    )
+  ){
+
+    return true;
+
+  }
+
+
+  return false;
 
 }
 
@@ -1344,7 +1311,10 @@ function buildMemberList(){
             0,
 
           lastMessage:
-            null
+            null,
+
+          namesUsed:
+            []
 
         };
 
@@ -1354,6 +1324,24 @@ function buildMemberList(){
       map[
         message.uid
       ].messageCount++;
+
+
+      if(
+        message.name &&
+        !map[
+          message.uid
+        ].namesUsed.includes(
+          message.name
+        )
+      ){
+
+        map[
+          message.uid
+        ].namesUsed.push(
+          message.name
+        );
+
+      }
 
 
       if(
@@ -1368,8 +1356,14 @@ function buildMemberList(){
 
         if(
           !current ||
-          message.createdAt.seconds >
-          current.seconds
+          (
+            message.createdAt.seconds &&
+            (
+              !current.seconds ||
+              message.createdAt.seconds >
+              current.seconds
+            )
+          )
         ){
 
           map[
@@ -1377,16 +1371,21 @@ function buildMemberList(){
           ].lastMessage =
             message.createdAt;
 
+
+          if(
+            message.name
+          ){
+
+            map[
+              message.uid
+            ].name =
+              message.name;
+
+          }
+
         }
 
-      }
-
-
-      /*
-        Use newest available name.
-      */
-
-      if(
+      }else if(
         message.name
       ){
 
@@ -1400,11 +1399,6 @@ function buildMemberList(){
     }
   );
 
-
-  /*
-    Include moderation records even when
-    the user no longer has a visible message.
-  */
 
   Object.keys(
     moderationRecords
@@ -1450,7 +1444,14 @@ function buildMemberList(){
             0,
 
           lastMessage:
-            null
+            null,
+
+          namesUsed:
+            moderation.name
+              ? [
+                  moderation.name
+                ]
+              : []
 
         };
 
@@ -1478,6 +1479,22 @@ function buildMemberList(){
           };
 
 
+        const reserved =
+          member.namesUsed.some(
+            function(name){
+
+              return isReservedName(
+                name
+              );
+
+            }
+          )
+          ||
+          isReservedName(
+            member.name
+          );
+
+
         return {
 
           ...member,
@@ -1491,7 +1508,10 @@ function buildMemberList(){
           status:
             getMemberStatus(
               moderation
-            )
+            ),
+
+          reserved:
+            reserved
 
         };
 
@@ -1502,11 +1522,17 @@ function buildMemberList(){
   combinedMembers.sort(
     function(a,b){
 
-      /*
-        Blocked first,
-        muted second,
-        active last.
-      */
+      if(
+        a.reserved !==
+        b.reserved
+      ){
+
+        return a.reserved
+          ? -1
+          : 1;
+
+      }
+
 
       const order = {
 
@@ -1602,6 +1628,19 @@ function updateSummary(){
     ).length;
 
 
+  const reserved =
+    combinedMembers.filter(
+      function(member){
+
+        return (
+          member.reserved ===
+          true
+        );
+
+      }
+    ).length;
+
+
   totalCount.textContent =
     total;
 
@@ -1613,6 +1652,28 @@ function updateSummary(){
 
   blockedCount.textContent =
     blocked;
+
+  reservedCount.textContent =
+    reserved;
+
+}
+
+
+/* GET MEMBER */
+
+function getMemberByUid(
+  uid
+){
+
+  return combinedMembers.find(
+    function(member){
+
+      return (
+        member.uid === uid
+      );
+
+    }
+  ) || null;
 
 }
 
@@ -1701,6 +1762,18 @@ async function muteMember(
   name
 ){
 
+  const member =
+    getMemberByUid(
+      uid
+    );
+
+
+  const currentlyBlocked =
+    member
+      ? member.blocked
+      : false;
+
+
   const confirmed =
     window.confirm(
       "Mute " +
@@ -1722,7 +1795,7 @@ async function muteMember(
     uid,
     name,
     true,
-    false
+    currentlyBlocked
   );
 
 }
@@ -1734,6 +1807,18 @@ async function unmuteMember(
   uid,
   name
 ){
+
+  const member =
+    getMemberByUid(
+      uid
+    );
+
+
+  const currentlyBlocked =
+    member
+      ? member.blocked
+      : false;
+
 
   const confirmed =
     window.confirm(
@@ -1756,7 +1841,7 @@ async function unmuteMember(
     uid,
     name,
     false,
-    false
+    currentlyBlocked
   );
 
 }
@@ -1768,6 +1853,18 @@ async function blockMember(
   uid,
   name
 ){
+
+  const member =
+    getMemberByUid(
+      uid
+    );
+
+
+  const currentlyMuted =
+    member
+      ? member.muted
+      : false;
+
 
   const confirmed =
     window.confirm(
@@ -1789,7 +1886,7 @@ async function blockMember(
   await updateModeration(
     uid,
     name,
-    false,
+    currentlyMuted,
     true
   );
 
@@ -1802,6 +1899,18 @@ async function unblockMember(
   uid,
   name
 ){
+
+  const member =
+    getMemberByUid(
+      uid
+    );
+
+
+  const currentlyMuted =
+    member
+      ? member.muted
+      : false;
+
 
   const confirmed =
     window.confirm(
@@ -1823,8 +1932,58 @@ async function unblockMember(
   await updateModeration(
     uid,
     name,
-    false,
+    currentlyMuted,
     false
+  );
+
+}
+
+
+/* BLOCK RESERVED LEGACY ACCOUNT */
+
+async function blockReservedMember(
+  uid,
+  name
+){
+
+  const member =
+    getMemberByUid(
+      uid
+    );
+
+
+  if(
+    !member ||
+    !member.reserved
+  ){
+
+    return;
+
+  }
+
+
+  const confirmed =
+    window.confirm(
+      "This account has used a protected Team Wolfpack identity.\n\nBlock " +
+      name +
+      " from Pack Chat?"
+    );
+
+
+  if(
+    !confirmed
+  ){
+
+    return;
+
+  }
+
+
+  await updateModeration(
+    uid,
+    name,
+    false,
+    true
   );
 
 }
@@ -1959,18 +2118,41 @@ function filteredMembers(){
           .toLowerCase()
           .includes(
             search
-          );
-
-
-      const matchesFilter =
-
-        activeFilter ===
-          "all"
+          )
 
         ||
 
-        member.status ===
+        member.namesUsed
+          .join(" ")
+          .toLowerCase()
+          .includes(
+            search
+          );
+
+
+      let matchesFilter =
+        true;
+
+
+      if(
+        activeFilter ===
+        "reserved"
+      ){
+
+        matchesFilter =
+          member.reserved ===
+          true;
+
+      }else if(
+        activeFilter !==
+        "all"
+      ){
+
+        matchesFilter =
+          member.status ===
           activeFilter;
+
+      }
 
 
       return (
@@ -2015,21 +2197,32 @@ function renderMembers(){
   records.forEach(
     function(member){
 
-      let statusClass =
+      const statusClass =
         member.status;
 
 
-      let statusText =
+      const statusText =
         member.status
           .toUpperCase();
 
 
+      const cardClass =
+        member.reserved
+          ? "member-card reserved-member"
+          : "member-card";
+
+
       html +=
 
-        '<div class="member-card">' +
+        '<div class="' +
+        cardClass +
+        '">' +
 
 
         '<div class="member-top">' +
+
+
+        '<div class="member-name-area">' +
 
 
         '<div class="member-name">' +
@@ -2040,6 +2233,28 @@ function renderMembers(){
         '</div>' +
 
 
+        '<div class="member-flags">';
+
+
+      if(
+        member.reserved
+      ){
+
+        html +=
+          '<span class="legacy-badge">' +
+          'LEGACY RESERVED NAME' +
+          '</span>';
+
+      }
+
+
+      html +=
+
+        '</div>' +
+
+        '</div>' +
+
+
         '<div class="status-badge ' +
         statusClass +
         '">' +
@@ -2047,8 +2262,27 @@ function renderMembers(){
         '</div>' +
 
 
-        '</div>' +
+        '</div>';
 
+
+      if(
+        member.reserved
+      ){
+
+        html +=
+
+          '<div class="reserved-warning">' +
+
+          'This non-admin account has previously used a protected Team Wolfpack identity. ' +
+
+          'The real MR WOLFIE and MRS WOLFIE administrator accounts are identified by Firebase UID and are not included in this member list.' +
+
+          '</div>';
+
+      }
+
+
+      html +=
 
         '<div class="member-details">' +
 
@@ -2086,8 +2320,32 @@ function renderMembers(){
         escapeHTML(
           member.uid
         ) +
-        '</div>' +
+        '</div>';
 
+
+      if(
+        member.namesUsed.length > 1
+      ){
+
+        html +=
+
+          '<div class="label">' +
+          'NAMES USED' +
+          '</div>' +
+
+
+          '<div class="value">' +
+          escapeHTML(
+            member.namesUsed.join(
+              ", "
+            )
+          ) +
+          '</div>';
+
+      }
+
+
+      html +=
 
         '</div>' +
 
@@ -2095,9 +2353,7 @@ function renderMembers(){
         '<div class="actions">';
 
 
-      /*
-        ACTIVE MEMBER
-      */
+      /* ACTIVE */
 
       if(
         member.status ===
@@ -2146,9 +2402,7 @@ function renderMembers(){
       }
 
 
-      /*
-        MUTED MEMBER
-      */
+      /* MUTED */
 
       if(
         member.status ===
@@ -2217,9 +2471,7 @@ function renderMembers(){
       }
 
 
-      /*
-        BLOCKED MEMBER
-      */
+      /* BLOCKED */
 
       if(
         member.status ===
@@ -2268,6 +2520,36 @@ function renderMembers(){
       }
 
 
+      /* RESERVED LEGACY ACCOUNT */
+
+      if(
+        member.reserved &&
+        member.status !==
+          "blocked"
+      ){
+
+        html +=
+
+          '<button ' +
+          'class="action-button block-reserved-button" ' +
+          'type="button" ' +
+          'data-action="block-reserved" ' +
+          'data-uid="' +
+          escapeHTML(
+            member.uid
+          ) +
+          '" ' +
+          'data-name="' +
+          escapeHTML(
+            member.name
+          ) +
+          '">' +
+          'BLOCK RESERVED-NAME ACCOUNT' +
+          '</button>';
+
+      }
+
+
       html +=
 
         '</div>' +
@@ -2281,10 +2563,6 @@ function renderMembers(){
   members.innerHTML =
     html;
 
-
-  /*
-    ACTION BUTTON EVENTS
-  */
 
   members
     .querySelectorAll(
@@ -2368,6 +2646,19 @@ function renderMembers(){
             ){
 
               clearRestrictions(
+                uid,
+                name
+              );
+
+            }
+
+
+            if(
+              action ===
+              "block-reserved"
+            ){
+
+              blockReservedMember(
                 uid,
                 name
               );
