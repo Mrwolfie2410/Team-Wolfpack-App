@@ -17,10 +17,11 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<title>Member Moderation | Team Wolfpack</title>
+<title>Pack Chat Members | Team Wolfpack</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
+
 
 <style>
 
@@ -36,6 +37,7 @@ html{
 
 body{
   min-height:100vh;
+  min-height:100dvh;
 
   font-family:
     Arial,
@@ -43,8 +45,6 @@ body{
     sans-serif;
 
   color:#fff;
-
-  padding-bottom:40px;
 
   background:
     radial-gradient(
@@ -99,7 +99,7 @@ body{
 .title{
   margin-top:18px;
 
-  font-size:28px;
+  font-size:29px;
 
   font-weight:900;
 }
@@ -125,7 +125,7 @@ body{
 .line{
   width:100%;
 
-  max-width:430px;
+  max-width:470px;
 
   height:2px;
 
@@ -149,14 +149,14 @@ body{
 .content{
   width:100%;
 
-  max-width:600px;
+  max-width:660px;
 
   margin:auto;
 
   padding:
     8px
     16px
-    50px;
+    70px;
 }
 
 
@@ -183,7 +183,7 @@ body{
 }
 
 .status.error{
-  color:#ff751c;
+  color:#ff7957;
 }
 
 
@@ -290,6 +290,14 @@ body{
   font-weight:900;
 }
 
+.admin-label{
+  color:#67dcff;
+
+  font-size:9px;
+
+  font-weight:900;
+}
+
 
 /* SUMMARY */
 
@@ -297,7 +305,7 @@ body{
   display:none;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(4,1fr);
 
   gap:8px;
 
@@ -311,7 +319,7 @@ body{
 .summary-card{
   padding:
     14px
-    8px;
+    6px;
 
   text-align:center;
 
@@ -332,16 +340,106 @@ body{
   color:#ff751c;
 }
 
+.summary-card.active-summary .summary-number{
+  color:#67dcff;
+}
+
 .summary-label{
   margin-top:4px;
 
-  color:#67dcff;
+  color:#aaa;
 
   font-size:8px;
 
   font-weight:900;
 
   letter-spacing:.5px;
+}
+
+
+/* SEARCH */
+
+.controls{
+  display:none;
+
+  margin-bottom:16px;
+
+  padding:14px;
+
+  border-radius:13px;
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  background:
+    rgba(8,8,8,.72);
+}
+
+.controls.show{
+  display:block;
+}
+
+.search-input{
+  width:100%;
+
+  padding:
+    13px
+    14px;
+
+  color:#fff;
+
+  outline:none;
+
+  border-radius:10px;
+
+  border:
+    1px solid rgba(255,255,255,.14);
+
+  background:#090909;
+
+  font-size:12px;
+}
+
+.search-input:focus{
+  border-color:#67dcff;
+}
+
+.filter-row{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:6px;
+
+  margin-top:10px;
+}
+
+.filter-button{
+  padding:
+    9px
+    5px;
+
+  border-radius:8px;
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  background:#111;
+
+  color:#888;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+.filter-button.active{
+  color:#050505;
+
+  background:#67dcff;
 }
 
 
@@ -381,6 +479,10 @@ body{
 /* MEMBER CARD */
 
 .member-card{
+  position:relative;
+
+  overflow:hidden;
+
   margin-bottom:14px;
 
   padding:17px;
@@ -393,13 +495,45 @@ body{
   background:
     linear-gradient(
       110deg,
-      rgba(0,150,210,.08),
+      rgba(0,150,210,.09),
       rgba(8,8,8,.95) 48%,
-      rgba(255,90,0,.10)
+      rgba(255,90,0,.11)
     );
 }
 
+.member-card::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:3px;
+
+  background:#4bd8ff;
+}
+
+.member-card::after{
+  content:"";
+
+  position:absolute;
+
+  right:0;
+  top:0;
+  bottom:0;
+
+  width:3px;
+
+  background:#ff6500;
+}
+
 .member-top{
+  position:relative;
+
+  z-index:2;
+
   display:flex;
 
   align-items:center;
@@ -417,6 +551,8 @@ body{
 
 .status-badge{
   display:inline-block;
+
+  flex-shrink:0;
 
   padding:
     5px
@@ -447,6 +583,12 @@ body{
   background:#67dcff;
 }
 
+.member-details{
+  position:relative;
+
+  z-index:2;
+}
+
 .label{
   margin-top:13px;
 
@@ -471,10 +613,20 @@ body{
   word-break:break-all;
 }
 
+.message-count{
+  color:#ff751c;
+
+  font-weight:900;
+}
+
 
 /* ACTIONS */
 
 .actions{
+  position:relative;
+
+  z-index:2;
+
   display:grid;
 
   grid-template-columns:
@@ -486,25 +638,25 @@ body{
   margin-top:15px;
 }
 
-.unmute-button,
-.unblock-button,
-.remove-button{
+.action-button{
+  min-height:40px;
+
   padding:
-    11px
-    8px;
+    10px
+    7px;
 
   border-radius:9px;
 
   cursor:pointer;
 
-  font-size:9px;
+  font-size:8px;
 
   font-weight:900;
 }
 
-.unmute-button{
+.mute-button{
   border:
-    1px solid rgba(255,180,71,.35);
+    1px solid rgba(255,180,71,.40);
 
   color:#ffb347;
 
@@ -512,7 +664,7 @@ body{
     rgba(100,60,0,.08);
 }
 
-.unblock-button{
+.block-button{
   border:
     1px solid rgba(255,80,50,.45);
 
@@ -522,19 +674,37 @@ body{
     rgba(100,20,0,.12);
 }
 
-.remove-button{
+.unmute-button{
+  border:
+    1px solid rgba(255,180,71,.40);
+
+  color:#050505;
+
+  background:#ffb347;
+}
+
+.unblock-button{
+  border:
+    1px solid rgba(255,80,50,.50);
+
+  color:#fff;
+
+  background:#8f2208;
+}
+
+.clear-button{
   grid-column:
     1
     /
     -1;
 
   border:
-    1px solid rgba(103,220,255,.30);
+    1px solid rgba(103,220,255,.35);
 
   color:#67dcff;
 
   background:
-    rgba(0,150,210,.06);
+    rgba(0,150,210,.07);
 }
 
 button:disabled{
@@ -544,18 +714,17 @@ button:disabled{
 }
 
 
-/* NAV BUTTONS */
+/* NAVIGATION */
 
 .nav-grid{
   display:none;
 
   grid-template-columns:
-    1fr
-    1fr;
+    repeat(3,1fr);
 
   gap:8px;
 
-  margin-top:16px;
+  margin-top:17px;
 }
 
 .nav-grid.show{
@@ -563,9 +732,17 @@ button:disabled{
 }
 
 .nav-button{
-  display:block;
+  display:flex;
 
-  padding:14px;
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:46px;
+
+  padding:
+    12px
+    8px;
 
   text-align:center;
 
@@ -578,7 +755,7 @@ button:disabled{
 
   border-radius:11px;
 
-  font-size:10px;
+  font-size:9px;
 
   font-weight:900;
 
@@ -588,6 +765,28 @@ button:disabled{
       rgba(0,160,220,.10),
       rgba(255,90,0,.10)
     );
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+  .summary{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .filter-row{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .nav-grid{
+    grid-template-columns:
+      1fr;
+  }
+
 }
 
 </style>
@@ -610,29 +809,34 @@ button:disabled{
 
 </a>
 
+
 <div class="brand">
 TEAM WOLFPACK
 </div>
 
+
 <h1 class="title">
 
 <span class="ice">
-MEMBER
+PACK CHAT
 </span>
 
 <span class="fire">
-MODERATION
+MEMBERS
 </span>
 
 </h1>
 
+
 <p class="subtitle">
-Manage muted and blocked Pack Chat members.
+Manage Pack Chat members, mute access and blocked accounts.
 </p>
+
 
 <div class="line"></div>
 
 </header>
+
 
 
 <main class="content">
@@ -658,12 +862,11 @@ ADMIN ACCESS REQUIRED
 </div>
 
 <div class="access-text">
-Sign into Pack Chat using an authorised Team Wolfpack administrator account before opening Member Moderation.
+Sign into Pack Chat using an authorised Team Wolfpack administrator account before opening Member Management.
 </div>
 
-<div
-  class="nav-grid show"
->
+
+<div class="nav-grid show">
 
 <a
   class="nav-button"
@@ -684,7 +887,7 @@ ADMIN REPORTS
 </div>
 
 
-<!-- ADMIN -->
+<!-- ADMIN BAR -->
 
 <div
   id="adminBar"
@@ -701,7 +904,7 @@ ADMIN
 
 </div>
 
-<div>
+<div class="admin-label">
 MEMBER MANAGEMENT
 </div>
 
@@ -725,7 +928,23 @@ MEMBER MANAGEMENT
 </div>
 
 <div class="summary-label">
-RESTRICTED
+MEMBERS
+</div>
+
+</div>
+
+
+<div class="summary-card active-summary">
+
+<div
+  id="activeCount"
+  class="summary-number"
+>
+0
+</div>
+
+<div class="summary-label">
+ACTIVE
 </div>
 
 </div>
@@ -765,6 +984,61 @@ BLOCKED
 </div>
 
 
+<!-- SEARCH -->
+
+<div
+  id="controls"
+  class="controls"
+>
+
+<input
+  id="searchInput"
+  class="search-input"
+  type="search"
+  placeholder="Search Pack members..."
+  autocomplete="off"
+>
+
+
+<div class="filter-row">
+
+<button
+  class="filter-button active"
+  type="button"
+  data-filter="all"
+>
+ALL
+</button>
+
+<button
+  class="filter-button"
+  type="button"
+  data-filter="active"
+>
+ACTIVE
+</button>
+
+<button
+  class="filter-button"
+  type="button"
+  data-filter="muted"
+>
+MUTED
+</button>
+
+<button
+  class="filter-button"
+  type="button"
+  data-filter="blocked"
+>
+BLOCKED
+</button>
+
+</div>
+
+</div>
+
+
 <!-- MEMBERS -->
 
 <div
@@ -773,7 +1047,7 @@ BLOCKED
 ></div>
 
 
-<!-- ADMIN NAV -->
+<!-- ADMIN NAVIGATION -->
 
 <div
   id="adminNavigation"
@@ -794,13 +1068,22 @@ BLOCKED
 ADMIN REPORTS
 </a>
 
+<a
+  class="nav-button"
+  href="more.html"
+>
+MORE
+</a>
+
 </div>
 
 
 </main>
 
 
+
 <script type="module">
+
 
 import {
   initializeApp
@@ -823,6 +1106,9 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
+
+
+/* FIREBASE CONFIG */
 
 const firebaseConfig = {
 
@@ -888,54 +1174,60 @@ const status =
     "status"
   );
 
-
 const accessDenied =
   document.getElementById(
     "accessDenied"
   );
-
 
 const adminBar =
   document.getElementById(
     "adminBar"
   );
 
-
 const adminName =
   document.getElementById(
     "adminName"
   );
-
 
 const summary =
   document.getElementById(
     "summary"
   );
 
-
 const totalCount =
   document.getElementById(
     "totalCount"
   );
 
+const activeCount =
+  document.getElementById(
+    "activeCount"
+  );
 
 const mutedCount =
   document.getElementById(
     "mutedCount"
   );
 
-
 const blockedCount =
   document.getElementById(
     "blockedCount"
   );
 
+const controls =
+  document.getElementById(
+    "controls"
+  );
+
+const searchInput =
+  document.getElementById(
+    "searchInput"
+  );
 
 const members =
   document.getElementById(
     "members"
   );
-
 
 const adminNavigation =
   document.getElementById(
@@ -943,36 +1235,389 @@ const adminNavigation =
   );
 
 
-let currentAdmin =
-  null;
+let currentAdmin = null;
 
+let messageRecords = [];
+
+let moderationRecords = {};
+
+let combinedMembers = [];
+
+let activeFilter =
+  "all";
+
+let unsubscribeMessages =
+  null;
 
 let unsubscribeModeration =
   null;
 
 
-/* ESCAPE */
+/* ESCAPE HTML */
 
-function escapeHTML(
-  value
-){
+function escapeHTML(value){
 
   const element =
     document.createElement(
       "div"
     );
 
-
   element.textContent =
     value || "";
-
 
   return element.innerHTML;
 
 }
 
 
-/* UPDATE MODERATION */
+/* MEMBER STATUS */
+
+function getMemberStatus(
+  moderation
+){
+
+  if(
+    moderation &&
+    moderation.blocked === true
+  ){
+
+    return "blocked";
+
+  }
+
+
+  if(
+    moderation &&
+    moderation.muted === true
+  ){
+
+    return "muted";
+
+  }
+
+
+  return "active";
+
+}
+
+
+/* COMBINE MESSAGE USERS + MODERATION */
+
+function buildMemberList(){
+
+  const map = {};
+
+
+  messageRecords.forEach(
+    function(message){
+
+      if(
+        !message.uid ||
+        ADMINS[
+          message.uid
+        ]
+      ){
+
+        return;
+
+      }
+
+
+      if(
+        !map[
+          message.uid
+        ]
+      ){
+
+        map[
+          message.uid
+        ] = {
+
+          uid:
+            message.uid,
+
+          name:
+            message.name ||
+            "Pack Member",
+
+          messageCount:
+            0,
+
+          lastMessage:
+            null
+
+        };
+
+      }
+
+
+      map[
+        message.uid
+      ].messageCount++;
+
+
+      if(
+        message.createdAt
+      ){
+
+        const current =
+          map[
+            message.uid
+          ].lastMessage;
+
+
+        if(
+          !current ||
+          message.createdAt.seconds >
+          current.seconds
+        ){
+
+          map[
+            message.uid
+          ].lastMessage =
+            message.createdAt;
+
+        }
+
+      }
+
+
+      /*
+        Use newest available name.
+      */
+
+      if(
+        message.name
+      ){
+
+        map[
+          message.uid
+        ].name =
+          message.name;
+
+      }
+
+    }
+  );
+
+
+  /*
+    Include moderation records even when
+    the user no longer has a visible message.
+  */
+
+  Object.keys(
+    moderationRecords
+  )
+  .forEach(
+    function(uid){
+
+      if(
+        ADMINS[
+          uid
+        ]
+      ){
+
+        return;
+
+      }
+
+
+      const moderation =
+        moderationRecords[
+          uid
+        ];
+
+
+      if(
+        !map[
+          uid
+        ]
+      ){
+
+        map[
+          uid
+        ] = {
+
+          uid:
+            uid,
+
+          name:
+            moderation.name ||
+            "Pack Member",
+
+          messageCount:
+            0,
+
+          lastMessage:
+            null
+
+        };
+
+      }
+
+    }
+  );
+
+
+  combinedMembers =
+    Object.values(
+      map
+    )
+    .map(
+      function(member){
+
+        const moderation =
+          moderationRecords[
+            member.uid
+          ] || {
+
+            muted:false,
+            blocked:false
+
+          };
+
+
+        return {
+
+          ...member,
+
+          muted:
+            moderation.muted === true,
+
+          blocked:
+            moderation.blocked === true,
+
+          status:
+            getMemberStatus(
+              moderation
+            )
+
+        };
+
+      }
+    );
+
+
+  combinedMembers.sort(
+    function(a,b){
+
+      /*
+        Blocked first,
+        muted second,
+        active last.
+      */
+
+      const order = {
+
+        blocked:0,
+        muted:1,
+        active:2
+
+      };
+
+
+      if(
+        order[
+          a.status
+        ] !==
+        order[
+          b.status
+        ]
+      ){
+
+        return (
+          order[
+            a.status
+          ] -
+          order[
+            b.status
+          ]
+        );
+
+      }
+
+
+      return (
+        a.name || ""
+      ).localeCompare(
+        b.name || ""
+      );
+
+    }
+  );
+
+
+  updateSummary();
+
+  renderMembers();
+
+}
+
+
+/* SUMMARY */
+
+function updateSummary(){
+
+  const total =
+    combinedMembers.length;
+
+
+  const active =
+    combinedMembers.filter(
+      function(member){
+
+        return (
+          member.status ===
+          "active"
+        );
+
+      }
+    ).length;
+
+
+  const muted =
+    combinedMembers.filter(
+      function(member){
+
+        return (
+          member.status ===
+          "muted"
+        );
+
+      }
+    ).length;
+
+
+  const blocked =
+    combinedMembers.filter(
+      function(member){
+
+        return (
+          member.status ===
+          "blocked"
+        );
+
+      }
+    ).length;
+
+
+  totalCount.textContent =
+    total;
+
+  activeCount.textContent =
+    active;
+
+  mutedCount.textContent =
+    muted;
+
+  blockedCount.textContent =
+    blocked;
+
+}
+
+
+/* SAVE MODERATION */
 
 async function updateModeration(
   uid,
@@ -983,7 +1628,9 @@ async function updateModeration(
 
   if(
     !currentAdmin ||
-    ADMINS[uid]
+    ADMINS[
+      uid
+    ]
   ){
 
     return;
@@ -994,18 +1641,21 @@ async function updateModeration(
   try{
 
     await setDoc(
+
       doc(
         db,
         "moderation",
         uid
       ),
+
       {
 
         uid:
           uid,
 
         name:
-          name || "Pack Member",
+          name ||
+          "Pack Member",
 
         muted:
           Boolean(
@@ -1024,6 +1674,7 @@ async function updateModeration(
           currentAdmin.uid
 
       }
+
     );
 
 
@@ -1043,12 +1694,45 @@ async function updateModeration(
 }
 
 
+/* MUTE */
+
+async function muteMember(
+  uid,
+  name
+){
+
+  const confirmed =
+    window.confirm(
+      "Mute " +
+      name +
+      "?"
+    );
+
+
+  if(
+    !confirmed
+  ){
+
+    return;
+
+  }
+
+
+  await updateModeration(
+    uid,
+    name,
+    true,
+    false
+  );
+
+}
+
+
 /* UNMUTE */
 
 async function unmuteMember(
   uid,
-  name,
-  blocked
+  name
 ){
 
   const confirmed =
@@ -1072,7 +1756,41 @@ async function unmuteMember(
     uid,
     name,
     false,
-    blocked
+    false
+  );
+
+}
+
+
+/* BLOCK */
+
+async function blockMember(
+  uid,
+  name
+){
+
+  const confirmed =
+    window.confirm(
+      "Block " +
+      name +
+      " from Pack Chat?"
+    );
+
+
+  if(
+    !confirmed
+  ){
+
+    return;
+
+  }
+
+
+  await updateModeration(
+    uid,
+    name,
+    false,
+    true
   );
 
 }
@@ -1082,8 +1800,7 @@ async function unmuteMember(
 
 async function unblockMember(
   uid,
-  name,
-  muted
+  name
 ){
 
   const confirmed =
@@ -1106,16 +1823,16 @@ async function unblockMember(
   await updateModeration(
     uid,
     name,
-    muted,
+    false,
     false
   );
 
 }
 
 
-/* REMOVE RECORD */
+/* CLEAR RESTRICTIONS */
 
-async function removeModeration(
+async function clearRestrictions(
   uid,
   name
 ){
@@ -1164,77 +1881,125 @@ async function removeModeration(
 }
 
 
-/* RENDER */
+/* LAST MESSAGE TIME */
 
-function renderMembers(
-  records
+function formatLastMessage(
+  timestamp
 ){
 
-  let muted =
-    0;
+  if(
+    !timestamp
+  ){
+
+    return "No message timestamp";
+
+  }
 
 
-  let blocked =
-    0;
+  try{
+
+    return timestamp
+      .toDate()
+      .toLocaleString(
+        [],
+        {
+
+          day:"2-digit",
+
+          month:"short",
+
+          year:"numeric",
+
+          hour:"2-digit",
+
+          minute:"2-digit"
+
+        }
+      );
 
 
-  const restricted =
-    records.filter(
-      function(record){
+  }catch(error){
 
-        return (
-          record.muted === true ||
-          record.blocked === true
-        );
+    return "Unknown";
 
-      }
-    );
+  }
+
+}
 
 
-  restricted.forEach(
-    function(record){
+/* FILTER MEMBERS */
 
-      if(
-        record.muted === true
-      ){
+function filteredMembers(){
 
-        muted++;
-
-      }
+  const search =
+    searchInput.value
+      .trim()
+      .toLowerCase();
 
 
-      if(
-        record.blocked === true
-      ){
+  return combinedMembers.filter(
+    function(member){
 
-        blocked++;
+      const matchesSearch =
 
-      }
+        !search ||
+
+        (
+          member.name ||
+          ""
+        )
+        .toLowerCase()
+        .includes(
+          search
+        )
+
+        ||
+
+        member.uid
+          .toLowerCase()
+          .includes(
+            search
+          );
+
+
+      const matchesFilter =
+
+        activeFilter ===
+          "all"
+
+        ||
+
+        member.status ===
+          activeFilter;
+
+
+      return (
+        matchesSearch &&
+        matchesFilter
+      );
 
     }
   );
 
-
-  totalCount.textContent =
-    restricted.length;
+}
 
 
-  mutedCount.textContent =
-    muted;
+/* RENDER MEMBERS */
 
+function renderMembers(){
 
-  blockedCount.textContent =
-    blocked;
+  const records =
+    filteredMembers();
 
 
   if(
-    restricted.length === 0
+    records.length === 0
   ){
 
     members.innerHTML =
       '<div class="empty">' +
-      'NO RESTRICTED MEMBERS<br><br>' +
-      'There are currently no muted or blocked Pack Chat members.' +
+      'NO MEMBERS FOUND<br><br>' +
+      'No Pack Chat members match this view.' +
       '</div>';
 
 
@@ -1247,40 +2012,16 @@ function renderMembers(
     "";
 
 
-  restricted.forEach(
-    function(record){
+  records.forEach(
+    function(member){
 
       let statusClass =
-        "active";
+        member.status;
 
 
       let statusText =
-        "ACTIVE";
-
-
-      if(
-        record.blocked
-      ){
-
-        statusClass =
-          "blocked";
-
-
-        statusText =
-          "BLOCKED";
-
-      }else if(
-        record.muted
-      ){
-
-        statusClass =
-          "muted";
-
-
-        statusText =
-          "MUTED";
-
-      }
+        member.status
+          .toUpperCase();
 
 
       html +=
@@ -1293,7 +2034,7 @@ function renderMembers(
 
         '<div class="member-name">' +
         escapeHTML(
-          record.name ||
+          member.name ||
           "Pack Member"
         ) +
         '</div>' +
@@ -1309,6 +2050,33 @@ function renderMembers(
         '</div>' +
 
 
+        '<div class="member-details">' +
+
+
+        '<div class="label">' +
+        'MESSAGES' +
+        '</div>' +
+
+
+        '<div class="value message-count">' +
+        member.messageCount +
+        '</div>' +
+
+
+        '<div class="label">' +
+        'LAST CHAT ACTIVITY' +
+        '</div>' +
+
+
+        '<div class="value">' +
+        escapeHTML(
+          formatLastMessage(
+            member.lastMessage
+          )
+        ) +
+        '</div>' +
+
+
         '<div class="label">' +
         'MEMBER UID' +
         '</div>' +
@@ -1316,77 +2084,185 @@ function renderMembers(
 
         '<div class="value">' +
         escapeHTML(
-          record.uid
+          member.uid
         ) +
+        '</div>' +
+
+
         '</div>' +
 
 
         '<div class="actions">';
 
 
+      /*
+        ACTIVE MEMBER
+      */
+
       if(
-        record.muted
+        member.status ===
+        "active"
       ){
 
         html +=
 
           '<button ' +
-          'class="unmute-button" ' +
+          'class="action-button mute-button" ' +
           'type="button" ' +
-          'data-action="unmute" ' +
+          'data-action="mute" ' +
           'data-uid="' +
           escapeHTML(
-            record.uid
+            member.uid
           ) +
           '" ' +
           'data-name="' +
           escapeHTML(
-            record.name ||
-            "Pack Member"
-          ) +
-          '" ' +
-          'data-blocked="' +
-          (
-            record.blocked
-              ? "true"
-              : "false"
+            member.name
           ) +
           '">' +
-          'UNMUTE MEMBER' +
+          'MUTE MEMBER' +
+          '</button>';
+
+
+        html +=
+
+          '<button ' +
+          'class="action-button block-button" ' +
+          'type="button" ' +
+          'data-action="block" ' +
+          'data-uid="' +
+          escapeHTML(
+            member.uid
+          ) +
+          '" ' +
+          'data-name="' +
+          escapeHTML(
+            member.name
+          ) +
+          '">' +
+          'BLOCK MEMBER' +
           '</button>';
 
       }
 
 
+      /*
+        MUTED MEMBER
+      */
+
       if(
-        record.blocked
+        member.status ===
+        "muted"
       ){
 
         html +=
 
           '<button ' +
-          'class="unblock-button" ' +
+          'class="action-button unmute-button" ' +
           'type="button" ' +
-          'data-action="unblock" ' +
+          'data-action="unmute" ' +
           'data-uid="' +
           escapeHTML(
-            record.uid
+            member.uid
           ) +
           '" ' +
           'data-name="' +
           escapeHTML(
-            record.name ||
-            "Pack Member"
+            member.name
+          ) +
+          '">' +
+          'UNMUTE MEMBER' +
+          '</button>';
+
+
+        html +=
+
+          '<button ' +
+          'class="action-button block-button" ' +
+          'type="button" ' +
+          'data-action="block" ' +
+          'data-uid="' +
+          escapeHTML(
+            member.uid
           ) +
           '" ' +
-          'data-muted="' +
-          (
-            record.muted
-              ? "true"
-              : "false"
+          'data-name="' +
+          escapeHTML(
+            member.name
+          ) +
+          '">' +
+          'BLOCK MEMBER' +
+          '</button>';
+
+
+        html +=
+
+          '<button ' +
+          'class="action-button clear-button" ' +
+          'type="button" ' +
+          'data-action="clear" ' +
+          'data-uid="' +
+          escapeHTML(
+            member.uid
+          ) +
+          '" ' +
+          'data-name="' +
+          escapeHTML(
+            member.name
+          ) +
+          '">' +
+          'REMOVE ALL RESTRICTIONS' +
+          '</button>';
+
+      }
+
+
+      /*
+        BLOCKED MEMBER
+      */
+
+      if(
+        member.status ===
+        "blocked"
+      ){
+
+        html +=
+
+          '<button ' +
+          'class="action-button unblock-button" ' +
+          'type="button" ' +
+          'data-action="unblock" ' +
+          'data-uid="' +
+          escapeHTML(
+            member.uid
+          ) +
+          '" ' +
+          'data-name="' +
+          escapeHTML(
+            member.name
           ) +
           '">' +
           'UNBLOCK MEMBER' +
+          '</button>';
+
+
+        html +=
+
+          '<button ' +
+          'class="action-button clear-button" ' +
+          'type="button" ' +
+          'data-action="clear" ' +
+          'data-uid="' +
+          escapeHTML(
+            member.uid
+          ) +
+          '" ' +
+          'data-name="' +
+          escapeHTML(
+            member.name
+          ) +
+          '">' +
+          'REMOVE ALL RESTRICTIONS' +
           '</button>';
 
       }
@@ -1394,27 +2270,7 @@ function renderMembers(
 
       html +=
 
-        '<button ' +
-        'class="remove-button" ' +
-        'type="button" ' +
-        'data-action="remove" ' +
-        'data-uid="' +
-        escapeHTML(
-          record.uid
-        ) +
-        '" ' +
-        'data-name="' +
-        escapeHTML(
-          record.name ||
-          "Pack Member"
-        ) +
-        '">' +
-        'REMOVE ALL RESTRICTIONS' +
-        '</button>' +
-
-
         '</div>' +
-
 
         '</div>';
 
@@ -1426,11 +2282,13 @@ function renderMembers(
     html;
 
 
-  /* UNMUTE */
+  /*
+    ACTION BUTTON EVENTS
+  */
 
   members
     .querySelectorAll(
-      '[data-action="unmute"]'
+      "[data-action]"
     )
     .forEach(
       function(button){
@@ -1439,75 +2297,82 @@ function renderMembers(
           "click",
           function(){
 
-            unmuteMember(
-
-              button.dataset.uid,
-
-              button.dataset.name,
-
-              button.dataset.blocked ===
-                "true"
-
-            );
-
-          }
-        );
-
-      }
-    );
+            const action =
+              button.dataset.action;
 
 
-  /* UNBLOCK */
-
-  members
-    .querySelectorAll(
-      '[data-action="unblock"]'
-    )
-    .forEach(
-      function(button){
-
-        button.addEventListener(
-          "click",
-          function(){
-
-            unblockMember(
-
-              button.dataset.uid,
-
-              button.dataset.name,
-
-              button.dataset.muted ===
-                "true"
-
-            );
-
-          }
-        );
-
-      }
-    );
+            const uid =
+              button.dataset.uid;
 
 
-  /* REMOVE */
+            const name =
+              button.dataset.name ||
+              "Pack Member";
 
-  members
-    .querySelectorAll(
-      '[data-action="remove"]'
-    )
-    .forEach(
-      function(button){
 
-        button.addEventListener(
-          "click",
-          function(){
+            if(
+              action ===
+              "mute"
+            ){
 
-            removeModeration(
+              muteMember(
+                uid,
+                name
+              );
 
-              button.dataset.uid,
+            }
 
-              button.dataset.name
 
-            );
+            if(
+              action ===
+              "unmute"
+            ){
+
+              unmuteMember(
+                uid,
+                name
+              );
+
+            }
+
+
+            if(
+              action ===
+              "block"
+            ){
+
+              blockMember(
+                uid,
+                name
+              );
+
+            }
+
+
+            if(
+              action ===
+              "unblock"
+            ){
+
+              unblockMember(
+                uid,
+                name
+              );
+
+            }
+
+
+            if(
+              action ===
+              "clear"
+            ){
+
+              clearRestrictions(
+                uid,
+                name
+              );
+
+            }
 
           }
         );
@@ -1518,7 +2383,131 @@ function renderMembers(
 }
 
 
-/* START MODERATION */
+/* SEARCH */
+
+searchInput.addEventListener(
+  "input",
+  function(){
+
+    renderMembers();
+
+  }
+);
+
+
+/* FILTER BUTTONS */
+
+document
+  .querySelectorAll(
+    ".filter-button"
+  )
+  .forEach(
+    function(button){
+
+      button.addEventListener(
+        "click",
+        function(){
+
+          activeFilter =
+            button.dataset.filter;
+
+
+          document
+            .querySelectorAll(
+              ".filter-button"
+            )
+            .forEach(
+              function(item){
+
+                item.classList.remove(
+                  "active"
+                );
+
+              }
+            );
+
+
+          button.classList.add(
+            "active"
+          );
+
+
+          renderMembers();
+
+        }
+      );
+
+    }
+  );
+
+
+/* MESSAGE LISTENER */
+
+function startMessages(){
+
+  if(
+    unsubscribeMessages
+  ){
+
+    unsubscribeMessages();
+
+  }
+
+
+  unsubscribeMessages =
+    onSnapshot(
+
+      collection(
+        db,
+        "messages"
+      ),
+
+
+      function(snapshot){
+
+        messageRecords =
+          [];
+
+
+        snapshot.forEach(
+          function(item){
+
+            messageRecords.push(
+              item.data()
+            );
+
+          }
+        );
+
+
+        buildMemberList();
+
+      },
+
+
+      function(error){
+
+        console.error(
+          "Messages listener:",
+          error
+        );
+
+
+        status.textContent =
+          "UNABLE TO LOAD PACK CHAT MEMBERS";
+
+
+        status.className =
+          "status error";
+
+      }
+
+    );
+
+}
+
+
+/* MODERATION LISTENER */
 
 function startModeration(){
 
@@ -1533,6 +2522,7 @@ function startModeration(){
 
   unsubscribeModeration =
     onSnapshot(
+
       collection(
         db,
         "moderation"
@@ -1541,24 +2531,23 @@ function startModeration(){
 
       function(snapshot){
 
-        const records =
-          [];
+        moderationRecords =
+          {};
 
 
         snapshot.forEach(
           function(item){
 
-            records.push(
-              item.data()
-            );
+            moderationRecords[
+              item.id
+            ] =
+              item.data();
 
           }
         );
 
 
-        renderMembers(
-          records
-        );
+        buildMemberList();
 
       },
 
@@ -1566,6 +2555,7 @@ function startModeration(){
       function(error){
 
         console.error(
+          "Moderation listener:",
           error
         );
 
@@ -1584,7 +2574,7 @@ function startModeration(){
 }
 
 
-/* AUTH */
+/* ADMIN AUTH */
 
 onAuthStateChanged(
   auth,
@@ -1636,6 +2626,11 @@ onAuthStateChanged(
       );
 
 
+      controls.classList.add(
+        "show"
+      );
+
+
       members.classList.add(
         "show"
       );
@@ -1645,6 +2640,8 @@ onAuthStateChanged(
         "show"
       );
 
+
+      startMessages();
 
       startModeration();
 
@@ -1681,6 +2678,11 @@ onAuthStateChanged(
     );
 
 
+    controls.classList.remove(
+      "show"
+    );
+
+
     members.classList.remove(
       "show"
     );
@@ -1689,6 +2691,30 @@ onAuthStateChanged(
     adminNavigation.classList.remove(
       "show"
     );
+
+
+    if(
+      unsubscribeMessages
+    ){
+
+      unsubscribeMessages();
+
+      unsubscribeMessages =
+        null;
+
+    }
+
+
+    if(
+      unsubscribeModeration
+    ){
+
+      unsubscribeModeration();
+
+      unsubscribeModeration =
+        null;
+
+    }
 
   }
 );
@@ -1709,9 +2735,20 @@ if(
     "load",
     function(){
 
-      navigator.serviceWorker.register(
-        "service-worker.js"
-      );
+      navigator.serviceWorker
+        .register(
+          "service-worker.js"
+        )
+        .catch(
+          function(error){
+
+            console.error(
+              "Service worker error:",
+              error
+            );
+
+          }
+        );
 
     }
   );
