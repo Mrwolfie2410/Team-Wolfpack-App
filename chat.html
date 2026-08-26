@@ -1,0 +1,3308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+  dataLayer.push(arguments);
+}
+
+gtag("js", new Date());
+gtag("config", "G-M973P0B4F0");
+</script>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<meta name="theme-color" content="#050505">
+
+<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<title>Pack Chat | Team Wolfpack</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  padding-bottom: 95px;
+
+  background:
+    radial-gradient(
+      circle at 0% 15%,
+      rgba(0,190,255,.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 35%,
+      rgba(255,85,0,.22),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #02090d 0%,
+      #050505 50%,
+      #150802 100%
+    );
+}
+
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  padding: 25px 18px 18px;
+}
+
+.logo {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+}
+
+.brand {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #67dcff;
+}
+
+.title {
+  margin-top: 18px;
+  font-size: 31px;
+  font-weight: 900;
+}
+
+.ice {
+  color: #67dcff;
+}
+
+.fire {
+  color: #ff751c;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.line {
+  width: 100%;
+  max-width: 430px;
+  height: 2px;
+  margin: 20px auto 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bd8ff,
+      transparent,
+      #ff6200
+    );
+}
+
+
+/* MAIN */
+
+.content {
+  width: 100%;
+  max-width: 540px;
+  margin: auto;
+  padding: 8px 16px 110px;
+}
+
+
+/* STATUS */
+
+.status {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #aaa;
+}
+
+.status.connected {
+  color: #67dcff;
+}
+
+.status.admin {
+  color: #ff751c;
+}
+
+.status.warning {
+  color: #ffb347;
+}
+
+.status.blocked {
+  color: #ff5a32;
+}
+
+.status.error {
+  color: #ff751c;
+}
+
+
+/* MODERATION NOTICE */
+
+.moderation-notice {
+  display: none;
+  margin-bottom: 14px;
+  padding: 14px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.moderation-notice.muted {
+  display: block;
+  color: #ffb347;
+  border: 1px solid rgba(255,180,71,.35);
+  background: rgba(90,55,0,.25);
+}
+
+.moderation-notice.blocked {
+  display: block;
+  color: #ff7957;
+  border: 1px solid rgba(255,90,50,.40);
+  background: rgba(90,20,0,.30);
+}
+
+
+/* ERROR */
+
+.error-details {
+  display: none;
+  margin-bottom: 14px;
+  padding: 14px;
+  border-radius: 12px;
+
+  border:
+    1px solid rgba(255,117,28,.45);
+
+  background:
+    rgba(80,20,0,.30);
+
+  color: #ffb37a;
+  font-size: 10px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.error-details.show {
+  display: block;
+}
+
+.error-title {
+  color: #ff751c;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+
+/* SUCCESS */
+
+.report-success {
+  display: none;
+  margin-bottom: 14px;
+  padding: 13px;
+  border-radius: 10px;
+  text-align: center;
+
+  color: #67dcff;
+
+  background:
+    rgba(0,150,210,.10);
+
+  border:
+    1px solid rgba(103,220,255,.25);
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.report-success.show {
+  display: block;
+}
+
+
+/* NAME BOX */
+
+.name-box {
+  padding: 18px;
+  margin-bottom: 14px;
+  border-radius: 15px;
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(20,150,205,.15),
+      rgba(8,8,8,.94) 50%,
+      rgba(220,70,0,.15)
+    );
+}
+
+.name-title {
+  font-size: 14px;
+  font-weight: 900;
+  color: #67dcff;
+  margin-bottom: 6px;
+}
+
+.name-info {
+  color: #aaa;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.name-row {
+  display: flex;
+  gap: 8px;
+}
+
+
+/* INPUTS */
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+}
+
+.name-input,
+.admin-input,
+.report-select {
+  width: 100%;
+  padding: 13px;
+  border-radius: 9px;
+
+  border:
+    1px solid rgba(255,255,255,.16);
+
+  outline: none;
+  color: #fff;
+  background: #080808;
+  font-size: 13px;
+}
+
+.name-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.name-input:focus,
+.admin-input:focus,
+.report-select:focus {
+  border-color: #67dcff;
+}
+
+.save-name {
+  border: none;
+  border-radius: 9px;
+  padding: 0 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #42cfff,
+      #0784b0
+    );
+
+  color: #00131b;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+/* ADMIN LOGIN */
+
+.admin-panel {
+  margin-bottom: 14px;
+  padding: 18px;
+  border-radius: 15px;
+
+  border:
+    1px solid rgba(255,117,28,.30);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(0,150,210,.10),
+      rgba(8,8,8,.94) 50%,
+      rgba(255,90,0,.15)
+    );
+}
+
+.admin-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-title {
+  color: #ff751c;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.admin-toggle {
+  border: none;
+  background: none;
+  color: #67dcff;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.admin-login {
+  display: none;
+  margin-top: 15px;
+}
+
+.admin-login.open {
+  display: block;
+}
+
+.admin-input {
+  margin-bottom: 9px;
+}
+
+.admin-button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff751c,
+      #bd4000
+    );
+}
+
+.admin-button:disabled {
+  opacity: .5;
+}
+
+.admin-note {
+  margin-top: 10px;
+  color: #777;
+  font-size: 9px;
+  text-align: center;
+}
+
+
+/* ADMIN ACTIVE */
+
+.admin-active {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+
+  border:
+    1px solid rgba(255,117,28,.45);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,150,210,.13),
+      rgba(255,90,0,.18)
+    );
+}
+
+.admin-active.show {
+  display: flex;
+}
+
+.admin-identity {
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.admin-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 4px 7px;
+  border-radius: 20px;
+  color: #050505;
+  background: #ff751c;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.admin-link {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #67dcff;
+
+  border:
+    1px solid rgba(103,220,255,.35);
+
+  background:
+    rgba(0,150,210,.08);
+
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.logout-button {
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 8px;
+  background: #111;
+  color: #aaa;
+  font-size: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+/* CHAT */
+
+.chat-shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.13);
+  background: rgba(5,5,5,.88);
+}
+
+.chat-shell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #4bd8ff;
+}
+
+.chat-shell::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ff6500;
+}
+
+.chat-header {
+  position: relative;
+  z-index: 2;
+  padding: 15px 17px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.chat-header-title {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.chat-header-info {
+  margin-top: 4px;
+  color: #888;
+  font-size: 10px;
+}
+
+
+/* MESSAGES */
+
+.messages {
+  position: relative;
+  z-index: 2;
+  height: 430px;
+  overflow-y: auto;
+  padding: 17px 14px;
+  scroll-behavior: smooth;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 60px 20px;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.message {
+  max-width: 84%;
+  margin-bottom: 16px;
+}
+
+.message.mine {
+  margin-left: auto;
+}
+
+.message-name {
+  margin-bottom: 4px;
+  color: #67dcff;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.message.mine .message-name {
+  text-align: right;
+  color: #ff751c;
+}
+
+.official-badge,
+.muted-badge,
+.blocked-badge {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  font-size: 7px;
+  font-weight: 900;
+}
+
+.official-badge {
+  color: #050505;
+  background: #ff751c;
+}
+
+.muted-badge {
+  color: #050505;
+  background: #ffb347;
+}
+
+.blocked-badge {
+  color: #fff;
+  background: #b52600;
+}
+
+.message-bubble {
+  padding: 10px 12px;
+  border-radius: 4px 13px 13px 13px;
+  color: #e9e9e9;
+  background: rgba(35,35,35,.95);
+  border: 1px solid rgba(255,255,255,.08);
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.message.mine .message-bubble {
+  border-radius: 13px 4px 13px 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,150,210,.20),
+      rgba(255,90,0,.15)
+    );
+}
+
+.message-time {
+  margin-top: 4px;
+  color: #666;
+  font-size: 8px;
+}
+
+.message.mine .message-time {
+  text-align: right;
+}
+
+
+/* MESSAGE ACTIONS */
+
+.message-actions {
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.delete-message,
+.report-message,
+.mute-member,
+.block-member {
+  padding: 5px 7px;
+  border-radius: 6px;
+  font-size: 7px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.delete-message {
+  border: 1px solid rgba(255,117,28,.35);
+  color: #ff751c;
+  background: rgba(255,80,0,.05);
+}
+
+.report-message {
+  border: 1px solid rgba(103,220,255,.30);
+  color: #67dcff;
+  background: rgba(0,160,220,.05);
+}
+
+.mute-member {
+  border: 1px solid rgba(255,180,71,.35);
+  color: #ffb347;
+  background: rgba(100,60,0,.08);
+}
+
+.block-member {
+  border: 1px solid rgba(255,80,50,.45);
+  color: #ff7957;
+  background: rgba(100,20,0,.12);
+}
+
+
+/* COMPOSER */
+
+.composer {
+  position: relative;
+  z-index: 2;
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  display: flex;
+  gap: 8px;
+  background: #080808;
+}
+
+.message-input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  max-height: 100px;
+  resize: none;
+  padding: 13px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  outline: none;
+  color: #fff;
+  background: #111;
+}
+
+.message-input:disabled {
+  opacity: .45;
+}
+
+.send-button {
+  height: 46px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff751c,
+      #bd4000
+    );
+}
+
+.send-button:disabled {
+  opacity: .4;
+}
+
+.character-count {
+  padding: 0 14px 10px;
+  text-align: right;
+  color: #666;
+  background: #080808;
+  font-size: 8px;
+}
+
+
+/* REPORT MODAL */
+
+.report-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0,0,0,.82);
+}
+
+.report-overlay.show {
+  display: flex;
+}
+
+.report-box {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(255,255,255,.13);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(0,150,210,.18),
+      #080808 50%,
+      rgba(255,90,0,.17)
+    );
+}
+
+.report-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #ff751c;
+}
+
+.report-text {
+  margin-top: 7px;
+  color: #aaa;
+  font-size: 11px;
+}
+
+.report-preview {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #111;
+  color: #ccc;
+  font-size: 11px;
+}
+
+.report-select {
+  margin-top: 12px;
+}
+
+.report-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.report-submit,
+.report-cancel {
+  padding: 12px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.report-submit {
+  border: none;
+  color: #fff;
+  background: linear-gradient(135deg,#ff751c,#bd4000);
+}
+
+.report-cancel {
+  border: 1px solid rgba(255,255,255,.12);
+  color: #ddd;
+  background: #191919;
+}
+
+
+/* OTHER */
+
+.safety {
+  margin-top: 14px;
+  padding: 14px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  color: #888;
+  background: rgba(8,8,8,.72);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.back {
+  display: block;
+  margin-top: 15px;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #59d9ff;
+  border-radius: 11px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+
+/* NAV */
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 74px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  background: rgba(4,4,4,.97);
+  border-top: 1px solid rgba(255,255,255,.12);
+  z-index: 100;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.nav-icon {
+  font-size: 20px;
+}
+
+.fire-nav {
+  color: #ff751c;
+}
+
+.nav-item.active {
+  color: #67dcff;
+}
+
+@media(max-width:400px) {
+
+  .messages {
+    height: 380px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<a href="index.html">
+
+<img
+  src="icon-512.png"
+  class="logo"
+  alt="Team Wolfpack"
+>
+
+</a>
+
+<div class="brand">
+TEAM WOLFPACK
+</div>
+
+<h1 class="title">
+
+<span class="ice">
+PACK
+</span>
+
+<span class="fire">
+CHAT
+</span>
+
+</h1>
+
+<p class="subtitle">
+Connect with the Team Wolfpack community.
+</p>
+
+<div class="line"></div>
+
+</header>
+
+
+<main class="content">
+
+
+<div
+  id="status"
+  class="status"
+>
+LOADING PACK CHAT...
+</div>
+
+
+<div
+  id="moderationNotice"
+  class="moderation-notice"
+></div>
+
+
+<div
+  id="reportSuccess"
+  class="report-success"
+>
+REPORT SENT TO TEAM WOLFPACK ADMINS
+</div>
+
+
+<div
+  id="errorDetails"
+  class="error-details"
+>
+
+<div class="error-title">
+PACK CHAT DIAGNOSTIC
+</div>
+
+<div id="errorCode"></div>
+<div id="errorMessage"></div>
+
+</div>
+
+
+<!-- ADMIN ACTIVE -->
+
+<div
+  id="adminActive"
+  class="admin-active"
+>
+
+<div class="admin-identity">
+
+<span id="adminDisplayName"></span>
+
+<span class="admin-badge">
+ADMIN
+</span>
+
+</div>
+
+
+<div class="admin-actions">
+
+<a
+  class="admin-link"
+  href="admin-reports.html"
+>
+ADMIN REPORTS
+</a>
+
+<a
+  class="admin-link"
+  href="admin-members.html"
+>
+MEMBERS
+</a>
+
+<button
+  id="logoutAdmin"
+  class="logout-button"
+  type="button"
+>
+LOG OUT
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PACK NAME -->
+
+<div
+  id="nameBox"
+  class="name-box"
+>
+
+<div class="name-title">
+YOUR PACK NAME
+</div>
+
+<div class="name-info">
+Choose the name you want other people in Pack Chat to see.
+</div>
+
+<div class="name-row">
+
+<input
+  id="nameInput"
+  class="name-input"
+  type="text"
+  maxlength="30"
+  placeholder="Enter your name"
+  autocomplete="nickname"
+>
+
+<button
+  id="saveName"
+  class="save-name"
+  type="button"
+>
+SAVE
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ADMIN LOGIN -->
+
+<div
+  id="adminPanel"
+  class="admin-panel"
+>
+
+<div class="admin-heading">
+
+<div class="admin-title">
+TEAM WOLFPACK ADMIN
+</div>
+
+<button
+  id="adminToggle"
+  class="admin-toggle"
+  type="button"
+>
+ADMIN LOGIN
+</button>
+
+</div>
+
+
+<div
+  id="adminLogin"
+  class="admin-login"
+>
+
+<input
+  id="adminEmail"
+  class="admin-input"
+  type="email"
+  placeholder="Admin email"
+  autocomplete="username"
+>
+
+<input
+  id="adminPassword"
+  class="admin-input"
+  type="password"
+  placeholder="Admin password"
+  autocomplete="current-password"
+>
+
+<button
+  id="adminLoginButton"
+  class="admin-button"
+  type="button"
+>
+SIGN IN AS ADMIN
+</button>
+
+<div class="admin-note">
+Official Team Wolfpack administrators only.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CHAT -->
+
+<div class="chat-shell">
+
+<div class="chat-header">
+
+<div class="chat-header-title">
+
+<span class="ice">
+LIVE
+</span>
+
+<span class="fire">
+PACK CHAT
+</span>
+
+</div>
+
+<div class="chat-header-info">
+Messages from the Team Wolfpack community
+</div>
+
+</div>
+
+
+<div
+  id="messages"
+  class="messages"
+>
+
+<div class="empty-message">
+Loading Pack Chat...
+</div>
+
+</div>
+
+
+<div class="composer">
+
+<textarea
+  id="messageInput"
+  class="message-input"
+  maxlength="500"
+  placeholder="Connecting..."
+  disabled
+></textarea>
+
+<button
+  id="sendButton"
+  class="send-button"
+  type="button"
+  disabled
+>
+SEND
+</button>
+
+</div>
+
+
+<div
+  id="characterCount"
+  class="character-count"
+>
+0 / 500
+</div>
+
+</div>
+
+
+<div class="safety">
+Please keep Pack Chat respectful. Do not share private information such as your address, passwords or financial details.
+</div>
+
+
+<a
+  class="back"
+  href="more.html"
+>
+‹ BACK TO MORE
+</a>
+
+
+</main>
+
+
+<!-- REPORT MODAL -->
+
+<div
+  id="reportOverlay"
+  class="report-overlay"
+>
+
+<div class="report-box">
+
+<div class="report-title">
+REPORT MESSAGE
+</div>
+
+<div class="report-text">
+Tell the Team Wolfpack admins why you are reporting this message.
+</div>
+
+<div
+  id="reportPreview"
+  class="report-preview"
+></div>
+
+<select
+  id="reportReason"
+  class="report-select"
+>
+
+<option value="">
+SELECT A REASON
+</option>
+
+<option value="Abusive or Harassing">
+Abusive or Harassing
+</option>
+
+<option value="Spam">
+Spam
+</option>
+
+<option value="Inappropriate Content">
+Inappropriate Content
+</option>
+
+<option value="Personal Information">
+Personal Information
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+<div class="report-buttons">
+
+<button
+  id="cancelReport"
+  class="report-cancel"
+  type="button"
+>
+CANCEL
+</button>
+
+<button
+  id="submitReport"
+  class="report-submit"
+  type="button"
+>
+SUBMIT REPORT
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottom-nav">
+
+<a class="nav-item" href="index.html">
+<span class="nav-icon">⌂</span>
+HOME
+</a>
+
+<a class="nav-item" href="fighters.html">
+<span class="nav-icon">♟</span>
+FIGHTERS
+</a>
+
+<a class="nav-item fire-nav" href="fights.html">
+<span class="nav-icon">♜</span>
+FIGHTS
+</a>
+
+<a class="nav-item active" href="more.html">
+<span class="nav-icon">☰</span>
+MORE
+</a>
+
+</nav>
+
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+import {
+  getAuth,
+  signInAnonymously,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  limit,
+  onSnapshot,
+  serverTimestamp,
+  deleteDoc,
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
+/* MODULE HAS NOW LOADED */
+
+const status =
+  document.getElementById("status");
+
+status.textContent =
+  "FIREBASE MODULE LOADED...";
+
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig = {
+
+  apiKey:
+    "AIzaSyC06RDrqpXodbYBJqyeGvRkmtxQGapaaPY",
+
+  authDomain:
+    "team-wolfpack-app.firebaseapp.com",
+
+  projectId:
+    "team-wolfpack-app",
+
+  storageBucket:
+    "team-wolfpack-app.firebasestorage.app",
+
+  messagingSenderId:
+    "1070414578856",
+
+  appId:
+    "1:1070414578856:web:df14e7d387e658eeae2e9d",
+
+  measurementId:
+    "G-6JTCE2N9LZ"
+
+};
+
+
+/* ADMINS */
+
+const ADMINS = {
+
+  "PRGa9TsCW0QDn1QtoUXyYjEi7YB3":
+    "MR WOLFIE",
+
+  "SlpEQYl94DaH6j42QUyl8Kv2ujJ3":
+    "MRS WOLFIE"
+
+};
+
+
+const CHAT_RULES_VERSION =
+  "1";
+
+
+/* FIREBASE */
+
+const app =
+  initializeApp(firebaseConfig);
+
+const auth =
+  getAuth(app);
+
+const db =
+  getFirestore(app);
+
+
+/* ELEMENTS */
+
+const moderationNotice =
+  document.getElementById(
+    "moderationNotice"
+  );
+
+const errorDetails =
+  document.getElementById(
+    "errorDetails"
+  );
+
+const errorCode =
+  document.getElementById(
+    "errorCode"
+  );
+
+const errorMessage =
+  document.getElementById(
+    "errorMessage"
+  );
+
+const reportSuccess =
+  document.getElementById(
+    "reportSuccess"
+  );
+
+const messages =
+  document.getElementById(
+    "messages"
+  );
+
+const nameBox =
+  document.getElementById(
+    "nameBox"
+  );
+
+const nameInput =
+  document.getElementById(
+    "nameInput"
+  );
+
+const saveName =
+  document.getElementById(
+    "saveName"
+  );
+
+const messageInput =
+  document.getElementById(
+    "messageInput"
+  );
+
+const sendButton =
+  document.getElementById(
+    "sendButton"
+  );
+
+const characterCount =
+  document.getElementById(
+    "characterCount"
+  );
+
+const adminPanel =
+  document.getElementById(
+    "adminPanel"
+  );
+
+const adminToggle =
+  document.getElementById(
+    "adminToggle"
+  );
+
+const adminLogin =
+  document.getElementById(
+    "adminLogin"
+  );
+
+const adminEmail =
+  document.getElementById(
+    "adminEmail"
+  );
+
+const adminPassword =
+  document.getElementById(
+    "adminPassword"
+  );
+
+const adminLoginButton =
+  document.getElementById(
+    "adminLoginButton"
+  );
+
+const adminActive =
+  document.getElementById(
+    "adminActive"
+  );
+
+const adminDisplayName =
+  document.getElementById(
+    "adminDisplayName"
+  );
+
+const logoutAdmin =
+  document.getElementById(
+    "logoutAdmin"
+  );
+
+const reportOverlay =
+  document.getElementById(
+    "reportOverlay"
+  );
+
+const reportPreview =
+  document.getElementById(
+    "reportPreview"
+  );
+
+const reportReason =
+  document.getElementById(
+    "reportReason"
+  );
+
+const cancelReport =
+  document.getElementById(
+    "cancelReport"
+  );
+
+const submitReport =
+  document.getElementById(
+    "submitReport"
+  );
+
+
+/* STATE */
+
+let currentUser = null;
+
+let isAdmin = false;
+
+let adminName = "";
+
+let sending = false;
+
+let reportTarget = null;
+
+let messageDocuments = [];
+
+let moderationMap = {};
+
+let memberModeration = {
+  muted: false,
+  blocked: false
+};
+
+let packName =
+  localStorage.getItem(
+    "teamWolfpackChatName"
+  ) || "";
+
+let unsubscribeMessages =
+  null;
+
+let unsubscribeOwnModeration =
+  null;
+
+let unsubscribeAdminModeration =
+  null;
+
+
+if(packName) {
+
+  nameInput.value =
+    packName;
+
+}
+
+
+/* ERROR */
+
+function showError(error) {
+
+  const code =
+    error && error.code
+      ? error.code
+      : "UNKNOWN_ERROR";
+
+  const message =
+    error && error.message
+      ? error.message
+      : String(error);
+
+  status.textContent =
+    "PACK CHAT CONNECTION ERROR";
+
+  status.className =
+    "status error";
+
+  errorCode.textContent =
+    "CODE: " + code;
+
+  errorMessage.textContent =
+    "MESSAGE: " + message;
+
+  errorDetails.classList.add(
+    "show"
+  );
+
+  console.error(
+    "PACK CHAT ERROR:",
+    error
+  );
+
+}
+
+
+function clearError() {
+
+  errorDetails.classList.remove(
+    "show"
+  );
+
+}
+
+
+/* UI */
+
+function updateInterface() {
+
+  isAdmin =
+    Boolean(
+      currentUser &&
+      ADMINS[currentUser.uid]
+    );
+
+  adminName =
+    isAdmin
+      ? ADMINS[currentUser.uid]
+      : "";
+
+  moderationNotice.className =
+    "moderation-notice";
+
+  moderationNotice.textContent =
+    "";
+
+
+  if(isAdmin) {
+
+    packName =
+      adminName;
+
+    status.textContent =
+      "● " +
+      adminName +
+      " • ADMIN CONNECTED";
+
+    status.className =
+      "status admin";
+
+    adminDisplayName.textContent =
+      adminName;
+
+    nameBox.style.display =
+      "none";
+
+    adminPanel.style.display =
+      "none";
+
+    adminActive.classList.add(
+      "show"
+    );
+
+  } else {
+
+    nameBox.style.display =
+      "block";
+
+    adminPanel.style.display =
+      "block";
+
+    adminActive.classList.remove(
+      "show"
+    );
+
+    adminDisplayName.textContent =
+      "";
+
+    packName =
+      localStorage.getItem(
+        "teamWolfpackChatName"
+      ) || "";
+
+    nameInput.value =
+      packName;
+
+
+    if(memberModeration.blocked) {
+
+      status.textContent =
+        "● PACK CHAT ACCESS RESTRICTED";
+
+      status.className =
+        "status blocked";
+
+      moderationNotice.textContent =
+        "YOU HAVE BEEN BLOCKED FROM SENDING MESSAGES OR REPORTS IN PACK CHAT.";
+
+      moderationNotice.classList.add(
+        "blocked"
+      );
+
+    } else if(memberModeration.muted) {
+
+      status.textContent =
+        "● PACK CHAT • MUTED";
+
+      status.className =
+        "status warning";
+
+      moderationNotice.textContent =
+        "YOU HAVE BEEN MUTED BY A TEAM WOLFPACK ADMIN. YOU CAN READ CHAT AND REPORT MESSAGES, BUT YOU CANNOT SEND MESSAGES.";
+
+      moderationNotice.classList.add(
+        "muted"
+      );
+
+    } else {
+
+      status.textContent =
+        "● PACK CHAT CONNECTED";
+
+      status.className =
+        "status connected";
+
+    }
+
+  }
+
+
+  const ready =
+    Boolean(
+      currentUser &&
+      packName.trim().length > 0 &&
+      (
+        isAdmin ||
+        (
+          !memberModeration.muted &&
+          !memberModeration.blocked
+        )
+      )
+    );
+
+
+  messageInput.disabled =
+    !ready;
+
+  sendButton.disabled =
+    !ready;
+
+
+  if(
+    !isAdmin &&
+    memberModeration.blocked
+  ) {
+
+    messageInput.placeholder =
+      "Pack Chat access restricted.";
+
+  } else if(
+    !isAdmin &&
+    memberModeration.muted
+  ) {
+
+    messageInput.placeholder =
+      "You are currently muted.";
+
+  } else {
+
+    messageInput.placeholder =
+      ready
+        ? "Write a message..."
+        : "Choose your Pack Name first...";
+
+  }
+
+}
+
+
+/* PACK NAME */
+
+saveName.addEventListener(
+  "click",
+  function() {
+
+    if(isAdmin) {
+      return;
+    }
+
+    const newName =
+      nameInput.value.trim();
+
+    if(
+      newName.length < 1 ||
+      newName.length > 30
+    ) {
+      return;
+    }
+
+    packName =
+      newName;
+
+    localStorage.setItem(
+      "teamWolfpackChatName",
+      packName
+    );
+
+    updateInterface();
+
+    messageInput.focus();
+
+  }
+);
+
+
+nameInput.addEventListener(
+  "keydown",
+  function(event) {
+
+    if(event.key === "Enter") {
+
+      event.preventDefault();
+
+      saveName.click();
+
+    }
+
+  }
+);
+
+
+/* ADMIN PANEL */
+
+adminToggle.addEventListener(
+  "click",
+  function() {
+
+    adminLogin.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+/* ADMIN LOGIN */
+
+adminLoginButton.addEventListener(
+  "click",
+  async function() {
+
+    clearError();
+
+    const email =
+      adminEmail.value.trim();
+
+    const password =
+      adminPassword.value;
+
+    if(!email || !password) {
+      return;
+    }
+
+    adminLoginButton.disabled =
+      true;
+
+    adminLoginButton.textContent =
+      "SIGNING IN...";
+
+
+    try {
+
+      const credential =
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+
+      if(
+        !ADMINS[
+          credential.user.uid
+        ]
+      ) {
+
+        await signOut(auth);
+
+        throw new Error(
+          "This account does not have Team Wolfpack administrator permission."
+        );
+
+      }
+
+
+      adminEmail.value =
+        "";
+
+      adminPassword.value =
+        "";
+
+      adminLogin.classList.remove(
+        "open"
+      );
+
+
+    } catch(error) {
+
+      showError(error);
+
+    } finally {
+
+      adminLoginButton.disabled =
+        false;
+
+      adminLoginButton.textContent =
+        "SIGN IN AS ADMIN";
+
+    }
+
+  }
+);
+
+
+adminPassword.addEventListener(
+  "keydown",
+  function(event) {
+
+    if(event.key === "Enter") {
+
+      event.preventDefault();
+
+      adminLoginButton.click();
+
+    }
+
+  }
+);
+
+
+/* ADMIN LOGOUT */
+
+logoutAdmin.addEventListener(
+  "click",
+  async function() {
+
+    try {
+
+      await signOut(auth);
+
+      await signInAnonymously(
+        auth
+      );
+
+    } catch(error) {
+
+      showError(error);
+
+    }
+
+  }
+);
+
+
+/* CHARACTER COUNT */
+
+messageInput.addEventListener(
+  "input",
+  function() {
+
+    characterCount.textContent =
+      messageInput.value.length +
+      " / 500";
+
+  }
+);
+
+
+/* SEND WITH ENTER */
+
+messageInput.addEventListener(
+  "keydown",
+  function(event) {
+
+    if(
+      event.key === "Enter" &&
+      !event.shiftKey
+    ) {
+
+      event.preventDefault();
+
+      sendMessage();
+
+    }
+
+  }
+);
+
+
+sendButton.addEventListener(
+  "click",
+  sendMessage
+);
+
+
+/* SEND MESSAGE */
+
+async function sendMessage() {
+
+  if(
+    !currentUser ||
+    !packName ||
+    sending
+  ) {
+    return;
+  }
+
+
+  if(
+    !isAdmin &&
+    (
+      memberModeration.muted ||
+      memberModeration.blocked
+    )
+  ) {
+    return;
+  }
+
+
+  const text =
+    messageInput.value.trim();
+
+
+  if(
+    text.length < 1 ||
+    text.length > 500
+  ) {
+    return;
+  }
+
+
+  sending =
+    true;
+
+  sendButton.disabled =
+    true;
+
+
+  try {
+
+    await addDoc(
+      collection(
+        db,
+        "messages"
+      ),
+      {
+
+        uid:
+          currentUser.uid,
+
+        name:
+          isAdmin
+            ? adminName
+            : packName,
+
+        text:
+          text,
+
+        createdAt:
+          serverTimestamp()
+
+      }
+    );
+
+
+    messageInput.value =
+      "";
+
+    characterCount.textContent =
+      "0 / 500";
+
+
+  } catch(error) {
+
+    showError(error);
+
+  } finally {
+
+    sending =
+      false;
+
+    updateInterface();
+
+  }
+
+}
+
+
+/* HELPERS */
+
+function escapeHTML(value) {
+
+  const element =
+    document.createElement(
+      "div"
+    );
+
+  element.textContent =
+    value || "";
+
+  return element.innerHTML;
+
+}
+
+
+function displayTime(timestamp) {
+
+  if(!timestamp) {
+    return "Sending...";
+  }
+
+  try {
+
+    return timestamp
+      .toDate()
+      .toLocaleTimeString(
+        [],
+        {
+          hour: "2-digit",
+          minute: "2-digit"
+        }
+      );
+
+  } catch(error) {
+
+    return "";
+
+  }
+
+}
+
+
+/* SAVE MODERATION */
+
+async function saveModeration(
+  uid,
+  name,
+  muted,
+  blocked
+) {
+
+  if(
+    !isAdmin ||
+    !currentUser ||
+    ADMINS[uid]
+  ) {
+    return;
+  }
+
+
+  try {
+
+    await setDoc(
+      doc(
+        db,
+        "moderation",
+        uid
+      ),
+      {
+
+        uid:
+          uid,
+
+        name:
+          name || "Pack Member",
+
+        muted:
+          Boolean(muted),
+
+        blocked:
+          Boolean(blocked),
+
+        updatedAt:
+          serverTimestamp(),
+
+        updatedBy:
+          currentUser.uid
+
+      }
+    );
+
+
+  } catch(error) {
+
+    showError(error);
+
+  }
+
+}
+
+
+/* MUTE */
+
+async function toggleMuteMember(
+  uid,
+  name
+) {
+
+  const current =
+    moderationMap[uid] || {
+      muted: false,
+      blocked: false
+    };
+
+
+  if(current.blocked) {
+    return;
+  }
+
+
+  const newMuted =
+    !current.muted;
+
+
+  const confirmed =
+    window.confirm(
+      newMuted
+        ? "Mute " + name + "?"
+        : "Unmute " + name + "?"
+    );
+
+
+  if(!confirmed) {
+    return;
+  }
+
+
+  await saveModeration(
+    uid,
+    name,
+    newMuted,
+    false
+  );
+
+}
+
+
+/* BLOCK */
+
+async function toggleBlockMember(
+  uid,
+  name
+) {
+
+  const current =
+    moderationMap[uid] || {
+      muted: false,
+      blocked: false
+    };
+
+
+  const newBlocked =
+    !current.blocked;
+
+
+  const confirmed =
+    window.confirm(
+      newBlocked
+        ? "Block " + name + " from Pack Chat?"
+        : "Unblock " + name + "?"
+    );
+
+
+  if(!confirmed) {
+    return;
+  }
+
+
+  await saveModeration(
+    uid,
+    name,
+    false,
+    newBlocked
+  );
+
+}
+
+
+/* DELETE MESSAGE */
+
+async function deletePackMessage(
+  messageId
+) {
+
+  if(!isAdmin) {
+    return;
+  }
+
+
+  const confirmed =
+    window.confirm(
+      "Delete this Pack Chat message?"
+    );
+
+
+  if(!confirmed) {
+    return;
+  }
+
+
+  try {
+
+    await deleteDoc(
+      doc(
+        db,
+        "messages",
+        messageId
+      )
+    );
+
+
+  } catch(error) {
+
+    showError(error);
+
+  }
+
+}
+
+
+/* REPORT */
+
+function openReport(
+  messageId,
+  messageUid,
+  messageName,
+  messageText
+) {
+
+  if(
+    !currentUser ||
+    isAdmin ||
+    memberModeration.blocked ||
+    currentUser.uid === messageUid
+  ) {
+    return;
+  }
+
+
+  reportTarget = {
+    messageId,
+    messageUid,
+    messageName,
+    messageText
+  };
+
+
+  reportPreview.textContent =
+    messageName +
+    ": " +
+    messageText;
+
+
+  reportReason.value =
+    "";
+
+
+  reportOverlay.classList.add(
+    "show"
+  );
+
+}
+
+
+function closeReport() {
+
+  reportOverlay.classList.remove(
+    "show"
+  );
+
+  reportTarget =
+    null;
+
+  reportReason.value =
+    "";
+
+}
+
+
+cancelReport.addEventListener(
+  "click",
+  closeReport
+);
+
+
+reportOverlay.addEventListener(
+  "click",
+  function(event) {
+
+    if(
+      event.target === reportOverlay
+    ) {
+
+      closeReport();
+
+    }
+
+  }
+);
+
+
+/* SUBMIT REPORT */
+
+submitReport.addEventListener(
+  "click",
+  async function() {
+
+    if(
+      !reportTarget ||
+      !currentUser ||
+      memberModeration.blocked
+    ) {
+      return;
+    }
+
+
+    const reason =
+      reportReason.value;
+
+
+    if(!reason) {
+      return;
+    }
+
+
+    submitReport.disabled =
+      true;
+
+    submitReport.textContent =
+      "SENDING...";
+
+
+    try {
+
+      await addDoc(
+        collection(
+          db,
+          "reports"
+        ),
+        {
+
+          reporterUid:
+            currentUser.uid,
+
+          messageId:
+            reportTarget.messageId,
+
+          messageUid:
+            reportTarget.messageUid,
+
+          messageName:
+            reportTarget.messageName,
+
+          messageText:
+            reportTarget.messageText,
+
+          reason:
+            reason,
+
+          createdAt:
+            serverTimestamp()
+
+        }
+      );
+
+
+      closeReport();
+
+
+      reportSuccess.classList.add(
+        "show"
+      );
+
+
+      setTimeout(
+        function() {
+
+          reportSuccess.classList.remove(
+            "show"
+          );
+
+        },
+        3000
+      );
+
+
+    } catch(error) {
+
+      showError(error);
+
+    } finally {
+
+      submitReport.disabled =
+        false;
+
+      submitReport.textContent =
+        "SUBMIT REPORT";
+
+    }
+
+  }
+);
+
+
+/* OWN MODERATION */
+
+function startOwnModeration() {
+
+  if(unsubscribeOwnModeration) {
+
+    unsubscribeOwnModeration();
+
+  }
+
+
+  if(
+    !currentUser ||
+    isAdmin
+  ) {
+    return;
+  }
+
+
+  unsubscribeOwnModeration =
+    onSnapshot(
+      doc(
+        db,
+        "moderation",
+        currentUser.uid
+      ),
+
+      function(snapshot) {
+
+        if(snapshot.exists()) {
+
+          const data =
+            snapshot.data();
+
+          memberModeration = {
+
+            muted:
+              data.muted === true,
+
+            blocked:
+              data.blocked === true
+
+          };
+
+        } else {
+
+          memberModeration = {
+            muted: false,
+            blocked: false
+          };
+
+        }
+
+
+        updateInterface();
+
+        renderMessages();
+
+      },
+
+      function(error) {
+
+        console.error(
+          "Moderation listener:",
+          error
+        );
+
+      }
+    );
+
+}
+
+
+/* ADMIN MODERATION */
+
+function startAdminModeration() {
+
+  if(unsubscribeAdminModeration) {
+
+    unsubscribeAdminModeration();
+
+  }
+
+
+  if(!isAdmin) {
+    return;
+  }
+
+
+  unsubscribeAdminModeration =
+    onSnapshot(
+      collection(
+        db,
+        "moderation"
+      ),
+
+      function(snapshot) {
+
+        moderationMap =
+          {};
+
+
+        snapshot.forEach(
+          function(item) {
+
+            moderationMap[
+              item.id
+            ] =
+              item.data();
+
+          }
+        );
+
+
+        renderMessages();
+
+      },
+
+      function(error) {
+
+        console.error(
+          "Admin moderation listener:",
+          error
+        );
+
+      }
+    );
+
+}
+
+
+/* RENDER */
+
+function renderMessages() {
+
+  if(
+    messageDocuments.length === 0
+  ) {
+
+    messages.innerHTML =
+      '<div class="empty-message">' +
+      'No messages yet.<br>' +
+      'Be the first to say hello to the pack.' +
+      '</div>';
+
+    return;
+
+  }
+
+
+  let html =
+    "";
+
+
+  messageDocuments.forEach(
+    function(item) {
+
+      const id =
+        item.id;
+
+      const data =
+        item.data;
+
+
+      const mine =
+        Boolean(
+          currentUser &&
+          data.uid === currentUser.uid
+        );
+
+
+      const officialName =
+        ADMINS[data.uid] || "";
+
+
+      const moderation =
+        moderationMap[data.uid] || {
+          muted: false,
+          blocked: false
+        };
+
+
+      const visibleName =
+        officialName
+          ? officialName
+          : data.name ||
+            "Pack Member";
+
+
+      let badges =
+        "";
+
+
+      if(officialName) {
+
+        badges +=
+          ' <span class="official-badge">ADMIN</span>';
+
+      } else if(
+        isAdmin &&
+        moderation.blocked
+      ) {
+
+        badges +=
+          ' <span class="blocked-badge">BLOCKED</span>';
+
+      } else if(
+        isAdmin &&
+        moderation.muted
+      ) {
+
+        badges +=
+          ' <span class="muted-badge">MUTED</span>';
+
+      }
+
+
+      html +=
+        '<div class="message ' +
+        (mine ? "mine" : "") +
+        '">' +
+
+        '<div class="message-name">' +
+        escapeHTML(visibleName) +
+        badges +
+        '</div>' +
+
+        '<div class="message-bubble">' +
+        escapeHTML(data.text || "") +
+        '</div>' +
+
+        '<div class="message-time">' +
+        displayTime(data.createdAt) +
+        '</div>' +
+
+        '<div class="message-actions">';
+
+
+      /* ADMIN CONTROLS */
+
+      if(
+        isAdmin &&
+        !officialName
+      ) {
+
+        if(moderation.blocked) {
+
+          html +=
+            '<button ' +
+            'class="block-member" ' +
+            'data-action="block" ' +
+            'data-uid="' +
+            escapeHTML(data.uid || "") +
+            '" ' +
+            'data-name="' +
+            escapeHTML(visibleName) +
+            '">' +
+            'UNBLOCK MEMBER' +
+            '</button>';
+
+        } else {
+
+          html +=
+            '<button ' +
+            'class="mute-member" ' +
+            'data-action="mute" ' +
+            'data-uid="' +
+            escapeHTML(data.uid || "") +
+            '" ' +
+            'data-name="' +
+            escapeHTML(visibleName) +
+            '">' +
+            (
+              moderation.muted
+                ? "UNMUTE MEMBER"
+                : "MUTE MEMBER"
+            ) +
+            '</button>';
+
+
+          html +=
+            '<button ' +
+            'class="block-member" ' +
+            'data-action="block" ' +
+            'data-uid="' +
+            escapeHTML(data.uid || "") +
+            '" ' +
+            'data-name="' +
+            escapeHTML(visibleName) +
+            '">' +
+            'BLOCK MEMBER' +
+            '</button>';
+
+        }
+
+
+        html +=
+          '<button ' +
+          'class="delete-message" ' +
+          'data-action="delete" ' +
+          'data-message-id="' +
+          id +
+          '">' +
+          'DELETE MESSAGE' +
+          '</button>';
+
+      }
+
+
+      /* REPORT */
+
+      if(
+        !isAdmin &&
+        currentUser &&
+        !memberModeration.blocked &&
+        data.uid !== currentUser.uid
+      ) {
+
+        html +=
+          '<button ' +
+          'class="report-message" ' +
+          'data-action="report" ' +
+          'data-message-id="' +
+          id +
+          '" ' +
+          'data-message-uid="' +
+          escapeHTML(data.uid || "") +
+          '">' +
+          'REPORT' +
+          '</button>';
+
+      }
+
+
+      html +=
+        '</div>' +
+        '</div>';
+
+    }
+  );
+
+
+  messages.innerHTML =
+    html;
+
+
+  /* DELETE */
+
+  messages
+    .querySelectorAll(
+      '[data-action="delete"]'
+    )
+    .forEach(
+      function(button) {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            deletePackMessage(
+              button.dataset.messageId
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* MUTE */
+
+  messages
+    .querySelectorAll(
+      '[data-action="mute"]'
+    )
+    .forEach(
+      function(button) {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            toggleMuteMember(
+              button.dataset.uid,
+              button.dataset.name
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* BLOCK */
+
+  messages
+    .querySelectorAll(
+      '[data-action="block"]'
+    )
+    .forEach(
+      function(button) {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            toggleBlockMember(
+              button.dataset.uid,
+              button.dataset.name
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* REPORT */
+
+  messages
+    .querySelectorAll(
+      '[data-action="report"]'
+    )
+    .forEach(
+      function(button) {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            const wrapper =
+              button.closest(
+                ".message"
+              );
+
+            const nameElement =
+              wrapper.querySelector(
+                ".message-name"
+              );
+
+            const bubbleElement =
+              wrapper.querySelector(
+                ".message-bubble"
+              );
+
+
+            const name =
+              nameElement
+                .textContent
+                .replace(
+                  "ADMIN",
+                  ""
+                )
+                .replace(
+                  "MUTED",
+                  ""
+                )
+                .replace(
+                  "BLOCKED",
+                  ""
+                )
+                .trim();
+
+
+            const text =
+              bubbleElement
+                .textContent
+                .trim();
+
+
+            openReport(
+
+              button.dataset.messageId,
+
+              button.dataset.messageUid,
+
+              name,
+
+              text
+
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  messages.scrollTop =
+    messages.scrollHeight;
+
+}
+
+
+/* MESSAGE LISTENER */
+
+function startMessages() {
+
+  if(unsubscribeMessages) {
+
+    unsubscribeMessages();
+
+  }
+
+
+  const messagesQuery =
+    query(
+      collection(
+        db,
+        "messages"
+      ),
+      orderBy(
+        "createdAt",
+        "asc"
+      ),
+      limit(
+        100
+      )
+    );
+
+
+  unsubscribeMessages =
+    onSnapshot(
+      messagesQuery,
+
+      function(snapshot) {
+
+        messageDocuments =
+          [];
+
+
+        snapshot.forEach(
+          function(item) {
+
+            messageDocuments.push({
+              id:
+                item.id,
+
+              data:
+                item.data()
+            });
+
+          }
+        );
+
+
+        renderMessages();
+
+      },
+
+      function(error) {
+
+        showError(error);
+
+      }
+    );
+
+}
+
+
+/* AUTH */
+
+onAuthStateChanged(
+  auth,
+  async function(user) {
+
+    clearError();
+
+
+    if(user) {
+
+      currentUser =
+        user;
+
+
+      isAdmin =
+        Boolean(
+          ADMINS[user.uid]
+        );
+
+
+      /*
+        RULES CHECK
+
+        Existing admins bypass the rules gate.
+        Normal members need rules version 1.
+      */
+
+      const acceptedRules =
+        localStorage.getItem(
+          "teamWolfpackChatRulesVersion"
+        );
+
+
+      if(
+        !isAdmin &&
+        acceptedRules !==
+          CHAT_RULES_VERSION
+      ) {
+
+        window.location.replace(
+          "chat-rules.html"
+        );
+
+        return;
+
+      }
+
+
+      memberModeration = {
+        muted: false,
+        blocked: false
+      };
+
+
+      moderationMap =
+        {};
+
+
+      updateInterface();
+
+      startMessages();
+
+
+      if(isAdmin) {
+
+        if(unsubscribeOwnModeration) {
+
+          unsubscribeOwnModeration();
+
+          unsubscribeOwnModeration =
+            null;
+
+        }
+
+        startAdminModeration();
+
+      } else {
+
+        if(unsubscribeAdminModeration) {
+
+          unsubscribeAdminModeration();
+
+          unsubscribeAdminModeration =
+            null;
+
+        }
+
+        startOwnModeration();
+
+      }
+
+
+      return;
+
+    }
+
+
+    /*
+      No authenticated Firebase session yet.
+      Create anonymous Pack Chat member.
+    */
+
+    status.textContent =
+      "AUTHENTICATING PACK MEMBER...";
+
+
+    try {
+
+      await signInAnonymously(
+        auth
+      );
+
+    } catch(error) {
+
+      showError(error);
+
+    }
+
+  }
+);
+
+</script>
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+if(
+  "serviceWorker" in navigator
+) {
+
+  window.addEventListener(
+    "load",
+    function() {
+
+      navigator.serviceWorker
+        .register(
+          "service-worker.js"
+        )
+        .catch(
+          function(error) {
+
+            console.error(
+              "Service worker error:",
+              error
+            );
+
+          }
+        );
+
+    }
+  );
+
+}
+
+</script>
+
+</body>
+</html>
