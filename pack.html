@@ -58,6 +58,7 @@ html{
 
 body{
   min-height:100vh;
+  min-height:100dvh;
 
   font-family:
     Arial,
@@ -65,8 +66,6 @@ body{
     sans-serif;
 
   color:#fff;
-
-  padding-bottom:95px;
 
   background:
     radial-gradient(
@@ -165,12 +164,12 @@ body{
   width:100%;
   max-width:540px;
 
-  margin:auto;
+  margin:0 auto;
 
   padding:
     10px
     18px
-    110px;
+    calc(150px + env(safe-area-inset-bottom));
 }
 
 
@@ -375,6 +374,7 @@ a.member-card:active{
   display:block;
 
   margin-top:8px;
+  margin-bottom:20px;
 
   padding:16px;
 
@@ -417,7 +417,8 @@ a.member-card:active{
   right:0;
   bottom:0;
 
-  height:74px;
+  height:
+    calc(74px + env(safe-area-inset-bottom));
 
   display:grid;
 
@@ -433,10 +434,13 @@ a.member-card:active{
   border-top:
     1px solid rgba(255,255,255,.12);
 
+  -webkit-backdrop-filter:
+    blur(12px);
+
   backdrop-filter:
     blur(12px);
 
-  z-index:100;
+  z-index:1000;
 }
 
 .nav-item{
@@ -453,6 +457,8 @@ a.member-card:active{
   justify-content:center;
 
   gap:5px;
+
+  min-width:0;
 
   font-size:9px;
 
@@ -506,6 +512,11 @@ a.member-card:active{
 
   .view{
     font-size:9px;
+  }
+
+  .content{
+    padding-bottom:
+      calc(160px + env(safe-area-inset-bottom));
   }
 
 }
@@ -569,7 +580,6 @@ The people behind Team Wolfpack.
 </header>
 
 
-
 <!-- PACK MEMBERS -->
 
 <main class="content">
@@ -600,7 +610,6 @@ Manager to Team Wolfie
 </div>
 
 </div>
-
 
 
 <!-- MRS WOLFIE -->
@@ -648,7 +657,6 @@ VIEW FIGHTER PROFILE
 </a>
 
 
-
 <!-- GREIG SLOAN -->
 
 <a
@@ -692,7 +700,6 @@ VIEW FIGHTER PROFILE
 </a>
 
 
-
 <!-- BRY KELLY -->
 
 <div class="member-card">
@@ -716,7 +723,6 @@ Corner Team
 </div>
 
 </div>
-
 
 
 <!-- BILLY BURTON -->
@@ -744,7 +750,6 @@ Corner Team
 </div>
 
 
-
 <!-- BACK -->
 
 <a
@@ -764,7 +769,6 @@ Corner Team
 
 
 </main>
-
 
 
 <!-- BOTTOM NAVIGATION -->
@@ -850,7 +854,6 @@ MORE
 
 
 </nav>
-
 
 
 <!-- SERVICE WORKER -->
