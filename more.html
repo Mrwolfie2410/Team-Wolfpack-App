@@ -4,25 +4,46 @@
 <head>
 
 <!-- Google Analytics - Team Wolfpack App -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0">
+</script>
 
 <script>
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer =
+    window.dataLayer || [];
 
   function gtag(){
     dataLayer.push(arguments);
   }
 
-  gtag('js', new Date());
+  gtag(
+    "js",
+    new Date()
+  );
 
-  gtag('config', 'G-M973P0B4F0');
+  gtag(
+    "config",
+    "G-M973P0B4F0"
+  );
 
-  window.addEventListener('load', function(){
-    gtag('event', 'more_page_view', {
-      section: 'More'
-    });
-  });
+  window.addEventListener(
+    "load",
+    function(){
+
+      gtag(
+        "event",
+        "more_page_view",
+        {
+          section:
+            "More"
+        }
+      );
+
+    }
+  );
 </script>
+
 
 <meta charset="UTF-8">
 
@@ -31,18 +52,50 @@
   content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
 
-<meta name="theme-color" content="#050505">
+<meta
+  name="theme-color"
+  content="#050505"
+>
+
 
 <!-- PWA / MOBILE -->
-<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<title>More | Team Wolfpack</title>
+<meta
+  name="apple-mobile-web-app-title"
+  content="TEAM WOLFPACK"
+>
 
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icon-192.png">
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes"
+>
+
+<meta
+  name="mobile-web-app-capable"
+  content="yes"
+>
+
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black"
+>
+
+
+<title>
+More | Team Wolfpack
+</title>
+
+
+<link
+  rel="manifest"
+  href="manifest.json"
+>
+
+<link
+  rel="apple-touch-icon"
+  href="icon-192.png"
+>
+
 
 <style>
 
@@ -87,28 +140,35 @@ body{
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+   ========================= */
 
 .header{
   text-align:center;
-  padding:28px 18px 20px;
+
+  padding:
+    28px
+    18px
+    20px;
 }
 
 .logo{
   width:110px;
   height:110px;
+
   object-fit:contain;
 }
 
 .brand{
   margin-top:5px;
 
+  color:#67dcff;
+
   font-size:12px;
   font-weight:900;
 
   letter-spacing:4px;
-
-  color:#67dcff;
 }
 
 .title{
@@ -137,12 +197,14 @@ body{
 
 .line{
   width:100%;
-
   max-width:430px;
 
   height:2px;
 
-  margin:22px auto 0;
+  margin:
+    22px
+    auto
+    0;
 
   background:
     linear-gradient(
@@ -154,11 +216,12 @@ body{
 }
 
 
-/* CONTENT */
+/* =========================
+   CONTENT
+   ========================= */
 
 .content{
   width:100%;
-
   max-width:540px;
 
   margin:auto;
@@ -166,11 +229,16 @@ body{
   padding:
     10px
     18px
-    calc(160px + env(safe-area-inset-bottom));
+    calc(
+      160px +
+      env(safe-area-inset-bottom)
+    );
 }
 
 
-/* MENU CARDS */
+/* =========================
+   MENU CARDS
+   ========================= */
 
 .menu-card{
   display:block;
@@ -186,7 +254,8 @@ body{
   border-radius:15px;
 
   border:
-    1px solid rgba(255,255,255,.13);
+    1px solid
+    rgba(255,255,255,.13);
 
   text-decoration:none;
 
@@ -201,7 +270,8 @@ body{
     );
 
   box-shadow:
-    0 8px 25px rgba(0,0,0,.28);
+    0 8px 25px
+    rgba(0,0,0,.28);
 }
 
 .menu-card::before{
@@ -233,11 +303,13 @@ body{
 }
 
 .menu-card:active{
-  transform:scale(.985);
+  transform:
+    scale(.985);
 }
 
 .menu-title{
   position:relative;
+
   z-index:2;
 
   font-size:18px;
@@ -247,17 +319,18 @@ body{
 
 .menu-subtitle{
   position:relative;
+
   z-index:2;
 
   margin-top:5px;
+
+  padding-right:30px;
 
   color:#aaa;
 
   font-size:12px;
 
   line-height:1.4;
-
-  padding-right:30px;
 }
 
 .arrow{
@@ -267,21 +340,25 @@ body{
 
   top:50%;
 
-  transform:translateY(-50%);
+  transform:
+    translateY(-50%);
+
+  z-index:2;
 
   color:#ff751c;
 
   font-size:24px;
-
-  z-index:2;
 }
 
 
-/* PACK CHAT SPECIAL */
+/* =========================
+   PACK CHAT CARD
+   ========================= */
 
 .chat-card{
   border:
-    1px solid rgba(103,220,255,.28);
+    1px solid
+    rgba(103,220,255,.28);
 
   background:
     linear-gradient(
@@ -292,11 +369,8 @@ body{
     );
 
   box-shadow:
-    0 8px 28px rgba(0,0,0,.35);
-}
-
-.chat-card .menu-title{
-  color:#fff;
+    0 8px 28px
+    rgba(0,0,0,.35);
 }
 
 .chat-tag{
@@ -304,7 +378,9 @@ body{
 
   margin-bottom:7px;
 
-  padding:4px 7px;
+  padding:
+    4px
+    7px;
 
   border-radius:20px;
 
@@ -320,7 +396,88 @@ body{
 }
 
 
-/* WEBSITE */
+/* =========================
+   ADMIN DASHBOARD
+   ========================= */
+
+.admin-menu-card{
+  display:none;
+
+  border:
+    1px solid
+    rgba(255,117,28,.45);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(0,160,220,.17),
+      rgba(7,7,7,.97) 48%,
+      rgba(255,90,0,.27)
+    );
+
+  box-shadow:
+    0 8px 30px
+    rgba(255,80,0,.08);
+}
+
+.admin-menu-card.show{
+  display:block;
+}
+
+.admin-menu-card::before{
+  background:#67dcff;
+}
+
+.admin-menu-card::after{
+  background:#ff6500;
+}
+
+.admin-tag{
+  display:inline-block;
+
+  position:relative;
+
+  z-index:2;
+
+  margin-bottom:8px;
+
+  padding:
+    4px
+    8px;
+
+  border-radius:20px;
+
+  color:#050505;
+
+  background:#ff751c;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+.admin-identity{
+  position:relative;
+
+  z-index:2;
+
+  margin-top:8px;
+
+  color:#67dcff;
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:.5px;
+}
+
+
+/* =========================
+   WEBSITE
+   ========================= */
 
 .website{
   margin-top:24px;
@@ -329,15 +486,17 @@ body{
 
   text-align:center;
 
+  color:#777;
+
   font-size:10px;
 
   letter-spacing:1px;
-
-  color:#777;
 }
 
 
-/* BOTTOM NAVIGATION */
+/* =========================
+   BOTTOM NAVIGATION
+   ========================= */
 
 .bottom-nav{
   position:fixed;
@@ -360,7 +519,8 @@ body{
     rgba(4,4,4,.97);
 
   border-top:
-    1px solid rgba(255,255,255,.12);
+    1px solid
+    rgba(255,255,255,.12);
 
   -webkit-backdrop-filter:
     blur(12px);
@@ -374,10 +534,6 @@ body{
 .nav-item{
   min-height:74px;
 
-  text-decoration:none;
-
-  color:#888;
-
   display:flex;
 
   flex-direction:column;
@@ -387,6 +543,10 @@ body{
   justify-content:center;
 
   gap:5px;
+
+  text-decoration:none;
+
+  color:#888;
 
   font-size:9px;
 
@@ -406,7 +566,9 @@ body{
 }
 
 
-/* SMALL PHONES */
+/* =========================
+   SMALL PHONES
+   ========================= */
 
 @media(max-width:400px){
 
@@ -432,7 +594,9 @@ body{
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+     ========================= -->
 
 <header class="header">
 
@@ -478,8 +642,9 @@ Everything else Team Wolfpack in one place.
 </header>
 
 
-
-<!-- CONTENT -->
+<!-- =========================
+     CONTENT
+     ========================= -->
 
 <main class="content">
 
@@ -489,9 +654,17 @@ Everything else Team Wolfpack in one place.
 <a
   class="menu-card"
   href="about.html"
-  onclick="gtag('event','more_menu_click',{
-    section:'About Team Wolfpack'
-  });"
+
+  onclick="
+    gtag(
+      'event',
+      'more_menu_click',
+      {
+        section:
+          'About Team Wolfpack'
+      }
+    );
+  "
 >
 
 <div class="menu-title">
@@ -509,15 +682,22 @@ Our story, values and what the pack stands for.
 </a>
 
 
-
 <!-- MEET THE PACK -->
 
 <a
   class="menu-card"
   href="pack.html"
-  onclick="gtag('event','more_menu_click',{
-    section:'Meet The Pack'
-  });"
+
+  onclick="
+    gtag(
+      'event',
+      'more_menu_click',
+      {
+        section:
+          'Meet The Pack'
+      }
+    );
+  "
 >
 
 <div class="menu-title">
@@ -535,15 +715,22 @@ Meet the people behind Team Wolfpack.
 </a>
 
 
-
 <!-- MERCH -->
 
 <a
   class="menu-card"
   href="merch.html"
-  onclick="gtag('event','more_menu_click',{
-    section:'Merch'
-  });"
+
+  onclick="
+    gtag(
+      'event',
+      'more_menu_click',
+      {
+        section:
+          'Merch'
+      }
+    );
+  "
 >
 
 <div class="menu-title">
@@ -561,15 +748,22 @@ Team Wolfpack clothing and merchandise.
 </a>
 
 
-
 <!-- SPONSORS -->
 
 <a
   class="menu-card"
   href="sponsors.html"
-  onclick="gtag('event','more_menu_click',{
-    section:'Sponsors and Partners'
-  });"
+
+  onclick="
+    gtag(
+      'event',
+      'more_menu_click',
+      {
+        section:
+          'Sponsors and Partners'
+      }
+    );
+  "
 >
 
 <div class="menu-title">
@@ -587,15 +781,22 @@ Support the pack and view our sponsors.
 </a>
 
 
-
 <!-- CONTACT -->
 
 <a
   class="menu-card"
   href="contact.html"
-  onclick="gtag('event','more_menu_click',{
-    section:'Contact Us'
-  });"
+
+  onclick="
+    gtag(
+      'event',
+      'more_menu_click',
+      {
+        section:
+          'Contact Us'
+      }
+    );
+  "
 >
 
 <div class="menu-title">
@@ -613,15 +814,22 @@ Get in touch with Team Wolfpack.
 </a>
 
 
-
-<!-- SOCIALS -->
+<!-- FOLLOW THE PACK -->
 
 <a
   class="menu-card"
   href="socials.html"
-  onclick="gtag('event','more_menu_click',{
-    section:'Follow The Pack'
-  });"
+
+  onclick="
+    gtag(
+      'event',
+      'more_menu_click',
+      {
+        section:
+          'Follow The Pack'
+      }
+    );
+  "
 >
 
 <div class="menu-title">
@@ -639,15 +847,24 @@ TikTok, Instagram and Team Wolfpack socials.
 </a>
 
 
-
-<!-- PACK CHAT -->
+<!-- =========================
+     PACK CHAT
+     ========================= -->
 
 <a
   class="menu-card chat-card"
   href="chat-rules.html"
-  onclick="gtag('event','more_menu_click',{
-    section:'Pack Chat'
-  });"
+
+  onclick="
+    gtag(
+      'event',
+      'more_menu_click',
+      {
+        section:
+          'Pack Chat'
+      }
+    );
+  "
 >
 
 <div class="chat-tag">
@@ -677,17 +894,82 @@ Join the Team Wolfpack community and chat with the pack.
 </a>
 
 
+<!-- =========================
+     ADMIN DASHBOARD
+     Hidden unless Firebase
+     confirms an admin UID
+     ========================= -->
+
+<a
+  id="adminDashboardCard"
+  class="menu-card admin-menu-card"
+  href="admin-dashboard.html"
+
+  onclick="
+    gtag(
+      'event',
+      'admin_dashboard_click',
+      {
+        source:
+          'More Page'
+      }
+    );
+  "
+>
+
+<div class="admin-tag">
+ADMIN ONLY
+</div>
+
+<div class="menu-title">
+
+<span class="ice">
+ADMIN
+</span>
+
+<span class="fire">
+DASHBOARD
+</span>
+
+</div>
+
+<div class="menu-subtitle">
+Pack Chat administration, reports, member moderation and community controls.
+</div>
+
+<div
+  id="adminIdentity"
+  class="admin-identity"
+></div>
+
+<span class="arrow">
+›
+</span>
+
+</a>
+
 
 <!-- FULL WEBSITE -->
 
 <a
   class="menu-card"
+
   href="https://officialteamwolfpack.com/boxing"
+
   target="_blank"
+
   rel="noopener noreferrer"
-  onclick="gtag('event','official_website_click',{
-    source:'More Page'
-  });"
+
+  onclick="
+    gtag(
+      'event',
+      'official_website_click',
+      {
+        source:
+          'More Page'
+      }
+    );
+  "
 >
 
 <div class="menu-title">
@@ -705,7 +987,6 @@ Open officialteamwolfpack.com/boxing.
 </a>
 
 
-
 <div class="website">
 OFFICIALTEAMWOLFPACK.COM/BOXING
 </div>
@@ -714,8 +995,9 @@ OFFICIALTEAMWOLFPACK.COM/BOXING
 </main>
 
 
-
-<!-- BOTTOM NAVIGATION -->
+<!-- =========================
+     BOTTOM NAVIGATION
+     ========================= -->
 
 <nav class="bottom-nav">
 
@@ -734,7 +1016,6 @@ HOME
 </a>
 
 
-
 <a
   class="nav-item"
   href="fighters.html"
@@ -749,7 +1030,6 @@ FIGHTERS
 </a>
 
 
-
 <a
   class="nav-item fire-nav"
   href="fights.html"
@@ -762,7 +1042,6 @@ FIGHTERS
 FIGHTS
 
 </a>
-
 
 
 <a
@@ -783,12 +1062,178 @@ MORE
 </nav>
 
 
+<!-- =========================
+     ADMIN AUTH CHECK
+     ========================= -->
 
-<!-- SERVICE WORKER -->
+<script type="module">
+
+import {
+  initializeApp
+} from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+
+import {
+  getAuth,
+  onAuthStateChanged
+} from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig = {
+
+  apiKey:
+    "AIzaSyC06RDrqpXodbYBJqyeGvRkmtxQGapaaPY",
+
+  authDomain:
+    "team-wolfpack-app.firebaseapp.com",
+
+  projectId:
+    "team-wolfpack-app",
+
+  storageBucket:
+    "team-wolfpack-app.firebasestorage.app",
+
+  messagingSenderId:
+    "1070414578856",
+
+  appId:
+    "1:1070414578856:web:df14e7d387e658eeae2e9d",
+
+  measurementId:
+    "G-6JTCE2N9LZ"
+
+};
+
+
+/* AUTHORISED ADMINS */
+
+const ADMINS = {
+
+  "PRGa9TsCW0QDn1QtoUXyYjEi7YB3":
+    "MR WOLFIE",
+
+  "SlpEQYl94DaH6j42QUyl8Kv2ujJ3":
+    "MRS WOLFIE"
+
+};
+
+
+/* FIREBASE */
+
+const app =
+  initializeApp(
+    firebaseConfig
+  );
+
+
+const auth =
+  getAuth(
+    app
+  );
+
+
+/* ELEMENTS */
+
+const adminDashboardCard =
+  document.getElementById(
+    "adminDashboardCard"
+  );
+
+
+const adminIdentity =
+  document.getElementById(
+    "adminIdentity"
+  );
+
+
+/* AUTH STATE */
+
+onAuthStateChanged(
+  auth,
+  function(user){
+
+    /*
+      Default:
+      admin controls are hidden.
+    */
+
+    adminDashboardCard.classList.remove(
+      "show"
+    );
+
+
+    adminIdentity.textContent =
+      "";
+
+
+    /*
+      No signed-in user.
+    */
+
+    if(
+      !user
+    ){
+
+      return;
+
+    }
+
+
+    /*
+      Signed in, but not an authorised
+      Team Wolfpack administrator.
+    */
+
+    if(
+      !ADMINS[
+        user.uid
+      ]
+    ){
+
+      return;
+
+    }
+
+
+    /*
+      Authorised administrator.
+    */
+
+    const name =
+      ADMINS[
+        user.uid
+      ];
+
+
+    adminIdentity.textContent =
+      "● " +
+      name +
+      " • ADMIN CONNECTED";
+
+
+    adminDashboardCard.classList.add(
+      "show"
+    );
+
+  }
+);
+
+</script>
+
+
+<!-- =========================
+     SERVICE WORKER
+     ========================= -->
 
 <script>
 
-if ("serviceWorker" in navigator){
+if(
+  "serviceWorker" in navigator
+){
 
   window.addEventListener(
     "load",
