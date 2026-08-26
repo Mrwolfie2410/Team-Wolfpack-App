@@ -23,7 +23,6 @@ window.addEventListener("load", function(){
 });
 </script>
 
-
 <meta charset="UTF-8">
 
 <meta
@@ -42,7 +41,6 @@ window.addEventListener("load", function(){
 
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-
 
 <style>
 
@@ -74,13 +72,11 @@ body{
       rgba(0,190,255,.22),
       transparent 30%
     ),
-
     radial-gradient(
       circle at 100% 35%,
       rgba(255,85,0,.22),
       transparent 30%
     ),
-
     linear-gradient(
       115deg,
       #02090d 0%,
@@ -105,18 +101,14 @@ body{
 
 .brand{
   margin-top:5px;
-
   font-size:12px;
   font-weight:900;
-
   letter-spacing:4px;
-
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
-
   font-size:31px;
   font-weight:900;
 }
@@ -131,9 +123,7 @@ body{
 
 .subtitle{
   margin-top:8px;
-
   color:#aaa;
-
   font-size:12px;
   line-height:1.5;
 }
@@ -141,9 +131,7 @@ body{
 .line{
   width:100%;
   max-width:430px;
-
   height:2px;
-
   margin:20px auto 0;
 
   background:
@@ -161,13 +149,8 @@ body{
 .content{
   width:100%;
   max-width:540px;
-
   margin:auto;
-
-  padding:
-    8px
-    16px
-    110px;
+  padding:8px 16px 110px;
 }
 
 
@@ -175,14 +158,10 @@ body{
 
 .status{
   text-align:center;
-
   margin-bottom:12px;
-
   font-size:10px;
   font-weight:900;
-
   letter-spacing:1px;
-
   color:#aaa;
 }
 
@@ -199,7 +178,6 @@ body{
 
 .name-box{
   padding:18px;
-
   margin-bottom:14px;
 
   border-radius:15px;
@@ -218,21 +196,15 @@ body{
 
 .name-title{
   font-size:14px;
-
   font-weight:900;
-
   color:#67dcff;
-
   margin-bottom:6px;
 }
 
 .name-info{
   color:#aaa;
-
   font-size:11px;
-
   line-height:1.5;
-
   margin-bottom:12px;
 }
 
@@ -252,9 +224,7 @@ button{
 
 .name-input{
   flex:1;
-
   min-width:0;
-
   padding:13px;
 
   border-radius:9px;
@@ -263,11 +233,8 @@ button{
     1px solid rgba(255,255,255,.16);
 
   outline:none;
-
   color:white;
-
   background:#080808;
-
   font-size:13px;
 }
 
@@ -277,9 +244,7 @@ button{
 
 .save-name{
   border:none;
-
   border-radius:9px;
-
   padding:0 15px;
 
   background:
@@ -290,11 +255,8 @@ button{
     );
 
   color:#00131b;
-
   font-size:10px;
-
   font-weight:900;
-
   cursor:pointer;
 }
 
@@ -303,7 +265,6 @@ button{
 
 .chat-shell{
   position:relative;
-
   overflow:hidden;
 
   border-radius:16px;
@@ -322,7 +283,6 @@ button{
   content:"";
 
   position:absolute;
-
   left:0;
   top:0;
   bottom:0;
@@ -336,7 +296,6 @@ button{
   content:"";
 
   position:absolute;
-
   right:0;
   top:0;
   bottom:0;
@@ -368,15 +327,12 @@ button{
 
 .chat-header-title{
   font-size:14px;
-
   font-weight:900;
 }
 
 .chat-header-info{
   margin-top:4px;
-
   color:#888;
-
   font-size:10px;
 }
 
@@ -398,19 +354,14 @@ button{
 
 .empty-message{
   text-align:center;
-
   padding:60px 20px;
-
   color:#777;
-
   font-size:12px;
-
   line-height:1.6;
 }
 
 .message{
   max-width:84%;
-
   margin-bottom:13px;
 }
 
@@ -420,26 +371,19 @@ button{
 
 .message-name{
   margin-bottom:4px;
-
   color:#67dcff;
-
   font-size:9px;
-
   font-weight:900;
-
   letter-spacing:.5px;
 }
 
 .message.mine .message-name{
   text-align:right;
-
   color:#ff751c;
 }
 
 .message-bubble{
-  padding:
-    10px
-    12px;
+  padding:10px 12px;
 
   border-radius:
     4px
@@ -456,9 +400,7 @@ button{
     1px solid rgba(255,255,255,.08);
 
   font-size:13px;
-
   line-height:1.5;
-
   overflow-wrap:anywhere;
 }
 
@@ -482,9 +424,7 @@ button{
 
 .message-time{
   margin-top:4px;
-
   color:#666;
-
   font-size:8px;
 }
 
@@ -505,9 +445,7 @@ button{
     1px solid rgba(255,255,255,.10);
 
   display:flex;
-
   gap:8px;
-
   align-items:flex-end;
 
   background:
@@ -516,7 +454,6 @@ button{
 
 .message-input{
   flex:1;
-
   min-width:0;
 
   height:46px;
@@ -524,9 +461,7 @@ button{
 
   resize:none;
 
-  padding:
-    13px
-    12px;
+  padding:13px 12px;
 
   border-radius:10px;
 
@@ -552,7 +487,6 @@ button{
 
 .send-button{
   height:46px;
-
   padding:0 16px;
 
   border:none;
@@ -586,10 +520,7 @@ button{
   position:relative;
   z-index:2;
 
-  padding:
-    0
-    14px
-    10px;
+  padding:0 14px 10px;
 
   text-align:right;
 
@@ -601,11 +532,10 @@ button{
 }
 
 
-/* SAFETY NOTE */
+/* SAFETY */
 
 .safety{
   margin-top:14px;
-
   padding:14px;
 
   text-align:center;
@@ -621,7 +551,6 @@ button{
     rgba(8,8,8,.72);
 
   font-size:10px;
-
   line-height:1.5;
 }
 
@@ -793,8 +722,6 @@ Connect with the Team Wolfpack community.
 <main class="content">
 
 
-<!-- CONNECTION STATUS -->
-
 <div
   id="status"
   class="status"
@@ -802,8 +729,6 @@ Connect with the Team Wolfpack community.
 CONNECTING TO THE PACK...
 </div>
 
-
-<!-- NAME -->
 
 <div class="name-box">
 
@@ -838,8 +763,6 @@ SAVE
 
 </div>
 
-
-<!-- CHAT -->
 
 <div class="chat-shell">
 
@@ -926,8 +849,6 @@ Please keep Pack Chat respectful. Do not share private information such as your 
 
 </main>
 
-
-<!-- BOTTOM NAV -->
 
 <nav class="bottom-nav">
 
@@ -1059,10 +980,7 @@ let sending = false;
 
 
 if(packName){
-
-  nameInput.value =
-    packName;
-
+  nameInput.value = packName;
 }
 
 
@@ -1072,17 +990,14 @@ function updateComposer(){
     currentUser &&
     packName.trim().length > 0;
 
-  messageInput.disabled =
-    !ready;
+  messageInput.disabled = !ready;
 
-  sendButton.disabled =
-    !ready;
+  sendButton.disabled = !ready;
 
   messageInput.placeholder =
     ready
       ? "Write a message..."
       : "Choose your Pack Name first...";
-
 }
 
 
@@ -1100,8 +1015,7 @@ saveName.addEventListener(
       return;
     }
 
-    packName =
-      newName;
+    packName = newName;
 
     localStorage.setItem(
       "teamWolfpackChatName",
@@ -1116,7 +1030,6 @@ saveName.addEventListener(
       "event",
       "chat_name_saved"
     );
-
   }
 );
 
@@ -1130,9 +1043,7 @@ nameInput.addEventListener(
       event.preventDefault();
 
       saveName.click();
-
     }
-
   }
 );
 
@@ -1144,7 +1055,6 @@ messageInput.addEventListener(
     characterCount.textContent =
       messageInput.value.length +
       " / 500";
-
   }
 );
 
@@ -1161,9 +1071,7 @@ messageInput.addEventListener(
       event.preventDefault();
 
       sendMessage();
-
     }
-
   }
 );
 
@@ -1251,9 +1159,7 @@ async function sendMessage(){
     updateComposer();
 
     messageInput.focus();
-
   }
-
 }
 
 
@@ -1266,7 +1172,6 @@ function escapeHTML(value){
     value;
 
   return element.innerHTML;
-
 }
 
 
@@ -1291,9 +1196,7 @@ function displayTime(timestamp){
   }catch(error){
 
     return "";
-
   }
-
 }
 
 
@@ -1356,18 +1259,14 @@ function startMessages(){
             '</div>' +
 
             '</div>';
-
         }
       );
 
 
-      messages.innerHTML =
-        html;
-
+      messages.innerHTML = html;
 
       messages.scrollTop =
         messages.scrollHeight;
-
     },
 
     function(error){
@@ -1382,10 +1281,8 @@ function startMessages(){
 
       status.className =
         "status error";
-
     }
   );
-
 }
 
 
@@ -1395,8 +1292,7 @@ onAuthStateChanged(
 
     if(user){
 
-      currentUser =
-        user;
+      currentUser = user;
 
       status.textContent =
         "● PACK CHAT CONNECTED";
@@ -1407,9 +1303,7 @@ onAuthStateChanged(
       updateComposer();
 
       startMessages();
-
     }
-
   }
 );
 
@@ -1428,10 +1322,8 @@ signInAnonymously(auth)
 
       status.className =
         "status error";
-
     }
   );
-
 
 </script>
 
@@ -1449,10 +1341,8 @@ if("serviceWorker" in navigator){
       navigator.serviceWorker.register(
         "service-worker.js"
       );
-
     }
   );
-
 }
 
 </script>
