@@ -7,21 +7,20 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M973P0B4F0"></script>
 
 <script>
-  window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
 
-  function gtag(){
-    dataLayer.push(arguments);
-  }
+function gtag(){
+  dataLayer.push(arguments);
+}
 
-  gtag('js', new Date());
+gtag('js', new Date());
+gtag('config', 'G-M973P0B4F0');
 
-  gtag('config', 'G-M973P0B4F0');
-
-  window.addEventListener('load', function(){
-    gtag('event', 'about_page_view', {
-      section: 'About Team Wolfpack'
-    });
+window.addEventListener('load', function(){
+  gtag('event', 'about_page_view', {
+    section: 'About Team Wolfpack'
   });
+});
 </script>
 
 <meta charset="UTF-8">
@@ -66,7 +65,13 @@ body{
 
   color:#fff;
 
-  padding-bottom:95px;
+  /*
+    Extra space for the fixed navigation.
+    This prevents the bottom of the page
+    from disappearing behind the nav.
+  */
+  padding-bottom:
+    calc(100px + env(safe-area-inset-bottom));
 
   background:
     radial-gradient(
@@ -160,14 +165,15 @@ body{
 /* CONTENT */
 
 .content{
+  width:100%;
   max-width:540px;
 
-  margin:auto;
+  margin:0 auto;
 
   padding:
     10px
     18px
-    110px;
+    40px;
 }
 
 
@@ -317,12 +323,13 @@ body{
 }
 
 
-/* BACK */
+/* BACK BUTTON */
 
 .back{
   display:block;
 
   margin-top:6px;
+  margin-bottom:30px;
 
   padding:16px;
 
@@ -365,7 +372,12 @@ body{
   right:0;
   bottom:0;
 
-  height:74px;
+  /*
+    74px navigation plus the iPhone
+    safe-area when required.
+  */
+  height:
+    calc(74px + env(safe-area-inset-bottom));
 
   display:grid;
 
@@ -381,10 +393,13 @@ body{
   border-top:
     1px solid rgba(255,255,255,.12);
 
+  -webkit-backdrop-filter:
+    blur(12px);
+
   backdrop-filter:
     blur(12px);
 
-  z-index:100;
+  z-index:1000;
 }
 
 .nav-item{
@@ -402,6 +417,8 @@ body{
 
   gap:5px;
 
+  min-width:0;
+
   font-size:9px;
 
   font-weight:bold;
@@ -417,6 +434,60 @@ body{
 
 .nav-item.active{
   color:#67dcff;
+}
+
+
+/* SMALL PHONES */
+
+@media(max-width:400px){
+
+  .header{
+    padding-top:22px;
+  }
+
+  .logo{
+    width:100px;
+    height:100px;
+  }
+
+  .title{
+    font-size:28px;
+  }
+
+  .content{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .card{
+    padding:19px;
+  }
+
+  .text{
+    font-size:13px;
+  }
+
+}
+
+
+/* DESKTOP / LARGE SCREENS */
+
+@media(min-width:900px){
+
+  /*
+    On desktop the page can scroll normally,
+    while still leaving clearance above the
+    fixed navigation.
+  */
+
+  body{
+    padding-bottom:120px;
+  }
+
+  .content{
+    padding-bottom:60px;
+  }
+
 }
 
 </style>
