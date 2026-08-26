@@ -247,15 +247,9 @@ body{
   padding:13px;
   border-radius:10px;
   text-align:center;
-
   color:#67dcff;
-
-  background:
-    rgba(0,150,210,.10);
-
-  border:
-    1px solid rgba(103,220,255,.25);
-
+  background:rgba(0,150,210,.10);
+  border:1px solid rgba(103,220,255,.25);
   font-size:10px;
   font-weight:900;
 }
@@ -319,10 +313,7 @@ select{
   width:100%;
   padding:13px;
   border-radius:9px;
-
-  border:
-    1px solid rgba(255,255,255,.16);
-
+  border:1px solid rgba(255,255,255,.16);
   outline:none;
   color:#fff;
   background:#080808;
@@ -499,12 +490,12 @@ select{
   flex-wrap:wrap;
 }
 
-.admin-reports-button,
-.admin-members-button{
+.admin-reports-button{
   display:inline-block;
   padding:8px 10px;
   border-radius:8px;
   text-decoration:none;
+  color:#67dcff;
 
   border:
     1px solid rgba(103,220,255,.35);
@@ -512,23 +503,13 @@ select{
   background:
     rgba(0,150,210,.08);
 
-  color:#67dcff;
   font-size:8px;
   font-weight:900;
 }
 
-.admin-members-button{
-  border-color:rgba(255,117,28,.40);
-  color:#ff9b58;
-  background:rgba(255,90,0,.08);
-}
-
 .logout-button{
   padding:8px 10px;
-
-  border:
-    1px solid rgba(255,255,255,.15);
-
+  border:1px solid rgba(255,255,255,.15);
   border-radius:8px;
   background:#111;
   color:#aaa;
@@ -544,15 +525,9 @@ select{
   position:relative;
   overflow:hidden;
   border-radius:16px;
-
-  border:
-    1px solid rgba(255,255,255,.13);
-
-  background:
-    rgba(5,5,5,.88);
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(5,5,5,.88);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 .chat-shell::before{
@@ -677,32 +652,17 @@ select{
 
 .message-bubble{
   padding:10px 12px;
-
-  border-radius:
-    4px
-    13px
-    13px
-    13px;
-
+  border-radius:4px 13px 13px 13px;
   color:#e9e9e9;
-
-  background:
-    rgba(35,35,35,.95);
-
-  border:
-    1px solid rgba(255,255,255,.08);
-
+  background:rgba(35,35,35,.95);
+  border:1px solid rgba(255,255,255,.08);
   font-size:13px;
   line-height:1.5;
   overflow-wrap:anywhere;
 }
 
 .message.mine .message-bubble{
-  border-radius:
-    13px
-    4px
-    13px
-    13px;
+  border-radius:13px 4px 13px 13px;
 
   background:
     linear-gradient(
@@ -711,8 +671,7 @@ select{
       rgba(255,90,0,.15)
     );
 
-  border-color:
-    rgba(103,220,255,.22);
+  border-color:rgba(103,220,255,.22);
 }
 
 .message-time{
@@ -748,33 +707,25 @@ select{
 }
 
 .delete-message{
-  border:
-    1px solid rgba(255,117,28,.35);
-
+  border:1px solid rgba(255,117,28,.35);
   color:#ff751c;
   background:rgba(255,80,0,.05);
 }
 
 .report-message{
-  border:
-    1px solid rgba(103,220,255,.30);
-
+  border:1px solid rgba(103,220,255,.30);
   color:#67dcff;
   background:rgba(0,160,220,.05);
 }
 
 .mute-member{
-  border:
-    1px solid rgba(255,180,71,.35);
-
+  border:1px solid rgba(255,180,71,.35);
   color:#ffb347;
   background:rgba(100,60,0,.08);
 }
 
 .block-member{
-  border:
-    1px solid rgba(255,80,50,.45);
-
+  border:1px solid rgba(255,80,50,.45);
   color:#ff7957;
   background:rgba(100,20,0,.12);
 }
@@ -832,10 +783,7 @@ select{
   margin-top:12px;
   padding:12px;
   border-radius:10px;
-
-  border:
-    1px solid rgba(255,255,255,.08);
-
+  border:1px solid rgba(255,255,255,.08);
   background:#111;
   color:#ccc;
   font-size:11px;
@@ -865,21 +813,13 @@ select{
 
 .report-submit{
   color:#fff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff751c,
-      #bd4000
-    );
+  background:linear-gradient(135deg,#ff751c,#bd4000);
 }
 
 .report-cancel{
   color:#ddd;
   background:#191919;
-
-  border:
-    1px solid rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.12);
 }
 
 
@@ -889,14 +829,10 @@ select{
   position:relative;
   z-index:2;
   padding:12px;
-
-  border-top:
-    1px solid rgba(255,255,255,.10);
-
+  border-top:1px solid rgba(255,255,255,.10);
   display:flex;
   gap:8px;
   align-items:flex-end;
-
   background:rgba(8,8,8,.98);
 }
 
@@ -908,10 +844,7 @@ select{
   resize:none;
   padding:13px 12px;
   border-radius:10px;
-
-  border:
-    1px solid rgba(255,255,255,.14);
-
+  border:1px solid rgba(255,255,255,.14);
   outline:none;
   color:white;
   background:#111;
@@ -935,13 +868,7 @@ select{
   color:#fff;
   font-size:10px;
   font-weight:900;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff751c,
-      #bd4000
-    );
+  background:linear-gradient(135deg,#ff751c,#bd4000);
 }
 
 .send-button:disabled{
@@ -967,10 +894,7 @@ select{
   padding:14px;
   text-align:center;
   border-radius:12px;
-
-  border:
-    1px solid rgba(255,255,255,.08);
-
+  border:1px solid rgba(255,255,255,.08);
   color:#888;
   background:rgba(8,8,8,.72);
   font-size:10px;
@@ -987,10 +911,7 @@ select{
   text-align:center;
   text-decoration:none;
   color:#fff;
-
-  border:
-    1px solid #59d9ff;
-
+  border:1px solid #59d9ff;
   border-radius:11px;
   font-size:11px;
   font-weight:900;
@@ -1014,15 +935,9 @@ select{
   height:74px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-
-  padding-bottom:
-    env(safe-area-inset-bottom);
-
+  padding-bottom:env(safe-area-inset-bottom);
   background:rgba(4,4,4,.97);
-
-  border-top:
-    1px solid rgba(255,255,255,.12);
-
+  border-top:1px solid rgba(255,255,255,.12);
   backdrop-filter:blur(12px);
   z-index:100;
 }
@@ -1051,7 +966,6 @@ select{
   color:#67dcff;
 }
 
-
 @media(max-width:400px){
 
   .messages{
@@ -1062,30 +976,13 @@ select{
     font-size:28px;
   }
 
-  .admin-active{
-    align-items:flex-start;
-  }
-
-  .admin-actions{
-    width:100%;
-  }
-
-  .admin-reports-button,
-  .admin-members-button,
-  .logout-button{
-    flex:1;
-    text-align:center;
-  }
-
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <header class="header">
 
@@ -1117,20 +1014,14 @@ Connect with the Team Wolfpack community.
 
 <main class="content">
 
-
-<div
-  id="status"
-  class="status"
->
+<div id="status" class="status">
 CONNECTING TO THE PACK...
 </div>
-
 
 <div
   id="moderationNotice"
   class="moderation-notice"
 ></div>
-
 
 <div
   id="reportSuccess"
@@ -1138,7 +1029,6 @@ CONNECTING TO THE PACK...
 >
 REPORT SENT TO TEAM WOLFPACK ADMINS
 </div>
-
 
 <div
   id="errorDetails"
@@ -1172,7 +1062,6 @@ ADMIN
 
 </div>
 
-
 <div class="admin-actions">
 
 <a
@@ -1183,7 +1072,7 @@ ADMIN REPORTS
 </a>
 
 <a
-  class="admin-members-button"
+  class="admin-reports-button"
   href="admin-members.html"
 >
 MEMBERS
@@ -1264,7 +1153,6 @@ ADMIN LOGIN
 
 </div>
 
-
 <div
   id="adminLogin"
   class="admin-login"
@@ -1320,16 +1208,16 @@ Messages from the Team Wolfpack community
 
 </div>
 
-
 <div
   id="messages"
   class="messages"
 >
+
 <div class="empty-message">
 Connecting to Pack Chat...
 </div>
-</div>
 
+</div>
 
 <div class="composer">
 
@@ -1352,7 +1240,6 @@ SEND
 
 </div>
 
-
 <div
   id="characterCount"
   class="character-count"
@@ -1367,14 +1254,12 @@ SEND
 Please keep Pack Chat respectful. Do not share private information such as your address, passwords or financial details.
 </div>
 
-
 <a
   class="back"
   href="more.html"
 >
 ‹ BACK TO MORE
 </a>
-
 
 </main>
 
@@ -1492,7 +1377,6 @@ import {
   initializeApp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
-
 import {
   getAuth,
   signInAnonymously,
@@ -1500,7 +1384,6 @@ import {
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
 
 import {
   getFirestore,
@@ -1539,10 +1422,9 @@ const firebaseConfig = {
 
   measurementId:
     "G-6JTCE2N9LZ"
+
 };
 
-
-/* ADMINS */
 
 const ADMINS = {
 
@@ -1553,6 +1435,10 @@ const ADMINS = {
     "MRS WOLFIE"
 
 };
+
+
+const CHAT_RULES_VERSION =
+  "1";
 
 
 const app =
@@ -1672,6 +1558,8 @@ let unsubscribeAdminModeration = null;
 
 let reportTarget = null;
 
+let messageDocuments = [];
+
 let moderationMap = {};
 
 let memberModeration = {
@@ -1679,10 +1567,6 @@ let memberModeration = {
   blocked:false
 };
 
-let messageDocuments = [];
-
-
-/* RESTORE NAME */
 
 if(packName){
   nameInput.value = packName;
@@ -1723,7 +1607,6 @@ function showError(error){
     "PACK CHAT ERROR:",
     error
   );
-
 }
 
 
@@ -1736,7 +1619,7 @@ function clearError(){
 }
 
 
-/* INTERFACE */
+/* UI */
 
 function updateInterface(){
 
@@ -1746,12 +1629,10 @@ function updateInterface(){
       ADMINS[currentUser.uid]
     );
 
-
   adminName =
     isAdmin
       ? ADMINS[currentUser.uid]
       : "";
-
 
   moderationNotice.className =
     "moderation-notice";
@@ -1902,7 +1783,7 @@ function updateInterface(){
 }
 
 
-/* SAVE PACK NAME */
+/* SAVE NAME */
 
 saveName.addEventListener(
   "click",
@@ -1954,7 +1835,7 @@ nameInput.addEventListener(
 );
 
 
-/* ADMIN LOGIN PANEL */
+/* ADMIN LOGIN OPEN */
 
 adminToggle.addEventListener(
   "click",
@@ -2002,7 +1883,6 @@ adminLoginButton.addEventListener(
         "status error";
 
       return;
-
     }
 
 
@@ -2038,11 +1918,8 @@ adminLoginButton.addEventListener(
       }
 
 
-      adminEmail.value =
-        "";
-
-      adminPassword.value =
-        "";
+      adminEmail.value = "";
+      adminPassword.value = "";
 
       adminLogin.classList.remove(
         "open"
@@ -2119,7 +1996,7 @@ messageInput.addEventListener(
 );
 
 
-/* SEND WITH ENTER */
+/* ENTER TO SEND */
 
 messageInput.addEventListener(
   "keydown",
@@ -2146,7 +2023,7 @@ sendButton.addEventListener(
 );
 
 
-/* SEND MESSAGE */
+/* SEND */
 
 async function sendMessage(){
 
@@ -2182,11 +2059,9 @@ async function sendMessage(){
   }
 
 
-  sending =
-    true;
+  sending = true;
 
-  sendButton.disabled =
-    true;
+  sendButton.disabled = true;
 
 
   try{
@@ -2229,8 +2104,7 @@ async function sendMessage(){
 
   }finally{
 
-    sending =
-      false;
+    sending = false;
 
     updateInterface();
 
@@ -2263,9 +2137,7 @@ function escapeHTML(value){
 function displayTime(timestamp){
 
   if(!timestamp){
-
     return "Sending...";
-
   }
 
   try{
@@ -2289,7 +2161,7 @@ function displayTime(timestamp){
 }
 
 
-/* SAVE MEMBER MODERATION */
+/* SAVE MODERATION */
 
 async function saveModeration(
   uid,
@@ -2317,8 +2189,7 @@ async function saveModeration(
       ),
       {
 
-        uid:
-          uid,
+        uid:uid,
 
         name:
           name || "Pack Member",
@@ -2348,7 +2219,7 @@ async function saveModeration(
 }
 
 
-/* MUTE / UNMUTE */
+/* MUTE */
 
 async function toggleMuteMember(
   uid,
@@ -2363,9 +2234,7 @@ async function toggleMuteMember(
 
 
   if(current.blocked){
-
     return;
-
   }
 
 
@@ -2382,9 +2251,7 @@ async function toggleMuteMember(
 
 
   if(!confirmed){
-
     return;
-
   }
 
 
@@ -2398,7 +2265,7 @@ async function toggleMuteMember(
 }
 
 
-/* BLOCK / UNBLOCK */
+/* BLOCK */
 
 async function toggleBlockMember(
   uid,
@@ -2425,9 +2292,7 @@ async function toggleBlockMember(
 
 
   if(!confirmed){
-
     return;
-
   }
 
 
@@ -2441,16 +2306,14 @@ async function toggleBlockMember(
 }
 
 
-/* DELETE MESSAGE */
+/* DELETE */
 
 async function deletePackMessage(
   messageId
 ){
 
   if(!isAdmin){
-
     return;
-
   }
 
 
@@ -2461,9 +2324,7 @@ async function deletePackMessage(
 
 
   if(!confirmed){
-
     return;
-
   }
 
 
@@ -2487,7 +2348,7 @@ async function deletePackMessage(
 }
 
 
-/* REPORT MESSAGE */
+/* REPORT */
 
 function openReport(
   messageId,
@@ -2507,19 +2368,10 @@ function openReport(
 
 
   reportTarget = {
-
-    messageId:
-      messageId,
-
-    messageUid:
-      messageUid,
-
-    messageName:
-      messageName,
-
-    messageText:
-      messageText
-
+    messageId,
+    messageUid,
+    messageName,
+    messageText
   };
 
 
@@ -2529,8 +2381,7 @@ function openReport(
     messageText;
 
 
-  reportReason.value =
-    "";
+  reportReason.value = "";
 
 
   reportOverlay.classList.add(
@@ -2546,11 +2397,9 @@ function closeReport(){
     "show"
   );
 
-  reportTarget =
-    null;
+  reportTarget = null;
 
-  reportReason.value =
-    "";
+  reportReason.value = "";
 
 }
 
@@ -2566,12 +2415,9 @@ reportOverlay.addEventListener(
   function(event){
 
     if(
-      event.target ===
-      reportOverlay
+      event.target === reportOverlay
     ){
-
       closeReport();
-
     }
 
   }
@@ -2589,9 +2435,7 @@ submitReport.addEventListener(
       !currentUser ||
       memberModeration.blocked
     ){
-
       return;
-
     }
 
 
@@ -2600,9 +2444,7 @@ submitReport.addEventListener(
 
 
     if(!reason){
-
       return;
-
     }
 
 
@@ -2685,16 +2527,12 @@ submitReport.addEventListener(
 );
 
 
-/* OWN MODERATION LISTENER */
+/* OWN MODERATION */
 
 function startOwnModeration(){
 
-  if(
-    unsubscribeOwnModeration
-  ){
-
+  if(unsubscribeOwnModeration){
     unsubscribeOwnModeration();
-
   }
 
 
@@ -2702,9 +2540,7 @@ function startOwnModeration(){
     !currentUser ||
     isAdmin
   ){
-
     return;
-
   }
 
 
@@ -2736,11 +2572,8 @@ function startOwnModeration(){
         }else{
 
           memberModeration = {
-
             muted:false,
-
             blocked:false
-
           };
 
         }
@@ -2765,23 +2598,17 @@ function startOwnModeration(){
 }
 
 
-/* ADMIN MODERATION LISTENER */
+/* ADMIN MODERATION */
 
 function startAdminModeration(){
 
-  if(
-    unsubscribeAdminModeration
-  ){
-
+  if(unsubscribeAdminModeration){
     unsubscribeAdminModeration();
-
   }
 
 
   if(!isAdmin){
-
     return;
-
   }
 
 
@@ -2794,8 +2621,7 @@ function startAdminModeration(){
 
       function(snapshot){
 
-        moderationMap =
-          {};
+        moderationMap = {};
 
 
         snapshot.forEach(
@@ -2803,8 +2629,7 @@ function startAdminModeration(){
 
             moderationMap[
               item.id
-            ] =
-              item.data();
+            ] = item.data();
 
           }
         );
@@ -2846,8 +2671,7 @@ function renderMessages(){
   }
 
 
-  let html =
-    "";
+  let html = "";
 
 
   messageDocuments.forEach(
@@ -2863,26 +2687,18 @@ function renderMessages(){
       const mine =
         Boolean(
           currentUser &&
-          data.uid ===
-          currentUser.uid
+          data.uid === currentUser.uid
         );
 
 
       const messageAdminName =
-        ADMINS[
-          data.uid
-        ] || "";
+        ADMINS[data.uid] || "";
 
 
       const moderation =
-        moderationMap[
-          data.uid
-        ] || {
-
+        moderationMap[data.uid] || {
           muted:false,
-
           blocked:false
-
         };
 
 
@@ -2893,8 +2709,7 @@ function renderMessages(){
             "Pack Member";
 
 
-      let badges =
-        "";
+      let badges = "";
 
 
       if(messageAdminName){
@@ -2923,65 +2738,41 @@ function renderMessages(){
 
       html +=
         '<div class="message ' +
-        (
-          mine
-            ? "mine"
-            : ""
-        ) +
+        (mine ? "mine" : "") +
         '">' +
 
-
         '<div class="message-name">' +
-        escapeHTML(
-          visibleName
-        ) +
+        escapeHTML(visibleName) +
         badges +
         '</div>' +
 
-
         '<div class="message-bubble">' +
-        escapeHTML(
-          data.text ||
-          ""
-        ) +
+        escapeHTML(data.text || "") +
         '</div>' +
-
 
         '<div class="message-time">' +
-        displayTime(
-          data.createdAt
-        ) +
+        displayTime(data.createdAt) +
         '</div>' +
-
 
         '<div class="message-actions">';
 
-
-      /* ADMIN CONTROLS */
 
       if(
         isAdmin &&
         !messageAdminName
       ){
 
-        if(
-          moderation.blocked
-        ){
+        if(moderation.blocked){
 
           html +=
             '<button ' +
             'class="block-member" ' +
             'data-action="block" ' +
             'data-uid="' +
-            escapeHTML(
-              data.uid ||
-              ""
-            ) +
+            escapeHTML(data.uid || "") +
             '" ' +
             'data-name="' +
-            escapeHTML(
-              visibleName
-            ) +
+            escapeHTML(visibleName) +
             '">' +
             'UNBLOCK MEMBER' +
             '</button>';
@@ -2993,15 +2784,10 @@ function renderMessages(){
             'class="mute-member" ' +
             'data-action="mute" ' +
             'data-uid="' +
-            escapeHTML(
-              data.uid ||
-              ""
-            ) +
+            escapeHTML(data.uid || "") +
             '" ' +
             'data-name="' +
-            escapeHTML(
-              visibleName
-            ) +
+            escapeHTML(visibleName) +
             '">' +
             (
               moderation.muted
@@ -3016,15 +2802,10 @@ function renderMessages(){
             'class="block-member" ' +
             'data-action="block" ' +
             'data-uid="' +
-            escapeHTML(
-              data.uid ||
-              ""
-            ) +
+            escapeHTML(data.uid || "") +
             '" ' +
             'data-name="' +
-            escapeHTML(
-              visibleName
-            ) +
+            escapeHTML(visibleName) +
             '">' +
             'BLOCK MEMBER' +
             '</button>';
@@ -3045,14 +2826,11 @@ function renderMessages(){
       }
 
 
-      /* NORMAL MEMBER REPORT */
-
       if(
         !isAdmin &&
         currentUser &&
         !memberModeration.blocked &&
-        data.uid !==
-        currentUser.uid
+        data.uid !== currentUser.uid
       ){
 
         html +=
@@ -3063,10 +2841,7 @@ function renderMessages(){
           id +
           '" ' +
           'data-message-uid="' +
-          escapeHTML(
-            data.uid ||
-            ""
-          ) +
+          escapeHTML(data.uid || "") +
           '">' +
           'REPORT' +
           '</button>';
@@ -3085,8 +2860,6 @@ function renderMessages(){
   messages.innerHTML =
     html;
 
-
-  /* DELETE LISTENERS */
 
   messages
     .querySelectorAll(
@@ -3109,8 +2882,6 @@ function renderMessages(){
       }
     );
 
-
-  /* MUTE LISTENERS */
 
   messages
     .querySelectorAll(
@@ -3135,8 +2906,6 @@ function renderMessages(){
     );
 
 
-  /* BLOCK LISTENERS */
-
   messages
     .querySelectorAll(
       '[data-action="block"]'
@@ -3160,8 +2929,6 @@ function renderMessages(){
     );
 
 
-  /* REPORT LISTENERS */
-
   messages
     .querySelectorAll(
       '[data-action="report"]'
@@ -3178,19 +2945,15 @@ function renderMessages(){
                 ".message"
               );
 
-
             const nameElement =
-              messageElement
-                .querySelector(
-                  ".message-name"
-                );
-
+              messageElement.querySelector(
+                ".message-name"
+              );
 
             const bubbleElement =
-              messageElement
-                .querySelector(
-                  ".message-bubble"
-                );
+              messageElement.querySelector(
+                ".message-bubble"
+              );
 
 
             openReport(
@@ -3238,12 +3001,8 @@ function renderMessages(){
 
 function startMessages(){
 
-  if(
-    unsubscribeMessages
-  ){
-
+  if(unsubscribeMessages){
     unsubscribeMessages();
-
   }
 
 
@@ -3267,24 +3026,16 @@ function startMessages(){
 
       function(snapshot){
 
-        messageDocuments =
-          [];
+        messageDocuments = [];
 
 
         snapshot.forEach(
           function(item){
 
-            messageDocuments.push(
-              {
-
-                id:
-                  item.id,
-
-                data:
-                  item.data()
-
-              }
-            );
+            messageDocuments.push({
+              id:item.id,
+              data:item.data()
+            });
 
           }
         );
@@ -3304,7 +3055,7 @@ function startMessages(){
 }
 
 
-/* AUTH STATE */
+/* AUTH + RULES CHECK */
 
 onAuthStateChanged(
   auth,
@@ -3321,114 +3072,9 @@ onAuthStateChanged(
 
       isAdmin =
         Boolean(
-          ADMINS[
-            user.uid
-          ]
+          ADMINS[user.uid]
         );
 
 
-      memberModeration =
-        {
-          muted:false,
-          blocked:false
-        };
-
-
-      moderationMap =
-        {};
-
-
-      updateInterface();
-
-
-      startMessages();
-
-
-      if(isAdmin){
-
-        if(
-          unsubscribeOwnModeration
-        ){
-
-          unsubscribeOwnModeration();
-
-          unsubscribeOwnModeration =
-            null;
-
-        }
-
-        startAdminModeration();
-
-      }else{
-
-        if(
-          unsubscribeAdminModeration
-        ){
-
-          unsubscribeAdminModeration();
-
-          unsubscribeAdminModeration =
-            null;
-
-        }
-
-        startOwnModeration();
-
-      }
-
-
-      return;
-
-    }
-
-
-    currentUser =
-      null;
-
-
-    try{
-
-      await signInAnonymously(
-        auth
-      );
-
-
-    }catch(error){
-
-      showError(error);
-
-    }
-
-  }
-);
-
-</script>
-
-
-<!-- SERVICE WORKER -->
-
-<script>
-
-if(
-  "serviceWorker"
-  in navigator
-){
-
-  window.addEventListener(
-    "load",
-    function(){
-
-      navigator.serviceWorker.register(
-        "service-worker.js"
-      );
-
-    }
-  );
-
-}
-
-</script>
-
-
-</body>
-</html>
+      /*
+        PACK
