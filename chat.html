@@ -174,7 +174,7 @@ body{
 }
 
 
-/* DIAGNOSTIC ERROR BOX */
+/* DIAGNOSTIC */
 
 .error-details{
   display:none;
@@ -262,6 +262,7 @@ button{
 .name-input{
   flex:1;
   min-width:0;
+
   padding:13px;
 
   border-radius:9px;
@@ -270,8 +271,10 @@ button{
     1px solid rgba(255,255,255,.16);
 
   outline:none;
+
   color:white;
   background:#080808;
+
   font-size:13px;
 }
 
@@ -281,7 +284,9 @@ button{
 
 .save-name{
   border:none;
+
   border-radius:9px;
+
   padding:0 15px;
 
   background:
@@ -292,8 +297,10 @@ button{
     );
 
   color:#00131b;
+
   font-size:10px;
   font-weight:900;
+
   cursor:pointer;
 }
 
@@ -302,6 +309,7 @@ button{
 
 .chat-shell{
   position:relative;
+
   overflow:hidden;
 
   border-radius:16px;
@@ -318,21 +326,29 @@ button{
 
 .chat-shell::before{
   content:"";
+
   position:absolute;
+
   left:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#4bd8ff;
 }
 
 .chat-shell::after{
   content:"";
+
   position:absolute;
+
   right:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#ff6500;
 }
 
@@ -402,9 +418,12 @@ button{
 
 .message-name{
   margin-bottom:4px;
+
   color:#67dcff;
+
   font-size:9px;
   font-weight:900;
+
   letter-spacing:.5px;
 }
 
@@ -432,6 +451,7 @@ button{
 
   font-size:13px;
   line-height:1.5;
+
   overflow-wrap:anywhere;
 }
 
@@ -518,9 +538,11 @@ button{
 
 .send-button{
   height:46px;
+
   padding:0 16px;
 
   border:none;
+
   border-radius:10px;
 
   cursor:pointer;
@@ -528,6 +550,7 @@ button{
   color:#fff;
 
   font-size:10px;
+
   font-weight:900;
 
   letter-spacing:.5px;
@@ -565,6 +588,7 @@ button{
 
 .safety{
   margin-top:14px;
+
   padding:14px;
 
   text-align:center;
@@ -686,6 +710,7 @@ button{
   color:#67dcff;
 }
 
+
 @media(max-width:400px){
 
   .messages{
@@ -701,6 +726,7 @@ button{
 </style>
 
 </head>
+
 
 <body>
 
@@ -909,6 +935,8 @@ MORE
 </nav>
 
 
+<!-- FIREBASE -->
+
 <script type="module">
 
 import {
@@ -941,27 +969,6 @@ const firebaseConfig = {
   messagingSenderId: "1070414578856",
   appId: "1:1070414578856:web:df14e7d387e658eeae2e9d",
   measurementId: "G-6JTCE2N9LZ"
-};
-  apiKey:
-    "AIzaSyC06RDrqpXddbYBJqyeGvRkmtxQ0apaaPY",
-
-  authDomain:
-    "team-wolfpack-app.firebaseapp.com",
-
-  projectId:
-    "team-wolfpack-app",
-
-  storageBucket:
-    "team-wolfpack-app.firebasestorage.app",
-
-  messagingSenderId:
-    "1070414578856",
-
-  appId:
-    "1:1070414578856:web:df14e7d387e658eeae2e9d",
-
-  measurementId:
-    "G-6JTCE2N9LZ"
 };
 
 
@@ -1013,6 +1020,8 @@ let packName =
 
 let sending = false;
 
+let messagesListenerStarted = false;
+
 
 if(packName){
   nameInput.value = packName;
@@ -1032,7 +1041,7 @@ function showError(error){
       : String(error);
 
   status.textContent =
-    "UNABLE TO CONNECT TO PACK CHAT";
+    "PACK CHAT ERROR";
 
   status.className =
     "status error";
@@ -1046,7 +1055,7 @@ function showError(error){
   errorDetails.classList.add("show");
 
   console.error(
-    "PACK CHAT FIREBASE ERROR:",
+    "PACK CHAT ERROR:",
     error
   );
 }
@@ -1058,9 +1067,11 @@ function updateComposer(){
     currentUser &&
     packName.trim().length > 0;
 
-  messageInput.disabled = !ready;
+  messageInput.disabled =
+    !ready;
 
-  sendButton.disabled = !ready;
+  sendButton.disabled =
+    !ready;
 
   messageInput.placeholder =
     ready
@@ -1083,7 +1094,8 @@ saveName.addEventListener(
       return;
     }
 
-    packName = newName;
+    packName =
+      newName;
 
     localStorage.setItem(
       "teamWolfpackChatName",
@@ -1194,18 +1206,15 @@ async function sendMessage(){
       }
     );
 
-
     messageInput.value = "";
 
     characterCount.textContent =
       "0 / 500";
 
-
     gtag(
       "event",
       "chat_message_sent"
     );
-
 
   }catch(error){
 
@@ -1261,6 +1270,12 @@ function displayTime(timestamp){
 
 function startMessages(){
 
+  if(messagesListenerStarted){
+    return;
+  }
+
+  messagesListenerStarted = true;
+
   const messagesQuery =
     query(
       collection(db, "messages"),
@@ -1285,9 +1300,7 @@ function startMessages(){
         return;
       }
 
-
       let html = "";
-
 
       snapshot.forEach(
         function(documentSnapshot){
@@ -1298,7 +1311,6 @@ function startMessages(){
           const mine =
             currentUser &&
             data.uid === currentUser.uid;
-
 
           html +=
             '<div class="message ' +
@@ -1321,8 +1333,8 @@ function startMessages(){
         }
       );
 
-
-      messages.innerHTML = html;
+      messages.innerHTML =
+        html;
 
       messages.scrollTop =
         messages.scrollHeight;
@@ -1331,7 +1343,6 @@ function startMessages(){
     function(error){
 
       showError(error);
-
     }
   );
 }
@@ -1343,7 +1354,8 @@ onAuthStateChanged(
 
     if(user){
 
-      currentUser = user;
+      currentUser =
+        user;
 
       status.textContent =
         "● PACK CHAT CONNECTED";
@@ -1356,22 +1368,37 @@ onAuthStateChanged(
       updateComposer();
 
       startMessages();
+
+    }else{
+
+      currentUser =
+        null;
+
+      updateComposer();
     }
   }
 );
 
 
 signInAnonymously(auth)
-  .catch(
-    function(error){
+  .then(function(userCredential){
 
-      showError(error);
+    console.log(
+      "Anonymous sign-in successful:",
+      userCredential.user.uid
+    );
 
-    }
-  );
+  })
+  .catch(function(error){
+
+    showError(error);
+
+  });
 
 </script>
 
+
+<!-- SERVICE WORKER -->
 
 <script>
 
@@ -1390,5 +1417,7 @@ if("serviceWorker" in navigator){
 
 </script>
 
+
 </body>
+
 </html>
