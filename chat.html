@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -35,9 +36,10 @@ html{
 
 body{
   min-height:100vh;
+  min-height:100dvh;
+
   font-family:Arial,Helvetica,sans-serif;
   color:#fff;
-  padding-bottom:95px;
 
   background:
     radial-gradient(
@@ -57,6 +59,9 @@ body{
       #150802 100%
     );
 }
+
+
+/* HEADER */
 
 .header{
   text-align:center;
@@ -113,12 +118,23 @@ body{
     );
 }
 
+
+/* MAIN CONTENT */
+
 .content{
   width:100%;
   max-width:540px;
-  margin:auto;
-  padding:8px 16px 110px;
+
+  margin:0 auto;
+
+  padding:
+    8px
+    16px
+    calc(155px + env(safe-area-inset-bottom));
 }
+
+
+/* STATUS */
 
 .status{
   text-align:center;
@@ -149,6 +165,9 @@ body{
   color:#ff751c;
 }
 
+
+/* MODERATION NOTICE */
+
 .moderation-notice{
   display:none;
   margin-bottom:14px;
@@ -174,6 +193,9 @@ body{
   background:rgba(90,20,0,.30);
 }
 
+
+/* ERRORS */
+
 .error-details{
   display:none;
   margin-bottom:14px;
@@ -197,6 +219,9 @@ body{
   margin-bottom:6px;
 }
 
+
+/* REPORT SUCCESS */
+
 .report-success{
   display:none;
   margin-bottom:14px;
@@ -213,6 +238,9 @@ body{
 .report-success.show{
   display:block;
 }
+
+
+/* PACK NAME */
 
 .name-box{
   padding:18px;
@@ -297,6 +325,9 @@ select{
   cursor:pointer;
 }
 
+
+/* ADMIN LOGIN */
+
 .admin-panel{
   margin-bottom:14px;
   padding:18px;
@@ -356,7 +387,13 @@ select{
   color:#fff;
   font-size:10px;
   font-weight:900;
-  background:linear-gradient(135deg,#ff751c,#bd4000);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff751c,
+      #bd4000
+    );
 }
 
 .admin-button:disabled{
@@ -372,14 +409,19 @@ select{
   text-align:center;
 }
 
+
+/* ADMIN CONNECTED */
+
 .admin-active{
   display:none;
   align-items:center;
   justify-content:space-between;
   gap:8px;
   flex-wrap:wrap;
+
   margin-bottom:14px;
   padding:14px 16px;
+
   border-radius:12px;
   border:1px solid rgba(255,117,28,.45);
 
@@ -423,30 +465,51 @@ select{
   border-radius:8px;
   text-decoration:none;
   color:#67dcff;
-  border:1px solid rgba(103,220,255,.35);
-  background:rgba(0,150,210,.08);
+
+  border:
+    1px solid rgba(103,220,255,.35);
+
+  background:
+    rgba(0,150,210,.08);
+
   font-size:8px;
   font-weight:900;
 }
 
 .logout-button{
   padding:8px 10px;
-  border:1px solid rgba(255,255,255,.15);
+
+  border:
+    1px solid rgba(255,255,255,.15);
+
   border-radius:8px;
+
   background:#111;
+
   color:#aaa;
+
   font-size:8px;
   font-weight:900;
   cursor:pointer;
 }
 
+
+/* CHAT SHELL */
+
 .chat-shell{
   position:relative;
   overflow:hidden;
+
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.13);
-  background:rgba(5,5,5,.88);
-  box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+  border:
+    1px solid rgba(255,255,255,.13);
+
+  background:
+    rgba(5,5,5,.88);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35);
 }
 
 .chat-shell::before{
@@ -457,6 +520,7 @@ select{
   bottom:0;
   width:4px;
   background:#4bd8ff;
+  z-index:4;
 }
 
 .chat-shell::after{
@@ -467,13 +531,20 @@ select{
   bottom:0;
   width:4px;
   background:#ff6500;
+  z-index:4;
 }
+
+
+/* CHAT HEADER */
 
 .chat-header{
   position:relative;
   z-index:2;
+
   padding:15px 17px;
-  border-bottom:1px solid rgba(255,255,255,.10);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.10);
 
   background:
     linear-gradient(
@@ -494,13 +565,37 @@ select{
   font-size:10px;
 }
 
+
+/* MESSAGES */
+
 .messages{
   position:relative;
   z-index:2;
+
   height:430px;
+
   overflow-y:auto;
+  overscroll-behavior:contain;
+
   padding:17px 14px;
+
   scroll-behavior:smooth;
+
+  scrollbar-width:thin;
+  scrollbar-color:#777 #111;
+}
+
+.messages::-webkit-scrollbar{
+  width:8px;
+}
+
+.messages::-webkit-scrollbar-track{
+  background:#111;
+}
+
+.messages::-webkit-scrollbar-thumb{
+  background:#666;
+  border-radius:10px;
 }
 
 .empty-message{
@@ -510,6 +605,9 @@ select{
   font-size:12px;
   line-height:1.6;
 }
+
+
+/* MESSAGE */
 
 .message{
   max-width:84%;
@@ -560,17 +658,27 @@ select{
 
 .message-bubble{
   padding:10px 12px;
-  border-radius:4px 13px 13px 13px;
+
+  border-radius:
+    4px 13px 13px 13px;
+
   color:#e9e9e9;
-  background:rgba(35,35,35,.95);
-  border:1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(35,35,35,.95);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
   font-size:13px;
   line-height:1.5;
+
   overflow-wrap:anywhere;
 }
 
 .message.mine .message-bubble{
-  border-radius:13px 4px 13px 13px;
+  border-radius:
+    13px 4px 13px 13px;
 
   background:
     linear-gradient(
@@ -590,11 +698,17 @@ select{
   text-align:right;
 }
 
+
+/* MESSAGE ACTIONS */
+
 .message-actions{
   margin-top:6px;
+
   display:flex;
   justify-content:flex-end;
+
   gap:5px;
+
   flex-wrap:wrap;
 }
 
@@ -603,59 +717,99 @@ select{
 .mute-member,
 .block-member{
   padding:5px 7px;
+
   border-radius:6px;
+
   font-size:7px;
   font-weight:900;
+
   cursor:pointer;
 }
 
 .delete-message{
-  border:1px solid rgba(255,117,28,.35);
+  border:
+    1px solid rgba(255,117,28,.35);
+
   color:#ff751c;
-  background:rgba(255,80,0,.05);
+
+  background:
+    rgba(255,80,0,.05);
 }
 
 .report-message{
-  border:1px solid rgba(103,220,255,.30);
+  border:
+    1px solid rgba(103,220,255,.30);
+
   color:#67dcff;
-  background:rgba(0,160,220,.05);
+
+  background:
+    rgba(0,160,220,.05);
 }
 
 .mute-member{
-  border:1px solid rgba(255,180,71,.35);
+  border:
+    1px solid rgba(255,180,71,.35);
+
   color:#ffb347;
-  background:rgba(100,60,0,.08);
+
+  background:
+    rgba(100,60,0,.08);
 }
 
 .block-member{
-  border:1px solid rgba(255,80,50,.45);
+  border:
+    1px solid rgba(255,80,50,.45);
+
   color:#ff7957;
-  background:rgba(100,20,0,.12);
+
+  background:
+    rgba(100,20,0,.12);
 }
+
+
+/* MESSAGE COMPOSER */
 
 .composer{
   position:relative;
   z-index:2;
+
   padding:12px;
-  border-top:1px solid rgba(255,255,255,.10);
+
+  border-top:
+    1px solid rgba(255,255,255,.10);
+
   display:flex;
   gap:8px;
   align-items:flex-end;
+
   background:#080808;
 }
 
 .message-input{
   flex:1;
   min-width:0;
+
   height:46px;
   max-height:100px;
+
   resize:none;
+
   padding:13px 12px;
+
   border-radius:10px;
-  border:1px solid rgba(255,255,255,.14);
+
+  border:
+    1px solid rgba(255,255,255,.14);
+
   outline:none;
+
   color:#fff;
+
   background:#111;
+}
+
+.message-input:focus{
+  border-color:#67dcff;
 }
 
 .message-input:disabled{
@@ -664,14 +818,25 @@ select{
 
 .send-button{
   height:46px;
+
   padding:0 16px;
+
   border:none;
   border-radius:10px;
+
   color:#fff;
+
   cursor:pointer;
+
   font-size:10px;
   font-weight:900;
-  background:linear-gradient(135deg,#ff751c,#bd4000);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff751c,
+      #bd4000
+    );
 }
 
 .send-button:disabled{
@@ -680,22 +845,39 @@ select{
 }
 
 .character-count{
-  padding:0 14px 10px;
+  padding:
+    0
+    14px
+    10px;
+
   text-align:right;
+
   color:#666;
+
   background:#080808;
+
   font-size:8px;
 }
 
+
+/* REPORT MODAL */
+
 .report-overlay{
   display:none;
+
   position:fixed;
+
   inset:0;
-  z-index:1000;
+
+  z-index:2000;
+
   align-items:center;
   justify-content:center;
+
   padding:20px;
-  background:rgba(0,0,0,.82);
+
+  background:
+    rgba(0,0,0,.82);
 }
 
 .report-overlay.show{
@@ -705,9 +887,13 @@ select{
 .report-box{
   width:100%;
   max-width:420px;
+
   padding:20px;
+
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.13);
+
+  border:
+    1px solid rgba(255,255,255,.13);
 
   background:
     linear-gradient(
@@ -733,11 +919,18 @@ select{
 
 .report-preview{
   margin-top:12px;
+
   padding:12px;
+
   border-radius:10px;
-  border:1px solid rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
   background:#111;
+
   color:#ccc;
+
   font-size:11px;
   line-height:1.5;
 }
@@ -748,80 +941,162 @@ select{
 
 .report-buttons{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:8px;
+
   margin-top:12px;
 }
 
 .report-submit,
 .report-cancel{
   padding:12px;
+
   border-radius:9px;
+
   cursor:pointer;
+
   font-size:9px;
   font-weight:900;
 }
 
 .report-submit{
   border:none;
+
   color:#fff;
-  background:linear-gradient(135deg,#ff751c,#bd4000);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff751c,
+      #bd4000
+    );
 }
 
 .report-cancel{
-  border:1px solid rgba(255,255,255,.12);
+  border:
+    1px solid rgba(255,255,255,.12);
+
   color:#ddd;
+
   background:#191919;
 }
 
+
+/* SAFETY */
+
 .safety{
   margin-top:14px;
+
   padding:14px;
+
   text-align:center;
+
   border-radius:12px;
-  border:1px solid rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
   color:#888;
-  background:rgba(8,8,8,.72);
+
+  background:
+    rgba(8,8,8,.72);
+
   font-size:10px;
   line-height:1.5;
 }
 
+
+/* BACK BUTTON */
+
 .back{
   display:block;
+
   margin-top:15px;
+  margin-bottom:20px;
+
   padding:15px;
+
   text-align:center;
+
   text-decoration:none;
+
   color:#fff;
-  border:1px solid #59d9ff;
+
+  border:
+    1px solid #59d9ff;
+
   border-radius:11px;
+
   font-size:11px;
   font-weight:900;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,160,220,.10),
+      rgba(255,90,0,.10)
+    );
 }
+
+.back:active{
+  transform:scale(.985);
+}
+
+
+/* BOTTOM NAV */
 
 .bottom-nav{
   position:fixed;
+
   left:0;
   right:0;
   bottom:0;
-  height:74px;
+
+  height:
+    calc(74px + env(safe-area-inset-bottom));
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  padding-bottom:env(safe-area-inset-bottom);
-  background:rgba(4,4,4,.97);
-  border-top:1px solid rgba(255,255,255,.12);
-  backdrop-filter:blur(12px);
-  z-index:100;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  padding-bottom:
+    env(safe-area-inset-bottom);
+
+  background:
+    rgba(4,4,4,.97);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  backdrop-filter:
+    blur(12px);
+
+  z-index:1000;
 }
 
 .nav-item{
   text-decoration:none;
+
   color:#888;
+
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
   justify-content:center;
+
   gap:5px;
+
+  min-width:0;
+
   font-size:9px;
   font-weight:bold;
 }
@@ -838,14 +1113,70 @@ select{
   color:#67dcff;
 }
 
-@media(max-width:400px){
+
+/* SMALL SCREENS */
+
+@media(max-width:430px){
+
+  .header{
+    padding-top:20px;
+  }
+
+  .logo{
+    width:80px;
+    height:80px;
+  }
+
+  .title{
+    font-size:27px;
+  }
+
+  .content{
+    padding-left:12px;
+    padding-right:12px;
+
+    padding-bottom:
+      calc(160px + env(safe-area-inset-bottom));
+  }
 
   .messages{
     height:380px;
   }
 
-  .title{
-    font-size:28px;
+  .admin-active{
+    padding:12px;
+  }
+
+  .admin-actions{
+    width:100%;
+  }
+
+  .admin-link,
+  .logout-button{
+    flex:1;
+    text-align:center;
+  }
+
+}
+
+
+/* SHORT MOBILE SCREENS */
+
+@media(max-height:700px){
+
+  .messages{
+    height:310px;
+  }
+
+}
+
+
+/* DESKTOP */
+
+@media(min-width:900px){
+
+  .messages{
+    height:440px;
   }
 
 }
@@ -856,14 +1187,20 @@ select{
 
 <body>
 
+
 <header class="header">
 
-<a href="index.html">
+<a
+  href="index.html"
+  aria-label="Team Wolfpack Home"
+>
+
 <img
   src="icon-512.png"
   class="logo"
   alt="Team Wolfpack"
 >
+
 </a>
 
 <div class="brand">
@@ -871,8 +1208,15 @@ TEAM WOLFPACK
 </div>
 
 <h1 class="title">
-<span class="ice">PACK</span>
-<span class="fire">CHAT</span>
+
+<span class="ice">
+PACK
+</span>
+
+<span class="fire">
+CHAT
+</span>
+
 </h1>
 
 <p class="subtitle">
@@ -886,14 +1230,20 @@ Connect with the Team Wolfpack community.
 
 <main class="content">
 
-<div id="status" class="status">
+
+<div
+  id="status"
+  class="status"
+>
 LOADING PACK CHAT...
 </div>
+
 
 <div
   id="moderationNotice"
   class="moderation-notice"
 ></div>
+
 
 <div
   id="reportSuccess"
@@ -901,6 +1251,7 @@ LOADING PACK CHAT...
 >
 REPORT SENT TO TEAM WOLFPACK ADMINS
 </div>
+
 
 <div
   id="errorDetails"
@@ -916,6 +1267,8 @@ PACK CHAT DIAGNOSTIC
 
 </div>
 
+
+<!-- ADMIN CONNECTED -->
 
 <div
   id="adminActive"
@@ -961,6 +1314,8 @@ LOG OUT
 </div>
 
 
+<!-- PACK NAME -->
+
 <div
   id="nameBox"
   class="name-box"
@@ -998,6 +1353,8 @@ SAVE
 </div>
 
 
+<!-- ADMIN LOGIN -->
+
 <div
   id="adminPanel"
   class="admin-panel"
@@ -1018,7 +1375,6 @@ ADMIN LOGIN
 </button>
 
 </div>
-
 
 <div
   id="adminLogin"
@@ -1058,13 +1414,22 @@ Official Team Wolfpack administrators only.
 </div>
 
 
+<!-- CHAT -->
+
 <div class="chat-shell">
 
 <div class="chat-header">
 
 <div class="chat-header-title">
-<span class="ice">LIVE</span>
-<span class="fire">PACK CHAT</span>
+
+<span class="ice">
+LIVE
+</span>
+
+<span class="fire">
+PACK CHAT
+</span>
+
 </div>
 
 <div class="chat-header-info">
@@ -1072,6 +1437,7 @@ Messages from the Team Wolfpack community
 </div>
 
 </div>
+
 
 <div
   id="messages"
@@ -1083,6 +1449,7 @@ Loading Pack Chat...
 </div>
 
 </div>
+
 
 <div class="composer">
 
@@ -1105,6 +1472,7 @@ SEND
 
 </div>
 
+
 <div
   id="characterCount"
   class="character-count"
@@ -1119,6 +1487,7 @@ SEND
 Please keep Pack Chat respectful. Do not share private information such as your address, passwords or financial details.
 </div>
 
+
 <a
   class="back"
   href="more.html"
@@ -1126,8 +1495,11 @@ Please keep Pack Chat respectful. Do not share private information such as your 
 ‹ BACK TO MORE
 </a>
 
+
 </main>
 
+
+<!-- REPORT MODAL -->
 
 <div
   id="reportOverlay"
@@ -1205,30 +1577,66 @@ SUBMIT REPORT
 </div>
 
 
+<!-- BOTTOM NAV -->
+
 <nav class="bottom-nav">
 
-<a class="nav-item" href="index.html">
-<span class="nav-icon">⌂</span>
+<a
+  class="nav-item"
+  href="index.html"
+>
+
+<span class="nav-icon">
+⌂
+</span>
+
 HOME
+
 </a>
 
-<a class="nav-item" href="fighters.html">
-<span class="nav-icon">♟</span>
+<a
+  class="nav-item"
+  href="fighters.html"
+>
+
+<span class="nav-icon">
+♟
+</span>
+
 FIGHTERS
+
 </a>
 
-<a class="nav-item fire-nav" href="fights.html">
-<span class="nav-icon">♜</span>
+<a
+  class="nav-item fire-nav"
+  href="fights.html"
+>
+
+<span class="nav-icon">
+♜
+</span>
+
 FIGHTS
+
 </a>
 
-<a class="nav-item active" href="more.html">
-<span class="nav-icon">☰</span>
+<a
+  class="nav-item active"
+  href="more.html"
+>
+
+<span class="nav-icon">
+☰
+</span>
+
 MORE
+
 </a>
 
 </nav>
 
+
+<!-- FIREBASE -->
 
 <script type="module">
 
@@ -1260,23 +1668,44 @@ import {
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC06RDrqpXodbYBJqyeGvRkmtxQGapaaPY",
-  authDomain: "team-wolfpack-app.firebaseapp.com",
-  projectId: "team-wolfpack-app",
-  storageBucket: "team-wolfpack-app.firebasestorage.app",
-  messagingSenderId: "1070414578856",
-  appId: "1:1070414578856:web:df14e7d387e658eeae2e9d",
-  measurementId: "G-6JTCE2N9LZ"
+
+  apiKey:
+    "AIzaSyC06RDrqpXodbYBJqyeGvRkmtxQGapaaPY",
+
+  authDomain:
+    "team-wolfpack-app.firebaseapp.com",
+
+  projectId:
+    "team-wolfpack-app",
+
+  storageBucket:
+    "team-wolfpack-app.firebasestorage.app",
+
+  messagingSenderId:
+    "1070414578856",
+
+  appId:
+    "1:1070414578856:web:df14e7d387e658eeae2e9d",
+
+  measurementId:
+    "G-6JTCE2N9LZ"
+
 };
 
 
 const ADMINS = {
-  "PRGa9TsCW0QDn1QtoUXyYjEi7YB3": "MR WOLFIE",
-  "SlpEQYl94DaH6j42QUyl8Kv2ujJ3": "MRS WOLFIE"
+
+  "PRGa9TsCW0QDn1QtoUXyYjEi7YB3":
+    "MR WOLFIE",
+
+  "SlpEQYl94DaH6j42QUyl8Kv2ujJ3":
+    "MRS WOLFIE"
+
 };
 
 
-const CHAT_RULES_VERSION = "1";
+const CHAT_RULES_VERSION =
+  "1";
 
 
 const app =
@@ -1372,12 +1801,17 @@ const submitReport =
 
 
 let currentUser = null;
+
 let isAdmin = false;
+
 let adminName = "";
+
 let sending = false;
+
 let reportTarget = null;
 
 let messageDocuments = [];
+
 let moderationMap = {};
 
 let memberModeration = {
@@ -1391,7 +1825,9 @@ let packName =
   ) || "";
 
 let unsubscribeMessages = null;
+
 let unsubscribeOwnModeration = null;
+
 let unsubscribeAdminModeration = null;
 
 
@@ -1461,6 +1897,7 @@ function updateInterface(){
     isAdmin
       ? ADMINS[currentUser.uid]
       : "";
+
 
   moderationNotice.className =
     "moderation-notice";
@@ -1873,6 +2310,7 @@ async function sendMessage(){
         "messages"
       ),
       {
+
         uid:
           currentUser.uid,
 
@@ -1886,6 +2324,7 @@ async function sendMessage(){
 
         createdAt:
           serverTimestamp()
+
       }
     );
 
@@ -1931,7 +2370,9 @@ function escapeHTML(value){
 function displayTime(timestamp){
 
   if(!timestamp){
+
     return "Sending...";
+
   }
 
   try{
@@ -1980,10 +2421,12 @@ async function saveModeration(
         uid
       ),
       {
+
         uid:uid,
 
         name:
-          name || "Pack Member",
+          name ||
+          "Pack Member",
 
         muted:
           Boolean(muted),
@@ -1996,6 +2439,7 @@ async function saveModeration(
 
         updatedBy:
           currentUser.uid
+
       }
     );
 
@@ -2198,9 +2642,12 @@ reportOverlay.addEventListener(
   function(event){
 
     if(
-      event.target === reportOverlay
+      event.target ===
+      reportOverlay
     ){
+
       closeReport();
+
     }
 
   }
@@ -2244,6 +2691,7 @@ submitReport.addEventListener(
           "reports"
         ),
         {
+
           reporterUid:
             currentUser.uid,
 
@@ -2264,6 +2712,7 @@ submitReport.addEventListener(
 
           createdAt:
             serverTimestamp()
+
         }
       );
 
@@ -2888,8 +3337,12 @@ onAuthStateChanged(
         if(
           unsubscribeOwnModeration
         ){
+
           unsubscribeOwnModeration();
-          unsubscribeOwnModeration = null;
+
+          unsubscribeOwnModeration =
+            null;
+
         }
 
         startAdminModeration();
@@ -2899,8 +3352,12 @@ onAuthStateChanged(
         if(
           unsubscribeAdminModeration
         ){
+
           unsubscribeAdminModeration();
-          unsubscribeAdminModeration = null;
+
+          unsubscribeAdminModeration =
+            null;
+
         }
 
         startOwnModeration();
@@ -2934,6 +3391,8 @@ onAuthStateChanged(
 
 </script>
 
+
+<!-- SERVICE WORKER -->
 
 <script>
 
