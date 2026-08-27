@@ -12,10 +12,25 @@
 
 <meta name="theme-color" content="#050505">
 
-<meta name="apple-mobile-web-app-title" content="TEAM WOLFPACK">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta
+  name="apple-mobile-web-app-title"
+  content="TEAM WOLFPACK"
+>
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes"
+>
+
+<meta
+  name="mobile-web-app-capable"
+  content="yes"
+>
+
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black"
+>
 
 <title>Resolved History | Team Wolfpack</title>
 
@@ -161,8 +176,13 @@ body{
   padding:25px 18px;
   border-radius:14px;
   text-align:center;
-  border:1px solid rgba(255,117,28,.35);
-  background:rgba(50,10,0,.35);
+
+  border:
+    1px solid
+    rgba(255,117,28,.35);
+
+  background:
+    rgba(50,10,0,.35);
 }
 
 .access-denied.show{
@@ -190,12 +210,15 @@ body{
   align-items:center;
   justify-content:space-between;
   gap:10px;
+
   margin-bottom:15px;
   padding:14px 16px;
+
   border-radius:12px;
 
   border:
-    1px solid rgba(255,117,28,.35);
+    1px solid
+    rgba(255,117,28,.35);
 
   background:
     linear-gradient(
@@ -219,8 +242,10 @@ body{
   margin-left:6px;
   padding:4px 7px;
   border-radius:20px;
+
   background:#ff751c;
   color:#050505;
+
   font-size:8px;
   font-weight:900;
 }
@@ -249,8 +274,13 @@ body{
   padding:14px 6px;
   text-align:center;
   border-radius:11px;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(8,8,8,.78);
+
+  border:
+    1px solid
+    rgba(255,255,255,.10);
+
+  background:
+    rgba(8,8,8,.78);
 }
 
 .summary-number{
@@ -272,15 +302,21 @@ body{
 }
 
 
-/* FILTERS */
+/* CONTROLS */
 
 .controls{
   display:none;
   margin-bottom:16px;
   padding:14px;
+
   border-radius:13px;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(8,8,8,.72);
+
+  border:
+    1px solid
+    rgba(255,255,255,.10);
+
+  background:
+    rgba(8,8,8,.72);
 }
 
 .controls.show{
@@ -290,17 +326,27 @@ body{
 .search-input{
   width:100%;
   padding:13px 14px;
+
   border-radius:10px;
-  border:1px solid rgba(255,255,255,.14);
+
+  border:
+    1px solid
+    rgba(255,255,255,.14);
+
   outline:none;
+
   background:#090909;
   color:#fff;
+
   font-size:12px;
 }
 
 .search-input:focus{
   border-color:#67dcff;
 }
+
+
+/* FILTERS */
 
 .filter-row{
   display:grid;
@@ -310,19 +356,43 @@ body{
 }
 
 .filter-button{
+  min-height:40px;
   padding:9px 5px;
+
   border-radius:8px;
-  border:1px solid rgba(255,255,255,.10);
+
+  border:
+    1px solid
+    rgba(255,255,255,.10);
+
   background:#111;
   color:#888;
+
   font-size:7px;
   font-weight:900;
+
   cursor:pointer;
 }
 
 .filter-button.active{
   background:#67dcff;
   color:#050505;
+}
+
+.filter-button[data-filter="reports"].active{
+  background:#67dcff;
+}
+
+.filter-button[data-filter="muted"].active{
+  background:#ffb347;
+}
+
+.filter-button[data-filter="blocked"].active{
+  background:#ff7957;
+}
+
+.filter-button[data-filter="members"].active{
+  background:#ff751c;
 }
 
 
@@ -339,10 +409,18 @@ body{
 .empty{
   padding:35px 20px;
   text-align:center;
+
   border-radius:14px;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(8,8,8,.75);
+
+  border:
+    1px solid
+    rgba(255,255,255,.10);
+
+  background:
+    rgba(8,8,8,.75);
+
   color:#777;
+
   font-size:12px;
   line-height:1.6;
 }
@@ -353,10 +431,15 @@ body{
 .history-card{
   position:relative;
   overflow:hidden;
+
   margin-bottom:14px;
   padding:17px;
+
   border-radius:14px;
-  border:1px solid rgba(255,117,28,.25);
+
+  border:
+    1px solid
+    rgba(255,117,28,.25);
 
   background:
     linear-gradient(
@@ -414,15 +497,15 @@ body{
   color:#ffb347;
 }
 
-.history-action.unmuted{
-  color:#67dcff;
-}
-
 .history-action.blocked{
   color:#ff7957;
 }
 
 .history-action.unblocked{
+  color:#67dcff;
+}
+
+.history-action.cleared{
   color:#67dcff;
 }
 
@@ -457,10 +540,17 @@ body{
 .reported-message{
   margin-top:8px;
   padding:12px;
+
   border-radius:9px;
-  border:1px solid rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+
   background:#111;
+
   color:#eee;
+
   font-size:12px;
   line-height:1.5;
 }
@@ -497,13 +587,22 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+
   min-height:46px;
+
   padding:12px 8px;
+
   text-align:center;
   text-decoration:none;
+
   color:#fff;
-  border:1px solid #59d9ff;
+
+  border:
+    1px solid
+    #59d9ff;
+
   border-radius:11px;
+
   font-size:8px;
   font-weight:900;
 
@@ -521,15 +620,22 @@ body{
 @media(max-width:500px){
 
   .summary{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .filter-row{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .filter-button:last-child{
+    grid-column:1 / -1;
   }
 
   .nav-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .title{
@@ -561,11 +667,9 @@ body{
 
 </a>
 
-
 <div class="brand">
 TEAM WOLFPACK
 </div>
-
 
 <h1 class="title">
 
@@ -579,11 +683,9 @@ HISTORY
 
 </h1>
 
-
 <p class="subtitle">
 Pack Chat moderation and report resolution history.
 </p>
-
 
 <div class="line"></div>
 
@@ -615,7 +717,6 @@ ADMIN ACCESS REQUIRED
 <div class="access-text">
 Resolved History is available only to authorised Team Wolfpack administrators.
 </div>
-
 
 <div class="nav-grid show">
 
@@ -688,14 +789,14 @@ HISTORY
 <div class="summary-card blue">
 
 <div
-  id="dismissedCount"
+  id="reportCount"
   class="summary-number"
 >
 0
 </div>
 
 <div class="summary-label">
-DISMISSED
+REPORT ACTIONS
 </div>
 
 </div>
@@ -704,14 +805,14 @@ DISMISSED
 <div class="summary-card">
 
 <div
-  id="actionCount"
+  id="memberActionCount"
   class="summary-number"
 >
 0
 </div>
 
 <div class="summary-label">
-ACTION TAKEN
+MEMBER ACTIONS
 </div>
 
 </div>
@@ -750,7 +851,6 @@ MEMBERS
   autocomplete="off"
 >
 
-
 <div class="filter-row">
 
 <button
@@ -764,17 +864,9 @@ ALL
 <button
   class="filter-button"
   type="button"
-  data-filter="dismissed"
+  data-filter="reports"
 >
-DISMISSED
-</button>
-
-<button
-  class="filter-button"
-  type="button"
-  data-filter="deleted"
->
-DELETED
+REPORTS
 </button>
 
 <button
@@ -793,6 +885,14 @@ MUTED
 BLOCKED
 </button>
 
+<button
+  class="filter-button"
+  type="button"
+  data-filter="members"
+>
+MEMBER ACTIONS
+</button>
+
 </div>
 
 </div>
@@ -806,7 +906,7 @@ BLOCKED
 ></div>
 
 
-<!-- ADMIN NAV -->
+<!-- ADMIN NAVIGATION -->
 
 <div
   id="adminNavigation"
@@ -853,12 +953,10 @@ import {
   initializeApp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
-
 import {
   getAuth,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
 
 import {
   getFirestore,
@@ -910,6 +1008,8 @@ const ADMINS = {
 };
 
 
+/* FIREBASE */
+
 const app =
   initializeApp(
     firebaseConfig
@@ -958,14 +1058,14 @@ const totalCount =
     "totalCount"
   );
 
-const dismissedCount =
+const reportCount =
   document.getElementById(
-    "dismissedCount"
+    "reportCount"
   );
 
-const actionCount =
+const memberActionCount =
   document.getElementById(
-    "actionCount"
+    "memberActionCount"
   );
 
 const memberCount =
@@ -994,8 +1094,6 @@ const adminNavigation =
   );
 
 
-/* STATE */
-
 let currentAdmin =
   null;
 
@@ -1021,9 +1119,7 @@ function escapeHTML(value){
   element.textContent =
     value == null
       ? ""
-      : String(
-          value
-        );
+      : String(value);
 
   return element.innerHTML;
 
@@ -1032,14 +1128,12 @@ function escapeHTML(value){
 
 /* DISPLAY DATE */
 
-function displayDate(
-  timestamp
-){
+function displayDate(timestamp){
 
   if(
     !timestamp
   ){
-    return "";
+    return "Processing...";
   }
 
   try{
@@ -1059,86 +1153,56 @@ function displayDate(
 
   }catch(error){
 
-    return "";
+    return "Unknown";
 
   }
 
 }
 
 
-/* ACTION STYLE */
+/* NORMALISE RECORD */
 
-function getActionClass(
-  action
-){
-
-  if(
-    action ===
-    "REPORT DISMISSED"
-  ){
-    return "dismissed";
-  }
-
-  if(
-    action ===
-    "MEMBER MUTED"
-  ){
-    return "muted";
-  }
-
-  if(
-    action ===
-    "MEMBER UNMUTED"
-  ){
-    return "unmuted";
-  }
-
-  if(
-    action ===
-    "MEMBER BLOCKED" ||
-    action ===
-    "RESERVED-NAME ACCOUNT BLOCKED"
-  ){
-    return "blocked";
-  }
-
-  if(
-    action ===
-    "MEMBER UNBLOCKED" ||
-    action ===
-    "ALL RESTRICTIONS REMOVED"
-  ){
-    return "unblocked";
-  }
-
-  return "";
-}
-
-
-/* RECORD MEMBER UID */
-
-function getRecordMemberUid(
-  record
-){
+function getAction(record){
 
   return (
-    record.messageUid ||
-    record.memberUid ||
-    ""
+    record.action ||
+    record.actionTaken ||
+    "RESOLVED"
+  )
+  .toUpperCase();
+
+}
+
+
+function isMemberManagement(record){
+
+  return (
+    record.source ===
+    "member-management"
+  )
+  ||
+  (
+    record.type ===
+    "member-moderation"
   );
 
 }
 
 
-/* RECORD MEMBER NAME */
+function isReportRecord(record){
 
-function getRecordMemberName(
-  record
-){
+  return !isMemberManagement(
+    record
+  );
+
+}
+
+
+function getMemberName(record){
 
   return (
-    record.messageName ||
     record.memberName ||
+    record.messageName ||
     record.reportedMember ||
     "Pack Member"
   );
@@ -1146,153 +1210,92 @@ function getRecordMemberName(
 }
 
 
-/* RESOLVING ADMIN */
-
-function getResolvedByName(
-  record
-){
-
-  if(
-    record.resolvedByName
-  ){
-    return record.resolvedByName;
-  }
-
-  if(
-    record.resolvedBy &&
-    typeof record.resolvedBy ===
-      "string"
-  ){
-
-    if(
-      ADMINS[
-        record.resolvedBy
-      ]
-    ){
-      return ADMINS[
-        record.resolvedBy
-      ];
-    }
-
-    return record.resolvedBy;
-  }
-
-  if(
-    record.resolvedByUid &&
-    ADMINS[
-      record.resolvedByUid
-    ]
-  ){
-
-    return ADMINS[
-      record.resolvedByUid
-    ];
-
-  }
-
-  return "TEAM WOLFPACK ADMIN";
-
-}
-
-
-/* SOURCE */
-
-function isMemberManagementRecord(
-  record
-){
+function getMemberUid(record){
 
   return (
-    record.source ===
-      "member-management"
-
-    ||
-
-    record.type ===
-      "member-moderation"
+    record.memberUid ||
+    record.messageUid ||
+    ""
   );
 
 }
 
 
-/* FILTER GROUP */
+function getResolvedBy(record){
 
-function actionMatchesFilter(
-  action,
-  filter
-){
+  return (
+    record.resolvedByName ||
+    record.resolvedBy ||
+    "TEAM WOLFPACK ADMIN"
+  );
+
+}
+
+
+function getResolvedDate(record){
+
+  return (
+    record.resolvedAt ||
+    record.createdAt ||
+    null
+  );
+
+}
+
+
+/* ACTION STYLE */
+
+function getActionClass(action){
 
   if(
-    filter ===
-    "all"
+    action.includes(
+      "DISMISSED"
+    )
   ){
-    return true;
+    return "dismissed";
   }
 
   if(
-    filter ===
-    "dismissed"
+    action.includes(
+      "UNMUTED"
+    )
   ){
-
-    return action ===
-      "REPORT DISMISSED";
-
+    return "dismissed";
   }
 
   if(
-    filter ===
-    "deleted"
+    action.includes(
+      "MUTED"
+    )
   ){
-
-    return action ===
-      "MESSAGE DELETED";
-
+    return "muted";
   }
 
   if(
-    filter ===
-    "muted"
+    action.includes(
+      "UNBLOCKED"
+    )
   ){
-
-    return (
-      action ===
-        "MEMBER MUTED"
-
-      ||
-
-      action ===
-        "MEMBER UNMUTED"
-    );
-
+    return "unblocked";
   }
 
   if(
-    filter ===
-    "blocked"
+    action.includes(
+      "BLOCKED"
+    )
   ){
-
-    return (
-      action ===
-        "MEMBER BLOCKED"
-
-      ||
-
-      action ===
-        "MEMBER UNBLOCKED"
-
-      ||
-
-      action ===
-        "RESERVED-NAME ACCOUNT BLOCKED"
-
-      ||
-
-      action ===
-        "ALL RESTRICTIONS REMOVED"
-    );
-
+    return "blocked";
   }
 
-  return true;
+  if(
+    action.includes(
+      "RESTRICTIONS REMOVED"
+    )
+  ){
+    return "cleared";
+  }
+
+  return "";
 
 }
 
@@ -1301,33 +1304,35 @@ function actionMatchesFilter(
 
 function updateSummary(){
 
-  const total =
+  totalCount.textContent =
     historyRecords.length;
 
 
-  const dismissed =
+  const reports =
     historyRecords.filter(
       function(record){
 
-        return record.action ===
-          "REPORT DISMISSED";
+        return isReportRecord(
+          record
+        );
 
       }
     ).length;
 
 
-  const actions =
+  const memberActions =
     historyRecords.filter(
       function(record){
 
-        return record.action !==
-          "REPORT DISMISSED";
+        return isMemberManagement(
+          record
+        );
 
       }
     ).length;
 
 
-  const members =
+  const uniqueMembers =
     new Set();
 
 
@@ -1335,35 +1340,115 @@ function updateSummary(){
     function(record){
 
       const uid =
-        getRecordMemberUid(
+        getMemberUid(
           record
         );
 
-      if(
-        uid
-      ){
-
-        members.add(
+      if(uid){
+        uniqueMembers.add(
           uid
         );
-
       }
 
     }
   );
 
 
-  totalCount.textContent =
-    total;
+  reportCount.textContent =
+    reports;
 
-  dismissedCount.textContent =
-    dismissed;
-
-  actionCount.textContent =
-    actions;
+  memberActionCount.textContent =
+    memberActions;
 
   memberCount.textContent =
-    members.size;
+    uniqueMembers.size;
+
+}
+
+
+/* FILTER MATCH */
+
+function matchesActiveFilter(
+  record
+){
+
+  const action =
+    getAction(
+      record
+    );
+
+
+  if(
+    activeFilter ===
+    "all"
+  ){
+    return true;
+  }
+
+
+  if(
+    activeFilter ===
+    "reports"
+  ){
+
+    return isReportRecord(
+      record
+    );
+
+  }
+
+
+  if(
+    activeFilter ===
+    "muted"
+  ){
+
+    return (
+      action ===
+        "MEMBER MUTED"
+      ||
+      action ===
+        "MEMBER UNMUTED"
+    );
+
+  }
+
+
+  if(
+    activeFilter ===
+    "blocked"
+  ){
+
+    return (
+      action ===
+        "MEMBER BLOCKED"
+      ||
+      action ===
+        "MEMBER UNBLOCKED"
+      ||
+      action ===
+        "RESERVED-NAME ACCOUNT BLOCKED"
+      ||
+      action ===
+        "ALL RESTRICTIONS REMOVED"
+    );
+
+  }
+
+
+  if(
+    activeFilter ===
+    "members"
+  ){
+
+    return isMemberManagement(
+      record
+    );
+
+  }
+
+
+  return true;
 
 }
 
@@ -1381,60 +1466,50 @@ function filteredHistory(){
   return historyRecords.filter(
     function(record){
 
+      const action =
+        getAction(
+          record
+        );
+
       const memberName =
-        getRecordMemberName(
+        getMemberName(
           record
         );
 
       const memberUid =
-        getRecordMemberUid(
+        getMemberUid(
           record
         );
 
-      const admin =
-        getResolvedByName(
+      const resolvedBy =
+        getResolvedBy(
           record
         );
 
-      const haystack =
 
-        memberName.toLowerCase()
+      const haystack = [
 
-        + " " +
+        memberName,
 
-        memberUid.toLowerCase()
+        memberUid,
 
-        + " " +
+        record.messageText || "",
 
-        (
-          record.messageText ||
-          ""
-        ).toLowerCase()
+        record.reason || "",
 
-        + " " +
+        action,
 
-        (
-          record.reason ||
-          ""
-        ).toLowerCase()
+        resolvedBy,
 
-        + " " +
+        record.source || "",
 
-        (
-          record.action ||
-          ""
-        ).toLowerCase()
+        record.reporterUid || "",
 
-        + " " +
+        record.messageId || ""
 
-        admin.toLowerCase()
-
-        + " " +
-
-        (
-          record.source ||
-          ""
-        ).toLowerCase();
+      ]
+      .join(" ")
+      .toLowerCase();
 
 
       const matchesSearch =
@@ -1444,17 +1519,11 @@ function filteredHistory(){
         );
 
 
-      const matchesFilter =
-        actionMatchesFilter(
-          record.action ||
-          "",
-          activeFilter
-        );
-
-
       return (
         matchesSearch &&
-        matchesFilter
+        matchesActiveFilter(
+          record
+        )
       );
 
     }
@@ -1463,355 +1532,297 @@ function filteredHistory(){
 }
 
 
-/* MEMBER MANAGEMENT CARD */
+/* RENDER REPORT RECORD */
 
-function buildMemberManagementCard(
-  record
+function renderReportRecord(
+  record,
+  action
 ){
 
-  const action =
-    record.action ||
-    "MODERATION ACTION";
+  let html = "";
 
-  const memberName =
-    getRecordMemberName(
-      record
-    );
 
-  const memberUid =
-    getRecordMemberUid(
-      record
-    );
+  html +=
+    '<div class="label">' +
+    'REPORTED PACK MEMBER' +
+    '</div>';
 
-  const admin =
-    getResolvedByName(
-      record
-    );
 
-  const actionClass =
-    getActionClass(
+  html +=
+    '<div class="value member-name">' +
+    escapeHTML(
+      getMemberName(
+        record
+      )
+    ) +
+    '</div>';
+
+
+  html +=
+    '<div class="label">' +
+    'REPORT REASON' +
+    '</div>';
+
+
+  html +=
+    '<div class="value">' +
+    escapeHTML(
+      record.reason ||
+      "Reported"
+    ) +
+    '</div>';
+
+
+  html +=
+    '<div class="label">' +
+    'REPORTED MESSAGE' +
+    '</div>';
+
+
+  html +=
+    '<div class="reported-message">' +
+    escapeHTML(
+      record.messageText ||
+      ""
+    ) +
+    '</div>';
+
+
+  html +=
+    '<div class="label">' +
+    'ACTION TAKEN' +
+    '</div>';
+
+
+  html +=
+    '<div class="value">' +
+    escapeHTML(
       action
-    );
-
-  return (
-
-    '<div class="history-card">' +
-
-      '<div class="history-top">' +
-
-        '<div class="history-action ' +
-        actionClass +
-        '">' +
-          escapeHTML(
-            action
-          ) +
-        '</div>' +
-
-        '<div class="history-time">' +
-          escapeHTML(
-            displayDate(
-              record.resolvedAt
-            )
-          ) +
-        '</div>' +
-
-      '</div>' +
+    ) +
+    '</div>';
 
 
-      '<div class="history-details">' +
+  html +=
+    '<div class="label">' +
+    'RESOLVED BY' +
+    '</div>';
 
 
-        '<div class="label">' +
-          'PACK MEMBER' +
-        '</div>' +
-
-        '<div class="value member-name">' +
-          escapeHTML(
-            memberName
-          ) +
-        '</div>' +
-
-
-        '<div class="label">' +
-          'ACTION TAKEN' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            action
-          ) +
-        '</div>' +
+  html +=
+    '<div class="value admin-value">' +
+    escapeHTML(
+      getResolvedBy(
+        record
+      )
+    ) +
+    '</div>';
 
 
-        '<div class="label">' +
-          'ACTIONED BY' +
-        '</div>' +
-
-        '<div class="value admin-value">' +
-          escapeHTML(
-            admin
-          ) +
-        '</div>' +
+  html +=
+    '<div class="label">' +
+    'ORIGINAL REPORT DATE' +
+    '</div>';
 
 
-        '<div class="label">' +
-          'ACTION DATE' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            displayDate(
-              record.resolvedAt
-            )
-          ) +
-        '</div>' +
+  html +=
+    '<div class="value">' +
+    escapeHTML(
+      displayDate(
+        record.reportCreatedAt
+      )
+    ) +
+    '</div>';
 
 
-        '<div class="label">' +
-          'SOURCE' +
-        '</div>' +
-
-        '<div class="value source-value">' +
-          'MEMBER MANAGEMENT' +
-        '</div>' +
+  html +=
+    '<div class="label">' +
+    'MEMBER UID' +
+    '</div>';
 
 
-        '<div class="label">' +
-          'MEMBER UID' +
-        '</div>' +
-
-        '<div class="value uid">' +
-          escapeHTML(
-            memberUid
-          ) +
-        '</div>' +
-
-
-        '<div class="label">' +
-          'MESSAGES' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            record.messageCount != null
-              ? record.messageCount
-              : ""
-          ) +
-        '</div>' +
+  html +=
+    '<div class="value uid">' +
+    escapeHTML(
+      getMemberUid(
+        record
+      )
+    ) +
+    '</div>';
 
 
-        (
-          record.reservedIdentity ===
-          true
-
-            ?
-
-          '<div class="label">' +
-            'RESERVED IDENTITY' +
-          '</div>' +
-
-          '<div class="value">' +
-            'YES' +
-          '</div>'
-
-            :
-
-          ''
-        ) +
+  html +=
+    '<div class="label">' +
+    'REPORTER UID' +
+    '</div>';
 
 
-      '</div>' +
+  html +=
+    '<div class="value uid">' +
+    escapeHTML(
+      record.reporterUid ||
+      ""
+    ) +
+    '</div>';
 
-    '</div>'
 
-  );
+  html +=
+    '<div class="label">' +
+    'MESSAGE ID' +
+    '</div>';
+
+
+  html +=
+    '<div class="value uid">' +
+    escapeHTML(
+      record.messageId ||
+      ""
+    ) +
+    '</div>';
+
+
+  return html;
 
 }
 
 
-/* REPORT HISTORY CARD */
+/* RENDER MEMBER MANAGEMENT RECORD */
 
-function buildReportHistoryCard(
-  record
+function renderMemberRecord(
+  record,
+  action
 ){
 
-  const action =
-    record.action ||
-    "RESOLVED";
+  let html = "";
 
-  const memberName =
-    getRecordMemberName(
-      record
-    );
 
-  const memberUid =
-    getRecordMemberUid(
-      record
-    );
+  html +=
+    '<div class="label">' +
+    'PACK MEMBER' +
+    '</div>';
 
-  const admin =
-    getResolvedByName(
-      record
-    );
 
-  const actionClass =
-    getActionClass(
+  html +=
+    '<div class="value member-name">' +
+    escapeHTML(
+      getMemberName(
+        record
+      )
+    ) +
+    '</div>';
+
+
+  html +=
+    '<div class="label">' +
+    'ACTION TAKEN' +
+    '</div>';
+
+
+  html +=
+    '<div class="value">' +
+    escapeHTML(
       action
-    );
+    ) +
+    '</div>';
 
 
-  return (
-
-    '<div class="history-card">' +
-
-      '<div class="history-top">' +
-
-        '<div class="history-action ' +
-        actionClass +
-        '">' +
-          escapeHTML(
-            action
-          ) +
-        '</div>' +
-
-        '<div class="history-time">' +
-          escapeHTML(
-            displayDate(
-              record.resolvedAt
-            )
-          ) +
-        '</div>' +
-
-      '</div>' +
+  html +=
+    '<div class="label">' +
+    'ACTIONED BY' +
+    '</div>';
 
 
-      '<div class="history-details">' +
+  html +=
+    '<div class="value admin-value">' +
+    escapeHTML(
+      getResolvedBy(
+        record
+      )
+    ) +
+    '</div>';
 
 
-        '<div class="label">' +
-          'REPORTED PACK MEMBER' +
-        '</div>' +
-
-        '<div class="value member-name">' +
-          escapeHTML(
-            memberName
-          ) +
-        '</div>' +
+  html +=
+    '<div class="label">' +
+    'ACTION DATE' +
+    '</div>';
 
 
-        '<div class="label">' +
-          'REPORT REASON' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            record.reason ||
-            "Reported"
-          ) +
-        '</div>' +
-
-
-        '<div class="label">' +
-          'REPORTED MESSAGE' +
-        '</div>' +
-
-        '<div class="reported-message">' +
-          escapeHTML(
-            record.messageText ||
-            ""
-          ) +
-        '</div>' +
+  html +=
+    '<div class="value">' +
+    escapeHTML(
+      displayDate(
+        getResolvedDate(
+          record
+        )
+      )
+    ) +
+    '</div>';
 
 
-        '<div class="label">' +
-          'ACTION TAKEN' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            action
-          ) +
-        '</div>' +
+  html +=
+    '<div class="label">' +
+    'SOURCE' +
+    '</div>';
 
 
-        '<div class="label">' +
-          'RESOLVED BY' +
-        '</div>' +
-
-        '<div class="value admin-value">' +
-          escapeHTML(
-            admin
-          ) +
-        '</div>' +
+  html +=
+    '<div class="value source-value">' +
+    'MEMBER MANAGEMENT' +
+    '</div>';
 
 
-        '<div class="label">' +
-          'ORIGINAL REPORT DATE' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            displayDate(
-              record.reportCreatedAt
-            ) ||
-            "Unknown"
-          ) +
-        '</div>' +
+  html +=
+    '<div class="label">' +
+    'MEMBER UID' +
+    '</div>';
 
 
-        '<div class="label">' +
-          'RESOLVED DATE' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            displayDate(
-              record.resolvedAt
-            )
-          ) +
-        '</div>' +
+  html +=
+    '<div class="value uid">' +
+    escapeHTML(
+      getMemberUid(
+        record
+      )
+    ) +
+    '</div>';
 
 
-        '<div class="label">' +
-          'MEMBER UID' +
-        '</div>' +
-
-        '<div class="value uid">' +
-          escapeHTML(
-            memberUid
-          ) +
-        '</div>' +
+  html +=
+    '<div class="label">' +
+    'MESSAGE COUNT AT ACTION' +
+    '</div>';
 
 
-        '<div class="label">' +
-          'REPORTER UID' +
-        '</div>' +
-
-        '<div class="value uid">' +
-          escapeHTML(
-            record.reporterUid ||
-            ""
-          ) +
-        '</div>' +
+  html +=
+    '<div class="value">' +
+    escapeHTML(
+      record.messageCount == null
+        ? "0"
+        : record.messageCount
+    ) +
+    '</div>';
 
 
-        '<div class="label">' +
-          'MESSAGE ID' +
-        '</div>' +
+  if(
+    record.reservedIdentity ===
+    true
+  ){
 
-        '<div class="value uid">' +
-          escapeHTML(
-            record.messageId ||
-            ""
-          ) +
-        '</div>' +
+    html +=
+      '<div class="label">' +
+      'RESERVED IDENTITY' +
+      '</div>';
 
 
-      '</div>' +
+    html +=
+      '<div class="value">' +
+      'YES — PROTECTED TEAM WOLFPACK NAME' +
+      '</div>';
 
-    '</div>'
+  }
 
-  );
+
+  return html;
 
 }
 
@@ -1831,7 +1842,7 @@ function renderHistory(){
 
     history.innerHTML =
       '<div class="empty">' +
-      'NO HISTORY FOUND<br><br>' +
+      'NO RESOLVED HISTORY FOUND<br><br>' +
       'No moderation history matches this view.' +
       '</div>';
 
@@ -1847,25 +1858,85 @@ function renderHistory(){
   records.forEach(
     function(record){
 
+      const action =
+        getAction(
+          record
+        );
+
+
+      const actionClass =
+        getActionClass(
+          action
+        );
+
+
+      html +=
+        '<div class="history-card">';
+
+
+      html +=
+        '<div class="history-top">';
+
+
+      html +=
+        '<div class="history-action ' +
+        actionClass +
+        '">' +
+        escapeHTML(
+          action
+        ) +
+        '</div>';
+
+
+      html +=
+        '<div class="history-time">' +
+        escapeHTML(
+          displayDate(
+            getResolvedDate(
+              record
+            )
+          )
+        ) +
+        '</div>';
+
+
+      html +=
+        '</div>';
+
+
+      html +=
+        '<div class="history-details">';
+
+
       if(
-        isMemberManagementRecord(
+        isMemberManagement(
           record
         )
       ){
 
         html +=
-          buildMemberManagementCard(
-            record
+          renderMemberRecord(
+            record,
+            action
           );
 
       }else{
 
         html +=
-          buildReportHistoryCard(
-            record
+          renderReportRecord(
+            record,
+            action
           );
 
       }
+
+
+      html +=
+        '</div>';
+
+
+      html +=
+        '</div>';
 
     }
   );
@@ -1969,7 +2040,6 @@ function startHistory(){
 
       historyQuery,
 
-
       function(snapshot){
 
         historyRecords =
@@ -2000,7 +2070,6 @@ function startHistory(){
 
       },
 
-
       function(error){
 
         console.error(
@@ -2023,7 +2092,7 @@ function startHistory(){
 }
 
 
-/* AUTH CHECK */
+/* AUTH */
 
 onAuthStateChanged(
   auth,
@@ -2092,7 +2161,6 @@ onAuthStateChanged(
 
       startHistory();
 
-
       return;
 
     }
@@ -2157,11 +2225,12 @@ onAuthStateChanged(
 </script>
 
 
+<!-- SERVICE WORKER -->
+
 <script>
 
 if(
-  "serviceWorker"
-  in navigator
+  "serviceWorker" in navigator
 ){
 
   window.addEventListener(
