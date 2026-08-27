@@ -2659,8 +2659,8 @@ async function submitReport(){
 
 
   /*
-    Prevent a member reporting
-    their own message.
+    Do not allow members to
+    report their own messages.
   */
 
   if(
@@ -2684,6 +2684,66 @@ async function submitReport(){
 
   try{
 
+    /*
+      IMPORTANT:
+      These fields exactly match the
+      Firestore /reports create rule.
+    */
+
+    const reportData = {
+
+      reporterUid:
+        String(
+          currentUser.uid
+        ),
+
+      messageId:
+        String(
+          record.id || ""
+        ),
+
+      messageUid:
+        String(
+          data.uid || ""
+        ),
+
+      messageName:
+        String(
+          data.name ||
+          "Pack Member"
+        ).slice(
+          0,
+          30
+        ),
+
+      messageText:
+        String(
+          data.text || ""
+        ).slice(
+          0,
+          500
+        ),
+
+      reason:
+        String(
+          reason
+        ).slice(
+          0,
+          100
+        ),
+
+      createdAt:
+        serverTimestamp()
+
+    };
+
+
+    console.log(
+      "Submitting report:",
+      reportData
+    );
+
+
     await addDoc(
 
       collection(
@@ -2691,34 +2751,14 @@ async function submitReport(){
         "reports"
       ),
 
-      {
-
-        reporterUid:
-          currentUser.uid,
-
-        messageId:
-          record.id,
-
-        messageUid:
-          data.uid || "",
-
-        messageName:
-          data.name ||
-          "Pack Member",
-
-        messageText:
-          data.text || "",
-
-        reason:
-          reason,
-
-        createdAt:
-          serverTimestamp()
-
-      }
+      reportData
 
     );
 
+
+    /*
+      Report successfully saved.
+    */
 
     closeReportModal();
 
@@ -2735,10 +2775,38 @@ async function submitReport(){
       error
     );
 
-
-    window.alert(
-      "Unable to submit this report."
+    console.error(
+      "Firebase error code:",
+      error.code
     );
+
+    console.error(
+      "Firebase error message:",
+      error.message
+    );
+
+
+    /*
+      Give us a more useful error if
+      Firestore rejects the request.
+    */
+
+    if(
+      error.code ===
+      "permission-denied"
+    ){
+
+      window.alert(
+        "Report permission denied. Please check the Team Wolfpack Firestore report rules."
+      );
+
+    }else{
+
+      window.alert(
+        "Unable to submit this report."
+      );
+
+    }
 
   }finally{
 
