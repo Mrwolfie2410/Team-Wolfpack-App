@@ -1,127 +1,3 @@
-Edit
-why is there no box around greigs profile 
-LUKE MORGAN ELECTRICAL
-RHW ELECTRICAL
-i have the tabs meet the pack twice, once on the home page and 2nd one on the more tab page
-can we add images of the fighters
-we add zoeys image onto her profile 
-add the image for these in meet the pack 
-can we sort out the contact us page now with links to where people can go 
-Pasted text(20260824-141119).txt
-Document
-Edit
-Today 10:00 AM
-Pasted text(20260827-090034).txt
-Document
-
-Yes — I’ve got your current chat.html. The admin bar currently contains ADMIN REPORTS, MEMBERS, and LOG OUT.
-
-Next change: add ADMIN DASHBOARD
-
-Find this section:
-
-<div class="admin-actions">
-
-<a
-  class="admin-link"
-  href="admin-reports.html"
->
-ADMIN REPORTS
-</a>
-
-<a
-  class="admin-link"
-  href="admin-members.html"
->
-MEMBERS
-</a>
-
-<button
-  id="logoutAdmin"
-  class="logout-button"
-  type="button"
->
-LOG OUT
-</button>
-
-</div>
-
-Replace it with:
-
-<div class="admin-actions">
-
-<a
-  class="admin-link"
-  href="admin-dashboard.html"
->
-DASHBOARD
-</a>
-
-<a
-  class="admin-link"
-  href="admin-reports.html"
->
-ADMIN REPORTS
-</a>
-
-<a
-  class="admin-link"
-  href="admin-members.html"
->
-MEMBERS
-</a>
-
-<button
-  id="logoutAdmin"
-  class="logout-button"
-  type="button"
->
-LOG OUT
-</button>
-
-</div>
-
-That gives you:
-
-DASHBOARD | ADMIN REPORTS | MEMBERS | LOG OUT
-
-Nothing else in chat.html needs changing for this step.
-
-Once you've replaced that section and saved/committed chat.html, tell me done and we'll do the next part.
-
-can you send me the whole new code 
-
-Yes. I’ve made the complete new chat.html, keeping your existing Pack Chat, Firebase, admin login, moderation, reporting, protected names, and navigation intact, while adding the new DASHBOARD button to the admin controls. Your existing code already links Admin Reports and Members from this admin area.
-
-Download the complete new chat.html
-
-Replace your existing chat.html in GitHub with this entire file, then Commit changes.
-
-Tell me done when you've done that, and we'll move to the next step.
-
-chat.html
-HTML
-can you send me new code to paste the old one
-
-Yes — paste the new code over the whole of your old chat.html.
-
-I’ve prepared the complete replacement file, including the new DASHBOARD admin button alongside ADMIN REPORTS, MEMBERS, and LOG OUT.
-
-Download the complete new chat.html code
-
-Replace it in GitHub
-Open chat.html.
-Click Edit.
-Press Ctrl + A inside the code.
-Delete everything.
-Open the new chat.html above and copy all of its code.
-Paste it into GitHub.
-Click Commit changes.
-
-You are replacing the entire old chat.html, not adding this underneath the old code.
-
-Once you've committed it, send me done and we'll do the next file.
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -162,7 +38,10 @@ body{
   min-height:100vh;
   min-height:100dvh;
 
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
   color:#fff;
 
@@ -201,15 +80,20 @@ body{
 
 .brand{
   margin-top:5px;
+
   font-size:12px;
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
+
   font-size:31px;
+
   font-weight:900;
 }
 
@@ -223,15 +107,21 @@ body{
 
 .subtitle{
   margin-top:8px;
+
   color:#aaa;
+
   font-size:12px;
+
   line-height:1.5;
 }
 
 .line{
   width:100%;
+
   max-width:430px;
+
   height:2px;
+
   margin:20px auto 0;
 
   background:
@@ -248,6 +138,7 @@ body{
 
 .content{
   width:100%;
+
   max-width:540px;
 
   margin:0 auto;
@@ -263,10 +154,15 @@ body{
 
 .status{
   text-align:center;
+
   margin-bottom:12px;
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
   color:#aaa;
 }
 
@@ -295,27 +191,44 @@ body{
 
 .moderation-notice{
   display:none;
+
   margin-bottom:14px;
+
   padding:14px;
+
   text-align:center;
+
   border-radius:12px;
+
   font-size:10px;
+
   font-weight:900;
+
   line-height:1.5;
 }
 
 .moderation-notice.muted{
   display:block;
+
   color:#ffb347;
-  border:1px solid rgba(255,180,71,.35);
-  background:rgba(90,55,0,.25);
+
+  border:
+    1px solid rgba(255,180,71,.35);
+
+  background:
+    rgba(90,55,0,.25);
 }
 
 .moderation-notice.blocked{
   display:block;
+
   color:#ff7957;
-  border:1px solid rgba(255,90,50,.40);
-  background:rgba(90,20,0,.30);
+
+  border:
+    1px solid rgba(255,90,50,.40);
+
+  background:
+    rgba(90,20,0,.30);
 }
 
 
@@ -323,14 +236,25 @@ body{
 
 .error-details{
   display:none;
+
   margin-bottom:14px;
+
   padding:14px;
+
   border-radius:12px;
-  border:1px solid rgba(255,117,28,.45);
-  background:rgba(80,20,0,.30);
+
+  border:
+    1px solid rgba(255,117,28,.45);
+
+  background:
+    rgba(80,20,0,.30);
+
   color:#ffb37a;
+
   font-size:10px;
+
   line-height:1.5;
+
   word-break:break-word;
 }
 
@@ -340,7 +264,9 @@ body{
 
 .error-title{
   color:#ff751c;
+
   font-weight:900;
+
   margin-bottom:6px;
 }
 
@@ -349,14 +275,25 @@ body{
 
 .report-success{
   display:none;
+
   margin-bottom:14px;
+
   padding:13px;
+
   border-radius:10px;
+
   text-align:center;
+
   color:#67dcff;
-  background:rgba(0,150,210,.10);
-  border:1px solid rgba(103,220,255,.25);
+
+  background:
+    rgba(0,150,210,.10);
+
+  border:
+    1px solid rgba(103,220,255,.25);
+
   font-size:10px;
+
   font-weight:900;
 }
 
@@ -369,15 +306,27 @@ body{
 
 .name-warning{
   display:none;
+
   margin-bottom:14px;
+
   padding:13px 14px;
+
   border-radius:10px;
+
   text-align:center;
+
   color:#ffb347;
-  background:rgba(100,45,0,.22);
-  border:1px solid rgba(255,117,28,.38);
+
+  background:
+    rgba(100,45,0,.22);
+
+  border:
+    1px solid rgba(255,117,28,.38);
+
   font-size:10px;
+
   font-weight:900;
+
   line-height:1.5;
 }
 
@@ -390,9 +339,13 @@ body{
 
 .name-box{
   padding:18px;
+
   margin-bottom:14px;
+
   border-radius:15px;
-  border:1px solid rgba(255,255,255,.12);
+
+  border:
+    1px solid rgba(255,255,255,.12);
 
   background:
     linear-gradient(
@@ -405,20 +358,27 @@ body{
 
 .name-title{
   font-size:14px;
+
   font-weight:900;
+
   color:#67dcff;
+
   margin-bottom:6px;
 }
 
 .name-info{
   color:#aaa;
+
   font-size:11px;
+
   line-height:1.5;
+
   margin-bottom:12px;
 }
 
 .name-row{
   display:flex;
+
   gap:8px;
 }
 
@@ -433,17 +393,26 @@ select{
 .admin-input,
 .report-select{
   width:100%;
+
   padding:13px;
+
   border-radius:9px;
-  border:1px solid rgba(255,255,255,.16);
+
+  border:
+    1px solid rgba(255,255,255,.16);
+
   outline:none;
+
   color:#fff;
+
   background:#080808;
+
   font-size:13px;
 }
 
 .name-input{
   flex:1;
+
   min-width:0;
 }
 
@@ -455,11 +424,16 @@ select{
 
 .name-input.invalid{
   border-color:#ff751c;
+
+  box-shadow:
+    0 0 0 1px rgba(255,117,28,.15);
 }
 
 .save-name{
   border:none;
+
   border-radius:9px;
+
   padding:0 15px;
 
   background:
@@ -470,8 +444,11 @@ select{
     );
 
   color:#00131b;
+
   font-size:10px;
+
   font-weight:900;
+
   cursor:pointer;
 }
 
@@ -480,9 +457,13 @@ select{
 
 .admin-panel{
   margin-bottom:14px;
+
   padding:18px;
+
   border-radius:15px;
-  border:1px solid rgba(255,117,28,.30);
+
+  border:
+    1px solid rgba(255,117,28,.30);
 
   background:
     linear-gradient(
@@ -495,28 +476,39 @@ select{
 
 .admin-heading{
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   gap:10px;
 }
 
 .admin-title{
   color:#ff751c;
+
   font-size:12px;
+
   font-weight:900;
 }
 
 .admin-toggle{
   border:none;
+
   background:none;
+
   color:#67dcff;
+
   cursor:pointer;
+
   font-size:10px;
+
   font-weight:900;
 }
 
 .admin-login{
   display:none;
+
   margin-top:15px;
 }
 
@@ -530,12 +522,19 @@ select{
 
 .admin-button{
   width:100%;
+
   padding:13px;
+
   border:none;
+
   border-radius:9px;
+
   cursor:pointer;
+
   color:#fff;
+
   font-size:10px;
+
   font-weight:900;
 
   background:
@@ -548,14 +547,19 @@ select{
 
 .admin-button:disabled{
   opacity:.5;
+
   cursor:not-allowed;
 }
 
 .admin-note{
   margin-top:10px;
+
   color:#777;
+
   font-size:9px;
+
   line-height:1.5;
+
   text-align:center;
 }
 
@@ -564,14 +568,25 @@ select{
 
 .admin-active{
   display:none;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:8px;
+
   flex-wrap:wrap;
+
   margin-bottom:14px;
-  padding:14px 16px;
+
+  padding:
+    14px
+    16px;
+
   border-radius:12px;
-  border:1px solid rgba(255,117,28,.45);
+
+  border:
+    1px solid rgba(255,117,28,.45);
 
   background:
     linear-gradient(
@@ -587,46 +602,80 @@ select{
 
 .admin-identity{
   font-size:11px;
+
   font-weight:900;
 }
 
 .admin-badge{
   display:inline-block;
+
   margin-left:6px;
-  padding:4px 7px;
+
+  padding:
+    4px
+    7px;
+
   border-radius:20px;
+
   color:#050505;
+
   background:#ff751c;
+
   font-size:8px;
+
   font-weight:900;
 }
 
 .admin-actions{
   display:flex;
+
   gap:7px;
+
   flex-wrap:wrap;
 }
 
 .admin-link{
   display:inline-block;
-  padding:8px 10px;
+
+  padding:
+    8px
+    10px;
+
   border-radius:8px;
+
   text-decoration:none;
+
   color:#67dcff;
-  border:1px solid rgba(103,220,255,.35);
-  background:rgba(0,150,210,.08);
+
+  border:
+    1px solid rgba(103,220,255,.35);
+
+  background:
+    rgba(0,150,210,.08);
+
   font-size:8px;
+
   font-weight:900;
 }
 
 .logout-button{
-  padding:8px 10px;
-  border:1px solid rgba(255,255,255,.15);
+  padding:
+    8px
+    10px;
+
+  border:
+    1px solid rgba(255,255,255,.15);
+
   border-radius:8px;
+
   background:#111;
+
   color:#aaa;
+
   font-size:8px;
+
   font-weight:900;
+
   cursor:pointer;
 }
 
@@ -635,38 +684,60 @@ select{
 
 .chat-shell{
   position:relative;
+
   overflow:hidden;
+
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.13);
-  background:rgba(5,5,5,.88);
-  box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+  border:
+    1px solid rgba(255,255,255,.13);
+
+  background:
+    rgba(5,5,5,.88);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35);
 }
 
 .chat-shell::before{
   content:"";
+
   position:absolute;
+
   left:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#4bd8ff;
 }
 
 .chat-shell::after{
   content:"";
+
   position:absolute;
+
   right:0;
   top:0;
   bottom:0;
+
   width:4px;
+
   background:#ff6500;
 }
 
 .chat-header{
   position:relative;
+
   z-index:2;
-  padding:15px 17px;
-  border-bottom:1px solid rgba(255,255,255,.10);
+
+  padding:
+    15px
+    17px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.10);
 
   background:
     linear-gradient(
@@ -678,12 +749,15 @@ select{
 
 .chat-header-title{
   font-size:14px;
+
   font-weight:900;
 }
 
 .chat-header-info{
   margin-top:4px;
+
   color:#888;
+
   font-size:10px;
 }
 
@@ -692,23 +766,37 @@ select{
 
 .messages{
   position:relative;
+
   z-index:2;
+
   height:430px;
+
   overflow-y:auto;
-  padding:17px 14px;
+
+  padding:
+    17px
+    14px;
+
   scroll-behavior:smooth;
 }
 
 .empty-message{
   text-align:center;
-  padding:60px 20px;
+
+  padding:
+    60px
+    20px;
+
   color:#777;
+
   font-size:12px;
+
   line-height:1.6;
 }
 
 .message{
   max-width:84%;
+
   margin-bottom:16px;
 }
 
@@ -718,13 +806,17 @@ select{
 
 .message-name{
   margin-bottom:4px;
+
   color:#67dcff;
+
   font-size:9px;
+
   font-weight:900;
 }
 
 .message.mine .message-name{
   text-align:right;
+
   color:#ff751c;
 }
 
@@ -732,41 +824,70 @@ select{
 .muted-badge,
 .blocked-badge{
   display:inline-block;
+
   margin-left:5px;
-  padding:2px 5px;
+
+  padding:
+    2px
+    5px;
+
   border-radius:10px;
+
   font-size:7px;
+
   font-weight:900;
 }
 
 .official-badge{
   color:#050505;
+
   background:#ff751c;
 }
 
 .muted-badge{
   color:#050505;
+
   background:#ffb347;
 }
 
 .blocked-badge{
   color:#fff;
+
   background:#b52600;
 }
 
 .message-bubble{
-  padding:10px 12px;
-  border-radius:4px 13px 13px 13px;
+  padding:
+    10px
+    12px;
+
+  border-radius:
+    4px
+    13px
+    13px
+    13px;
+
   color:#e9e9e9;
-  background:rgba(35,35,35,.95);
-  border:1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(35,35,35,.95);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
   font-size:13px;
+
   line-height:1.5;
+
   overflow-wrap:anywhere;
 }
 
 .message.mine .message-bubble{
-  border-radius:13px 4px 13px 13px;
+  border-radius:
+    13px
+    4px
+    13px
+    13px;
 
   background:
     linear-gradient(
@@ -778,7 +899,9 @@ select{
 
 .message-time{
   margin-top:4px;
+
   color:#666;
+
   font-size:8px;
 }
 
@@ -788,9 +911,13 @@ select{
 
 .message-actions{
   margin-top:6px;
+
   display:flex;
+
   justify-content:flex-end;
+
   gap:5px;
+
   flex-wrap:wrap;
 }
 
@@ -798,35 +925,57 @@ select{
 .report-message,
 .mute-member,
 .block-member{
-  padding:5px 7px;
+  padding:
+    5px
+    7px;
+
   border-radius:6px;
+
   font-size:7px;
+
   font-weight:900;
+
   cursor:pointer;
 }
 
 .delete-message{
-  border:1px solid rgba(255,117,28,.35);
+  border:
+    1px solid rgba(255,117,28,.35);
+
   color:#ff751c;
-  background:rgba(255,80,0,.05);
+
+  background:
+    rgba(255,80,0,.05);
 }
 
 .report-message{
-  border:1px solid rgba(103,220,255,.30);
+  border:
+    1px solid rgba(103,220,255,.30);
+
   color:#67dcff;
-  background:rgba(0,160,220,.05);
+
+  background:
+    rgba(0,160,220,.05);
 }
 
 .mute-member{
-  border:1px solid rgba(255,180,71,.35);
+  border:
+    1px solid rgba(255,180,71,.35);
+
   color:#ffb347;
-  background:rgba(100,60,0,.08);
+
+  background:
+    rgba(100,60,0,.08);
 }
 
 .block-member{
-  border:1px solid rgba(255,80,50,.45);
+  border:
+    1px solid rgba(255,80,50,.45);
+
   color:#ff7957;
-  background:rgba(100,20,0,.12);
+
+  background:
+    rgba(100,20,0,.12);
 }
 
 
@@ -834,31 +983,48 @@ select{
 
 .composer{
   position:relative;
+
   z-index:2;
+
   padding:12px;
-  border-top:1px solid rgba(255,255,255,.10);
+
+  border-top:
+    1px solid rgba(255,255,255,.10);
+
   display:flex;
+
   gap:8px;
+
   align-items:flex-end;
+
   background:#080808;
 }
 
 .message-input{
   flex:1;
-  min-width:0;
-  height:46px;
-  max-height:100px;
-  resize:none;
-  padding:13px 12px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.14);
-  outline:none;
-  color:#fff;
-  background:#111;
-}
 
-.message-input:focus{
-  border-color:#67dcff;
+  min-width:0;
+
+  height:46px;
+
+  max-height:100px;
+
+  resize:none;
+
+  padding:
+    13px
+    12px;
+
+  border-radius:10px;
+
+  border:
+    1px solid rgba(255,255,255,.14);
+
+  outline:none;
+
+  color:#fff;
+
+  background:#111;
 }
 
 .message-input:disabled{
@@ -867,12 +1033,21 @@ select{
 
 .send-button{
   height:46px;
-  padding:0 16px;
+
+  padding:
+    0
+    16px;
+
   border:none;
+
   border-radius:10px;
+
   color:#fff;
+
   cursor:pointer;
+
   font-size:10px;
+
   font-weight:900;
 
   background:
@@ -885,14 +1060,22 @@ select{
 
 .send-button:disabled{
   opacity:.4;
+
   cursor:not-allowed;
 }
 
 .character-count{
-  padding:0 14px 10px;
+  padding:
+    0
+    14px
+    10px;
+
   text-align:right;
+
   color:#666;
+
   background:#080808;
+
   font-size:8px;
 }
 
@@ -901,13 +1084,21 @@ select{
 
 .report-overlay{
   display:none;
+
   position:fixed;
+
   inset:0;
-  z-index:2000;
+
+  z-index:1000;
+
   align-items:center;
+
   justify-content:center;
+
   padding:20px;
-  background:rgba(0,0,0,.82);
+
+  background:
+    rgba(0,0,0,.82);
 }
 
 .report-overlay.show{
@@ -916,10 +1107,15 @@ select{
 
 .report-box{
   width:100%;
+
   max-width:420px;
+
   padding:20px;
+
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.13);
+
+  border:
+    1px solid rgba(255,255,255,.13);
 
   background:
     linear-gradient(
@@ -932,25 +1128,38 @@ select{
 
 .report-title{
   font-size:18px;
+
   font-weight:900;
+
   color:#ff751c;
 }
 
 .report-text{
   margin-top:7px;
+
   color:#aaa;
+
   font-size:11px;
+
   line-height:1.5;
 }
 
 .report-preview{
   margin-top:12px;
+
   padding:12px;
+
   border-radius:10px;
-  border:1px solid rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
   background:#111;
+
   color:#ccc;
+
   font-size:11px;
+
   line-height:1.5;
 }
 
@@ -960,22 +1169,32 @@ select{
 
 .report-buttons{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
   gap:8px;
+
   margin-top:12px;
 }
 
 .report-submit,
 .report-cancel{
   padding:12px;
+
   border-radius:9px;
+
   cursor:pointer;
+
   font-size:9px;
+
   font-weight:900;
 }
 
 .report-submit{
   border:none;
+
   color:#fff;
 
   background:
@@ -987,8 +1206,11 @@ select{
 }
 
 .report-cancel{
-  border:1px solid rgba(255,255,255,.12);
+  border:
+    1px solid rgba(255,255,255,.12);
+
   color:#ddd;
+
   background:#191919;
 }
 
@@ -997,30 +1219,51 @@ select{
 
 .safety{
   margin-top:14px;
+
   padding:14px;
+
   text-align:center;
+
   border-radius:12px;
-  border:1px solid rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
   color:#888;
-  background:rgba(8,8,8,.72);
+
+  background:
+    rgba(8,8,8,.72);
+
   font-size:10px;
+
   line-height:1.5;
 }
 
 
-/* BACK */
+/* BACK BUTTON */
 
 .back{
   display:block;
+
   margin-top:18px;
+
   margin-bottom:35px;
+
   padding:15px;
+
   text-align:center;
+
   text-decoration:none;
+
   color:#fff;
-  border:1px solid #59d9ff;
+
+  border:
+    1px solid #59d9ff;
+
   border-radius:11px;
+
   font-size:11px;
+
   font-weight:900;
 
   background:
@@ -1032,14 +1275,16 @@ select{
 }
 
 .back:active{
-  transform:scale(.985);
+  transform:
+    scale(.985);
 }
 
 
-/* BOTTOM NAV */
+/* BOTTOM NAVIGATION */
 
 .bottom-nav{
   position:fixed;
+
   left:0;
   right:0;
   bottom:0;
@@ -1047,30 +1292,44 @@ select{
   min-height:74px;
 
   display:grid;
-  grid-template-columns:repeat(4,1fr);
 
-  padding-bottom:env(safe-area-inset-bottom);
+  grid-template-columns:
+    repeat(4,1fr);
 
-  background:rgba(4,4,4,.97);
+  padding-bottom:
+    env(safe-area-inset-bottom);
 
-  border-top:1px solid rgba(255,255,255,.12);
+  background:
+    rgba(4,4,4,.97);
 
-  -webkit-backdrop-filter:blur(12px);
-  backdrop-filter:blur(12px);
+  border-top:
+    1px solid rgba(255,255,255,.12);
 
-  z-index:1000;
+  backdrop-filter:
+    blur(12px);
+
+  z-index:100;
 }
 
 .nav-item{
   min-height:74px;
+
   text-decoration:none;
+
   color:#888;
+
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
+
   gap:5px;
+
   font-size:9px;
+
   font-weight:bold;
 }
 
@@ -1111,10 +1370,7 @@ select{
 
 <header class="header">
 
-<a
-  href="index.html"
-  aria-label="Team Wolfpack Home"
->
+<a href="index.html">
 
 <img
   src="icon-512.png"
@@ -1124,11 +1380,9 @@ select{
 
 </a>
 
-
 <div class="brand">
 TEAM WOLFPACK
 </div>
-
 
 <h1 class="title">
 
@@ -1142,11 +1396,9 @@ CHAT
 
 </h1>
 
-
 <p class="subtitle">
 Connect with the Team Wolfpack community.
 </p>
-
 
 <div class="line"></div>
 
@@ -1181,7 +1433,6 @@ REPORT SENT TO TEAM WOLFPACK ADMINS
 <div
   id="nameWarning"
   class="name-warning"
-  aria-live="polite"
 ></div>
 
 
@@ -1201,7 +1452,7 @@ PACK CHAT DIAGNOSTIC
 </div>
 
 
-<!-- ADMIN CONNECTED -->
+<!-- ADMIN ACTIVE -->
 
 <div
   id="adminActive"
@@ -1269,7 +1520,6 @@ YOUR PACK NAME
 <div class="name-info">
 Choose the name you want other people in Pack Chat to see. Official Team Wolfpack identities are protected.
 </div>
-
 
 <div class="name-row">
 
@@ -1361,7 +1611,6 @@ Official Team Wolfpack administrators only.
 
 <div class="chat-shell">
 
-
 <div class="chat-header">
 
 <div class="chat-header-title">
@@ -1424,7 +1673,6 @@ SEND
 0 / 500
 </div>
 
-
 </div>
 
 
@@ -1444,7 +1692,7 @@ Please keep Pack Chat respectful. Do not share private information such as your 
 </main>
 
 
-<!-- REPORT WINDOW -->
+<!-- REPORT OVERLAY -->
 
 <div
   id="reportOverlay"
@@ -1461,12 +1709,10 @@ REPORT MESSAGE
 Tell the Team Wolfpack admins why you are reporting this message.
 </div>
 
-
 <div
   id="reportPreview"
   class="report-preview"
 ></div>
-
 
 <select
   id="reportReason"
@@ -1499,7 +1745,6 @@ Other
 
 </select>
 
-
 <div class="report-buttons">
 
 <button
@@ -1525,7 +1770,7 @@ SUBMIT REPORT
 </div>
 
 
-<!-- BOTTOM NAV -->
+<!-- BOTTOM NAVIGATION -->
 
 <nav class="bottom-nav">
 
@@ -1534,55 +1779,59 @@ SUBMIT REPORT
   href="index.html"
 >
 
-<span class="nav-icon">⌂</span>
+<span class="nav-icon">
+⌂
+</span>
+
 HOME
 
 </a>
-
 
 <a
   class="nav-item"
   href="fighters.html"
 >
 
-<span class="nav-icon">♟</span>
+<span class="nav-icon">
+♟
+</span>
+
 FIGHTERS
 
 </a>
-
 
 <a
   class="nav-item fire-nav"
   href="fights.html"
 >
 
-<span class="nav-icon">♜</span>
+<span class="nav-icon">
+♜
+</span>
+
 FIGHTS
 
 </a>
-
 
 <a
   class="nav-item active"
   href="more.html"
 >
 
-<span class="nav-icon">☰</span>
+<span class="nav-icon">
+☰
+</span>
+
 MORE
 
 </a>
 
 </nav>
-
-
-<!-- FIREBASE -->
-
 <script type="module">
 
 import {
   initializeApp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-
 
 import {
   getAuth,
@@ -1591,7 +1840,6 @@ import {
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
 
 import {
   getFirestore,
@@ -1607,6 +1855,10 @@ import {
   setDoc
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
+
+/* =========================
+   FIREBASE CONFIG
+   ========================= */
 
 const firebaseConfig = {
 
@@ -1634,6 +1886,10 @@ const firebaseConfig = {
 };
 
 
+/* =========================
+   ADMINS
+   ========================= */
+
 const ADMINS = {
 
   "PRGa9TsCW0QDn1QtoUXyYjEi7YB3":
@@ -1645,282 +1901,378 @@ const ADMINS = {
 };
 
 
+/* =========================
+   RESERVED NAMES
+   ========================= */
+
+const RESERVED_NAMES = [
+  "MR WOLFIE",
+  "MRS WOLFIE",
+  "CHRIS",
+  "CHRIS JAMES",
+  "ZOEY",
+  "ZOEY JAMES",
+  "TEAM WOLFPACK",
+  "TEAM WOLFIE",
+  "TEAM SLOAN",
+  "ADMIN",
+  "ADMINISTRATOR"
+];
+
+
 const CHAT_RULES_VERSION =
   "1";
 
 
-/* PROTECTED IDENTITIES */
-
-const RESERVED_PACK_NAMES = [
-
-  "MR WOLFIE",
-  "MRS WOLFIE",
-
-  "MRWOLFIE",
-  "MRSWOLFIE",
-
-  "MR WOLFIE 2410",
-  "MRS WOLFIE 2410",
-
-  "MRWOLFIE2410",
-  "MRSWOLFIE2410",
-
-  "CHRIS",
-  "CHRIS JAMES",
-
-  "ZOEY",
-  "ZOEY JAMES",
-
-  "TEAM WOLFPACK",
-  "TEAMWOLFPACK",
-
-  "OFFICIAL TEAM WOLFPACK",
-  "OFFICIALTEAMWOLFPACK",
-
-  "TEAM WOLFIE",
-  "TEAMWOLFIE",
-
-  "TEAM SLOAN",
-  "TEAMSLOAN",
-
-  "ADMIN",
-  "ADMINISTRATOR",
-
-  "MOD",
-  "MODERATOR",
-
-  "TEAM WOLFPACK ADMIN",
-  "TEAMWOLFPACKADMIN",
-
-  "TEAM WOLFPACK MODERATOR",
-
-  "OFFICIAL",
-  "OFFICIAL ACCOUNT",
-  "OFFICIAL TEAM"
-
-];
-
-
-function normalisePackName(value){
-
-  return String(value || "")
-    .normalize("NFKD")
-    .toUpperCase()
-    .trim()
-    .replace(/0/g,"O")
-    .replace(/1/g,"I")
-    .replace(/3/g,"E")
-    .replace(/4/g,"A")
-    .replace(/5/g,"S")
-    .replace(/7/g,"T")
-    .replace(/@/g,"A")
-    .replace(/\$/g,"S")
-    .replace(/[^A-Z0-9]/g,"");
-
-}
-
-
-const NORMALISED_RESERVED_NAMES =
-  RESERVED_PACK_NAMES.map(
-    function(name){
-
-      return normalisePackName(
-        name
-      );
-
-    }
-  );
-
-
-function isReservedPackName(value){
-
-  const cleaned =
-    normalisePackName(value);
-
-
-  if(!cleaned){
-    return false;
-  }
-
-
-  if(
-    NORMALISED_RESERVED_NAMES.includes(
-      cleaned
-    )
-  ){
-    return true;
-  }
-
-
-  const protectedPatterns = [
-
-    "MRWOLFIE",
-    "MRSWOLFIE",
-
-    "TEAMWOLFPACK",
-    "OFFICIALTEAMWOLFPACK",
-
-    "TEAMWOLFPACKADMIN",
-    "TEAMWOLFPACKMODERATOR"
-
-  ];
-
-
-  return protectedPatterns.some(
-    function(pattern){
-
-      return cleaned.includes(
-        pattern
-      );
-
-    }
-  );
-
-}
-
-
-/* FIREBASE */
+/* =========================
+   FIREBASE START
+   ========================= */
 
 const app =
-  initializeApp(firebaseConfig);
+  initializeApp(
+    firebaseConfig
+  );
 
 const auth =
-  getAuth(app);
+  getAuth(
+    app
+  );
 
 const db =
-  getFirestore(app);
+  getFirestore(
+    app
+  );
 
 
-/* ELEMENTS */
+/* =========================
+   ELEMENTS
+   ========================= */
 
 const status =
-  document.getElementById("status");
+  document.getElementById(
+    "status"
+  );
 
 const moderationNotice =
-  document.getElementById("moderationNotice");
+  document.getElementById(
+    "moderationNotice"
+  );
 
 const errorDetails =
-  document.getElementById("errorDetails");
+  document.getElementById(
+    "errorDetails"
+  );
 
 const errorCode =
-  document.getElementById("errorCode");
+  document.getElementById(
+    "errorCode"
+  );
 
 const errorMessage =
-  document.getElementById("errorMessage");
+  document.getElementById(
+    "errorMessage"
+  );
 
 const reportSuccess =
-  document.getElementById("reportSuccess");
+  document.getElementById(
+    "reportSuccess"
+  );
 
 const nameWarning =
-  document.getElementById("nameWarning");
+  document.getElementById(
+    "nameWarning"
+  );
 
 const messages =
-  document.getElementById("messages");
+  document.getElementById(
+    "messages"
+  );
 
 const nameBox =
-  document.getElementById("nameBox");
+  document.getElementById(
+    "nameBox"
+  );
 
 const nameInput =
-  document.getElementById("nameInput");
+  document.getElementById(
+    "nameInput"
+  );
 
 const saveName =
-  document.getElementById("saveName");
+  document.getElementById(
+    "saveName"
+  );
 
 const messageInput =
-  document.getElementById("messageInput");
+  document.getElementById(
+    "messageInput"
+  );
 
 const sendButton =
-  document.getElementById("sendButton");
+  document.getElementById(
+    "sendButton"
+  );
 
 const characterCount =
-  document.getElementById("characterCount");
+  document.getElementById(
+    "characterCount"
+  );
 
 const adminPanel =
-  document.getElementById("adminPanel");
+  document.getElementById(
+    "adminPanel"
+  );
 
 const adminToggle =
-  document.getElementById("adminToggle");
+  document.getElementById(
+    "adminToggle"
+  );
 
 const adminLogin =
-  document.getElementById("adminLogin");
+  document.getElementById(
+    "adminLogin"
+  );
 
 const adminEmail =
-  document.getElementById("adminEmail");
+  document.getElementById(
+    "adminEmail"
+  );
 
 const adminPassword =
-  document.getElementById("adminPassword");
+  document.getElementById(
+    "adminPassword"
+  );
 
 const adminLoginButton =
-  document.getElementById("adminLoginButton");
+  document.getElementById(
+    "adminLoginButton"
+  );
 
 const adminActive =
-  document.getElementById("adminActive");
+  document.getElementById(
+    "adminActive"
+  );
 
 const adminDisplayName =
-  document.getElementById("adminDisplayName");
+  document.getElementById(
+    "adminDisplayName"
+  );
 
 const logoutAdmin =
-  document.getElementById("logoutAdmin");
+  document.getElementById(
+    "logoutAdmin"
+  );
 
 const reportOverlay =
-  document.getElementById("reportOverlay");
+  document.getElementById(
+    "reportOverlay"
+  );
 
 const reportPreview =
-  document.getElementById("reportPreview");
+  document.getElementById(
+    "reportPreview"
+  );
 
 const reportReason =
-  document.getElementById("reportReason");
+  document.getElementById(
+    "reportReason"
+  );
 
 const cancelReport =
-  document.getElementById("cancelReport");
+  document.getElementById(
+    "cancelReport"
+  );
 
 const submitReport =
-  document.getElementById("submitReport");
+  document.getElementById(
+    "submitReport"
+  );
 
 
-/* STATE */
+/* =========================
+   STATE
+   ========================= */
 
-let currentUser = null;
+let currentUser =
+  null;
 
-let isAdmin = false;
+let isAdmin =
+  false;
 
-let adminName = "";
+let adminName =
+  "";
 
-let sending = false;
+let sending =
+  false;
 
-let reportTarget = null;
+let reportTarget =
+  null;
 
-let messageDocuments = [];
+let messageDocuments =
+  [];
 
-let moderationMap = {};
-
+let moderationMap =
+  {};
 
 let memberModeration = {
+
   muted:false,
   blocked:false
-};
 
+};
 
 let packName =
   localStorage.getItem(
     "teamWolfpackChatName"
   ) || "";
 
+let unsubscribeMessages =
+  null;
 
-let unsubscribeMessages = null;
+let unsubscribeOwnModeration =
+  null;
 
-let unsubscribeOwnModeration = null;
+let unsubscribeAdminModeration =
+  null;
 
-let unsubscribeAdminModeration = null;
 
+/* =========================
+   INITIAL STATUS
+   ========================= */
 
 status.textContent =
   "FIREBASE MODULE LOADED...";
 
+if(
+  packName
+){
 
-/* NAME WARNING */
+  nameInput.value =
+    packName;
 
-function showNameWarning(message){
+}
+
+
+/* =========================
+   ERROR HANDLING
+   ========================= */
+
+function showError(
+  error
+){
+
+  const code =
+    error &&
+    error.code
+      ? error.code
+      : "UNKNOWN_ERROR";
+
+  const message =
+    error &&
+    error.message
+      ? error.message
+      : String(
+          error
+        );
+
+  status.textContent =
+    "PACK CHAT CONNECTION ERROR";
+
+  status.className =
+    "status error";
+
+  errorCode.textContent =
+    "CODE: " +
+    code;
+
+  errorMessage.textContent =
+    "MESSAGE: " +
+    message;
+
+  errorDetails.classList.add(
+    "show"
+  );
+
+  console.error(
+    "PACK CHAT ERROR:",
+    error
+  );
+
+}
+
+
+function clearError(){
+
+  errorDetails.classList.remove(
+    "show"
+  );
+
+}
+
+
+/* =========================
+   NAME NORMALISER
+   ========================= */
+
+function normaliseName(
+  value
+){
+
+  return String(
+    value || ""
+  )
+  .trim()
+  .replace(
+    /\s+/g,
+    " "
+  )
+  .toUpperCase();
+
+}
+
+
+/* =========================
+   RESERVED NAME CHECK
+   ========================= */
+
+function isReservedName(
+  value
+){
+
+  const normalised =
+    normaliseName(
+      value
+    );
+
+  if(
+    !normalised
+  ){
+
+    return false;
+
+  }
+
+  return RESERVED_NAMES.some(
+    function(name){
+
+      return normalised ===
+        normaliseName(
+          name
+        );
+
+    }
+  );
+
+}
+
+
+/* =========================
+   NAME WARNING
+   ========================= */
+
+function showNameWarning(
+  message
+){
 
   nameWarning.textContent =
     message;
@@ -1952,236 +2304,127 @@ function clearNameWarning(){
 }
 
 
-/* CHECK OLD SAVED NAME */
-
-function validateStoredName(){
-
-  const storedName =
-    localStorage.getItem(
-      "teamWolfpackChatName"
-    ) || "";
-
-
-  if(!storedName){
-
-    packName = "";
-
-    nameInput.value = "";
-
-    return;
-
-  }
-
-
-  if(
-    isReservedPackName(
-      storedName
-    )
-  ){
-
-    localStorage.removeItem(
-      "teamWolfpackChatName"
-    );
-
-    packName = "";
-
-    nameInput.value = "";
-
-    showNameWarning(
-      "YOUR PREVIOUS PACK NAME IS RESERVED FOR TEAM WOLFPACK. PLEASE CHOOSE ANOTHER NAME."
-    );
-
-    return;
-
-  }
-
-
-  packName =
-    storedName.trim();
-
-  nameInput.value =
-    packName;
-
-}
-
-
-/* ERRORS */
-
-function showError(error){
-
-  const code =
-    error && error.code
-      ? error.code
-      : "UNKNOWN_ERROR";
-
-
-  const message =
-    error && error.message
-      ? error.message
-      : String(error);
-
-
-  status.textContent =
-    "PACK CHAT CONNECTION ERROR";
-
-
-  status.className =
-    "status error";
-
-
-  errorCode.textContent =
-    "CODE: " + code;
-
-
-  errorMessage.textContent =
-    "MESSAGE: " + message;
-
-
-  errorDetails.classList.add(
-    "show"
-  );
-
-
-  console.error(
-    "PACK CHAT ERROR:",
-    error
-  );
-
-}
-
-
-function clearError(){
-
-  errorDetails.classList.remove(
-    "show"
-  );
-
-}
-
-
-/* INTERFACE */
+/* =========================
+   UPDATE INTERFACE
+   ========================= */
 
 function updateInterface(){
 
   isAdmin =
     Boolean(
       currentUser &&
-      ADMINS[currentUser.uid]
+      ADMINS[
+        currentUser.uid
+      ]
     );
-
 
   adminName =
     isAdmin
-      ? ADMINS[currentUser.uid]
+      ? ADMINS[
+          currentUser.uid
+        ]
       : "";
 
 
   moderationNotice.className =
     "moderation-notice";
 
-
   moderationNotice.textContent =
     "";
 
 
-  if(isAdmin){
+  if(
+    isAdmin
+  ){
 
     packName =
       adminName;
-
 
     status.textContent =
       "● " +
       adminName +
       " • ADMIN CONNECTED";
 
-
     status.className =
       "status admin";
-
 
     adminDisplayName.textContent =
       adminName;
 
-
     nameBox.style.display =
       "none";
 
-
     adminPanel.style.display =
       "none";
-
 
     adminActive.classList.add(
       "show"
     );
 
+    clearNameWarning();
 
   }else{
 
     nameBox.style.display =
       "block";
 
-
     adminPanel.style.display =
       "block";
-
 
     adminActive.classList.remove(
       "show"
     );
 
-
     adminDisplayName.textContent =
       "";
 
+    packName =
+      localStorage.getItem(
+        "teamWolfpackChatName"
+      ) || "";
 
-    validateStoredName();
+    nameInput.value =
+      packName;
 
 
-    if(memberModeration.blocked){
+    if(
+      memberModeration.blocked
+    ){
 
       status.textContent =
         "● PACK CHAT ACCESS RESTRICTED";
 
-
       status.className =
         "status blocked";
 
-
       moderationNotice.textContent =
         "YOU HAVE BEEN BLOCKED FROM SENDING MESSAGES OR REPORTS IN PACK CHAT.";
-
 
       moderationNotice.classList.add(
         "blocked"
       );
 
-
-    }else if(memberModeration.muted){
+    }else if(
+      memberModeration.muted
+    ){
 
       status.textContent =
         "● PACK CHAT • MUTED";
 
-
       status.className =
         "status warning";
 
-
       moderationNotice.textContent =
         "YOU HAVE BEEN MUTED BY A TEAM WOLFPACK ADMIN. YOU CAN READ CHAT AND REPORT MESSAGES, BUT YOU CANNOT SEND MESSAGES.";
-
 
       moderationNotice.classList.add(
         "muted"
       );
 
-
     }else{
 
       status.textContent =
         "● PACK CHAT CONNECTED";
-
 
       status.className =
         "status connected";
@@ -2191,28 +2434,32 @@ function updateInterface(){
   }
 
 
+  const validPackName =
+    isAdmin ||
+    (
+      packName.trim().length > 0 &&
+      !isReservedName(
+        packName
+      )
+    );
+
+
   const ready =
     Boolean(
-
       currentUser &&
-
-      packName.trim().length > 0 &&
-
+      validPackName &&
       (
         isAdmin ||
-
         (
           !memberModeration.muted &&
           !memberModeration.blocked
         )
       )
-
     );
 
 
   messageInput.disabled =
     !ready;
-
 
   sendButton.disabled =
     !ready;
@@ -2226,7 +2473,6 @@ function updateInterface(){
     messageInput.placeholder =
       "Pack Chat access restricted.";
 
-
   }else if(
     !isAdmin &&
     memberModeration.muted
@@ -2235,6 +2481,15 @@ function updateInterface(){
     messageInput.placeholder =
       "You are currently muted.";
 
+  }else if(
+    !isAdmin &&
+    isReservedName(
+      packName
+    )
+  ){
+
+    messageInput.placeholder =
+      "Choose a different Pack Name first...";
 
   }else{
 
@@ -2248,45 +2503,35 @@ function updateInterface(){
 }
 
 
-/* SAVE PACK NAME */
+/* =========================
+   SAVE PACK NAME
+   ========================= */
 
 saveName.addEventListener(
   "click",
   function(){
 
-    if(isAdmin){
-      return;
-    }
+    if(
+      isAdmin
+    ){
 
+      return;
+
+    }
 
     clearNameWarning();
 
-
     const newName =
-      nameInput.value
-        .replace(/\s+/g," ")
-        .trim();
+      nameInput.value.trim();
 
 
     if(
-      newName.length < 1
-    ){
-
-      showNameWarning(
-        "PLEASE ENTER A PACK NAME."
-      );
-
-      return;
-
-    }
-
-
-    if(
+      newName.length < 1 ||
       newName.length > 30
     ){
 
       showNameWarning(
-        "YOUR PACK NAME MUST BE 30 CHARACTERS OR FEWER."
+        "YOUR PACK NAME MUST BE BETWEEN 1 AND 30 CHARACTERS."
       );
 
       return;
@@ -2295,7 +2540,7 @@ saveName.addEventListener(
 
 
     if(
-      isReservedPackName(
+      isReservedName(
         newName
       )
     ){
@@ -2304,18 +2549,17 @@ saveName.addEventListener(
         "teamWolfpackChatName"
       );
 
+      packName =
+        "";
 
-      packName = "";
-
+      nameInput.value =
+        "";
 
       showNameWarning(
         "THIS NAME IS RESERVED FOR TEAM WOLFPACK. PLEASE CHOOSE ANOTHER PACK NAME."
       );
 
-
       updateInterface();
-
-      nameInput.focus();
 
       return;
 
@@ -2325,22 +2569,14 @@ saveName.addEventListener(
     packName =
       newName;
 
-
     localStorage.setItem(
       "teamWolfpackChatName",
       packName
     );
 
-
-    nameInput.value =
-      packName;
-
-
     clearNameWarning();
 
-
     updateInterface();
-
 
     messageInput.focus();
 
@@ -2352,7 +2588,21 @@ nameInput.addEventListener(
   "input",
   function(){
 
-    clearNameWarning();
+    if(
+      isReservedName(
+        nameInput.value
+      )
+    ){
+
+      showNameWarning(
+        "THIS NAME IS RESERVED FOR TEAM WOLFPACK."
+      );
+
+    }else{
+
+      clearNameWarning();
+
+    }
 
   }
 );
@@ -2363,7 +2613,8 @@ nameInput.addEventListener(
   function(event){
 
     if(
-      event.key === "Enter"
+      event.key ===
+      "Enter"
     ){
 
       event.preventDefault();
@@ -2376,7 +2627,9 @@ nameInput.addEventListener(
 );
 
 
-/* ADMIN LOGIN */
+/* =========================
+   ADMIN LOGIN OPEN/CLOSE
+   ========================= */
 
 adminToggle.addEventListener(
   "click",
@@ -2390,16 +2643,18 @@ adminToggle.addEventListener(
 );
 
 
+/* =========================
+   ADMIN LOGIN
+   ========================= */
+
 adminLoginButton.addEventListener(
   "click",
   async function(){
 
     clearError();
 
-
     const email =
       adminEmail.value.trim();
-
 
     const password =
       adminPassword.value;
@@ -2417,7 +2672,6 @@ adminLoginButton.addEventListener(
 
     adminLoginButton.disabled =
       true;
-
 
     adminLoginButton.textContent =
       "SIGNING IN...";
@@ -2443,7 +2697,6 @@ adminLoginButton.addEventListener(
           auth
         );
 
-
         throw new Error(
           "This account does not have Team Wolfpack administrator permission."
         );
@@ -2451,10 +2704,11 @@ adminLoginButton.addEventListener(
       }
 
 
-      adminEmail.value = "";
+      adminEmail.value =
+        "";
 
-      adminPassword.value = "";
-
+      adminPassword.value =
+        "";
 
       adminLogin.classList.remove(
         "open"
@@ -2467,12 +2721,10 @@ adminLoginButton.addEventListener(
         error
       );
 
-
     }finally{
 
       adminLoginButton.disabled =
         false;
-
 
       adminLoginButton.textContent =
         "SIGN IN AS ADMIN";
@@ -2488,7 +2740,8 @@ adminPassword.addEventListener(
   function(event){
 
     if(
-      event.key === "Enter"
+      event.key ===
+      "Enter"
     ){
 
       event.preventDefault();
@@ -2501,7 +2754,9 @@ adminPassword.addEventListener(
 );
 
 
-/* ADMIN LOGOUT */
+/* =========================
+   ADMIN LOGOUT
+   ========================= */
 
 logoutAdmin.addEventListener(
   "click",
@@ -2513,11 +2768,9 @@ logoutAdmin.addEventListener(
         auth
       );
 
-
       await signInAnonymously(
         auth
       );
-
 
     }catch(error){
 
@@ -2531,7 +2784,9 @@ logoutAdmin.addEventListener(
 );
 
 
-/* MESSAGE INPUT */
+/* =========================
+   CHARACTER COUNT
+   ========================= */
 
 messageInput.addEventListener(
   "input",
@@ -2545,12 +2800,17 @@ messageInput.addEventListener(
 );
 
 
+/* =========================
+   ENTER TO SEND
+   ========================= */
+
 messageInput.addEventListener(
   "keydown",
   function(event){
 
     if(
-      event.key === "Enter" &&
+      event.key ===
+        "Enter" &&
       !event.shiftKey
     ){
 
@@ -2570,7 +2830,9 @@ sendButton.addEventListener(
 );
 
 
-/* SEND MESSAGE */
+/* =========================
+   SEND MESSAGE
+   ========================= */
 
 async function sendMessage(){
 
@@ -2585,11 +2847,9 @@ async function sendMessage(){
   }
 
 
-  /* SECOND NAME SECURITY CHECK */
-
   if(
     !isAdmin &&
-    isReservedPackName(
+    isReservedName(
       packName
     )
   ){
@@ -2598,23 +2858,17 @@ async function sendMessage(){
       "teamWolfpackChatName"
     );
 
+    packName =
+      "";
 
-    packName = "";
-
-
-    nameInput.value = "";
-
+    nameInput.value =
+      "";
 
     showNameWarning(
-      "THIS NAME IS RESERVED FOR TEAM WOLFPACK. CHOOSE ANOTHER PACK NAME BEFORE SENDING A MESSAGE."
+      "THIS NAME IS RESERVED FOR TEAM WOLFPACK. PLEASE CHOOSE ANOTHER PACK NAME."
     );
 
-
     updateInterface();
-
-
-    nameInput.focus();
-
 
     return;
 
@@ -2648,18 +2902,22 @@ async function sendMessage(){
   }
 
 
-  sending = true;
+  sending =
+    true;
 
-  sendButton.disabled = true;
+  sendButton.disabled =
+    true;
 
 
   try{
 
     await addDoc(
+
       collection(
         db,
         "messages"
       ),
+
       {
 
         uid:
@@ -2677,11 +2935,12 @@ async function sendMessage(){
           serverTimestamp()
 
       }
+
     );
 
 
-    messageInput.value = "";
-
+    messageInput.value =
+      "";
 
     characterCount.textContent =
       "0 / 500";
@@ -2693,10 +2952,10 @@ async function sendMessage(){
       error
     );
 
-
   }finally{
 
-    sending = false;
+    sending =
+      false;
 
     updateInterface();
 
@@ -2705,33 +2964,42 @@ async function sendMessage(){
 }
 
 
-/* HELPERS */
+/* =========================
+   ESCAPE HTML
+   ========================= */
 
-function escapeHTML(value){
+function escapeHTML(
+  value
+){
 
   const element =
     document.createElement(
       "div"
     );
 
-
   element.textContent =
     value || "";
-
 
   return element.innerHTML;
 
 }
 
 
-function displayTime(timestamp){
+/* =========================
+   DISPLAY TIME
+   ========================= */
 
-  if(!timestamp){
+function displayTime(
+  timestamp
+){
+
+  if(
+    !timestamp
+  ){
 
     return "Sending...";
 
   }
-
 
   try{
 
@@ -2745,7 +3013,6 @@ function displayTime(timestamp){
         }
       );
 
-
   }catch(error){
 
     return "";
@@ -2755,7 +3022,9 @@ function displayTime(timestamp){
 }
 
 
-/* MODERATION */
+/* =========================
+   SAVE MODERATION
+   ========================= */
 
 async function saveModeration(
   uid,
@@ -2767,7 +3036,9 @@ async function saveModeration(
   if(
     !isAdmin ||
     !currentUser ||
-    ADMINS[uid]
+    ADMINS[
+      uid
+    ]
   ){
 
     return;
@@ -2778,24 +3049,31 @@ async function saveModeration(
   try{
 
     await setDoc(
+
       doc(
         db,
         "moderation",
         uid
       ),
+
       {
 
-        uid:uid,
+        uid:
+          uid,
 
         name:
           name ||
           "Pack Member",
 
         muted:
-          Boolean(muted),
+          Boolean(
+            muted
+          ),
 
         blocked:
-          Boolean(blocked),
+          Boolean(
+            blocked
+          ),
 
         updatedAt:
           serverTimestamp(),
@@ -2804,6 +3082,7 @@ async function saveModeration(
           currentUser.uid
 
       }
+
     );
 
 
@@ -2818,19 +3097,29 @@ async function saveModeration(
 }
 
 
+/* =========================
+   TOGGLE MUTE
+   ========================= */
+
 async function toggleMuteMember(
   uid,
   name
 ){
 
   const current =
-    moderationMap[uid] || {
+    moderationMap[
+      uid
+    ] || {
+
       muted:false,
       blocked:false
+
     };
 
 
-  if(current.blocked){
+  if(
+    current.blocked
+  ){
 
     return;
 
@@ -2843,13 +3132,21 @@ async function toggleMuteMember(
 
   const confirmed =
     window.confirm(
+
       newMuted
-        ? "Mute " + name + "?"
-        : "Unmute " + name + "?"
+        ? "Mute " +
+          name +
+          "?"
+        : "Unmute " +
+          name +
+          "?"
+
     );
 
 
-  if(!confirmed){
+  if(
+    !confirmed
+  ){
 
     return;
 
@@ -2866,15 +3163,23 @@ async function toggleMuteMember(
 }
 
 
+/* =========================
+   TOGGLE BLOCK
+   ========================= */
+
 async function toggleBlockMember(
   uid,
   name
 ){
 
   const current =
-    moderationMap[uid] || {
+    moderationMap[
+      uid
+    ] || {
+
       muted:false,
       blocked:false
+
     };
 
 
@@ -2884,6 +3189,7 @@ async function toggleBlockMember(
 
   const confirmed =
     window.confirm(
+
       newBlocked
         ? "Block " +
           name +
@@ -2891,10 +3197,13 @@ async function toggleBlockMember(
         : "Unblock " +
           name +
           "?"
+
     );
 
 
-  if(!confirmed){
+  if(
+    !confirmed
+  ){
 
     return;
 
@@ -2911,11 +3220,17 @@ async function toggleBlockMember(
 }
 
 
+/* =========================
+   DELETE MESSAGE
+   ========================= */
+
 async function deletePackMessage(
   messageId
 ){
 
-  if(!isAdmin){
+  if(
+    !isAdmin
+  ){
 
     return;
 
@@ -2928,7 +3243,9 @@ async function deletePackMessage(
     );
 
 
-  if(!confirmed){
+  if(
+    !confirmed
+  ){
 
     return;
 
@@ -2938,11 +3255,13 @@ async function deletePackMessage(
   try{
 
     await deleteDoc(
+
       doc(
         db,
         "messages",
         messageId
       )
+
     );
 
 
@@ -2957,7 +3276,9 @@ async function deletePackMessage(
 }
 
 
-/* REPORT */
+/* =========================
+   OPEN REPORT
+   ========================= */
 
 function openReport(
   messageId,
@@ -2970,7 +3291,8 @@ function openReport(
     !currentUser ||
     isAdmin ||
     memberModeration.blocked ||
-    currentUser.uid === messageUid
+    currentUser.uid ===
+      messageUid
   ){
 
     return;
@@ -2994,7 +3316,8 @@ function openReport(
     messageText;
 
 
-  reportReason.value = "";
+  reportReason.value =
+    "";
 
 
   reportOverlay.classList.add(
@@ -3004,16 +3327,21 @@ function openReport(
 }
 
 
+/* =========================
+   CLOSE REPORT
+   ========================= */
+
 function closeReport(){
 
   reportOverlay.classList.remove(
     "show"
   );
 
+  reportTarget =
+    null;
 
-  reportTarget = null;
-
-  reportReason.value = "";
+  reportReason.value =
+    "";
 
 }
 
@@ -3041,6 +3369,10 @@ reportOverlay.addEventListener(
 );
 
 
+/* =========================
+   SUBMIT REPORT
+   ========================= */
+
 submitReport.addEventListener(
   "click",
   async function(){
@@ -3060,14 +3392,17 @@ submitReport.addEventListener(
       reportReason.value;
 
 
-    if(!reason){
+    if(
+      !reason
+    ){
 
       return;
 
     }
 
 
-    submitReport.disabled = true;
+    submitReport.disabled =
+      true;
 
     submitReport.textContent =
       "SENDING...";
@@ -3076,10 +3411,12 @@ submitReport.addEventListener(
     try{
 
       await addDoc(
+
         collection(
           db,
           "reports"
         ),
+
         {
 
           reporterUid:
@@ -3104,6 +3441,7 @@ submitReport.addEventListener(
             serverTimestamp()
 
         }
+
       );
 
 
@@ -3133,11 +3471,10 @@ submitReport.addEventListener(
         error
       );
 
-
     }finally{
 
-      submitReport.disabled = false;
-
+      submitReport.disabled =
+        false;
 
       submitReport.textContent =
         "SUBMIT REPORT";
@@ -3146,9 +3483,9 @@ submitReport.addEventListener(
 
   }
 );
-
-
-/* MEMBER MODERATION LISTENER */
+/* =========================
+   OWN MODERATION LISTENER
+   ========================= */
 
 function startOwnModeration(){
 
@@ -3182,7 +3519,9 @@ function startOwnModeration(){
 
       function(snapshot){
 
-        if(snapshot.exists()){
+        if(
+          snapshot.exists()
+        ){
 
           const data =
             snapshot.data();
@@ -3204,6 +3543,7 @@ function startOwnModeration(){
           memberModeration = {
 
             muted:false,
+
             blocked:false
 
           };
@@ -3216,7 +3556,6 @@ function startOwnModeration(){
         renderMessages();
 
       },
-
 
       function(error){
 
@@ -3232,7 +3571,9 @@ function startOwnModeration(){
 }
 
 
-/* ADMIN MODERATION LISTENER */
+/* =========================
+   ADMIN MODERATION LISTENER
+   ========================= */
 
 function startAdminModeration(){
 
@@ -3245,7 +3586,9 @@ function startAdminModeration(){
   }
 
 
-  if(!isAdmin){
+  if(
+    !isAdmin
+  ){
 
     return;
 
@@ -3262,7 +3605,8 @@ function startAdminModeration(){
 
       function(snapshot){
 
-        moderationMap = {};
+        moderationMap =
+          {};
 
 
         snapshot.forEach(
@@ -3281,7 +3625,6 @@ function startAdminModeration(){
 
       },
 
-
       function(error){
 
         console.error(
@@ -3296,7 +3639,9 @@ function startAdminModeration(){
 }
 
 
-/* RENDER MESSAGES */
+/* =========================
+   RENDER MESSAGES
+   ========================= */
 
 function renderMessages(){
 
@@ -3305,9 +3650,13 @@ function renderMessages(){
   ){
 
     messages.innerHTML =
+
       '<div class="empty-message">' +
+
       'No messages yet.<br>' +
+
       'Be the first to say hello to the pack.' +
+
       '</div>';
 
 
@@ -3316,7 +3665,8 @@ function renderMessages(){
   }
 
 
-  let html = "";
+  let html =
+    "";
 
 
   messageDocuments.forEach(
@@ -3324,7 +3674,6 @@ function renderMessages(){
 
       const id =
         item.id;
-
 
       const data =
         item.data;
@@ -3348,50 +3697,34 @@ function renderMessages(){
         moderationMap[
           data.uid
         ] || {
+
           muted:false,
+
           blocked:false
+
         };
 
 
-      let visibleName =
+      const visibleName =
         officialName
           ? officialName
           : data.name ||
             "Pack Member";
 
 
-      /*
-        Old messages created before name
-        protection may still contain
-        protected names.
-
-        They are labelled as unverified
-        instead of being treated as admins.
-      */
-
-      const legacyProtected =
-        !officialName &&
-        isReservedPackName(
-          visibleName
-        );
+      let badges =
+        "";
 
 
-      if(legacyProtected){
-
-        visibleName =
-          "Pack Member";
-
-      }
-
-
-      let badges = "";
-
-
-      if(officialName){
+      if(
+        officialName
+      ){
 
         badges +=
-          ' <span class="official-badge">ADMIN</span>';
 
+          ' <span class="official-badge">' +
+          'ADMIN' +
+          '</span>';
 
       }else if(
         isAdmin &&
@@ -3399,8 +3732,10 @@ function renderMessages(){
       ){
 
         badges +=
-          ' <span class="blocked-badge">BLOCKED</span>';
 
+          ' <span class="blocked-badge">' +
+          'BLOCKED' +
+          '</span>';
 
       }else if(
         isAdmin &&
@@ -3408,34 +3743,53 @@ function renderMessages(){
       ){
 
         badges +=
-          ' <span class="muted-badge">MUTED</span>';
+
+          ' <span class="muted-badge">' +
+          'MUTED' +
+          '</span>';
 
       }
 
 
       html +=
+
         '<div class="message ' +
-        (mine ? "mine" : "") +
+        (
+          mine
+            ? "mine"
+            : ""
+        ) +
         '">' +
 
+
         '<div class="message-name">' +
+
         escapeHTML(
           visibleName
         ) +
+
         badges +
+
         '</div>' +
 
+
         '<div class="message-bubble">' +
+
         escapeHTML(
           data.text || ""
         ) +
+
         '</div>' +
 
+
         '<div class="message-time">' +
+
         displayTime(
           data.createdAt
         ) +
+
         '</div>' +
+
 
         '<div class="message-actions">';
 
@@ -3452,81 +3806,124 @@ function renderMessages(){
         ){
 
           html +=
+
             '<button ' +
+
             'class="block-member" ' +
+
             'data-action="block" ' +
+
             'data-uid="' +
+
             escapeHTML(
               data.uid || ""
             ) +
+
             '" ' +
+
             'data-name="' +
+
             escapeHTML(
               visibleName
             ) +
+
             '">' +
+
             'UNBLOCK MEMBER' +
+
             '</button>';
 
 
         }else{
 
           html +=
+
             '<button ' +
+
             'class="mute-member" ' +
+
             'data-action="mute" ' +
+
             'data-uid="' +
+
             escapeHTML(
               data.uid || ""
             ) +
+
             '" ' +
+
             'data-name="' +
+
             escapeHTML(
               visibleName
             ) +
+
             '">' +
+
             (
               moderation.muted
                 ? "UNMUTE MEMBER"
                 : "MUTE MEMBER"
             ) +
+
             '</button>';
 
 
           html +=
+
             '<button ' +
+
             'class="block-member" ' +
+
             'data-action="block" ' +
+
             'data-uid="' +
+
             escapeHTML(
               data.uid || ""
             ) +
+
             '" ' +
+
             'data-name="' +
+
             escapeHTML(
               visibleName
             ) +
+
             '">' +
+
             'BLOCK MEMBER' +
+
             '</button>';
 
         }
 
 
         html +=
+
           '<button ' +
+
           'class="delete-message" ' +
+
           'data-action="delete" ' +
+
           'data-message-id="' +
-          id +
+
+          escapeHTML(
+            id
+          ) +
+
           '">' +
+
           'DELETE MESSAGE' +
+
           '</button>';
 
       }
 
 
-      /* REPORT */
+      /* MEMBER REPORT BUTTON */
 
       if(
         !isAdmin &&
@@ -3537,25 +3934,40 @@ function renderMessages(){
       ){
 
         html +=
+
           '<button ' +
+
           'class="report-message" ' +
+
           'data-action="report" ' +
+
           'data-message-id="' +
-          id +
+
+          escapeHTML(
+            id
+          ) +
+
           '" ' +
+
           'data-message-uid="' +
+
           escapeHTML(
             data.uid || ""
           ) +
+
           '">' +
+
           'REPORT' +
+
           '</button>';
 
       }
 
 
       html +=
+
         '</div>' +
+
         '</div>';
 
     }
@@ -3566,7 +3978,9 @@ function renderMessages(){
     html;
 
 
-  /* DELETE BUTTONS */
+/* =========================
+   DELETE BUTTONS
+   ========================= */
 
   messages
     .querySelectorAll(
@@ -3590,7 +4004,9 @@ function renderMessages(){
     );
 
 
-  /* MUTE BUTTONS */
+/* =========================
+   MUTE BUTTONS
+   ========================= */
 
   messages
     .querySelectorAll(
@@ -3604,8 +4020,11 @@ function renderMessages(){
           function(){
 
             toggleMuteMember(
+
               button.dataset.uid,
+
               button.dataset.name
+
             );
 
           }
@@ -3615,7 +4034,9 @@ function renderMessages(){
     );
 
 
-  /* BLOCK BUTTONS */
+/* =========================
+   BLOCK BUTTONS
+   ========================= */
 
   messages
     .querySelectorAll(
@@ -3629,8 +4050,11 @@ function renderMessages(){
           function(){
 
             toggleBlockMember(
+
               button.dataset.uid,
+
               button.dataset.name
+
             );
 
           }
@@ -3640,7 +4064,9 @@ function renderMessages(){
     );
 
 
-  /* REPORT BUTTONS */
+/* =========================
+   REPORT BUTTONS
+   ========================= */
 
   messages
     .querySelectorAll(
@@ -3690,10 +4116,15 @@ function renderMessages(){
 
 
             openReport(
+
               button.dataset.messageId,
+
               button.dataset.messageUid,
+
               name,
+
               text
+
             );
 
           }
@@ -3703,13 +4134,19 @@ function renderMessages(){
     );
 
 
+/* =========================
+   SCROLL TO NEWEST MESSAGE
+   ========================= */
+
   messages.scrollTop =
     messages.scrollHeight;
 
 }
 
 
-/* MESSAGE LISTENER */
+/* =========================
+   START MESSAGES
+   ========================= */
 
 function startMessages(){
 
@@ -3749,7 +4186,8 @@ function startMessages(){
 
       function(snapshot){
 
-        messageDocuments = [];
+        messageDocuments =
+          [];
 
 
         snapshot.forEach(
@@ -3775,7 +4213,6 @@ function startMessages(){
 
       },
 
-
       function(error){
 
         showError(
@@ -3789,7 +4226,9 @@ function startMessages(){
 }
 
 
-/* AUTH */
+/* =========================
+   AUTH STATE
+   ========================= */
 
 onAuthStateChanged(
   auth,
@@ -3798,7 +4237,9 @@ onAuthStateChanged(
     clearError();
 
 
-    if(user){
+    if(
+      user
+    ){
 
       currentUser =
         user;
@@ -3818,6 +4259,13 @@ onAuthStateChanged(
         );
 
 
+      /*
+        Normal members must accept
+        the Pack Chat rules first.
+
+        Admin accounts bypass the rules page.
+      */
+
       if(
         !isAdmin &&
         acceptedRules !==
@@ -3828,30 +4276,81 @@ onAuthStateChanged(
           "chat-rules.html"
         );
 
-
         return;
 
       }
 
 
+      /*
+        Reset moderation state before
+        loading the current account.
+      */
+
       memberModeration = {
 
         muted:false,
+
         blocked:false
 
       };
 
 
-      moderationMap = {};
+      moderationMap =
+        {};
+
+
+      /*
+        Remove any legacy saved reserved
+        Pack Name from normal accounts.
+      */
+
+      if(
+        !isAdmin
+      ){
+
+        const savedName =
+          localStorage.getItem(
+            "teamWolfpackChatName"
+          ) || "";
+
+
+        if(
+          isReservedName(
+            savedName
+          )
+        ){
+
+          localStorage.removeItem(
+            "teamWolfpackChatName"
+          );
+
+          packName =
+            "";
+
+          nameInput.value =
+            "";
+
+          showNameWarning(
+            "YOUR PREVIOUS PACK NAME IS NOW RESERVED FOR TEAM WOLFPACK. PLEASE CHOOSE A NEW PACK NAME."
+          );
+
+        }
+
+      }
 
 
       updateInterface();
 
-
       startMessages();
 
 
-      if(isAdmin){
+      /*
+        ADMIN
+      */
+
+      if(
+        isAdmin
+      ){
 
         if(
           unsubscribeOwnModeration
@@ -3869,6 +4368,11 @@ onAuthStateChanged(
 
 
       }else{
+
+
+        /*
+          NORMAL PACK MEMBER
+        */
 
         if(
           unsubscribeAdminModeration
@@ -3892,6 +4396,20 @@ onAuthStateChanged(
     }
 
 
+    /*
+      NO AUTH SESSION
+    */
+
+    currentUser =
+      null;
+
+    isAdmin =
+      false;
+
+    adminName =
+      "";
+
+
     status.textContent =
       "AUTHENTICATING PACK MEMBER...";
 
@@ -3901,7 +4419,6 @@ onAuthStateChanged(
       await signInAnonymously(
         auth
       );
-
 
     }catch(error){
 
@@ -3953,7 +4470,4 @@ if(
 
 
 </body>
-
-</html>
-chat.html
-HTML
+</html>  
