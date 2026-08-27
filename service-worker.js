@@ -1,4 +1,4 @@
-const CACHE_NAME = "team-wolfpack-v8";
+const CACHE_NAME = "team-wolfpack-v9";
 
 const APP_FILES = [
   "./",
@@ -14,7 +14,6 @@ const APP_FILES = [
   "./contact.html",
   "./socials.html",
   "./merch.html",
-  "./chat.html",
   "./chat-rules.html",
   "./admin-reports.html",
   "./admin-members.html",
@@ -33,11 +32,6 @@ self.addEventListener("install", event => {
 
     caches.open(CACHE_NAME).then(async cache => {
 
-      console.log(
-        "Team Wolfpack: creating cache",
-        CACHE_NAME
-      );
-
       for (const file of APP_FILES) {
 
         try {
@@ -54,11 +48,6 @@ self.addEventListener("install", event => {
             await cache.put(
               file,
               response
-            );
-
-            console.log(
-              "Cached:",
-              file
             );
 
           }
@@ -106,11 +95,6 @@ self.addEventListener("activate", event => {
             cacheName !== CACHE_NAME
           ) {
 
-            console.log(
-              "Deleting old Team Wolfpack cache:",
-              cacheName
-            );
-
             return caches.delete(
               cacheName
             );
@@ -122,11 +106,6 @@ self.addEventListener("activate", event => {
       );
 
       await self.clients.claim();
-
-      console.log(
-        "Team Wolfpack service worker activated:",
-        CACHE_NAME
-      );
 
     })()
 
@@ -141,35 +120,82 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
 
-  if (
-    event.request.method !== "GET"
-  ) {
+  if (event.request.method !== "GET") {
     return;
   }
-
 
   const requestURL =
     new URL(event.request.url);
 
 
   /* ======================================
-     IGNORE FIREBASE / GOOGLE REQUESTS
-     Let browser handle them normally
+     EXTERNAL REQUESTS
+     FIREBASE / GOOGLE ETC.
   ====================================== */
 
   if (
     requestURL.origin !==
     self.location.origin
   ) {
+    return;
+  }
+
+
+  /* ======================================
+     CHAT.HTML
+
+     IMPORTANT:
+     NEVER USE CACHE FOR PACK CHAT
+  ====================================== */
+
+  if (
+    requestURL.pathname.endsWith(
+      "/chat.html"
+    )
+  ) {
+
+    event.respondWith(
+
+      fetch(
+        event.request,
+        {
+          cache: "no-store"
+        }
+      )
+
+    );
 
     return;
+  }
 
+
+  /* ======================================
+     SERVICE WORKER
+  ====================================== */
+
+  if (
+    requestURL.pathname.endsWith(
+      "/service-worker.js"
+    )
+  ) {
+
+    event.respondWith(
+
+      fetch(
+        event.request,
+        {
+          cache: "no-store"
+        }
+      )
+
+    );
+
+    return;
   }
 
 
   /* ======================================
      MANIFEST
-     ALWAYS GET NEWEST VERSION
   ====================================== */
 
   if (
@@ -190,19 +216,12 @@ self.addEventListener("fetch", event => {
     );
 
     return;
-
   }
 
 
   /* ======================================
-     HTML PAGES
-
-     ALWAYS TRY NETWORK FIRST.
-
-     cache:"no-store" prevents the browser's
-     normal HTTP cache from returning an
-     older copy before the service worker
-     sees it.
+     OTHER HTML PAGES
+     NETWORK FIRST
   ====================================== */
 
   if (
@@ -224,66 +243,44 @@ self.addEventListener("fetch", event => {
               }
             );
 
-
           if (
             response &&
             response.ok
           ) {
-
-            const copy =
-              response.clone();
-
 
             const cache =
               await caches.open(
                 CACHE_NAME
               );
 
-
             await cache.put(
               event.request,
-              copy
+              response.clone()
             );
 
           }
 
-
           return response;
 
-
         } catch (error) {
-
-          console.warn(
-            "Network unavailable. Trying cached page.",
-            error
-          );
-
 
           const cached =
             await caches.match(
               event.request
             );
 
-
           if (cached) {
-
             return cached;
-
           }
-
 
           const home =
             await caches.match(
               "./index.html"
             );
 
-
           if (home) {
-
             return home;
-
           }
-
 
           return new Response(
             "Team Wolfpack is currently offline.",
@@ -303,35 +300,6 @@ self.addEventListener("fetch", event => {
     );
 
     return;
-
-  }
-
-
-  /* ======================================
-     SERVICE WORKER FILE ITSELF
-
-     NEVER CACHE IT
-  ====================================== */
-
-  if (
-    requestURL.pathname.endsWith(
-      "/service-worker.js"
-    )
-  ) {
-
-    event.respondWith(
-
-      fetch(
-        event.request,
-        {
-          cache: "no-store"
-        }
-      )
-
-    );
-
-    return;
-
   }
 
 
@@ -354,48 +322,35 @@ self.addEventListener("fetch", event => {
             }
           );
 
-
         if (
           response &&
           response.ok
         ) {
-
-          const copy =
-            response.clone();
-
 
           const cache =
             await caches.open(
               CACHE_NAME
             );
 
-
           await cache.put(
             event.request,
-            copy
+            response.clone()
           );
 
         }
 
-
         return response;
 
-
       } catch (error) {
-
 
         const cached =
           await caches.match(
             event.request
           );
 
-
         if (cached) {
-
           return cached;
-
         }
-
 
         throw error;
 
