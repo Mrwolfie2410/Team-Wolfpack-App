@@ -82,14 +82,18 @@ body{
 
 .brand{
   margin-top:5px;
+
   font-size:12px;
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#67dcff;
 }
 
 .title{
   margin-top:18px;
+
   font-size:29px;
   font-weight:900;
 }
@@ -104,7 +108,9 @@ body{
 
 .subtitle{
   margin-top:8px;
+
   color:#999;
+
   font-size:11px;
   line-height:1.5;
 }
@@ -112,7 +118,9 @@ body{
 .line{
   width:100%;
   max-width:470px;
+
   height:2px;
+
   margin:20px auto 0;
 
   background:
@@ -131,9 +139,15 @@ body{
 
 .content{
   width:100%;
+
   max-width:660px;
+
   margin:auto;
-  padding:8px 16px 70px;
+
+  padding:
+    8px
+    16px
+    70px;
 }
 
 
@@ -143,11 +157,16 @@ body{
 
 .status{
   text-align:center;
+
   margin-bottom:15px;
+
   padding:10px;
+
   font-size:10px;
   font-weight:900;
+
   letter-spacing:1px;
+
   color:#aaa;
 }
 
@@ -157,39 +176,6 @@ body{
 
 .status.error{
   color:#ff7957;
-}
-
-
-/* =========================
-   SUCCESS MESSAGE
-   ========================= */
-
-.success-message{
-  display:none;
-
-  margin-bottom:15px;
-  padding:12px 14px;
-
-  text-align:center;
-
-  border-radius:10px;
-
-  border:
-    1px solid rgba(103,220,255,.35);
-
-  background:
-    rgba(0,150,210,.10);
-
-  color:#67dcff;
-
-  font-size:10px;
-  font-weight:900;
-
-  line-height:1.5;
-}
-
-.success-message.show{
-  display:block;
 }
 
 
@@ -207,7 +193,8 @@ body{
   text-align:center;
 
   border:
-    1px solid rgba(255,117,28,.35);
+    1px solid
+    rgba(255,117,28,.35);
 
   background:
     rgba(50,10,0,.35);
@@ -219,14 +206,18 @@ body{
 
 .access-title{
   color:#ff751c;
+
   font-size:18px;
   font-weight:900;
 }
 
 .access-text{
   margin-top:10px;
+
   color:#aaa;
+
   font-size:11px;
+
   line-height:1.6;
 }
 
@@ -250,7 +241,8 @@ body{
   border-radius:12px;
 
   border:
-    1px solid rgba(255,117,28,.35);
+    1px solid
+    rgba(255,117,28,.35);
 
   background:
     linear-gradient(
@@ -288,13 +280,14 @@ body{
 
 .admin-label{
   color:#67dcff;
+
   font-size:9px;
   font-weight:900;
 }
 
 
 /* =========================
-   SUMMARY
+   REPORT SUMMARY
    ========================= */
 
 .report-summary{
@@ -320,7 +313,8 @@ body{
   border-radius:11px;
 
   border:
-    1px solid rgba(255,255,255,.10);
+    1px solid
+    rgba(255,255,255,.10);
 
   background:
     rgba(8,8,8,.78);
@@ -329,10 +323,12 @@ body{
 .summary-number{
   font-size:24px;
   font-weight:900;
+
   color:#ff751c;
 }
 
-.summary-card.blue .summary-number{
+.summary-card.blue
+.summary-number{
   color:#67dcff;
 }
 
@@ -349,92 +345,14 @@ body{
 
 
 /* =========================
-   SECTION SWITCHER
+   REPORTS
    ========================= */
 
-.section-tabs{
-  display:none;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:8px;
-
-  margin-bottom:16px;
-}
-
-.section-tabs.show{
-  display:grid;
-}
-
-.tab-button{
-  min-height:42px;
-
-  padding:10px 8px;
-
-  border-radius:9px;
-
-  border:
-    1px solid rgba(255,255,255,.12);
-
-  background:#111;
-
-  color:#888;
-
-  font-size:9px;
-  font-weight:900;
-
-  cursor:pointer;
-}
-
-.tab-button.active{
-  color:#050505;
-  background:#67dcff;
-}
-
-.tab-button.history-active{
-  color:#050505;
-  background:#ff751c;
-}
-
-
-/* =========================
-   SECTION TITLE
-   ========================= */
-
-.section-heading{
-  display:none;
-
-  margin-bottom:12px;
-
-  color:#67dcff;
-
-  font-size:11px;
-  font-weight:900;
-
-  letter-spacing:1px;
-}
-
-.section-heading.show{
-  display:block;
-}
-
-.section-heading.history{
-  color:#ff751c;
-}
-
-
-/* =========================
-   REPORT LIST
-   ========================= */
-
-.reports,
-.resolved-reports{
+.reports{
   display:none;
 }
 
-.reports.show,
-.resolved-reports.show{
+.reports.show{
   display:block;
 }
 
@@ -446,7 +364,8 @@ body{
   border-radius:14px;
 
   border:
-    1px solid rgba(255,255,255,.10);
+    1px solid
+    rgba(255,255,255,.10);
 
   background:
     rgba(8,8,8,.75);
@@ -475,7 +394,8 @@ body{
   border-radius:14px;
 
   border:
-    1px solid rgba(255,117,28,.25);
+    1px solid
+    rgba(255,117,28,.25);
 
   background:
     linear-gradient(
@@ -524,9 +444,11 @@ body{
 .report-top{
   display:flex;
 
-  justify-content:space-between;
+  justify-content:
+    space-between;
 
-  align-items:flex-start;
+  align-items:
+    flex-start;
 
   gap:10px;
 }
@@ -535,10 +457,10 @@ body{
   color:#ff751c;
 
   font-size:11px;
-
   font-weight:900;
 
-  text-transform:uppercase;
+  text-transform:
+    uppercase;
 }
 
 .report-time{
@@ -555,7 +477,6 @@ body{
   color:#67dcff;
 
   font-size:8px;
-
   font-weight:900;
 
   letter-spacing:1px;
@@ -570,14 +491,14 @@ body{
 
   line-height:1.5;
 
-  word-break:break-word;
+  word-break:
+    break-word;
 }
 
 .reported-member{
   color:#fff;
 
   font-size:13px;
-
   font-weight:900;
 }
 
@@ -591,7 +512,8 @@ body{
   background:#111;
 
   border:
-    1px solid rgba(255,255,255,.08);
+    1px solid
+    rgba(255,255,255,.08);
 
   color:#eee;
 
@@ -601,38 +523,35 @@ body{
 }
 
 .uid{
-  word-break:break-all;
+  word-break:
+    break-all;
 }
 
 
 /* =========================
-   RESOLVED REPORT
+   PROTECTED ADMIN NOTICE
    ========================= */
 
-.resolved-card{
+.protected-notice{
+  margin-top:12px;
+
+  padding:10px;
+
+  border-radius:8px;
+
   border:
-    1px solid rgba(103,220,255,.20);
-}
+    1px solid
+    rgba(255,179,71,.25);
 
-.resolution-badge{
-  display:inline-block;
+  background:
+    rgba(100,60,0,.08);
 
-  padding:5px 8px;
-
-  border-radius:20px;
-
-  background:#ff751c;
-
-  color:#050505;
+  color:#ffb347;
 
   font-size:8px;
-
   font-weight:900;
-}
 
-.resolution-value{
-  color:#ff751c;
-  font-weight:900;
+  line-height:1.5;
 }
 
 
@@ -661,7 +580,6 @@ body{
   cursor:pointer;
 
   font-size:8px;
-
   font-weight:900;
 }
 
@@ -680,7 +598,8 @@ body{
 
 .mute-button{
   border:
-    1px solid rgba(255,180,71,.40);
+    1px solid
+    rgba(255,180,71,.40);
 
   color:#ffb347;
 
@@ -690,7 +609,8 @@ body{
 
 .block-button{
   border:
-    1px solid rgba(255,80,50,.45);
+    1px solid
+    rgba(255,80,50,.45);
 
   color:#ff7957;
 
@@ -700,7 +620,8 @@ body{
 
 .dismiss-button{
   border:
-    1px solid rgba(103,220,255,.30);
+    1px solid
+    rgba(103,220,255,.30);
 
   color:#67dcff;
 
@@ -708,21 +629,9 @@ body{
     rgba(0,150,210,.06);
 }
 
-.history-delete-button{
-  grid-column:
-    1 / -1;
-
-  border:
-    1px solid rgba(255,80,50,.35);
-
-  color:#ff7957;
-
-  background:
-    rgba(100,20,0,.10);
-}
-
 button:disabled{
   opacity:.4;
+
   cursor:not-allowed;
 }
 
@@ -735,7 +644,7 @@ button:disabled{
   display:none;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(4,1fr);
 
   gap:8px;
 
@@ -750,7 +659,6 @@ button:disabled{
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   min-height:46px;
@@ -764,12 +672,12 @@ button:disabled{
   color:#fff;
 
   border:
-    1px solid #59d9ff;
+    1px solid
+    #59d9ff;
 
   border-radius:11px;
 
-  font-size:9px;
-
+  font-size:8px;
   font-weight:900;
 
   background:
@@ -788,11 +696,17 @@ button:disabled{
 @media(max-width:500px){
 
   .actions{
-    grid-template-columns:1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .nav-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .title{
+    font-size:26px;
   }
 
 }
@@ -807,7 +721,10 @@ button:disabled{
 
 <header class="header">
 
-<a href="index.html">
+<a
+  href="index.html"
+  aria-label="Team Wolfpack Home"
+>
 
 <img
   src="icon-512.png"
@@ -817,9 +734,11 @@ button:disabled{
 
 </a>
 
+
 <div class="brand">
 TEAM WOLFPACK
 </div>
+
 
 <h1 class="title">
 
@@ -833,9 +752,11 @@ REPORTS
 
 </h1>
 
+
 <p class="subtitle">
-Review Pack Chat reports and moderation history.
+Review reported Pack Chat messages and take moderation action.
 </p>
+
 
 <div class="line"></div>
 
@@ -853,12 +774,6 @@ CHECKING ADMIN ACCESS...
 </div>
 
 
-<div
-  id="successMessage"
-  class="success-message"
-></div>
-
-
 <!-- ACCESS DENIED -->
 
 <div
@@ -873,6 +788,7 @@ ADMIN ACCESS REQUIRED
 <div class="access-text">
 Sign into Pack Chat using an authorised Team Wolfpack administrator account before opening Admin Reports.
 </div>
+
 
 <div class="nav-grid show">
 
@@ -912,6 +828,7 @@ ADMIN
 
 </div>
 
+
 <div class="admin-label">
 REPORT MODERATION
 </div>
@@ -945,14 +862,14 @@ OPEN REPORTS
 <div class="summary-card blue">
 
 <div
-  id="resolvedCount"
+  id="reportedMembersCount"
   class="summary-number"
 >
 0
 </div>
 
 <div class="summary-label">
-RESOLVED REPORTS
+REPORTED MEMBERS
 </div>
 
 </div>
@@ -960,60 +877,11 @@ RESOLVED REPORTS
 </div>
 
 
-<!-- TABS -->
-
-<div
-  id="sectionTabs"
-  class="section-tabs"
->
-
-<button
-  id="openReportsButton"
-  class="tab-button active"
-  type="button"
->
-OPEN REPORTS
-</button>
-
-<button
-  id="historyButton"
-  class="tab-button"
-  type="button"
->
-RESOLVED HISTORY
-</button>
-
-</div>
-
-
-<div
-  id="openHeading"
-  class="section-heading"
->
-OPEN REPORTS
-</div>
-
-<div
-  id="historyHeading"
-  class="section-heading history"
->
-RESOLVED REPORT HISTORY
-</div>
-
-
-<!-- OPEN REPORTS -->
+<!-- REPORTS -->
 
 <div
   id="reports"
   class="reports"
-></div>
-
-
-<!-- RESOLVED REPORTS -->
-
-<div
-  id="resolvedReports"
-  class="resolved-reports"
 ></div>
 
 
@@ -1026,9 +894,16 @@ RESOLVED REPORT HISTORY
 
 <a
   class="nav-button"
+  href="admin-dashboard.html"
+>
+DASHBOARD
+</a>
+
+<a
+  class="nav-button"
   href="chat.html"
 >
-‹ PACK CHAT
+PACK CHAT
 </a>
 
 <a
@@ -1072,14 +947,14 @@ import {
   onSnapshot,
   deleteDoc,
   setDoc,
+  addDoc,
   doc,
-  serverTimestamp,
-  writeBatch
+  serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
 /* =========================
-   FIREBASE
+   FIREBASE CONFIG
    ========================= */
 
 const firebaseConfig = {
@@ -1108,6 +983,10 @@ const firebaseConfig = {
 };
 
 
+/* =========================
+   TEAM WOLFPACK ADMINS
+   ========================= */
+
 const ADMINS = {
 
   "PRGa9TsCW0QDn1QtoUXyYjEi7YB3":
@@ -1124,12 +1003,10 @@ const app =
     firebaseConfig
   );
 
-
 const auth =
   getAuth(
     app
   );
-
 
 const db =
   getFirestore(
@@ -1144,11 +1021,6 @@ const db =
 const status =
   document.getElementById(
     "status"
-  );
-
-const successMessage =
-  document.getElementById(
-    "successMessage"
   );
 
 const accessDenied =
@@ -1176,44 +1048,14 @@ const reportCount =
     "reportCount"
   );
 
-const resolvedCount =
+const reportedMembersCount =
   document.getElementById(
-    "resolvedCount"
-  );
-
-const sectionTabs =
-  document.getElementById(
-    "sectionTabs"
-  );
-
-const openReportsButton =
-  document.getElementById(
-    "openReportsButton"
-  );
-
-const historyButton =
-  document.getElementById(
-    "historyButton"
-  );
-
-const openHeading =
-  document.getElementById(
-    "openHeading"
-  );
-
-const historyHeading =
-  document.getElementById(
-    "historyHeading"
+    "reportedMembersCount"
   );
 
 const reports =
   document.getElementById(
     "reports"
-  );
-
-const resolvedReports =
-  document.getElementById(
-    "resolvedReports"
   );
 
 const adminNavigation =
@@ -1228,15 +1070,14 @@ let currentAdmin =
 let unsubscribeReports =
   null;
 
-let unsubscribeResolved =
-  null;
-
 
 /* =========================
-   HELPERS
+   ESCAPE HTML
    ========================= */
 
-function escapeHTML(value){
+function escapeHTML(
+  value
+){
 
   const element =
     document.createElement(
@@ -1244,16 +1085,26 @@ function escapeHTML(value){
     );
 
   element.textContent =
-    value || "";
+    value == null
+      ? ""
+      : String(value);
 
   return element.innerHTML;
 
 }
 
 
-function displayDate(timestamp){
+/* =========================
+   DATE
+   ========================= */
 
-  if(!timestamp){
+function displayDate(
+  timestamp
+){
+
+  if(
+    !timestamp
+  ){
 
     return "Processing...";
 
@@ -1283,37 +1134,38 @@ function displayDate(timestamp){
 }
 
 
-function showSuccess(message){
+/* =========================
+   ADMIN NAME
+   ========================= */
 
-  successMessage.textContent =
-    message;
+function getCurrentAdminName(){
 
-  successMessage.classList.add(
-    "show"
-  );
+  if(
+    !currentAdmin
+  ){
 
-  window.setTimeout(
-    function(){
+    return "TEAM WOLFPACK ADMIN";
 
-      successMessage.classList.remove(
-        "show"
-      );
+  }
 
-    },
-    3500
+  return (
+    ADMINS[
+      currentAdmin.uid
+    ] ||
+    "TEAM WOLFPACK ADMIN"
   );
 
 }
 
 
 /* =========================
-   ARCHIVE REPORT
+   SAVE RESOLVED HISTORY
    ========================= */
 
-async function archiveReport(
-  reportId,
+async function saveResolvedReport(
   reportData,
-  resolution
+  reportId,
+  action
 ){
 
   if(
@@ -1321,61 +1173,128 @@ async function archiveReport(
   ){
 
     throw new Error(
-      "Admin session required."
+      "Admin authentication required."
     );
 
   }
 
 
-  const historyReference =
-    doc(
+  await addDoc(
+
+    collection(
       db,
-      "resolvedReports",
-      reportId
-    );
+      "resolvedReports"
+    ),
 
-
-  await setDoc(
-    historyReference,
     {
 
-      reporterUid:
-        reportData.reporterUid || "",
+      originalReportId:
+        reportId || "",
+
+      reason:
+        reportData.reason ||
+        "Reported",
 
       messageId:
-        reportData.messageId || "",
+        reportData.messageId ||
+        "",
 
       messageUid:
-        reportData.messageUid || "",
+        reportData.messageUid ||
+        "",
 
       messageName:
         reportData.messageName ||
         "Pack Member",
 
       messageText:
-        reportData.messageText || "",
+        reportData.messageText ||
+        "",
 
-      reason:
-        reportData.reason ||
-        "Reported",
+      reporterUid:
+        reportData.reporterUid ||
+        "",
 
-      createdAt:
-        reportData.createdAt || null,
+      reportCreatedAt:
+        reportData.createdAt ||
+        null,
 
-      resolution:
-        resolution,
+      action:
+        action,
 
-      resolvedAt:
-        serverTimestamp(),
-
-      resolvedBy:
+      resolvedByUid:
         currentAdmin.uid,
 
       resolvedByName:
-        ADMINS[currentAdmin.uid] ||
-        "TEAM WOLFPACK ADMIN"
+        getCurrentAdminName(),
+
+      resolvedAt:
+        serverTimestamp()
 
     }
+
+  );
+
+}
+  /* =========================
+   SAVE MODERATION
+   ========================= */
+
+async function saveModeration(
+  uid,
+  name,
+  muted,
+  blocked
+){
+
+  if(
+    !currentAdmin ||
+    !uid ||
+    ADMINS[
+      uid
+    ]
+  ){
+
+    return;
+
+  }
+
+
+  await setDoc(
+
+    doc(
+      db,
+      "moderation",
+      uid
+    ),
+
+    {
+
+      uid:
+        uid,
+
+      name:
+        name ||
+        "Pack Member",
+
+      muted:
+        Boolean(
+          muted
+        ),
+
+      blocked:
+        Boolean(
+          blocked
+        ),
+
+      updatedAt:
+        serverTimestamp(),
+
+      updatedBy:
+        currentAdmin.uid
+
+    }
+
   );
 
 }
@@ -1386,12 +1305,13 @@ async function archiveReport(
    ========================= */
 
 async function muteMember(
-  reportId,
-  reportData
+  reportData,
+  reportId
 ){
 
   const uid =
-    reportData.messageUid;
+    reportData.messageUid ||
+    "";
 
   const name =
     reportData.messageName ||
@@ -1400,8 +1320,14 @@ async function muteMember(
 
   if(
     !uid ||
-    ADMINS[uid]
+    ADMINS[
+      uid
+    ]
   ){
+
+    window.alert(
+      "Official Team Wolfpack administrator accounts cannot be moderated."
+    );
 
     return;
 
@@ -1427,125 +1353,39 @@ async function muteMember(
 
   try{
 
-    const batch =
-      writeBatch(
-        db
-      );
+    await saveModeration(
+      uid,
+      name,
+      true,
+      false
+    );
 
 
-    const moderationRef =
-      doc(
-        db,
-        "moderation",
-        uid
-      );
+    await saveResolvedReport(
+      reportData,
+      reportId,
+      "MEMBER MUTED"
+    );
 
 
-    const resolvedRef =
-      doc(
-        db,
-        "resolvedReports",
-        reportId
-      );
-
-
-    const reportRef =
+    await deleteDoc(
       doc(
         db,
         "reports",
         reportId
-      );
-
-
-    batch.set(
-      moderationRef,
-      {
-
-        uid:
-          uid,
-
-        name:
-          name,
-
-        muted:
-          true,
-
-        blocked:
-          false,
-
-        updatedAt:
-          serverTimestamp(),
-
-        updatedBy:
-          currentAdmin.uid
-
-      }
-    );
-
-
-    batch.set(
-      resolvedRef,
-      {
-
-        reporterUid:
-          reportData.reporterUid || "",
-
-        messageId:
-          reportData.messageId || "",
-
-        messageUid:
-          uid,
-
-        messageName:
-          name,
-
-        messageText:
-          reportData.messageText || "",
-
-        reason:
-          reportData.reason || "Reported",
-
-        createdAt:
-          reportData.createdAt || null,
-
-        resolution:
-          "MEMBER MUTED",
-
-        resolvedAt:
-          serverTimestamp(),
-
-        resolvedBy:
-          currentAdmin.uid,
-
-        resolvedByName:
-          ADMINS[currentAdmin.uid]
-
-      }
-    );
-
-
-    batch.delete(
-      reportRef
-    );
-
-
-    await batch.commit();
-
-
-    showSuccess(
-      name +
-      " MUTED • REPORT MOVED TO HISTORY"
+      )
     );
 
 
   }catch(error){
 
     console.error(
+      "Mute member error:",
       error
     );
 
     window.alert(
-      "Unable to mute this member."
+      "Unable to mute this Pack member."
     );
 
   }
@@ -1558,12 +1398,13 @@ async function muteMember(
    ========================= */
 
 async function blockMember(
-  reportId,
-  reportData
+  reportData,
+  reportId
 ){
 
   const uid =
-    reportData.messageUid;
+    reportData.messageUid ||
+    "";
 
   const name =
     reportData.messageName ||
@@ -1572,8 +1413,14 @@ async function blockMember(
 
   if(
     !uid ||
-    ADMINS[uid]
+    ADMINS[
+      uid
+    ]
   ){
+
+    window.alert(
+      "Official Team Wolfpack administrator accounts cannot be moderated."
+    );
 
     return;
 
@@ -1599,88 +1446,22 @@ async function blockMember(
 
   try{
 
-    const batch =
-      writeBatch(
-        db
-      );
-
-
-    batch.set(
-      doc(
-        db,
-        "moderation",
-        uid
-      ),
-      {
-
-        uid:
-          uid,
-
-        name:
-          name,
-
-        muted:
-          false,
-
-        blocked:
-          true,
-
-        updatedAt:
-          serverTimestamp(),
-
-        updatedBy:
-          currentAdmin.uid
-
-      }
+    await saveModeration(
+      uid,
+      name,
+      false,
+      true
     );
 
 
-    batch.set(
-      doc(
-        db,
-        "resolvedReports",
-        reportId
-      ),
-      {
-
-        reporterUid:
-          reportData.reporterUid || "",
-
-        messageId:
-          reportData.messageId || "",
-
-        messageUid:
-          uid,
-
-        messageName:
-          name,
-
-        messageText:
-          reportData.messageText || "",
-
-        reason:
-          reportData.reason || "Reported",
-
-        createdAt:
-          reportData.createdAt || null,
-
-        resolution:
-          "MEMBER BLOCKED",
-
-        resolvedAt:
-          serverTimestamp(),
-
-        resolvedBy:
-          currentAdmin.uid,
-
-        resolvedByName:
-          ADMINS[currentAdmin.uid]
-
-      }
+    await saveResolvedReport(
+      reportData,
+      reportId,
+      "MEMBER BLOCKED"
     );
 
 
-    batch.delete(
+    await deleteDoc(
       doc(
         db,
         "reports",
@@ -1689,23 +1470,15 @@ async function blockMember(
     );
 
 
-    await batch.commit();
-
-
-    showSuccess(
-      name +
-      " BLOCKED • REPORT MOVED TO HISTORY"
-    );
-
-
   }catch(error){
 
     console.error(
+      "Block member error:",
       error
     );
 
     window.alert(
-      "Unable to block this member."
+      "Unable to block this Pack member."
     );
 
   }
@@ -1714,12 +1487,12 @@ async function blockMember(
 
 
 /* =========================
-   DELETE MESSAGE
+   DELETE REPORTED MESSAGE
    ========================= */
 
 async function deleteReportedMessage(
-  reportId,
-  reportData
+  reportData,
+  reportId
 ){
 
   if(
@@ -1733,7 +1506,7 @@ async function deleteReportedMessage(
 
   const confirmed =
     window.confirm(
-      "Delete this message from Pack Chat?\n\nThe report will be moved to Resolved History."
+      "Delete this message from Pack Chat?\n\nThe report will also be moved into Resolved History."
     );
 
 
@@ -1748,17 +1521,27 @@ async function deleteReportedMessage(
 
   try{
 
-    const batch =
-      writeBatch(
-        db
-      );
+    /*
+      Save the audit/history entry first.
+    */
 
+    await saveResolvedReport(
+      reportData,
+      reportId,
+      "MESSAGE DELETED"
+    );
+
+
+    /*
+      Delete the original Pack Chat message
+      if the report contains a message ID.
+    */
 
     if(
       reportData.messageId
     ){
 
-      batch.delete(
+      await deleteDoc(
         doc(
           db,
           "messages",
@@ -1769,54 +1552,11 @@ async function deleteReportedMessage(
     }
 
 
-    batch.set(
-      doc(
-        db,
-        "resolvedReports",
-        reportId
-      ),
-      {
+    /*
+      Remove the report from the open queue.
+    */
 
-        reporterUid:
-          reportData.reporterUid || "",
-
-        messageId:
-          reportData.messageId || "",
-
-        messageUid:
-          reportData.messageUid || "",
-
-        messageName:
-          reportData.messageName ||
-          "Pack Member",
-
-        messageText:
-          reportData.messageText || "",
-
-        reason:
-          reportData.reason ||
-          "Reported",
-
-        createdAt:
-          reportData.createdAt || null,
-
-        resolution:
-          "MESSAGE DELETED",
-
-        resolvedAt:
-          serverTimestamp(),
-
-        resolvedBy:
-          currentAdmin.uid,
-
-        resolvedByName:
-          ADMINS[currentAdmin.uid]
-
-      }
-    );
-
-
-    batch.delete(
+    await deleteDoc(
       doc(
         db,
         "reports",
@@ -1825,17 +1565,10 @@ async function deleteReportedMessage(
     );
 
 
-    await batch.commit();
-
-
-    showSuccess(
-      "MESSAGE DELETED • REPORT MOVED TO HISTORY"
-    );
-
-
   }catch(error){
 
     console.error(
+      "Delete reported message error:",
       error
     );
 
@@ -1853,8 +1586,8 @@ async function deleteReportedMessage(
    ========================= */
 
 async function dismissReport(
-  reportId,
-  reportData
+  reportData,
+  reportId
 ){
 
   if(
@@ -1883,60 +1616,22 @@ async function dismissReport(
 
   try{
 
-    const batch =
-      writeBatch(
-        db
-      );
+    /*
+      Save to the permanent moderation history.
+    */
 
-
-    batch.set(
-      doc(
-        db,
-        "resolvedReports",
-        reportId
-      ),
-      {
-
-        reporterUid:
-          reportData.reporterUid || "",
-
-        messageId:
-          reportData.messageId || "",
-
-        messageUid:
-          reportData.messageUid || "",
-
-        messageName:
-          reportData.messageName ||
-          "Pack Member",
-
-        messageText:
-          reportData.messageText || "",
-
-        reason:
-          reportData.reason ||
-          "Reported",
-
-        createdAt:
-          reportData.createdAt || null,
-
-        resolution:
-          "DISMISSED",
-
-        resolvedAt:
-          serverTimestamp(),
-
-        resolvedBy:
-          currentAdmin.uid,
-
-        resolvedByName:
-          ADMINS[currentAdmin.uid]
-
-      }
+    await saveResolvedReport(
+      reportData,
+      reportId,
+      "REPORT DISMISSED"
     );
 
 
-    batch.delete(
+    /*
+      Remove from the open-report collection.
+    */
+
+    await deleteDoc(
       doc(
         db,
         "reports",
@@ -1945,17 +1640,10 @@ async function dismissReport(
     );
 
 
-    await batch.commit();
-
-
-    showSuccess(
-      "REPORT DISMISSED • MOVED TO HISTORY"
-    );
-
-
   }catch(error){
 
     console.error(
+      "Dismiss report error:",
       error
     );
 
@@ -1969,61 +1657,7 @@ async function dismissReport(
 
 
 /* =========================
-   DELETE HISTORY RECORD
-   ========================= */
-
-async function deleteHistory(
-  reportId
-){
-
-  const confirmed =
-    window.confirm(
-      "Permanently delete this resolved report from moderation history?"
-    );
-
-
-  if(
-    !confirmed
-  ){
-
-    return;
-
-  }
-
-
-  try{
-
-    await deleteDoc(
-      doc(
-        db,
-        "resolvedReports",
-        reportId
-      )
-    );
-
-
-    showSuccess(
-      "HISTORY RECORD DELETED"
-    );
-
-
-  }catch(error){
-
-    console.error(
-      error
-    );
-
-    window.alert(
-      "Unable to delete this history record."
-    );
-
-  }
-
-}
-
-
-/* =========================
-   OPEN REPORT CARD
+   BUILD REPORT CARD
    ========================= */
 
 function buildReportCard(
@@ -2044,68 +1678,166 @@ function buildReportCard(
     data.messageUid ||
     "";
 
-  const protectedAdmin =
+  const reporterUid =
+    data.reporterUid ||
+    "";
+
+  const isProtectedAdmin =
     Boolean(
-      ADMINS[memberUid]
+      ADMINS[
+        memberUid
+      ]
     );
 
 
-  let moderationButtons =
+  let protectedNotice =
+    "";
+
+  let actions =
     "";
 
 
   if(
-    memberUid &&
-    !protectedAdmin
+    isProtectedAdmin
   ){
 
-    moderationButtons +=
+    protectedNotice =
+
+      '<div class="protected-notice">' +
+
+      'THIS IS AN OFFICIAL TEAM WOLFPACK ADMIN ACCOUNT. ' +
+
+      'MUTE AND BLOCK CONTROLS ARE DISABLED.' +
+
+      '</div>';
+
+  }
+
+
+  if(
+    !isProtectedAdmin &&
+    memberUid
+  ){
+
+    actions +=
 
       '<button ' +
+
       'class="action-button mute-button" ' +
+
       'type="button" ' +
+
       'data-action="mute" ' +
+
       'data-report-id="' +
-      escapeHTML(reportId) +
+
+      escapeHTML(
+        reportId
+      ) +
+
       '">' +
+
       'MUTE MEMBER' +
+
       '</button>';
 
 
-    moderationButtons +=
+    actions +=
 
       '<button ' +
+
       'class="action-button block-button" ' +
+
       'type="button" ' +
+
       'data-action="block" ' +
+
       'data-report-id="' +
-      escapeHTML(reportId) +
+
+      escapeHTML(
+        reportId
+      ) +
+
       '">' +
+
       'BLOCK MEMBER' +
+
       '</button>';
 
   }
+
+
+  actions +=
+
+    '<button ' +
+
+    'class="action-button delete-button" ' +
+
+    'type="button" ' +
+
+    'data-action="delete" ' +
+
+    'data-report-id="' +
+
+    escapeHTML(
+      reportId
+    ) +
+
+    '">' +
+
+    'DELETE MESSAGE' +
+
+    '</button>';
+
+
+  actions +=
+
+    '<button ' +
+
+    'class="action-button dismiss-button" ' +
+
+    'type="button" ' +
+
+    'data-action="dismiss" ' +
+
+    'data-report-id="' +
+
+    escapeHTML(
+      reportId
+    ) +
+
+    '">' +
+
+    'DISMISS REPORT' +
+
+    '</button>';
 
 
   return (
 
     '<div class="report-card">' +
 
+
       '<div class="report-top">' +
 
         '<div class="report-reason">' +
+
           escapeHTML(
             data.reason ||
             "Reported"
           ) +
+
         '</div>' +
 
+
         '<div class="report-time">' +
+
           escapeHTML(
             displayDate(
               data.createdAt
             )
           ) +
+
         '</div>' +
 
       '</div>' +
@@ -2113,14 +1845,17 @@ function buildReportCard(
 
       '<div class="report-details">' +
 
+
         '<div class="label">' +
           'REPORTED PACK MEMBER' +
         '</div>' +
 
         '<div class="value reported-member">' +
+
           escapeHTML(
             memberName
           ) +
+
         '</div>' +
 
 
@@ -2129,9 +1864,11 @@ function buildReportCard(
         '</div>' +
 
         '<div class="value uid">' +
+
           escapeHTML(
             memberUid
           ) +
+
         '</div>' +
 
 
@@ -2140,10 +1877,12 @@ function buildReportCard(
         '</div>' +
 
         '<div class="reported-message">' +
+
           escapeHTML(
             data.messageText ||
             ""
           ) +
+
         '</div>' +
 
 
@@ -2152,40 +1891,40 @@ function buildReportCard(
         '</div>' +
 
         '<div class="value uid">' +
+
           escapeHTML(
-            data.reporterUid ||
+            reporterUid
+          ) +
+
+        '</div>' +
+
+
+        '<div class="label">' +
+          'MESSAGE ID' +
+        '</div>' +
+
+        '<div class="value uid">' +
+
+          escapeHTML(
+            data.messageId ||
             ""
           ) +
+
         '</div>' +
+
+
+        protectedNotice +
+
 
       '</div>' +
 
 
       '<div class="actions">' +
 
-        moderationButtons +
-
-        '<button ' +
-        'class="action-button delete-button" ' +
-        'type="button" ' +
-        'data-action="delete" ' +
-        'data-report-id="' +
-        escapeHTML(reportId) +
-        '">' +
-        'DELETE MESSAGE' +
-        '</button>' +
-
-        '<button ' +
-        'class="action-button dismiss-button" ' +
-        'type="button" ' +
-        'data-action="dismiss" ' +
-        'data-report-id="' +
-        escapeHTML(reportId) +
-        '">' +
-        'DISMISS REPORT' +
-        '</button>' +
+        actions +
 
       '</div>' +
+
 
     '</div>'
 
@@ -2195,146 +1934,7 @@ function buildReportCard(
 
 
 /* =========================
-   HISTORY CARD
-   ========================= */
-
-function buildHistoryCard(
-  historySnapshot
-){
-
-  const data =
-    historySnapshot.data();
-
-
-  return (
-
-    '<div class="report-card resolved-card">' +
-
-      '<div class="report-top">' +
-
-        '<div>' +
-
-          '<div class="resolution-badge">' +
-            escapeHTML(
-              data.resolution ||
-              "RESOLVED"
-            ) +
-          '</div>' +
-
-        '</div>' +
-
-        '<div class="report-time">' +
-          escapeHTML(
-            displayDate(
-              data.resolvedAt
-            )
-          ) +
-        '</div>' +
-
-      '</div>' +
-
-
-      '<div class="report-details">' +
-
-        '<div class="label">' +
-          'PACK MEMBER' +
-        '</div>' +
-
-        '<div class="value reported-member">' +
-          escapeHTML(
-            data.messageName ||
-            "Pack Member"
-          ) +
-        '</div>' +
-
-
-        '<div class="label">' +
-          'ORIGINAL REPORT REASON' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            data.reason ||
-            "Reported"
-          ) +
-        '</div>' +
-
-
-        '<div class="label">' +
-          'REPORTED MESSAGE' +
-        '</div>' +
-
-        '<div class="reported-message">' +
-          escapeHTML(
-            data.messageText ||
-            ""
-          ) +
-        '</div>' +
-
-
-        '<div class="label">' +
-          'RESOLUTION' +
-        '</div>' +
-
-        '<div class="value resolution-value">' +
-          escapeHTML(
-            data.resolution ||
-            ""
-          ) +
-        '</div>' +
-
-
-        '<div class="label">' +
-          'RESOLVED BY' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            data.resolvedByName ||
-            "TEAM WOLFPACK ADMIN"
-          ) +
-        '</div>' +
-
-
-        '<div class="label">' +
-          'RESOLVED AT' +
-        '</div>' +
-
-        '<div class="value">' +
-          escapeHTML(
-            displayDate(
-              data.resolvedAt
-            )
-          ) +
-        '</div>' +
-
-      '</div>' +
-
-
-      '<div class="actions">' +
-
-        '<button ' +
-        'class="action-button history-delete-button" ' +
-        'type="button" ' +
-        'data-history-delete="' +
-        escapeHTML(
-          historySnapshot.id
-        ) +
-        '">' +
-        'DELETE HISTORY RECORD' +
-        '</button>' +
-
-      '</div>' +
-
-    '</div>'
-
-  );
-
-}
-
-
-/* =========================
-   OPEN REPORT LISTENER
+   REPORT LISTENER
    ========================= */
 
 function startReports(){
@@ -2371,8 +1971,51 @@ function startReports(){
 
       function(snapshot){
 
-        reportCount.textContent =
+        reportSummary.classList.add(
+          "show"
+        );
+
+
+        reports.classList.add(
+          "show"
+        );
+
+
+        const total =
           snapshot.size;
+
+
+        const reportedMembers =
+          new Set();
+
+
+        snapshot.forEach(
+          function(item){
+
+            const data =
+              item.data();
+
+
+            if(
+              data.messageUid
+            ){
+
+              reportedMembers.add(
+                data.messageUid
+              );
+
+            }
+
+          }
+        );
+
+
+        reportCount.textContent =
+          total;
+
+
+        reportedMembersCount.textContent =
+          reportedMembers.size;
 
 
         if(
@@ -2383,34 +2026,45 @@ function startReports(){
 
             '<div class="empty">' +
 
-            'NO OPEN REPORTS<br><br>' +
+            'NO REPORTS<br><br>' +
 
             'There are currently no Pack Chat reports requiring review.' +
 
             '</div>';
+
 
           return;
 
         }
 
 
+        const reportMap =
+          {};
+
+
         let html =
           "";
 
 
-        const reportDataMap =
-          {};
-
-
         snapshot.forEach(
-          function(item){
+          function(reportSnapshot){
 
-            reportDataMap[item.id] =
-              item.data();
+            reportMap[
+              reportSnapshot.id
+            ] = {
+
+              id:
+                reportSnapshot.id,
+
+              data:
+                reportSnapshot.data()
+
+            };
+
 
             html +=
               buildReportCard(
-                item
+                reportSnapshot
               );
 
           }
@@ -2420,6 +2074,10 @@ function startReports(){
         reports.innerHTML =
           html;
 
+
+        /*
+          ACTION BUTTON EVENTS
+        */
 
         reports
           .querySelectorAll(
@@ -2435,17 +2093,19 @@ function startReports(){
                   const action =
                     button.dataset.action;
 
+
                   const reportId =
                     button.dataset.reportId;
 
-                  const reportData =
-                    reportDataMap[
+
+                  const record =
+                    reportMap[
                       reportId
                     ];
 
 
                   if(
-                    !reportData
+                    !record
                   ){
 
                     return;
@@ -2453,49 +2113,57 @@ function startReports(){
                   }
 
 
-                  if(
-                    action === "mute"
-                  ){
-
-                    muteMember(
-                      reportId,
-                      reportData
-                    );
-
-                  }
+                  const reportData =
+                    record.data;
 
 
                   if(
-                    action === "block"
-                  ){
-
-                    blockMember(
-                      reportId,
-                      reportData
-                    );
-
-                  }
-
-
-                  if(
-                    action === "delete"
+                    action ===
+                    "delete"
                   ){
 
                     deleteReportedMessage(
-                      reportId,
-                      reportData
+                      reportData,
+                      reportId
                     );
 
                   }
 
 
                   if(
-                    action === "dismiss"
+                    action ===
+                    "dismiss"
                   ){
 
                     dismissReport(
-                      reportId,
-                      reportData
+                      reportData,
+                      reportId
+                    );
+
+                  }
+
+
+                  if(
+                    action ===
+                    "mute"
+                  ){
+
+                    muteMember(
+                      reportData,
+                      reportId
+                    );
+
+                  }
+
+
+                  if(
+                    action ===
+                    "block"
+                  ){
+
+                    blockMember(
+                      reportData,
+                      reportId
                     );
 
                   }
@@ -2508,139 +2176,18 @@ function startReports(){
 
       },
 
+
       function(error){
 
         console.error(
-          "Reports:",
+          "Reports listener:",
           error
         );
+
 
         status.textContent =
           "UNABLE TO LOAD REPORTS";
 
-        status.className =
-          "status error";
-
-      }
-
-    );
-
-}
-
-
-/* =========================
-   HISTORY LISTENER
-   ========================= */
-
-function startResolvedReports(){
-
-  if(
-    unsubscribeResolved
-  ){
-
-    unsubscribeResolved();
-
-  }
-
-
-  const resolvedQuery =
-    query(
-
-      collection(
-        db,
-        "resolvedReports"
-      ),
-
-      orderBy(
-        "resolvedAt",
-        "desc"
-      )
-
-    );
-
-
-  unsubscribeResolved =
-    onSnapshot(
-
-      resolvedQuery,
-
-      function(snapshot){
-
-        resolvedCount.textContent =
-          snapshot.size;
-
-
-        if(
-          snapshot.empty
-        ){
-
-          resolvedReports.innerHTML =
-
-            '<div class="empty">' +
-
-            'NO RESOLVED REPORTS<br><br>' +
-
-            'Moderation history will appear here after reports are handled.' +
-
-            '</div>';
-
-          return;
-
-        }
-
-
-        let html =
-          "";
-
-
-        snapshot.forEach(
-          function(item){
-
-            html +=
-              buildHistoryCard(
-                item
-              );
-
-          }
-        );
-
-
-        resolvedReports.innerHTML =
-          html;
-
-
-        resolvedReports
-          .querySelectorAll(
-            "[data-history-delete]"
-          )
-          .forEach(
-            function(button){
-
-              button.addEventListener(
-                "click",
-                function(){
-
-                  deleteHistory(
-                    button.dataset.historyDelete
-                  );
-
-                }
-              );
-
-            }
-          );
-
-      },
-
-      function(error){
-
-        console.error(
-          "Resolved reports:",
-          error
-        );
-
-        status.textContent =
-          "UNABLE TO LOAD REPORT HISTORY";
 
         status.className =
           "status error";
@@ -2653,82 +2200,7 @@ function startResolvedReports(){
 
 
 /* =========================
-   TABS
-   ========================= */
-
-function showOpenReports(){
-
-  openReportsButton.classList.add(
-    "active"
-  );
-
-  historyButton.classList.remove(
-    "active",
-    "history-active"
-  );
-
-  reports.classList.add(
-    "show"
-  );
-
-  resolvedReports.classList.remove(
-    "show"
-  );
-
-  openHeading.classList.add(
-    "show"
-  );
-
-  historyHeading.classList.remove(
-    "show"
-  );
-
-}
-
-
-function showHistory(){
-
-  openReportsButton.classList.remove(
-    "active"
-  );
-
-  historyButton.classList.add(
-    "history-active"
-  );
-
-  reports.classList.remove(
-    "show"
-  );
-
-  resolvedReports.classList.add(
-    "show"
-  );
-
-  openHeading.classList.remove(
-    "show"
-  );
-
-  historyHeading.classList.add(
-    "show"
-  );
-
-}
-
-
-openReportsButton.addEventListener(
-  "click",
-  showOpenReports
-);
-
-
-historyButton.addEventListener(
-  "click",
-  showHistory
-);
-
-
-/* =========================
-   AUTH
+   AUTH CHECK
    ========================= */
 
 onAuthStateChanged(
@@ -2737,7 +2209,9 @@ onAuthStateChanged(
 
     if(
       user &&
-      ADMINS[user.uid]
+      ADMINS[
+        user.uid
+      ]
     ){
 
       currentAdmin =
@@ -2745,7 +2219,9 @@ onAuthStateChanged(
 
 
       const name =
-        ADMINS[user.uid];
+        ADMINS[
+          user.uid
+        ];
 
 
       status.textContent =
@@ -2762,12 +2238,12 @@ onAuthStateChanged(
         name;
 
 
-      accessDenied.classList.remove(
+      adminBar.classList.add(
         "show"
       );
 
 
-      adminBar.classList.add(
+      accessDenied.classList.remove(
         "show"
       );
 
@@ -2777,7 +2253,7 @@ onAuthStateChanged(
       );
 
 
-      sectionTabs.classList.add(
+      reports.classList.add(
         "show"
       );
 
@@ -2787,12 +2263,7 @@ onAuthStateChanged(
       );
 
 
-      showOpenReports();
-
-
       startReports();
-
-      startResolvedReports();
 
 
       return;
@@ -2812,11 +2283,6 @@ onAuthStateChanged(
       "status error";
 
 
-    accessDenied.classList.add(
-      "show"
-    );
-
-
     adminBar.classList.remove(
       "show"
     );
@@ -2827,32 +2293,17 @@ onAuthStateChanged(
     );
 
 
-    sectionTabs.classList.remove(
-      "show"
-    );
-
-
     reports.classList.remove(
       "show"
     );
 
 
-    resolvedReports.classList.remove(
-      "show"
-    );
-
-
-    openHeading.classList.remove(
-      "show"
-    );
-
-
-    historyHeading.classList.remove(
-      "show"
-    );
-
-
     adminNavigation.classList.remove(
+      "show"
+    );
+
+
+    accessDenied.classList.add(
       "show"
     );
 
@@ -2868,28 +2319,19 @@ onAuthStateChanged(
 
     }
 
-
-    if(
-      unsubscribeResolved
-    ){
-
-      unsubscribeResolved();
-
-      unsubscribeResolved =
-        null;
-
-    }
-
   }
 );
 
+</script>
 
-/* =========================
-   SERVICE WORKER
-   ========================= */
+
+<!-- SERVICE WORKER -->
+
+<script>
 
 if(
-  "serviceWorker" in navigator
+  "serviceWorker"
+  in navigator
 ){
 
   window.addEventListener(
@@ -2918,6 +2360,6 @@ if(
 
 </script>
 
-</body>
 
+</body>
 </html>
