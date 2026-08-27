@@ -2639,7 +2639,6 @@ async function submitReport(){
   const reason =
     reportReason.value.trim();
 
-
   if(!reason){
 
     window.alert(
@@ -2647,7 +2646,6 @@ async function submitReport(){
     );
 
     return;
-
   }
 
 
@@ -2657,11 +2655,6 @@ async function submitReport(){
   const data =
     record.data;
 
-
-  /*
-    Do not allow members to
-    report their own messages.
-  */
 
   if(
     data.uid === currentUser.uid
@@ -2674,7 +2667,6 @@ async function submitReport(){
     closeReportModal();
 
     return;
-
   }
 
 
@@ -2684,53 +2676,29 @@ async function submitReport(){
 
   try{
 
-    /*
-      IMPORTANT:
-      These fields exactly match the
-      Firestore /reports create rule.
-    */
-
     const reportData = {
 
       reporterUid:
-        String(
-          currentUser.uid
-        ),
+        String(currentUser.uid),
 
       messageId:
-        String(
-          record.id || ""
-        ),
+        String(record.id || ""),
 
       messageUid:
-        String(
-          data.uid || ""
-        ),
+        String(data.uid || ""),
 
       messageName:
         String(
-          data.name ||
-          "Pack Member"
-        ).slice(
-          0,
-          30
-        ),
+          data.name || "Pack Member"
+        ).slice(0,30),
 
       messageText:
         String(
           data.text || ""
-        ).slice(
-          0,
-          500
-        ),
+        ).slice(0,500),
 
       reason:
-        String(
-          reason
-        ).slice(
-          0,
-          100
-        ),
+        String(reason).slice(0,100),
 
       createdAt:
         serverTimestamp()
@@ -2739,26 +2707,19 @@ async function submitReport(){
 
 
     console.log(
-      "Submitting report:",
+      "TEAM WOLFPACK REPORT DATA:",
       reportData
     );
 
 
     await addDoc(
-
       collection(
         db,
         "reports"
       ),
-
       reportData
-
     );
 
-
-    /*
-      Report successfully saved.
-    */
 
     closeReportModal();
 
@@ -2771,39 +2732,36 @@ async function submitReport(){
   }catch(error){
 
     console.error(
-      "Submit report error:",
+      "TEAM WOLFPACK REPORT ERROR:",
       error
     );
 
     console.error(
-      "Firebase error code:",
+      "ERROR CODE:",
       error.code
     );
 
     console.error(
-      "Firebase error message:",
+      "ERROR MESSAGE:",
       error.message
     );
 
 
-    /*
-      Give us a more useful error if
-      Firestore rejects the request.
-    */
-
     if(
-      error.code ===
-      "permission-denied"
+      error.code === "permission-denied"
     ){
 
       window.alert(
-        "Report permission denied. Please check the Team Wolfpack Firestore report rules."
+        "REPORT ERROR: Firestore permission denied."
       );
 
     }else{
 
       window.alert(
-        "Unable to submit this report."
+        "REPORT ERROR: " +
+        (error.code || "unknown") +
+        " - " +
+        (error.message || "Unknown error")
       );
 
     }
@@ -2816,7 +2774,6 @@ async function submitReport(){
   }
 
 }
-
 
 /* =========================
    ENTER PACK CHAT
