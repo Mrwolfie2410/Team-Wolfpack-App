@@ -1266,7 +1266,7 @@ async function saveResolvedReport(
   );
 
 }
- /* =========================
+/* =========================
    SAVE MODERATION
    ========================= */
 
@@ -1288,7 +1288,6 @@ async function saveModeration(
     return false;
 
   }
-
 
   try{
 
@@ -1332,9 +1331,7 @@ async function saveModeration(
 
     );
 
-
     return true;
-
 
   }catch(error){
 
@@ -1348,67 +1345,6 @@ async function saveModeration(
   }
 
 }
-
-async function saveModeration(
-  uid,
-  name,
-  muted,
-  blocked
-){
-
-  if(
-    !currentAdmin ||
-    !uid ||
-    ADMINS[
-      uid
-    ]
-  ){
-
-    return;
-
-  }
-
-
-  await setDoc(
-
-    doc(
-      db,
-      "moderation",
-      uid
-    ),
-
-    {
-
-      uid:
-        uid,
-
-      name:
-        name ||
-        "Pack Member",
-
-      muted:
-        Boolean(
-          muted
-        ),
-
-      blocked:
-        Boolean(
-          blocked
-        ),
-
-      updatedAt:
-        serverTimestamp(),
-
-      updatedBy:
-        currentAdmin.uid
-
-    }
-
-  );
-
-}
-
-
 /* =========================
    MUTE MEMBER
    ========================= */
