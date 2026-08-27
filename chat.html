@@ -1,3 +1,127 @@
+Edit
+why is there no box around greigs profile 
+LUKE MORGAN ELECTRICAL
+RHW ELECTRICAL
+i have the tabs meet the pack twice, once on the home page and 2nd one on the more tab page
+can we add images of the fighters
+we add zoeys image onto her profile 
+add the image for these in meet the pack 
+can we sort out the contact us page now with links to where people can go 
+Pasted text(20260824-141119).txt
+Document
+Edit
+Today 10:00 AM
+Pasted text(20260827-090034).txt
+Document
+
+Yes — I’ve got your current chat.html. The admin bar currently contains ADMIN REPORTS, MEMBERS, and LOG OUT.
+
+Next change: add ADMIN DASHBOARD
+
+Find this section:
+
+<div class="admin-actions">
+
+<a
+  class="admin-link"
+  href="admin-reports.html"
+>
+ADMIN REPORTS
+</a>
+
+<a
+  class="admin-link"
+  href="admin-members.html"
+>
+MEMBERS
+</a>
+
+<button
+  id="logoutAdmin"
+  class="logout-button"
+  type="button"
+>
+LOG OUT
+</button>
+
+</div>
+
+Replace it with:
+
+<div class="admin-actions">
+
+<a
+  class="admin-link"
+  href="admin-dashboard.html"
+>
+DASHBOARD
+</a>
+
+<a
+  class="admin-link"
+  href="admin-reports.html"
+>
+ADMIN REPORTS
+</a>
+
+<a
+  class="admin-link"
+  href="admin-members.html"
+>
+MEMBERS
+</a>
+
+<button
+  id="logoutAdmin"
+  class="logout-button"
+  type="button"
+>
+LOG OUT
+</button>
+
+</div>
+
+That gives you:
+
+DASHBOARD | ADMIN REPORTS | MEMBERS | LOG OUT
+
+Nothing else in chat.html needs changing for this step.
+
+Once you've replaced that section and saved/committed chat.html, tell me done and we'll do the next part.
+
+can you send me the whole new code 
+
+Yes. I’ve made the complete new chat.html, keeping your existing Pack Chat, Firebase, admin login, moderation, reporting, protected names, and navigation intact, while adding the new DASHBOARD button to the admin controls. Your existing code already links Admin Reports and Members from this admin area.
+
+Download the complete new chat.html
+
+Replace your existing chat.html in GitHub with this entire file, then Commit changes.
+
+Tell me done when you've done that, and we'll move to the next step.
+
+chat.html
+HTML
+can you send me new code to paste the old one
+
+Yes — paste the new code over the whole of your old chat.html.
+
+I’ve prepared the complete replacement file, including the new DASHBOARD admin button alongside ADMIN REPORTS, MEMBERS, and LOG OUT.
+
+Download the complete new chat.html code
+
+Replace it in GitHub
+Open chat.html.
+Click Edit.
+Press Ctrl + A inside the code.
+Delete everything.
+Open the new chat.html above and copy all of its code.
+Paste it into GitHub.
+Click Commit changes.
+
+You are replacing the entire old chat.html, not adding this underneath the old code.
+
+Once you've committed it, send me done and we'll do the next file.
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1096,6 +1220,13 @@ ADMIN
 
 
 <div class="admin-actions">
+
+<a
+  class="admin-link"
+  href="admin-dashboard.html"
+>
+DASHBOARD
+</a>
 
 <a
   class="admin-link"
@@ -3824,3 +3955,5 @@ if(
 </body>
 
 </html>
+chat.html
+HTML
