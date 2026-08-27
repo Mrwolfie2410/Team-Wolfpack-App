@@ -1266,9 +1266,88 @@ async function saveResolvedReport(
   );
 
 }
-  /* =========================
+ /* =========================
    SAVE MODERATION
    ========================= */
+
+async function saveModeration(
+  uid,
+  name,
+  muted,
+  blocked
+){
+
+  if(
+    !currentAdmin ||
+    !uid ||
+    ADMINS[
+      uid
+    ]
+  ){
+
+    return false;
+
+  }
+
+
+  try{
+
+    await setDoc(
+
+      doc(
+        db,
+        "moderation",
+        uid
+      ),
+
+      {
+
+        uid:
+          uid,
+
+        name:
+          name ||
+          "Pack Member",
+
+        muted:
+          Boolean(
+            muted
+          ),
+
+        blocked:
+          Boolean(
+            blocked
+          ),
+
+        updatedAt:
+          serverTimestamp(),
+
+        updatedBy:
+          currentAdmin.uid,
+
+        updatedByName:
+          getCurrentAdminName()
+
+      }
+
+    );
+
+
+    return true;
+
+
+  }catch(error){
+
+    console.error(
+      "Save moderation error:",
+      error
+    );
+
+    throw error;
+
+  }
+
+}
 
 async function saveModeration(
   uid,
