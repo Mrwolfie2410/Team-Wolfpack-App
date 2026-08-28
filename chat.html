@@ -34,16 +34,8 @@
 
 <title>Pack Chat | Team Wolfpack</title>
 
-<link
-  rel="manifest"
-  href="manifest.json"
->
-
-<link
-  rel="apple-touch-icon"
-  href="icon-192.png"
->
-
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
 
@@ -273,11 +265,6 @@ body{
   font-weight:900;
 }
 
-.join-button:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-}
-
 
 /* =========================================
    ADMIN LOGIN
@@ -286,6 +273,7 @@ body{
 .admin-login-panel{
   margin-top:14px;
   padding-top:14px;
+
   border-top:
     1px solid
     rgba(255,255,255,.08);
@@ -326,8 +314,8 @@ body{
     );
 }
 
-.admin-login-button:disabled{
-  opacity:.45;
+button:disabled{
+  opacity:.4;
   cursor:not-allowed;
 }
 
@@ -343,7 +331,6 @@ body{
   gap:10px;
 
   margin-bottom:14px;
-
   padding:13px 14px;
 
   border-radius:12px;
@@ -365,10 +352,6 @@ body{
   display:flex;
 }
 
-.account-info{
-  min-width:0;
-}
-
 .account-name{
   color:#fff;
   font-size:11px;
@@ -387,9 +370,12 @@ body{
   display:none;
   margin-left:6px;
   padding:4px 7px;
+
   border-radius:20px;
+
   background:#ff751c;
   color:#050505;
+
   font-size:7px;
   font-weight:900;
 }
@@ -404,7 +390,9 @@ body{
 .account-button{
   min-height:32px;
   padding:7px 9px;
+
   border-radius:8px;
+
   cursor:pointer;
 
   border:
@@ -438,7 +426,7 @@ body{
   display:none;
 
   grid-template-columns:
-    repeat(5,1fr);
+    repeat(3,1fr);
 
   gap:7px;
   margin-bottom:14px;
@@ -454,7 +442,6 @@ body{
   justify-content:center;
 
   min-height:43px;
-
   padding:9px 6px;
 
   border-radius:9px;
@@ -489,26 +476,29 @@ body{
   cursor:pointer;
 
   border-color:
-    rgba(255,80,50,.48);
+    rgba(255,117,28,.55);
 
-  color:#ff7957;
+  color:#ff751c;
+
+  background:
+    rgba(255,90,0,.10);
+}
+
+.full-reset-button{
+  width:100%;
+  cursor:pointer;
+
+  border-color:
+    rgba(255,40,40,.60);
+
+  color:#ff5050;
 
   background:
     linear-gradient(
       90deg,
-      rgba(120,20,0,.12),
-      rgba(255,90,0,.12)
+      rgba(120,0,0,.18),
+      rgba(255,70,0,.12)
     );
-}
-
-.clear-chat-button:hover{
-  border-color:#ff751c;
-  color:#ff751c;
-}
-
-.clear-chat-button:disabled{
-  opacity:.4;
-  cursor:not-allowed;
 }
 
 
@@ -520,14 +510,12 @@ body{
   display:none;
 
   margin-bottom:14px;
-
   padding:13px 14px;
 
   border-radius:11px;
 
   font-size:10px;
   font-weight:900;
-
   line-height:1.5;
 }
 
@@ -559,7 +547,7 @@ body{
 
 
 /* =========================================
-   CHAT SHELL
+   CHAT
    ========================================= */
 
 .chat-shell{
@@ -614,7 +602,6 @@ body{
   z-index:2;
 
   display:flex;
-
   justify-content:space-between;
   align-items:center;
 
@@ -641,11 +628,6 @@ body{
   font-weight:900;
 }
 
-
-/* =========================================
-   MESSAGES
-   ========================================= */
-
 .messages{
   position:relative;
   z-index:2;
@@ -656,24 +638,6 @@ body{
   overflow-y:auto;
 
   padding:16px 13px 18px;
-}
-
-.messages::-webkit-scrollbar{
-  width:5px;
-}
-
-.messages::-webkit-scrollbar-track{
-  background:#090909;
-}
-
-.messages::-webkit-scrollbar-thumb{
-  border-radius:10px;
-
-  background:
-    linear-gradient(
-      #4bd8ff,
-      #ff6500
-    );
 }
 
 .empty-chat{
@@ -690,7 +654,6 @@ body{
   color:#666;
 
   font-size:11px;
-
   line-height:1.6;
 }
 
@@ -760,13 +723,11 @@ body{
   display:inline-block;
 
   margin-left:5px;
-
   padding:2px 5px;
 
   border-radius:10px;
 
   background:#ff751c;
-
   color:#050505;
 
   font-size:6px;
@@ -777,21 +738,16 @@ body{
   color:#eee;
 
   font-size:12px;
-
   line-height:1.5;
 
   white-space:pre-wrap;
-
   word-break:break-word;
 }
 
 .message-footer{
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:8px;
 
   margin-top:7px;
@@ -805,12 +761,10 @@ body{
 .message-actions{
   display:flex;
   gap:5px;
-  flex-wrap:wrap;
 }
 
 .message-action{
   border:none;
-
   padding:3px 5px;
 
   cursor:pointer;
@@ -823,11 +777,7 @@ body{
   font-weight:900;
 }
 
-.message-action:hover{
-  color:#67dcff;
-}
-
-.message-action.report:hover{
+.message-action.report{
   color:#ff751c;
 }
 
@@ -841,7 +791,6 @@ body{
   z-index:2;
 
   display:flex;
-
   align-items:flex-end;
 
   gap:8px;
@@ -875,7 +824,6 @@ body{
     rgba(255,255,255,.13);
 
   background:#0b0b0b;
-
   color:#fff;
 
   font-family:
@@ -890,11 +838,6 @@ body{
   border-color:#67dcff;
 }
 
-.message-input:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-}
-
 .send-button{
   min-width:78px;
   min-height:43px;
@@ -902,7 +845,6 @@ body{
   padding:10px 13px;
 
   border:none;
-
   border-radius:10px;
 
   cursor:pointer;
@@ -919,14 +861,7 @@ body{
   font-size:8px;
   font-weight:900;
 }
-
-.send-button:disabled{
-  opacity:.4;
-  cursor:not-allowed;
-}
-
-
-/* =========================================
+  /* =========================================
    REPORT MODAL
    ========================================= */
 
@@ -934,19 +869,15 @@ body{
   display:none;
 
   position:fixed;
-
   inset:0;
-
   z-index:1000;
 
   align-items:center;
-
   justify-content:center;
 
   padding:20px;
 
-  background:
-    rgba(0,0,0,.82);
+  background:rgba(0,0,0,.82);
 }
 
 .modal-backdrop.show{
@@ -989,7 +920,6 @@ body{
 
 .report-preview{
   margin-top:12px;
-
   padding:11px;
 
   border-radius:9px;
@@ -1023,7 +953,6 @@ body{
 
   font-size:8px;
   font-weight:900;
-
   letter-spacing:1px;
 }
 
@@ -1031,7 +960,6 @@ body{
   width:100%;
 
   margin-top:7px;
-
   padding:12px 11px;
 
   border-radius:9px;
@@ -1043,7 +971,6 @@ body{
   outline:none;
 
   background:#0b0b0b;
-
   color:#fff;
 
   font-size:10px;
@@ -1062,7 +989,6 @@ body{
 
 .modal-button{
   min-height:42px;
-
   padding:10px 8px;
 
   border-radius:9px;
@@ -1097,14 +1023,9 @@ body{
     );
 }
 
-.modal-button:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-}
-
 
 /* =========================================
-   BOTTOM NAVIGATION
+   NAVIGATION
    ========================================= */
 
 .nav-grid{
@@ -1122,7 +1043,6 @@ body{
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   min-height:47px;
@@ -1130,7 +1050,6 @@ body{
   padding:11px 8px;
 
   text-align:center;
-
   text-decoration:none;
 
   color:#fff;
@@ -1269,6 +1188,10 @@ CONNECTING TO PACK CHAT...
 </div>
 
 
+<!-- =========================================
+     JOIN / LOGIN
+     ========================================= -->
+
 <section
   id="joinPanel"
   class="join-panel"
@@ -1349,6 +1272,10 @@ ADMIN LOGIN
 </section>
 
 
+<!-- =========================================
+     ACCOUNT
+     ========================================= -->
+
 <section
   id="accountBar"
   class="account-bar"
@@ -1363,6 +1290,7 @@ ADMIN LOGIN
 <span id="accountName">
 PACK MEMBER
 </span>
+
 
 <span
   id="accountAdminBadge"
@@ -1411,6 +1339,10 @@ LEAVE CHAT
 </section>
 
 
+<!-- =========================================
+     ADMIN CONTROLS
+     ========================================= -->
+
 <nav
   id="adminControls"
   class="admin-controls"
@@ -1456,6 +1388,8 @@ HISTORY
 >
 CLEAR PACK CHAT
 </button>
+
+
 <button
   id="fullResetButton"
   class="admin-link full-reset-button"
@@ -1463,40 +1397,24 @@ CLEAR PACK CHAT
 >
 RESET ADMIN DATA
 </button>
-.full-reset-button{
-  width:100%;
-  cursor:pointer;
 
-  border-color:
-    rgba(255,40,40,.55);
 
-  color:#ff5050;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(120,0,0,.18),
-      rgba(255,70,0,.12)
-    );
-}
-
-.full-reset-button:hover{
-  border-color:#ff3030;
-  color:#ff3030;
-}
-
-.full-reset-button:disabled{
-  opacity:.4;
-  cursor:not-allowed;
-}
 </nav>
 
+
+<!-- =========================================
+     MODERATION NOTICE
+     ========================================= -->
 
 <div
   id="moderationNotice"
   class="moderation-notice"
 ></div>
 
+
+<!-- =========================================
+     CHAT
+     ========================================= -->
 
 <section
   id="chatShell"
@@ -1565,6 +1483,10 @@ SEND
 </section>
 
 
+<!-- =========================================
+     BOTTOM NAV
+     ========================================= -->
+
 <nav class="nav-grid">
 
 
@@ -1589,6 +1511,10 @@ MORE
 
 </main>
 
+
+<!-- =========================================
+     REPORT MODAL
+     ========================================= -->
 
 <div
   id="reportModal"
@@ -1647,21 +1573,26 @@ REPORT REASON
 Bullying or harassment
 </option>
 
+
 <option value="Threatening behaviour">
 Threatening behaviour
 </option>
+
 
 <option value="Hate or abusive language">
 Hate or abusive language
 </option>
 
+
 <option value="Spam">
 Spam
 </option>
 
+
 <option value="Inappropriate content">
 Inappropriate content
 </option>
+
 
 <option value="Other">
 Other
@@ -1700,6 +1631,10 @@ SUBMIT REPORT
 </div>
 
 
+<!-- =========================================
+     FIREBASE
+     ========================================= -->
+
 <script type="module">
 
 
@@ -1732,6 +1667,10 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
+
+/* =========================================
+   FIREBASE CONFIG
+   ========================================= */
 
 const firebaseConfig = {
 
@@ -1777,6 +1716,10 @@ const db =
   );
 
 
+/* =========================================
+   TEAM WOLFPACK ADMINS
+   ========================================= */
+
 const ADMINS = {
 
   "PRGa9TsCW0QDn1QtoUXyYjEi7YB3":
@@ -1788,111 +1731,218 @@ const ADMINS = {
 };
 
 
+/* =========================================
+   ELEMENTS
+   ========================================= */
+
 const status =
-  document.getElementById("status");
+  document.getElementById(
+    "status"
+  );
+
 
 const joinPanel =
-  document.getElementById("joinPanel");
+  document.getElementById(
+    "joinPanel"
+  );
+
 
 const nameInput =
-  document.getElementById("nameInput");
+  document.getElementById(
+    "nameInput"
+  );
+
 
 const joinButton =
-  document.getElementById("joinButton");
+  document.getElementById(
+    "joinButton"
+  );
+
 
 const adminEmail =
-  document.getElementById("adminEmail");
+  document.getElementById(
+    "adminEmail"
+  );
+
 
 const adminPassword =
-  document.getElementById("adminPassword");
+  document.getElementById(
+    "adminPassword"
+  );
+
 
 const adminLoginButton =
-  document.getElementById("adminLoginButton");
+  document.getElementById(
+    "adminLoginButton"
+  );
+
 
 const accountBar =
-  document.getElementById("accountBar");
+  document.getElementById(
+    "accountBar"
+  );
+
 
 const accountName =
-  document.getElementById("accountName");
+  document.getElementById(
+    "accountName"
+  );
+
 
 const accountRole =
-  document.getElementById("accountRole");
+  document.getElementById(
+    "accountRole"
+  );
+
 
 const accountAdminBadge =
-  document.getElementById("accountAdminBadge");
+  document.getElementById(
+    "accountAdminBadge"
+  );
+
 
 const changeNameButton =
-  document.getElementById("changeNameButton");
+  document.getElementById(
+    "changeNameButton"
+  );
+
 
 const leaveChatButton =
-  document.getElementById("leaveChatButton");
+  document.getElementById(
+    "leaveChatButton"
+  );
+
 
 const adminControls =
-  document.getElementById("adminControls");
+  document.getElementById(
+    "adminControls"
+  );
+
 
 const clearChatButton =
-  document.getElementById("clearChatButton");
+  document.getElementById(
+    "clearChatButton"
+  );
+
+
+const fullResetButton =
+  document.getElementById(
+    "fullResetButton"
+  );
+
 
 const moderationNotice =
-  document.getElementById("moderationNotice");
+  document.getElementById(
+    "moderationNotice"
+  );
+
 
 const chatShell =
-  document.getElementById("chatShell");
+  document.getElementById(
+    "chatShell"
+  );
+
 
 const chatLiveStatus =
-  document.getElementById("chatLiveStatus");
+  document.getElementById(
+    "chatLiveStatus"
+  );
+
 
 const messages =
-  document.getElementById("messages");
+  document.getElementById(
+    "messages"
+  );
+
 
 const messageInput =
-  document.getElementById("messageInput");
+  document.getElementById(
+    "messageInput"
+  );
+
 
 const sendButton =
-  document.getElementById("sendButton");
+  document.getElementById(
+    "sendButton"
+  );
+
 
 const reportModal =
-  document.getElementById("reportModal");
+  document.getElementById(
+    "reportModal"
+  );
+
 
 const reportPreviewName =
-  document.getElementById("reportPreviewName");
+  document.getElementById(
+    "reportPreviewName"
+  );
+
 
 const reportPreviewText =
-  document.getElementById("reportPreviewText");
+  document.getElementById(
+    "reportPreviewText"
+  );
+
 
 const reportReason =
-  document.getElementById("reportReason");
+  document.getElementById(
+    "reportReason"
+  );
+
 
 const cancelReportButton =
-  document.getElementById("cancelReportButton");
+  document.getElementById(
+    "cancelReportButton"
+  );
+
 
 const submitReportButton =
-  document.getElementById("submitReportButton");
+  document.getElementById(
+    "submitReportButton"
+  );
 
+
+/* =========================================
+   STATE
+   ========================================= */
 
 let currentUser =
   null;
 
+
 let currentName =
   "";
 
+
 let currentModeration = {
+
   muted:false,
+
   blocked:false
+
 };
+
 
 let selectedReportMessage =
   null;
 
+
 let unsubscribeMessages =
   null;
+
 
 let unsubscribeModeration =
   null;
 
+
 let messageMap =
   {};
 
+
+/* =========================================
+   HELPERS
+   ========================================= */
 
 function isAdmin(uid){
 
@@ -1922,9 +1972,15 @@ function isReservedAdminName(value){
     cleanName(value)
       .toUpperCase();
 
+
   return (
-    name === "MR WOLFIE" ||
+
+    name === "MR WOLFIE"
+
+    ||
+
     name === "MRS WOLFIE"
+
   );
 
 }
@@ -1933,12 +1989,16 @@ function isReservedAdminName(value){
 function escapeHTML(value){
 
   const div =
-    document.createElement("div");
+    document.createElement(
+      "div"
+    );
+
 
   div.textContent =
     value == null
       ? ""
       : String(value);
+
 
   return div.innerHTML;
 
@@ -1948,21 +2008,32 @@ function escapeHTML(value){
 function displayDate(timestamp){
 
   if(!timestamp){
+
     return "Sending...";
+
   }
+
 
   try{
 
     return timestamp
       .toDate()
       .toLocaleString(
+
         [],
+
         {
+
           day:"2-digit",
+
           month:"short",
+
           hour:"2-digit",
+
           minute:"2-digit"
+
         }
+
       );
 
   }catch(error){
@@ -1979,9 +2050,15 @@ function getSavedName(){
   try{
 
     return cleanName(
+
       localStorage.getItem(
         "teamWolfpackPackName"
-      ) || ""
+      )
+
+      ||
+
+      ""
+
     );
 
   }catch(error){
@@ -1998,8 +2075,11 @@ function saveName(name){
   try{
 
     localStorage.setItem(
+
       "teamWolfpackPackName",
+
       name
+
     );
 
   }catch(error){
@@ -2032,17 +2112,31 @@ function clearSavedName(){
   }
 
 }
-
+  /* =========================================
+   SCREEN / ACCOUNT DISPLAY
+   ========================================= */
 
 function showJoinPanel(){
 
-  joinPanel.classList.add("show");
+  joinPanel.classList.add(
+    "show"
+  );
 
-  accountBar.classList.remove("show");
 
-  adminControls.classList.remove("show");
+  accountBar.classList.remove(
+    "show"
+  );
 
-  chatShell.classList.remove("show");
+
+  adminControls.classList.remove(
+    "show"
+  );
+
+
+  chatShell.classList.remove(
+    "show"
+  );
+
 
   moderationNotice.classList.remove(
     "show",
@@ -2050,8 +2144,10 @@ function showJoinPanel(){
     "blocked"
   );
 
+
   status.textContent =
     "● PACK CHAT READY";
+
 
   status.className =
     "status connected";
@@ -2061,11 +2157,19 @@ function showJoinPanel(){
 
 function showChat(){
 
-  joinPanel.classList.remove("show");
+  joinPanel.classList.remove(
+    "show"
+  );
 
-  accountBar.classList.add("show");
 
-  chatShell.classList.add("show");
+  accountBar.classList.add(
+    "show"
+  );
+
+
+  chatShell.classList.add(
+    "show"
+  );
 
 
   if(
@@ -2073,11 +2177,15 @@ function showChat(){
     isAdmin(currentUser.uid)
   ){
 
-    adminControls.classList.add("show");
+    adminControls.classList.add(
+      "show"
+    );
 
   }else{
 
-    adminControls.classList.remove("show");
+    adminControls.classList.remove(
+      "show"
+    );
 
   }
 
@@ -2090,36 +2198,49 @@ function updateAccountBar(){
     !currentUser ||
     !currentName
   ){
+
     return;
+
   }
 
 
   if(
-    isAdmin(currentUser.uid)
+    isAdmin(
+      currentUser.uid
+    )
   ){
 
     currentName =
-      ADMINS[currentUser.uid];
+      ADMINS[
+        currentUser.uid
+      ];
+
 
     accountName.textContent =
       currentName;
 
+
     accountRole.textContent =
       "TEAM WOLFPACK ADMINISTRATOR";
+
 
     accountAdminBadge.style.display =
       "inline-block";
 
+
     changeNameButton.style.display =
       "none";
+
 
     status.textContent =
       "● " +
       currentName +
       " • ADMIN CONNECTED";
 
+
     status.className =
       "status admin";
+
 
     return;
 
@@ -2129,17 +2250,22 @@ function updateAccountBar(){
   accountName.textContent =
     currentName;
 
+
   accountRole.textContent =
     "PACK MEMBER";
+
 
   accountAdminBadge.style.display =
     "none";
 
+
   changeNameButton.style.display =
     "";
 
+
   status.textContent =
     "● PACK CHAT CONNECTED";
+
 
   status.className =
     "status connected";
@@ -2147,10 +2273,15 @@ function updateAccountBar(){
 }
 
 
+/* =========================================
+   MODERATION UI
+   ========================================= */
+
 function updateModerationUI(){
 
   moderationNotice.className =
     "moderation-notice";
+
 
   moderationNotice.textContent =
     "";
@@ -2162,21 +2293,29 @@ function updateModerationUI(){
   ){
 
     currentModeration = {
+
       muted:false,
+
       blocked:false
+
     };
+
 
     messageInput.disabled =
       false;
 
+
     sendButton.disabled =
       false;
+
 
     messageInput.placeholder =
       "Write a message...";
 
+
     chatLiveStatus.textContent =
       "LIVE";
+
 
     return;
 
@@ -2190,28 +2329,36 @@ function updateModerationUI(){
     moderationNotice.textContent =
       "PACK CHAT ACCESS BLOCKED — YOU CAN READ PACK CHAT BUT CANNOT SEND MESSAGES.";
 
+
     moderationNotice.classList.add(
       "show",
       "blocked"
     );
 
+
     messageInput.disabled =
       true;
+
 
     sendButton.disabled =
       true;
 
+
     messageInput.placeholder =
       "Pack Chat access blocked";
+
 
     chatLiveStatus.textContent =
       "BLOCKED";
 
+
     status.textContent =
       "● PACK CHAT BLOCKED";
 
+
     status.className =
       "status blocked";
+
 
     return;
 
@@ -2225,28 +2372,36 @@ function updateModerationUI(){
     moderationNotice.textContent =
       "YOU ARE MUTED — YOU CAN READ PACK CHAT BUT CANNOT SEND MESSAGES.";
 
+
     moderationNotice.classList.add(
       "show",
       "muted"
     );
 
+
     messageInput.disabled =
       true;
+
 
     sendButton.disabled =
       true;
 
+
     messageInput.placeholder =
       "You are currently muted";
+
 
     chatLiveStatus.textContent =
       "MUTED";
 
+
     status.textContent =
       "● PACK CHAT CONNECTED • MUTED";
 
+
     status.className =
       "status muted";
+
 
     return;
 
@@ -2256,11 +2411,14 @@ function updateModerationUI(){
   messageInput.disabled =
     false;
 
+
   sendButton.disabled =
     false;
 
+
   messageInput.placeholder =
     "Write a message...";
+
 
   chatLiveStatus.textContent =
     "LIVE";
@@ -2268,9 +2426,15 @@ function updateModerationUI(){
 }
 
 
+/* =========================================
+   WATCH MODERATION
+   ========================================= */
+
 function watchModeration(){
 
-  if(unsubscribeModeration){
+  if(
+    unsubscribeModeration
+  ){
 
     unsubscribeModeration();
 
@@ -2280,21 +2444,32 @@ function watchModeration(){
   }
 
 
-  if(!currentUser){
+  if(
+    !currentUser
+  ){
+
     return;
+
   }
 
 
   if(
-    isAdmin(currentUser.uid)
+    isAdmin(
+      currentUser.uid
+    )
   ){
 
     currentModeration = {
+
       muted:false,
+
       blocked:false
+
     };
 
+
     updateModerationUI();
+
 
     return;
 
@@ -2303,9 +2478,13 @@ function watchModeration(){
 
   const moderationRef =
     doc(
+
       db,
+
       "moderation",
+
       currentUser.uid
+
     );
 
 
@@ -2314,32 +2493,44 @@ function watchModeration(){
 
       moderationRef,
 
+
       function(snapshot){
 
-        if(snapshot.exists()){
+        if(
+          snapshot.exists()
+        ){
 
           const data =
             snapshot.data();
 
+
           currentModeration = {
+
             muted:
               data.muted === true,
+
             blocked:
               data.blocked === true
+
           };
 
         }else{
 
           currentModeration = {
+
             muted:false,
+
             blocked:false
+
           };
 
         }
 
+
         updateModerationUI();
 
       },
+
 
       function(error){
 
@@ -2355,6 +2546,10 @@ function watchModeration(){
 }
 
 
+/* =========================================
+   IMMEDIATE MODERATION CHECK
+   ========================================= */
+
 async function checkModerationNow(){
 
   if(
@@ -2363,9 +2558,13 @@ async function checkModerationNow(){
   ){
 
     currentModeration = {
+
       muted:false,
+
       blocked:false
+
     };
+
 
     return currentModeration;
 
@@ -2376,31 +2575,46 @@ async function checkModerationNow(){
 
     const snapshot =
       await getDoc(
+
         doc(
+
           db,
+
           "moderation",
+
           currentUser.uid
+
         )
+
       );
 
 
-    if(snapshot.exists()){
+    if(
+      snapshot.exists()
+    ){
 
       const data =
         snapshot.data();
 
+
       currentModeration = {
+
         muted:
           data.muted === true,
+
         blocked:
           data.blocked === true
+
       };
 
     }else{
 
       currentModeration = {
+
         muted:false,
+
         blocked:false
+
       };
 
     }
@@ -2417,27 +2631,40 @@ async function checkModerationNow(){
 
   updateModerationUI();
 
+
   return currentModeration;
 
 }
 
+
+/* =========================================
+   BUILD CHAT MESSAGE
+   ========================================= */
 
 function buildMessage(snapshot){
 
   const data =
     snapshot.data();
 
+
   const messageId =
     snapshot.id;
+
 
   const uid =
     data.uid || "";
 
+
   const ownMessage =
     Boolean(
+
       currentUser &&
-      uid === currentUser.uid
+
+      uid ===
+      currentUser.uid
+
     );
+
 
   const adminMessage =
     isAdmin(uid);
@@ -2449,7 +2676,9 @@ function buildMessage(snapshot){
       : "message-row other";
 
 
-  if(adminMessage){
+  if(
+    adminMessage
+  ){
 
     rowClass +=
       " admin-message";
@@ -2461,7 +2690,9 @@ function buildMessage(snapshot){
     "";
 
 
-  if(adminMessage){
+  if(
+    adminMessage
+  ){
 
     badge =
       '<span class="message-admin-badge">' +
@@ -2477,7 +2708,9 @@ function buildMessage(snapshot){
 
   if(
     currentUser &&
-    isAdmin(currentUser.uid)
+    isAdmin(
+      currentUser.uid
+    )
   ){
 
     action =
@@ -2485,12 +2718,16 @@ function buildMessage(snapshot){
       'class="message-action" ' +
       'type="button" ' +
       'data-delete-message="' +
-      escapeHTML(messageId) +
+      escapeHTML(
+        messageId
+      ) +
       '">' +
       'DELETE' +
       '</button>';
 
-  }else if(
+  }
+
+  else if(
     currentUser &&
     !ownMessage
   ){
@@ -2500,7 +2737,9 @@ function buildMessage(snapshot){
       'class="message-action report" ' +
       'type="button" ' +
       'data-report-message="' +
-      escapeHTML(messageId) +
+      escapeHTML(
+        messageId
+      ) +
       '">' +
       'REPORT' +
       '</button>';
@@ -2511,55 +2750,77 @@ function buildMessage(snapshot){
   return (
 
     '<div class="' +
-      rowClass +
+    rowClass +
     '">' +
+
 
       '<article class="message-card">' +
 
+
         '<div class="message-name">' +
 
+
           escapeHTML(
+
             adminMessage
               ? ADMINS[uid]
               : (
                   data.name ||
                   "Pack Member"
                 )
+
           ) +
+
 
           badge +
 
+
         '</div>' +
 
+
         '<div class="message-text">' +
+
 
           escapeHTML(
             data.text || ""
           ) +
 
+
         '</div>' +
+
 
         '<div class="message-footer">' +
 
+
           '<div class="message-time">' +
 
+
             escapeHTML(
+
               displayDate(
                 data.createdAt
               )
+
             ) +
 
+
           '</div>' +
+
 
           '<div class="message-actions">' +
 
+
             action +
+
 
           '</div>' +
 
+
         '</div>' +
 
+
       '</article>' +
+
 
     '</div>'
 
@@ -2568,9 +2829,15 @@ function buildMessage(snapshot){
 }
 
 
+/* =========================================
+   LIVE MESSAGES
+   ========================================= */
+
 function startMessages(){
 
-  if(unsubscribeMessages){
+  if(
+    unsubscribeMessages
+  ){
 
     unsubscribeMessages();
 
@@ -2582,15 +2849,19 @@ function startMessages(){
 
   const messagesQuery =
     query(
+
       collection(
         db,
         "messages"
       ),
+
       orderBy(
         "createdAt",
         "asc"
       ),
+
       limit(100)
+
     );
 
 
@@ -2599,13 +2870,16 @@ function startMessages(){
 
       messagesQuery,
 
+
       function(snapshot){
 
         messageMap =
           {};
 
 
-        if(snapshot.empty){
+        if(
+          snapshot.empty
+        ){
 
           messages.innerHTML =
             '<div class="empty-chat">' +
@@ -2613,6 +2887,7 @@ function startMessages(){
             '<br><br>' +
             'Start the conversation.' +
             '</div>';
+
 
           return;
 
@@ -2624,16 +2899,23 @@ function startMessages(){
 
 
         snapshot.forEach(
-          function(messageSnapshot){
+
+          function(
+            messageSnapshot
+          ){
 
             messageMap[
               messageSnapshot.id
             ] = {
+
               id:
                 messageSnapshot.id,
+
               data:
                 messageSnapshot.data()
+
             };
+
 
             html +=
               buildMessage(
@@ -2641,6 +2923,7 @@ function startMessages(){
               );
 
           }
+
         );
 
 
@@ -2652,15 +2935,18 @@ function startMessages(){
 
 
         requestAnimationFrame(
+
           function(){
 
             messages.scrollTop =
               messages.scrollHeight;
 
           }
+
         );
 
       },
+
 
       function(error){
 
@@ -2668,6 +2954,7 @@ function startMessages(){
           "Messages listener error:",
           error
         );
+
 
         messages.innerHTML =
           '<div class="empty-chat">' +
@@ -2681,6 +2968,10 @@ function startMessages(){
 }
 
 
+/* =========================================
+   MESSAGE BUTTONS
+   ========================================= */
+
 function attachMessageButtons(){
 
   messages
@@ -2688,10 +2979,13 @@ function attachMessageButtons(){
       "[data-report-message]"
     )
     .forEach(
+
       function(button){
 
         button.addEventListener(
+
           "click",
+
           function(){
 
             const record =
@@ -2699,7 +2993,10 @@ function attachMessageButtons(){
                 button.dataset.reportMessage
               ];
 
-            if(record){
+
+            if(
+              record
+            ){
 
               openReportModal(
                 record
@@ -2708,9 +3005,11 @@ function attachMessageButtons(){
             }
 
           }
+
         );
 
       }
+
     );
 
 
@@ -2719,24 +3018,35 @@ function attachMessageButtons(){
       "[data-delete-message]"
     )
     .forEach(
+
       function(button){
 
         button.addEventListener(
+
           "click",
+
           function(){
 
             deleteChatMessage(
+
               button.dataset.deleteMessage
+
             );
 
           }
+
         );
 
       }
+
     );
 
 }
 
+
+/* =========================================
+   SEND MESSAGE
+   ========================================= */
 
 async function sendMessage(){
 
@@ -2744,40 +3054,53 @@ async function sendMessage(){
     !currentUser ||
     !currentName
   ){
+
     return;
+
   }
 
 
   const text =
     String(
-      messageInput.value || ""
+      messageInput.value ||
+      ""
     ).trim();
 
 
-  if(!text){
+  if(
+    !text
+  ){
+
     return;
+
   }
 
 
   await checkModerationNow();
 
 
-  if(currentModeration.blocked){
+  if(
+    currentModeration.blocked
+  ){
 
     window.alert(
       "Your Pack Chat account is blocked."
     );
+
 
     return;
 
   }
 
 
-  if(currentModeration.muted){
+  if(
+    currentModeration.muted
+  ){
 
     window.alert(
       "You are currently muted and cannot send Pack Chat messages."
     );
+
 
     return;
 
@@ -2797,20 +3120,33 @@ async function sendMessage(){
         "messages"
       ),
 
+
       {
+
         uid:
           currentUser.uid,
 
+
         name:
-          isAdmin(currentUser.uid)
-            ? ADMINS[currentUser.uid]
+          isAdmin(
+            currentUser.uid
+          )
+            ? ADMINS[
+                currentUser.uid
+              ]
             : currentName,
 
+
         text:
-          text.slice(0,500),
+          text.slice(
+            0,
+            500
+          ),
+
 
         createdAt:
           serverTimestamp()
+
       }
 
     );
@@ -2831,26 +3167,33 @@ async function sendMessage(){
     await checkModerationNow();
 
 
-    if(currentModeration.muted){
+    if(
+      currentModeration.muted
+    ){
 
       window.alert(
         "You are currently muted and cannot send messages."
       );
 
-    }else if(currentModeration.blocked){
+    }
+
+    else if(
+      currentModeration.blocked
+    ){
 
       window.alert(
         "Your Pack Chat account has been blocked."
       );
 
-    }else{
+    }
+
+    else{
 
       window.alert(
         "Unable to send your Pack Chat message."
       );
 
     }
-
 
   }finally{
 
@@ -2861,15 +3204,23 @@ async function sendMessage(){
 }
 
 
+/* =========================================
+   DELETE SINGLE MESSAGE
+   ========================================= */
+
 async function deleteChatMessage(
   messageId
 ){
 
   if(
     !currentUser ||
-    !isAdmin(currentUser.uid)
+    !isAdmin(
+      currentUser.uid
+    )
   ){
+
     return;
+
   }
 
 
@@ -2879,19 +3230,29 @@ async function deleteChatMessage(
     );
 
 
-  if(!confirmed){
+  if(
+    !confirmed
+  ){
+
     return;
+
   }
 
 
   try{
 
     await deleteDoc(
+
       doc(
+
         db,
+
         "messages",
+
         messageId
+
       )
+
     );
 
   }catch(error){
@@ -2900,6 +3261,7 @@ async function deleteChatMessage(
       "Delete message error:",
       error
     );
+
 
     window.alert(
       "Unable to delete this message."
@@ -2911,19 +3273,22 @@ async function deleteChatMessage(
 
 
 /* =========================================
-   CLEAR PACK CHAT
+   CLEAR ENTIRE PACK CHAT
    ========================================= */
 
 async function clearPackChat(){
 
   if(
     !currentUser ||
-    !isAdmin(currentUser.uid)
+    !isAdmin(
+      currentUser.uid
+    )
   ){
 
     window.alert(
       "Team Wolfpack administrator access is required."
     );
+
 
     return;
 
@@ -2932,28 +3297,49 @@ async function clearPackChat(){
 
   const firstConfirm =
     window.confirm(
-      "CLEAR ALL PACK CHAT MESSAGES?\n\nThis will permanently remove every current Pack Chat message.\n\nReports, member accounts, moderation records and resolved history will NOT be deleted."
+
+      "CLEAR ALL PACK CHAT MESSAGES?\n\n" +
+
+      "This will permanently remove every current Pack Chat message.\n\n" +
+
+      "Reports, member moderation, mutes, blocks and resolved history will NOT be deleted."
+
     );
 
 
-  if(!firstConfirm){
+  if(
+    !firstConfirm
+  ){
+
     return;
+
   }
 
 
   const secondConfirm =
     window.confirm(
-      "FINAL CONFIRMATION\n\nAre you absolutely sure you want to clear Pack Chat and start a fresh conversation?\n\nThis cannot be undone."
+
+      "FINAL CONFIRMATION\n\n" +
+
+      "Are you absolutely sure you want to clear Pack Chat and start a fresh conversation?\n\n" +
+
+      "This cannot be undone."
+
     );
 
 
-  if(!secondConfirm){
+  if(
+    !secondConfirm
+  ){
+
     return;
+
   }
 
 
   clearChatButton.disabled =
     true;
+
 
   clearChatButton.textContent =
     "CLEARING...";
@@ -2963,10 +3349,12 @@ async function clearPackChat(){
 
     const snapshot =
       await getDocs(
+
         collection(
           db,
           "messages"
         )
+
       );
 
 
@@ -2979,19 +3367,31 @@ async function clearPackChat(){
 
 
     snapshot.forEach(
-      function(messageDocument){
+
+      function(
+        messageDocument
+      ){
 
         deletions.push(
+
           deleteDoc(
+
             doc(
+
               db,
+
               "messages",
+
               messageDocument.id
+
             )
+
           )
+
         );
 
       }
+
     );
 
 
@@ -3000,6 +3400,10 @@ async function clearPackChat(){
     );
 
 
+    /*
+      Record chat clear in history.
+    */
+
     await addDoc(
 
       collection(
@@ -3007,51 +3411,76 @@ async function clearPackChat(){
         "resolvedReports"
       ),
 
+
       {
+
         source:
           "pack-chat",
+
 
         type:
           "chat-clear",
 
+
         action:
           "CHAT CLEARED",
+
 
         actionTaken:
           "CHAT CLEARED",
 
+
         deletedMessageCount:
           deletedCount,
+
 
         resolvedByUid:
           currentUser.uid,
 
+
         resolvedByName:
-          ADMINS[currentUser.uid] ||
+          ADMINS[
+            currentUser.uid
+          ]
+          ||
           "TEAM WOLFPACK ADMIN",
 
+
         resolvedBy:
-          ADMINS[currentUser.uid] ||
+          ADMINS[
+            currentUser.uid
+          ]
+          ||
           "TEAM WOLFPACK ADMIN",
+
 
         resolvedAt:
           serverTimestamp(),
 
+
         createdAt:
           serverTimestamp()
+
       }
 
     );
 
 
     window.alert(
-      deletedCount === 1
-        ? "Pack Chat cleared. 1 message was removed. The Pack can now start fresh."
-        : "Pack Chat cleared. " +
-          deletedCount +
-          " messages were removed. The Pack can now start fresh."
-    );
 
+      "PACK CHAT CLEARED\n\n" +
+
+      deletedCount +
+
+      (
+        deletedCount === 1
+          ? " message was removed."
+          : " messages were removed."
+      ) +
+
+      "\n\nThe Pack can now start a fresh conversation."
+
+    );
 
   }catch(error){
 
@@ -3065,11 +3494,11 @@ async function clearPackChat(){
       "Unable to clear Pack Chat."
     );
 
-
   }finally{
 
     clearChatButton.disabled =
       false;
+
 
     clearChatButton.textContent =
       "CLEAR PACK CHAT";
@@ -3080,12 +3509,342 @@ async function clearPackChat(){
 
 
 /* =========================================
+   FULL ADMIN DATA RESET
+
+   CLEARS:
+   - OPEN REPORTS
+   - MODERATION RECORDS
+   - ALL MUTES
+   - ALL BLOCKS
+   - RESOLVED HISTORY
+
+   DOES NOT CLEAR CHAT MESSAGES
+   ========================================= */
+
+async function fullAdminReset(){
+
+  if(
+    !currentUser ||
+    !isAdmin(
+      currentUser.uid
+    )
+  ){
+
+    window.alert(
+      "Team Wolfpack administrator access is required."
+    );
+
+
+    return;
+
+  }
+
+
+  const firstConfirm =
+    window.confirm(
+
+      "FULL ADMIN RESET?\n\n" +
+
+      "This will permanently delete:\n\n" +
+
+      "• ALL OPEN REPORTS\n" +
+
+      "• ALL MEMBER MODERATION RECORDS\n" +
+
+      "• ALL MUTES\n" +
+
+      "• ALL BLOCKS\n" +
+
+      "• ALL RESOLVED HISTORY\n\n" +
+
+      "Pack Chat messages will NOT be deleted.\n\n" +
+
+      "Continue?"
+
+    );
+
+
+  if(
+    !firstConfirm
+  ){
+
+    return;
+
+  }
+
+
+  const secondConfirm =
+    window.confirm(
+
+      "FINAL WARNING\n\n" +
+
+      "All reports, mutes, blocks and moderation history will be permanently removed.\n\n" +
+
+      "This cannot be undone.\n\n" +
+
+      "Continue with the reset?"
+
+    );
+
+
+  if(
+    !secondConfirm
+  ){
+
+    return;
+
+  }
+
+
+  const typedConfirmation =
+    window.prompt(
+
+      "Type RESET to confirm the full Team Wolfpack moderation reset."
+
+    );
+
+
+  if(
+    typedConfirmation !==
+    "RESET"
+  ){
+
+    window.alert(
+      "Reset cancelled."
+    );
+
+
+    return;
+
+  }
+
+
+  fullResetButton.disabled =
+    true;
+
+
+  fullResetButton.textContent =
+    "RESETTING...";
+
+
+  try{
+
+    /*
+      Read all three admin collections.
+    */
+
+    const [
+      reportsSnapshot,
+      moderationSnapshot,
+      historySnapshot
+    ] =
+      await Promise.all([
+
+
+        getDocs(
+
+          collection(
+            db,
+            "reports"
+          )
+
+        ),
+
+
+        getDocs(
+
+          collection(
+            db,
+            "moderation"
+          )
+
+        ),
+
+
+        getDocs(
+
+          collection(
+            db,
+            "resolvedReports"
+          )
+
+        )
+
+
+      ]);
+
+
+    const reportCount =
+      reportsSnapshot.size;
+
+
+    const moderationCount =
+      moderationSnapshot.size;
+
+
+    const historyCount =
+      historySnapshot.size;
+
+
+    const deletions =
+      [];
+
+
+    /*
+      Delete open reports.
+    */
+
+    reportsSnapshot.forEach(
+
+      function(item){
+
+        deletions.push(
+
+          deleteDoc(
+
+            doc(
+
+              db,
+
+              "reports",
+
+              item.id
+
+            )
+
+          )
+
+        );
+
+      }
+
+    );
+
+
+    /*
+      Delete moderation documents.
+
+      Removing these documents clears
+      all current mutes and blocks.
+    */
+
+    moderationSnapshot.forEach(
+
+      function(item){
+
+        deletions.push(
+
+          deleteDoc(
+
+            doc(
+
+              db,
+
+              "moderation",
+
+              item.id
+
+            )
+
+          )
+
+        );
+
+      }
+
+    );
+
+
+    /*
+      Delete resolved history.
+    */
+
+    historySnapshot.forEach(
+
+      function(item){
+
+        deletions.push(
+
+          deleteDoc(
+
+            doc(
+
+              db,
+
+              "resolvedReports",
+
+              item.id
+
+            )
+
+          )
+
+        );
+
+      }
+
+    );
+
+
+    /*
+      Perform the reset.
+    */
+
+    await Promise.all(
+      deletions
+    );
+
+
+    window.alert(
+
+      "TEAM WOLFPACK ADMIN RESET COMPLETE\n\n" +
+
+      reportCount +
+      " open reports removed.\n" +
+
+      moderationCount +
+      " moderation records removed.\n" +
+
+      historyCount +
+      " history records removed.\n\n" +
+
+      "ALL MUTES CLEARED\n" +
+
+      "ALL BLOCKS CLEARED\n\n" +
+
+      "Pack Chat messages were left untouched."
+
+    );
+
+  }catch(error){
+
+    console.error(
+      "Full admin reset error:",
+      error
+    );
+
+
+    window.alert(
+      "Unable to complete the full admin reset."
+    );
+
+  }finally{
+
+    fullResetButton.disabled =
+      false;
+
+
+    fullResetButton.textContent =
+      "RESET ADMIN DATA";
+
+  }
+
+}
+  /* =========================================
    REPORTING
    ========================================= */
 
-function openReportModal(
-  record
-){
+function openReportModal(record){
 
   if(
     !currentUser ||
@@ -3105,7 +3864,6 @@ function openReportModal(
     );
 
     return;
-
   }
 
 
@@ -3140,6 +3898,7 @@ function closeReportModal(){
     "show"
   );
 
+
   selectedReportMessage =
     null;
 
@@ -3170,6 +3929,7 @@ async function submitReport(){
   const record =
     selectedReportMessage;
 
+
   const data =
     record.data;
 
@@ -3183,10 +3943,11 @@ async function submitReport(){
       "You cannot report your own Pack Chat message."
     );
 
+
     closeReportModal();
 
-    return;
 
+    return;
   }
 
 
@@ -3203,40 +3964,58 @@ async function submitReport(){
         "reports"
       ),
 
+
       {
+
         reporterUid:
           String(
             currentUser.uid
           ),
+
 
         messageId:
           String(
             record.id || ""
           ),
 
+
         messageUid:
           String(
             data.uid || ""
           ),
 
+
         messageName:
           String(
             data.name ||
             "Pack Member"
-          ).slice(0,30),
+          ).slice(
+            0,
+            30
+          ),
+
 
         messageText:
           String(
             data.text || ""
-          ).slice(0,500),
+          ).slice(
+            0,
+            500
+          ),
+
 
         reason:
           String(
             reason
-          ).slice(0,100),
+          ).slice(
+            0,
+            100
+          ),
+
 
         createdAt:
           serverTimestamp()
+
       }
 
     );
@@ -3248,7 +4027,6 @@ async function submitReport(){
     window.alert(
       "Report submitted to Team Wolfpack administrators."
     );
-
 
   }catch(error){
 
@@ -3270,15 +4048,17 @@ async function submitReport(){
     }else{
 
       window.alert(
+
         "REPORT ERROR: " +
+
         (
           error.code ||
           "unknown"
         )
+
       );
 
     }
-
 
   }finally{
 
@@ -3296,34 +4076,49 @@ async function submitReport(){
 
 function enterPackChat(){
 
-  if(!currentUser){
+  if(
+    !currentUser
+  ){
 
     window.alert(
       "Pack Chat is still connecting."
     );
 
     return;
-
   }
 
 
+  /*
+    Admins do not need a display-name
+    entry. Their verified Firebase UID
+    determines their official name.
+  */
+
   if(
-    isAdmin(currentUser.uid)
+    isAdmin(
+      currentUser.uid
+    )
   ){
 
     currentName =
-      ADMINS[currentUser.uid];
+      ADMINS[
+        currentUser.uid
+      ];
+
 
     updateAccountBar();
 
+
     showChat();
+
 
     watchModeration();
 
+
     startMessages();
 
-    return;
 
+    return;
   }
 
 
@@ -3333,16 +4128,22 @@ function enterPackChat(){
     );
 
 
-  if(!name){
+  if(
+    !name
+  ){
 
     window.alert(
       "Enter your Pack name."
     );
 
     return;
-
   }
 
+
+  /*
+    Stop normal members impersonating
+    MR WOLFIE or MRS WOLFIE.
+  */
 
   if(
     isReservedAdminName(
@@ -3355,7 +4156,6 @@ function enterPackChat(){
     );
 
     return;
-
   }
 
 
@@ -3374,35 +4174,49 @@ function enterPackChat(){
 
   updateAccountBar();
 
+
   showChat();
 
+
   watchModeration();
+
 
   startMessages();
 
 }
 
 
+/* =========================================
+   CHANGE MEMBER NAME
+   ========================================= */
+
 function changePackName(){
 
   if(
     !currentUser ||
-    isAdmin(currentUser.uid)
+    isAdmin(
+      currentUser.uid
+    )
   ){
+
     return;
   }
 
 
   const entered =
     window.prompt(
+
       "Enter your new Pack Chat name:",
+
       currentName
+
     );
 
 
   if(
     entered === null
   ){
+
     return;
   }
 
@@ -3413,7 +4227,10 @@ function changePackName(){
     );
 
 
-  if(!name){
+  if(
+    !name
+  ){
+
     return;
   }
 
@@ -3429,7 +4246,6 @@ function changePackName(){
     );
 
     return;
-
   }
 
 
@@ -3456,6 +4272,7 @@ async function adminLogin(){
   const email =
     adminEmail.value.trim();
 
+
   const password =
     adminPassword.value;
 
@@ -3470,12 +4287,12 @@ async function adminLogin(){
     );
 
     return;
-
   }
 
 
   adminLoginButton.disabled =
     true;
+
 
   adminLoginButton.textContent =
     "SIGNING IN...";
@@ -3485,9 +4302,13 @@ async function adminLogin(){
 
     const credential =
       await signInWithEmailAndPassword(
+
         auth,
+
         email,
+
         password
+
       );
 
 
@@ -3495,8 +4316,15 @@ async function adminLogin(){
       credential.user;
 
 
+    /*
+      The account must have one of the
+      two approved Team Wolfpack admin UIDs.
+    */
+
     if(
-      !ADMINS[user.uid]
+      !ADMINS[
+        user.uid
+      ]
     ){
 
       await signOut(
@@ -3508,17 +4336,25 @@ async function adminLogin(){
         "This account is not authorised for Team Wolfpack administration."
       );
 
-      return;
 
+      return;
     }
+
+
+    /*
+      Never store an admin display name
+      as the normal member name.
+    */
+
+    clearSavedName();
 
 
     adminEmail.value =
       "";
 
+
     adminPassword.value =
       "";
-
 
   }catch(error){
 
@@ -3529,14 +4365,20 @@ async function adminLogin(){
 
 
     if(
+
       error.code ===
       "auth/invalid-credential"
+
       ||
+
       error.code ===
       "auth/wrong-password"
+
       ||
+
       error.code ===
       "auth/user-not-found"
+
     ){
 
       window.alert(
@@ -3551,11 +4393,11 @@ async function adminLogin(){
 
     }
 
-
   }finally{
 
     adminLoginButton.disabled =
       false;
+
 
     adminLoginButton.textContent =
       "ADMIN LOGIN";
@@ -3566,7 +4408,7 @@ async function adminLogin(){
 
 
 /* =========================================
-   LEAVE CHAT
+   LEAVE PACK CHAT
    ========================================= */
 
 async function leavePackChat(){
@@ -3577,14 +4419,24 @@ async function leavePackChat(){
     );
 
 
-  if(!confirmed){
+  if(
+    !confirmed
+  ){
+
     return;
   }
 
 
-  if(unsubscribeMessages){
+  /*
+    Stop active Firestore listeners.
+  */
+
+  if(
+    unsubscribeMessages
+  ){
 
     unsubscribeMessages();
+
 
     unsubscribeMessages =
       null;
@@ -3592,9 +4444,12 @@ async function leavePackChat(){
   }
 
 
-  if(unsubscribeModeration){
+  if(
+    unsubscribeModeration
+  ){
 
     unsubscribeModeration();
+
 
     unsubscribeModeration =
       null;
@@ -3608,33 +4463,65 @@ async function leavePackChat(){
     '</div>';
 
 
+  /*
+    ADMIN:
+    Sign out of the authenticated admin
+    Firebase account.
+
+    The auth-state listener will then
+    automatically create a normal
+    anonymous Pack Chat session.
+  */
+
   if(
     currentUser &&
-    isAdmin(currentUser.uid)
+    isAdmin(
+      currentUser.uid
+    )
   ){
 
     clearSavedName();
 
+
     currentName =
       "";
+
 
     await signOut(
       auth
     );
 
-    return;
 
+    return;
   }
 
 
+  /*
+    NORMAL MEMBER:
+
+    IMPORTANT:
+    Do NOT sign the anonymous Firebase
+    user out.
+
+    Keeping this anonymous UID means
+    mute/block moderation continues to
+    apply when the member leaves and
+    rejoins Pack Chat.
+  */
+
   clearSavedName();
+
 
   currentName =
     "";
 
+
   currentModeration = {
+
     muted:false,
+
     blocked:false
+
   };
 
 
@@ -3651,37 +4538,70 @@ onAuthStateChanged(
 
   auth,
 
+
   async function(user){
+
 
     currentUser =
       user || null;
 
 
-    if(user){
+    /*
+      Firebase user exists.
+    */
+
+    if(
+      user
+    ){
+
+
+      /*
+        OFFICIAL ADMIN ACCOUNT
+      */
 
       if(
-        isAdmin(user.uid)
+        isAdmin(
+          user.uid
+        )
       ){
 
         currentName =
-          ADMINS[user.uid];
+          ADMINS[
+            user.uid
+          ];
+
+
+        clearSavedName();
+
 
         updateAccountBar();
 
+
         showChat();
+
 
         watchModeration();
 
+
         startMessages();
 
-        return;
 
+        return;
       }
 
+
+      /*
+        NORMAL ANONYMOUS MEMBER
+      */
 
       let savedName =
         getSavedName();
 
+
+      /*
+        Protection against an old saved
+        admin-style display name.
+      */
 
       if(
         isReservedAdminName(
@@ -3691,22 +4611,29 @@ onAuthStateChanged(
 
         clearSavedName();
 
+
         savedName =
           "";
 
       }
 
 
-      if(savedName){
+      if(
+        savedName
+      ){
 
         currentName =
           savedName;
 
+
         updateAccountBar();
+
 
         showChat();
 
+
         watchModeration();
+
 
         startMessages();
 
@@ -3715,21 +4642,30 @@ onAuthStateChanged(
         currentName =
           "";
 
+
         showJoinPanel();
 
       }
 
 
       return;
-
     }
 
+
+    /*
+      No Firebase user exists.
+
+      Create a persistent anonymous
+      Pack Chat identity.
+    */
 
     currentName =
       "";
 
+
     status.textContent =
       "CONNECTING TO PACK CHAT...";
+
 
     status.className =
       "status";
@@ -3752,6 +4688,7 @@ onAuthStateChanged(
       status.textContent =
         "UNABLE TO CONNECT TO PACK CHAT";
 
+
       status.className =
         "status error";
 
@@ -3763,17 +4700,27 @@ onAuthStateChanged(
 
 
 /* =========================================
-   EVENTS
+   EVENT LISTENERS
    ========================================= */
 
+
+/*
+  JOIN PACK CHAT
+*/
+
 joinButton.addEventListener(
+
   "click",
+
   enterPackChat
+
 );
 
 
 nameInput.addEventListener(
+
   "keydown",
+
   function(event){
 
     if(
@@ -3782,23 +4729,34 @@ nameInput.addEventListener(
     ){
 
       event.preventDefault();
+
 
       enterPackChat();
 
     }
 
   }
+
 );
 
 
+/*
+  ADMIN LOGIN
+*/
+
 adminLoginButton.addEventListener(
+
   "click",
+
   adminLogin
+
 );
 
 
 adminPassword.addEventListener(
+
   "keydown",
+
   function(event){
 
     if(
@@ -3807,74 +4765,136 @@ adminPassword.addEventListener(
     ){
 
       event.preventDefault();
+
 
       adminLogin();
 
     }
 
   }
+
 );
 
 
+/*
+  SEND MESSAGE
+*/
+
 sendButton.addEventListener(
+
   "click",
+
   sendMessage
+
 );
 
 
 messageInput.addEventListener(
+
   "keydown",
+
   function(event){
 
     if(
+
       event.key ===
       "Enter"
+
       &&
+
       !event.shiftKey
+
     ){
 
       event.preventDefault();
+
 
       sendMessage();
 
     }
 
   }
+
 );
 
 
+/*
+  MEMBER ACCOUNT
+*/
+
 changeNameButton.addEventListener(
+
   "click",
+
   changePackName
+
 );
 
 
 leaveChatButton.addEventListener(
+
   "click",
+
   leavePackChat
+
 );
 
+
+/*
+  ADMIN:
+  CLEAR LIVE PACK CHAT
+*/
 
 clearChatButton.addEventListener(
+
   "click",
+
   clearPackChat
+
 );
 
 
-cancelReportButton.addEventListener(
+/*
+  ADMIN:
+  RESET REPORTS / MODERATION /
+  MUTES / BLOCKS / HISTORY
+*/
+
+fullResetButton.addEventListener(
+
   "click",
+
+  fullAdminReset
+
+);
+
+
+/*
+  REPORT MODAL
+*/
+
+cancelReportButton.addEventListener(
+
+  "click",
+
   closeReportModal
+
 );
 
 
 submitReportButton.addEventListener(
+
   "click",
+
   submitReport
+
 );
 
 
 reportModal.addEventListener(
+
   "click",
+
   function(event){
 
     if(
@@ -3887,20 +4907,34 @@ reportModal.addEventListener(
     }
 
   }
+
 );
 
 
+/*
+  Re-check moderation whenever a member
+  returns to the page.
+*/
+
 document.addEventListener(
+
   "visibilitychange",
+
   function(){
 
     if(
+
       document.visibilityState ===
       "visible"
+
       &&
+
       currentUser
+
       &&
+
       currentName
+
     ){
 
       checkModerationNow();
@@ -3908,10 +4942,16 @@ document.addEventListener(
     }
 
   }
+
 );
+
 
 </script>
 
+
+<!-- =========================================
+     SERVICE WORKER
+     ========================================= -->
 
 <script>
 
@@ -3920,7 +4960,9 @@ if(
 ){
 
   window.addEventListener(
+
     "load",
+
     function(){
 
       navigator.serviceWorker
@@ -3928,6 +4970,7 @@ if(
           "service-worker.js"
         )
         .catch(
+
           function(error){
 
             console.error(
@@ -3936,14 +4979,18 @@ if(
             );
 
           }
+
         );
 
     }
+
   );
 
 }
 
 </script>
 
+
 </body>
+
 </html>
