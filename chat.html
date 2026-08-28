@@ -2989,10 +2989,24 @@ async function leavePackChat(){
       "Leave Pack Chat?"
     );
 
-
   if(!confirmed){
     return;
   }
+
+
+  /*
+    IMPORTANT:
+
+    DO NOT sign out of Firebase here.
+
+    Anonymous Firebase authentication
+    provides the permanent Pack member UID
+    used by moderation.
+
+    Signing out would create a new UID when
+    the member returned, allowing them to
+    bypass mute or block restrictions.
+  */
 
 
   if(
@@ -3019,6 +3033,13 @@ async function leavePackChat(){
   }
 
 
+  /*
+    Remove only the Pack display name.
+
+    Keep the authenticated Firebase account
+    and UID intact.
+  */
+
   clearSavedName();
 
 
@@ -3034,49 +3055,16 @@ async function leavePackChat(){
 
   messages.innerHTML =
     '<div class="empty-chat">' +
-    'Loading Pack Chat...' +
+    'Join Pack Chat to load messages.' +
     '</div>';
 
 
-  try{
+  /*
+    Return to the Join Pack Chat screen
+    without changing Firebase UID.
+  */
 
-    /*
-      Anonymous Pack members can safely
-      sign out and receive a new anonymous
-      account when they return.
-
-      Do NOT automatically sign out an
-      official administrator account.
-    */
-
-    if(
-      currentUser &&
-      !isAdmin(currentUser.uid)
-    ){
-
-      await signOut(
-        auth
-      );
-
-      return;
-
-    }
-
-
-    showJoinPanel();
-
-
-  }catch(error){
-
-    console.error(
-      "Leave chat error:",
-      error
-    );
-
-
-    showJoinPanel();
-
-  }
+  showJoinPanel();
 
 }
 
