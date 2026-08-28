@@ -329,7 +329,184 @@ body{
   font-weight:900;
 }
 
+/* =========================================
+   ONLINE PACK MEMBERS
+   ========================================= */
 
+.online-members-panel{
+  display:none;
+
+  margin-bottom:14px;
+
+  border-radius:12px;
+
+  border:
+    1px solid
+    rgba(103,220,255,.25);
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,150,210,.08),
+      rgba(8,8,8,.95) 50%,
+      rgba(255,90,0,.08)
+    );
+}
+
+.online-members-panel.show{
+  display:block;
+}
+
+.online-members-toggle{
+  display:flex;
+
+  align-items:center;
+
+  width:100%;
+
+  min-height:46px;
+
+  padding:12px 14px;
+
+  border:none;
+
+  background:transparent;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  font-family:inherit;
+
+  font-size:9px;
+  font-weight:900;
+
+  text-align:left;
+}
+
+.online-dot{
+  width:9px;
+  height:9px;
+
+  margin-right:9px;
+
+  border-radius:50%;
+
+  background:#3cff78;
+
+  box-shadow:
+    0 0 8px
+    rgba(60,255,120,.85);
+}
+
+#onlineMembersCount{
+  flex:1;
+
+  color:#67dcff;
+
+  letter-spacing:.6px;
+}
+
+.online-members-arrow{
+  margin-left:10px;
+
+  color:#ff751c;
+
+  font-size:9px;
+
+  transition:
+    transform .2s ease;
+}
+
+.online-members-panel.expanded
+.online-members-arrow{
+  transform:
+    rotate(180deg);
+}
+
+.online-members-list{
+  display:none;
+
+  padding:
+    2px 14px 12px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.07);
+}
+
+.online-members-panel.expanded
+.online-members-list{
+  display:block;
+}
+
+.online-member{
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:10px 2px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.06);
+}
+
+.online-member:last-child{
+  border-bottom:none;
+}
+
+.online-member-dot{
+  width:7px;
+  height:7px;
+
+  flex:0 0 7px;
+
+  border-radius:50%;
+
+  background:#3cff78;
+
+  box-shadow:
+    0 0 6px
+    rgba(60,255,120,.75);
+}
+
+.online-member-name{
+  flex:1;
+
+  color:#fff;
+
+  font-size:9px;
+  font-weight:900;
+}
+
+.online-member-name.admin{
+  color:#ff751c;
+}
+
+.online-admin-badge{
+  padding:3px 6px;
+
+  border-radius:12px;
+
+  background:#ff751c;
+
+  color:#050505;
+
+  font-size:6px;
+  font-weight:900;
+}
+
+.online-you{
+  color:#67dcff;
+
+  font-size:7px;
+  font-weight:900;
+}
 /* =========================================
    ACCOUNT BAR
    ========================================= */
@@ -1259,7 +1436,40 @@ ADMIN LOGIN
 
 </section>
 
+<!-- ONLINE PACK MEMBERS -->
 
+<section
+  id="onlineMembersPanel"
+  class="online-members-panel"
+>
+
+<button
+  id="onlineMembersToggle"
+  class="online-members-toggle"
+  type="button"
+>
+
+<span class="online-dot"></span>
+
+<span id="onlineMembersCount">
+0 PACK MEMBERS ONLINE
+</span>
+
+<span
+  id="onlineMembersArrow"
+  class="online-members-arrow"
+>
+▼
+</span>
+
+</button>
+
+<div
+  id="onlineMembersList"
+  class="online-members-list"
+></div>
+
+</section>
 <!-- ACCOUNT BAR -->
 
 <section
@@ -1580,7 +1790,15 @@ import {
   getDocs,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-
+import {
+  getDatabase,
+  ref,
+  set,
+  onValue,
+  onDisconnect,
+  remove,
+  serverTimestamp as databaseServerTimestamp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
 
 /* =========================================
    FIREBASE CONFIG
@@ -1625,7 +1843,10 @@ const db =
   getFirestore(
     app
   );
-
+const realtimeDb =
+  getDatabase(
+    app
+  );
 
 /* =========================================
    OFFICIAL ADMINS
@@ -1731,7 +1952,25 @@ const adminLoginButton =
   document.getElementById(
     "adminLoginButton"
   );
+const onlineMembersPanel =
+  document.getElementById(
+    "onlineMembersPanel"
+  );
 
+const onlineMembersToggle =
+  document.getElementById(
+    "onlineMembersToggle"
+  );
+
+const onlineMembersCount =
+  document.getElementById(
+    "onlineMembersCount"
+  );
+
+const onlineMembersList =
+  document.getElementById(
+    "onlineMembersList"
+  );
 const accountBar =
   document.getElementById(
     "accountBar"
@@ -1870,7 +2109,14 @@ let messageMap =
 
 let authReady =
   false;
+let presenceRef =
+  null;
 
+let unsubscribePresence =
+  null;
+
+let onlineMembers =
+  {};
 
 /* =========================================
    BASIC HELPERS
@@ -2121,7 +2367,12 @@ function setStatus(
    ========================================= */
 
 function showJoinScreen(){
-
+onlineMembersPanel.classList.remove(
+  "show"
+);
+  onlineMembersPanel.classList.remove(
+  "expanded"
+);
   joinPanel.classList.add(
     "show"
   );
@@ -2146,7 +2397,10 @@ function showJoinScreen(){
 
 
 function showChatScreen(){
-
+onlineMembersPanel.classList.add(
+  "show"
+);
+  startOnlinePresence();
   joinPanel.classList.remove(
     "show"
   );
@@ -2165,7 +2419,217 @@ function showChatScreen(){
 /* =========================================
    ACCOUNT DISPLAY
    ========================================= */
+/* =========================================
+   ONLINE PACK MEMBERS DISPLAY
+   ========================================= */
 
+function renderOnlineMembers(){
+
+  const members =
+    Object.values(
+      onlineMembers || {}
+    )
+    .filter(function(member){
+
+      return (
+        member &&
+        member.online === true &&
+        member.uid
+      );
+
+    });
+
+  /*
+   * Administrators first, followed by
+   * normal Pack Members alphabetically.
+   */
+
+  members.sort(function(a,b){
+
+    const aAdmin =
+      isAdmin(a.uid);
+
+    const bAdmin =
+      isAdmin(b.uid);
+
+    if(aAdmin && !bAdmin){
+      return -1;
+    }
+
+    if(!aAdmin && bAdmin){
+      return 1;
+    }
+
+    const aName =
+      isAdmin(a.uid)
+        ? ADMINS[a.uid]
+        : cleanName(a.name) || "Pack Member";
+
+    const bName =
+      isAdmin(b.uid)
+        ? ADMINS[b.uid]
+        : cleanName(b.name) || "Pack Member";
+
+    return aName.localeCompare(
+      bName
+    );
+
+  });
+
+
+  /* ONLINE COUNT */
+
+  const count =
+    members.length;
+
+  onlineMembersCount.textContent =
+    count === 1
+      ? "1 PACK MEMBER ONLINE"
+      : count + " PACK MEMBERS ONLINE";
+
+
+  /* ONLINE MEMBER LIST */
+
+  onlineMembersList.innerHTML =
+    "";
+
+  if(count === 0){
+
+    const empty =
+      document.createElement(
+        "div"
+      );
+
+    empty.className =
+      "online-member";
+
+    empty.textContent =
+      "No Pack Members currently online.";
+
+    onlineMembersList.appendChild(
+      empty
+    );
+
+    return;
+  }
+
+
+  members.forEach(function(member){
+
+    const memberIsAdmin =
+      isAdmin(
+        member.uid
+      );
+
+    const displayName =
+      memberIsAdmin
+        ? ADMINS[
+            member.uid
+          ]
+        : cleanName(
+            member.name
+          ) ||
+          "Pack Member";
+
+
+    const row =
+      document.createElement(
+        "div"
+      );
+
+    row.className =
+      "online-member";
+
+
+    /* GREEN ONLINE DOT */
+
+    const dot =
+      document.createElement(
+        "span"
+      );
+
+    dot.className =
+      "online-member-dot";
+
+    row.appendChild(
+      dot
+    );
+
+
+    /* MEMBER NAME */
+
+    const name =
+      document.createElement(
+        "span"
+      );
+
+    name.className =
+      memberIsAdmin
+        ? "online-member-name admin"
+        : "online-member-name";
+
+    name.textContent =
+      displayName;
+
+    row.appendChild(
+      name
+    );
+
+
+    /* SHOW YOU BESIDE CURRENT ACCOUNT */
+
+    if(
+      currentUser &&
+      member.uid ===
+        currentUser.uid
+    ){
+
+      const you =
+        document.createElement(
+          "span"
+        );
+
+      you.className =
+        "online-you";
+
+      you.textContent =
+        "YOU";
+
+      row.appendChild(
+        you
+      );
+
+    }
+
+
+    /* ADMIN BADGE */
+
+    if(memberIsAdmin){
+
+      const badge =
+        document.createElement(
+          "span"
+        );
+
+      badge.className =
+        "online-admin-badge";
+
+      badge.textContent =
+        "ADMIN";
+
+      row.appendChild(
+        badge
+      );
+
+    }
+
+    onlineMembersList.appendChild(
+      row
+    );
+
+  });
+
+}
 function updateAccountDisplay(){
 
   if(
@@ -2235,7 +2699,270 @@ function updateAccountDisplay(){
 /* =========================================
    MODERATION DISPLAY
    ========================================= */
+/* =========================================
+   REALTIME ONLINE PRESENCE
+   ========================================= */
 
+let  =
+  null;
+
+
+/* STOP ONLINE PRESENCE LISTENERS */
+
+function stopPresenceListeners(){
+
+  if(
+    unsubscribePresence
+  ){
+
+    unsubscribePresence();
+
+    unsubscribePresence =
+      null;
+
+  }
+
+  if(
+    unsubscribePresenceConnection
+  ){
+
+    unsubscribePresenceConnection();
+
+    unsubscribePresenceConnection =
+      null;
+
+  }
+
+}
+
+
+/* WATCH EVERY ONLINE PACK MEMBER */
+
+function watchOnlineMembers(){
+
+  if(
+    unsubscribePresence
+  ){
+
+    unsubscribePresence();
+
+    unsubscribePresence =
+      null;
+
+  }
+
+  const presenceListRef =
+    ref(
+      realtimeDb,
+      "presence"
+    );
+
+  unsubscribePresence =
+    onValue(
+
+      presenceListRef,
+
+      function(snapshot){
+
+        onlineMembers =
+          snapshot.val() || {};
+
+        renderOnlineMembers();
+
+      },
+
+      function(error){
+
+        console.error(
+          "Online members listener error:",
+          error
+        );
+
+      }
+
+    );
+
+}
+
+
+/* SET CURRENT USER ONLINE */
+
+function startOnlinePresence(){
+
+  if(
+    !currentUser
+  ){
+
+    return;
+
+  }
+
+  const displayName =
+    isAdmin(
+      currentUser.uid
+    )
+      ? ADMINS[
+          currentUser.uid
+        ]
+      : cleanName(
+          currentName
+        );
+
+  if(
+    !displayName
+  ){
+
+    return;
+
+  }
+
+
+  /* CURRENT USER PRESENCE LOCATION */
+
+  presenceRef =
+    ref(
+      realtimeDb,
+      "presence/" +
+      currentUser.uid
+    );
+
+
+  /* WATCH ALL ONLINE MEMBERS */
+
+  watchOnlineMembers();
+
+
+  /* WATCH FIREBASE CONNECTION */
+
+  const connectedRef =
+    ref(
+      realtimeDb,
+      ".info/connected"
+    );
+
+  if(
+    unsubscribePresenceConnection
+  ){
+
+    unsubscribePresenceConnection();
+
+    unsubscribePresenceConnection =
+      null;
+
+  }
+
+  unsubscribePresenceConnection =
+    onValue(
+
+      connectedRef,
+
+      async function(snapshot){
+
+        if(
+          snapshot.val() !== true
+        ){
+
+          return;
+
+        }
+
+        try{
+
+          /*
+           * Automatically remove this member from
+           * the online list if their connection closes.
+           */
+
+          await onDisconnect(
+            presenceRef
+          ).remove();
+
+
+          /*
+           * Mark the member online.
+           */
+
+          await set(
+
+            presenceRef,
+
+            {
+
+              uid:
+                currentUser.uid,
+
+              name:
+                displayName,
+
+              online:
+                true,
+
+              lastSeen:
+                databaseServerTimestamp()
+
+            }
+
+          );
+
+        }catch(error){
+
+          console.error(
+            "Online presence error:",
+            error
+          );
+
+        }
+
+      }
+
+    );
+
+}
+
+
+/* REMOVE CURRENT USER FROM ONLINE LIST */
+
+async function removeOnlinePresence(){
+
+  stopPresenceListeners();
+
+  if(
+    !presenceRef
+  ){
+
+    onlineMembers =
+      {};
+
+    renderOnlineMembers();
+
+    return;
+
+  }
+
+  try{
+
+    await remove(
+      presenceRef
+    );
+
+  }catch(error){
+
+    console.error(
+      "Remove online presence error:",
+      error
+    );
+
+  }
+
+  presenceRef =
+    null;
+
+  onlineMembers =
+    {};
+
+  renderOnlineMembers();
+
+}
 function updateModerationDisplay(){
 
   moderationNotice.className =
@@ -3229,7 +3956,7 @@ function changePackName(){
   );
 
   updateAccountDisplay();
-
+startOnlinePresence();
 }
 
 
@@ -3238,7 +3965,7 @@ function changePackName(){
    ========================================= */
 
 async function leavePackChat(){
-
+await removeOnlinePresence();
   stopMessagesListener();
 
   stopModerationListener();
@@ -4299,7 +5026,20 @@ messages.addEventListener(
   }
 );
 
+/* =========================================
+   ONLINE MEMBERS TOGGLE
+   ========================================= */
 
+onlineMembersToggle.addEventListener(
+  "click",
+  function(){
+
+    onlineMembersPanel.classList.toggle(
+      "expanded"
+    );
+
+  }
+);
 /* =========================================
    JOIN BUTTON
    ========================================= */
@@ -4571,7 +5311,18 @@ fullResetButton.addEventListener(
 onAuthStateChanged(
   auth,
   async function(user){
+if(
+  presenceRef &&
+  (
+    !user ||
+    !currentUser ||
+    presenceRef.key !== user.uid
+  )
+){
 
+  await removeOnlinePresence();
+
+}
     authReady =
       true;
 
