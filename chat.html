@@ -5311,19 +5311,7 @@ fullResetButton.addEventListener(
 onAuthStateChanged(
   auth,
   async function(user){
-if(
-  presenceRef &&
-  (
-    !user ||
-    !currentUser ||
-    presenceRef.key !== user.uid
-  )
-){
-
-  await removeOnlinePresence();
-
-}
-    authReady =
+Ready =
       true;
 
     currentUser =
