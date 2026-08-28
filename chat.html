@@ -2533,12 +2533,9 @@ async function checkModerationNow(){
 
 function renderMessages(snapshot){
 
-  messageMap =
-    {};
+  messageMap = {};
 
-  if(
-    snapshot.empty
-  ){
+  if(snapshot.empty){
 
     messages.innerHTML =
       '<div class="empty-chat">' +
@@ -2548,216 +2545,254 @@ function renderMessages(snapshot){
       '</div>';
 
     return;
-
   }
 
-  let html =
-    "";
+  messages.innerHTML = "";
 
-  snapshot.forEach(
-    function(messageDocument){
+  snapshot.forEach(function(messageDocument){
 
-      const data =
-        messageDocument.data();
+    const data = messageDocument.data();
+    const id = messageDocument.id;
 
-      const id =
-        messageDocument.id;
+    const senderUid = String(data.uid || "");
+    const senderIsAdmin = isAdmin(senderUid);
 
-      messageMap[
-        id
-      ] = {
+    const ownMessage = Boolean(
+      currentUser &&
+      senderUid === currentUser.uid
+    );
 
-        id:id,
+    const senderName = senderIsAdmin
+      ? ADMINS[senderUid]
+      : cleanName(data.name) || "Pack Member";
 
-        data:data
+    messageMap[id] = {
+      id: id,
+      data: data
+    };
 
-      };
 
-      const senderUid =
-        String(
-          data.uid || ""
-        );
+    /* MESSAGE CARD */
 
-      const senderIsAdmin =
-        isAdmin(
-          senderUid
-        );
+    const card = document.createElement("article");
 
-      const ownMessage =
-        Boolean(
-          currentUser &&
-          senderUid ===
-            currentUser.uid
-        );
+    card.className = "message-card";
 
-      const senderName =
-        senderIsAdmin
-          ? ADMINS[
-              senderUid
-            ]
-          : cleanName(
-              data.name
-            ) ||
-            "Pack Member";
+    if(ownMessage){
+      card.classList.add("own");
+    }
 
-      const cardClasses = [
-        "message-card"
-      ];
+    if(senderIsAdmin){
+      card.classList.add("admin-message");
+    }
 
-      if(
-        ownMessage
-      ){
 
-        cardClasses.push(
-          "own"
-        );
+    /* MEMBER / ADMIN NAME */
 
-      }
+    const nameElement = document.createElement("div");
 
-      if(
-        senderIsAdmin
-      ){
+    nameElement.className = senderIsAdmin
+      ? "message-name admin-name"
+      : "message-name";
 
-        cardClasses.push(
-          "admin-message"
-        );
+    nameElement.textContent = senderName;
 
-      }
+    if(senderIsAdmin){
 
-      let actions =
-        "";
+      const badge = document.createElement("span");
+
+      badge.className = "message-admin-badge";
+      badge.textContent = "ADMIN";
+
+      nameElement.appendChild(badge);
+    }
+
+    card.appendChild(nameElement);
+
+
+    /* MESSAGE TEXT */
+
+    const textElement = document.createElement("div");
+
+    textElement.className = "message-text";
+
+    textElement.textContent = String(
+      data.text || ""
+    );
+
+    card.appendChild(textElement);
+
+
+    /* FOOTER */
+
+    const footer = document.createElement("div");
+
+    footer.className = "message-footer";
+
+
+    /* TIME */
+
+    const timeElement = document.createElement("span");
+
+    timeElement.className = "message-time";
+
+    timeElement.textContent = displayDate(
+      data.createdAt
+    );
+
+    footer.appendChild(timeElement);
+
+
+    /* ACTION AREA */
+
+    const actions = document.createElement("div");
+
+    actions.className = "message-actions";
+
+
+    /*
+       NORMAL MEMBER:
+       Show REPORT on every message belonging
+       to somebody else.
+    */
+
+    if(
+      currentUser &&
+      !isAdmin(currentUser.uid) &&
+      senderUid &&
+      senderUid !== currentUser.uid
+    ){
+
+      const reportButton =
+        document.createElement("button");
+
+      reportButton.type = "button";
+
+      reportButton.className =
+        "message-action report-action";
+
+      reportButton.textContent =
+        "REPORT";
+
+      reportButton.dataset.action =
+        "report";
+
+      reportButton.dataset.messageId =
+        id;
 
       /*
-       * Normal members can report messages from other users.
-       * Administrators use DELETE instead.
-       * A member cannot report their own message.
-       */
+         Make REPORT deliberately visible.
+         These inline values prevent another
+         CSS rule from hiding the control.
+      */
 
-      if(
-        currentUser &&
-        !isAdmin(
-          currentUser.uid
-        ) &&
-        senderUid &&
-        senderUid !==
-          currentUser.uid
-      ){
+      reportButton.style.display =
+        "inline-block";
 
-        actions +=
-          '<button ' +
-          'class="message-action report-action" ' +
-          'type="button" ' +
-          'data-action="report" ' +
-          'data-message-id="' +
-          escapeHTML(
-            id
-          ) +
-          '">' +
-          'REPORT' +
-          '</button>';
+      reportButton.style.visibility =
+        "visible";
 
-      }
+      reportButton.style.opacity =
+        "1";
 
-      if(
-        currentUser &&
-        isAdmin(
-          currentUser.uid
-        )
-      ){
+      reportButton.style.color =
+        "#ff751c";
 
-        actions +=
-          '<button ' +
-          'class="message-action delete-action" ' +
-          'type="button" ' +
-          'data-action="delete" ' +
-          'data-message-id="' +
-          escapeHTML(
-            id
-          ) +
-          '">' +
-          'DELETE' +
-          '</button>';
+      reportButton.style.fontSize =
+        "9px";
 
-      }
+      reportButton.style.fontWeight =
+        "900";
 
-      html +=
-        '<article class="' +
-        cardClasses.join(" ") +
-        '">';
+      reportButton.style.cursor =
+        "pointer";
 
-      html +=
-        '<div class="message-name' +
-        (
-          senderIsAdmin
-            ? ' admin-name'
-            : ''
-        ) +
-        '">' +
-        escapeHTML(
-          senderName
-        );
+      reportButton.style.padding =
+        "5px 2px";
 
-      if(
-        senderIsAdmin
-      ){
-
-        html +=
-          '<span class="message-admin-badge">' +
-          'ADMIN' +
-          '</span>';
-
-      }
-
-      html +=
-        '</div>';
-
-      html +=
-        '<div class="message-text">' +
-        escapeHTML(
-          data.text || ""
-        ) +
-        '</div>';
-
-      html +=
-        '<div class="message-footer">';
-
-      html +=
-        '<span class="message-time">' +
-        escapeHTML(
-          displayDate(
-            data.createdAt
-          )
-        ) +
-        '</span>';
-
-      html +=
-        '<div class="message-actions">' +
-        actions +
-        '</div>';
-
-      html +=
-        '</div>';
-
-      html +=
-        '</article>';
-
+      actions.appendChild(
+        reportButton
+      );
     }
-  );
 
-  messages.innerHTML =
-    html;
 
-  requestAnimationFrame(
-    function(){
+    /*
+       ADMIN:
+       Administrators receive DELETE rather
+       than REPORT.
+    */
 
-      messages.scrollTop =
-        messages.scrollHeight;
+    if(
+      currentUser &&
+      isAdmin(currentUser.uid)
+    ){
 
+      const deleteButton =
+        document.createElement("button");
+
+      deleteButton.type =
+        "button";
+
+      deleteButton.className =
+        "message-action delete-action";
+
+      deleteButton.textContent =
+        "DELETE";
+
+      deleteButton.dataset.action =
+        "delete";
+
+      deleteButton.dataset.messageId =
+        id;
+
+      deleteButton.style.display =
+        "inline-block";
+
+      deleteButton.style.visibility =
+        "visible";
+
+      deleteButton.style.opacity =
+        "1";
+
+      deleteButton.style.color =
+        "#ff7957";
+
+      deleteButton.style.fontSize =
+        "9px";
+
+      deleteButton.style.fontWeight =
+        "900";
+
+      deleteButton.style.cursor =
+        "pointer";
+
+      deleteButton.style.padding =
+        "5px 2px";
+
+      actions.appendChild(
+        deleteButton
+      );
     }
-  );
+
+    footer.appendChild(actions);
+
+    card.appendChild(footer);
+
+    messages.appendChild(card);
+
+  });
+
+
+  /* SCROLL TO NEWEST MESSAGE */
+
+  requestAnimationFrame(function(){
+
+    messages.scrollTop =
+      messages.scrollHeight;
+
+  });
 
 }
-
 
 /* =========================================
    WATCH CHAT MESSAGES
