@@ -39,6 +39,10 @@
 
 <style>
 
+/* =========================================
+   GLOBAL
+   ========================================= */
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -97,7 +101,9 @@ body{
 
 .brand{
   margin-top:5px;
+
   color:#67dcff;
+
   font-size:12px;
   font-weight:900;
   letter-spacing:4px;
@@ -105,6 +111,7 @@ body{
 
 .title{
   margin-top:18px;
+
   font-size:29px;
   font-weight:900;
 }
@@ -119,7 +126,9 @@ body{
 
 .subtitle{
   margin-top:8px;
+
   color:#999;
+
   font-size:11px;
   line-height:1.5;
 }
@@ -128,6 +137,7 @@ body{
   width:100%;
   max-width:520px;
   height:2px;
+
   margin:20px auto 0;
 
   background:
@@ -141,26 +151,35 @@ body{
 
 
 /* =========================================
-   CONTENT
+   MAIN CONTENT
    ========================================= */
 
 .content{
   width:100%;
   max-width:700px;
+
   margin:auto;
-  padding:8px 16px 80px;
+
+  padding:
+    8px
+    16px
+    80px;
 }
 
 
 /* =========================================
-   STATUS
+   CONNECTION STATUS
    ========================================= */
 
 .status{
   margin-bottom:14px;
+
   padding:10px;
+
   text-align:center;
+
   color:#aaa;
+
   font-size:10px;
   font-weight:900;
   letter-spacing:1px;
@@ -190,8 +209,11 @@ body{
 
 .join-panel{
   display:none;
+
   margin-bottom:14px;
+
   padding:16px;
+
   border-radius:14px;
 
   border:
@@ -213,6 +235,7 @@ body{
 
 .join-title{
   color:#67dcff;
+
   font-size:11px;
   font-weight:900;
   letter-spacing:1px;
@@ -220,15 +243,20 @@ body{
 
 .join-text{
   margin-top:7px;
+
   color:#888;
+
   font-size:9px;
   line-height:1.5;
 }
 
 .name-input{
   width:100%;
+
   margin-top:12px;
+
   padding:13px 14px;
+
   border-radius:10px;
 
   border:
@@ -236,8 +264,10 @@ body{
     rgba(255,255,255,.14);
 
   outline:none;
+
   background:#090909;
   color:#fff;
+
   font-size:12px;
 }
 
@@ -247,10 +277,14 @@ body{
 
 .join-button{
   width:100%;
+
   margin-top:9px;
+
   min-height:44px;
+
   border:none;
   border-radius:10px;
+
   cursor:pointer;
 
   background:
@@ -261,6 +295,7 @@ body{
     );
 
   color:#031017;
+
   font-size:9px;
   font-weight:900;
 }
@@ -272,6 +307,7 @@ body{
 
 .admin-login-panel{
   margin-top:14px;
+
   padding-top:14px;
 
   border-top:
@@ -281,6 +317,7 @@ body{
 
 .admin-login-title{
   color:#ff751c;
+
   font-size:9px;
   font-weight:900;
   letter-spacing:1px;
@@ -288,17 +325,23 @@ body{
 
 .admin-login-text{
   margin-top:5px;
+
   color:#777;
+
   font-size:8px;
   line-height:1.5;
 }
 
 .admin-login-button{
   width:100%;
+
   min-height:44px;
+
   margin-top:9px;
+
   border:none;
   border-radius:10px;
+
   cursor:pointer;
 
   color:#fff;
@@ -326,11 +369,14 @@ button:disabled{
 
 .account-bar{
   display:none;
+
   align-items:center;
   justify-content:space-between;
+
   gap:10px;
 
   margin-bottom:14px;
+
   padding:13px 14px;
 
   border-radius:12px;
@@ -354,13 +400,16 @@ button:disabled{
 
 .account-name{
   color:#fff;
+
   font-size:11px;
   font-weight:900;
 }
 
 .account-role{
   margin-top:3px;
+
   color:#67dcff;
+
   font-size:7px;
   font-weight:900;
   letter-spacing:1px;
@@ -368,7 +417,9 @@ button:disabled{
 
 .admin-badge{
   display:none;
+
   margin-left:6px;
+
   padding:4px 7px;
 
   border-radius:20px;
@@ -382,13 +433,17 @@ button:disabled{
 
 .account-actions{
   display:flex;
+
   gap:6px;
+
   flex-wrap:wrap;
+
   justify-content:flex-end;
 }
 
 .account-button{
   min-height:32px;
+
   padding:7px 9px;
 
   border-radius:8px;
@@ -403,6 +458,7 @@ button:disabled{
     rgba(0,150,210,.06);
 
   color:#67dcff;
+
   font-size:7px;
   font-weight:900;
 }
@@ -429,6 +485,7 @@ button:disabled{
     repeat(3,1fr);
 
   gap:7px;
+
   margin-bottom:14px;
 }
 
@@ -438,15 +495,18 @@ button:disabled{
 
 .admin-link{
   display:flex;
+
   align-items:center;
   justify-content:center;
 
   min-height:43px;
+
   padding:9px 6px;
 
   border-radius:9px;
 
   text-align:center;
+
   text-decoration:none;
 
   color:#fff;
@@ -471,8 +531,12 @@ button:disabled{
   font-weight:900;
 }
 
+
+/* CLEAR CHAT */
+
 .clear-chat-button{
   width:100%;
+
   cursor:pointer;
 
   border-color:
@@ -484,8 +548,19 @@ button:disabled{
     rgba(255,90,0,.10);
 }
 
+.clear-chat-button:hover{
+  border-color:#ff751c;
+
+  background:
+    rgba(255,90,0,.18);
+}
+
+
+/* FULL ADMIN RESET */
+
 .full-reset-button{
   width:100%;
+
   cursor:pointer;
 
   border-color:
@@ -501,6 +576,22 @@ button:disabled{
     );
 }
 
+.full-reset-button:hover{
+  border-color:#ff3030;
+
+  color:#ff3030;
+
+  background:
+    rgba(160,0,0,.20);
+}
+
+.full-reset-button:disabled,
+.clear-chat-button:disabled{
+  opacity:.4;
+
+  cursor:not-allowed;
+}
+
 
 /* =========================================
    MODERATION NOTICE
@@ -510,6 +601,7 @@ button:disabled{
   display:none;
 
   margin-bottom:14px;
+
   padding:13px 14px;
 
   border-radius:11px;
@@ -547,12 +639,14 @@ button:disabled{
 
 
 /* =========================================
-   CHAT
+   CHAT SHELL
    ========================================= */
 
 .chat-shell{
   display:none;
+
   position:relative;
+
   overflow:hidden;
 
   border-radius:15px;
@@ -597,11 +691,18 @@ button:disabled{
   background:#ff6500;
 }
 
+
+/* =========================================
+   CHAT HEADER
+   ========================================= */
+
 .chat-header{
   position:relative;
+
   z-index:2;
 
   display:flex;
+
   justify-content:space-between;
   align-items:center;
 
@@ -617,6 +718,7 @@ button:disabled{
 
 .chat-header-title{
   color:#67dcff;
+
   font-size:10px;
   font-weight:900;
   letter-spacing:1px;
@@ -624,15 +726,23 @@ button:disabled{
 
 .chat-header-status{
   color:#777;
+
   font-size:8px;
   font-weight:900;
 }
 
+
+/* =========================================
+   MESSAGES
+   ========================================= */
+
 .messages{
   position:relative;
+
   z-index:2;
 
   height:min(58vh,540px);
+
   min-height:340px;
 
   overflow-y:auto;
@@ -642,6 +752,7 @@ button:disabled{
 
 .empty-chat{
   display:flex;
+
   align-items:center;
   justify-content:center;
 
@@ -659,6 +770,7 @@ button:disabled{
 
 .message-row{
   display:flex;
+
   margin-bottom:13px;
 }
 
@@ -710,7 +822,9 @@ button:disabled{
 
 .message-name{
   margin-bottom:5px;
+
   color:#67dcff;
+
   font-size:9px;
   font-weight:900;
 }
@@ -723,11 +837,13 @@ button:disabled{
   display:inline-block;
 
   margin-left:5px;
+
   padding:2px 5px;
 
   border-radius:10px;
 
   background:#ff751c;
+
   color:#050505;
 
   font-size:6px;
@@ -746,8 +862,10 @@ button:disabled{
 
 .message-footer{
   display:flex;
+
   align-items:center;
   justify-content:space-between;
+
   gap:8px;
 
   margin-top:7px;
@@ -755,16 +873,19 @@ button:disabled{
 
 .message-time{
   color:#555;
+
   font-size:7px;
 }
 
 .message-actions{
   display:flex;
+
   gap:5px;
 }
 
 .message-action{
   border:none;
+
   padding:3px 5px;
 
   cursor:pointer;
@@ -788,9 +909,11 @@ button:disabled{
 
 .composer{
   position:relative;
+
   z-index:2;
 
   display:flex;
+
   align-items:flex-end;
 
   gap:8px;
@@ -824,6 +947,7 @@ button:disabled{
     rgba(255,255,255,.13);
 
   background:#0b0b0b;
+
   color:#fff;
 
   font-family:
@@ -840,11 +964,13 @@ button:disabled{
 
 .send-button{
   min-width:78px;
+
   min-height:43px;
 
   padding:10px 13px;
 
   border:none;
+
   border-radius:10px;
 
   cursor:pointer;
@@ -861,6 +987,12 @@ button:disabled{
   font-size:8px;
   font-weight:900;
 }
+
+
+/* =========================================
+   END OF PART 1
+   DO NOT CLOSE STYLE YET
+   ========================================= */
   /* =========================================
    REPORT MODAL
    ========================================= */
@@ -870,6 +1002,7 @@ button:disabled{
 
   position:fixed;
   inset:0;
+
   z-index:1000;
 
   align-items:center;
@@ -877,7 +1010,8 @@ button:disabled{
 
   padding:20px;
 
-  background:rgba(0,0,0,.82);
+  background:
+    rgba(0,0,0,.82);
 }
 
 .modal-backdrop.show{
@@ -907,19 +1041,23 @@ button:disabled{
 
 .modal-title{
   color:#ff751c;
+
   font-size:14px;
   font-weight:900;
 }
 
 .modal-text{
   margin-top:7px;
+
   color:#888;
+
   font-size:9px;
   line-height:1.5;
 }
 
 .report-preview{
   margin-top:12px;
+
   padding:11px;
 
   border-radius:9px;
@@ -933,13 +1071,16 @@ button:disabled{
 
 .report-preview-name{
   color:#67dcff;
+
   font-size:8px;
   font-weight:900;
 }
 
 .report-preview-text{
   margin-top:5px;
+
   color:#ddd;
+
   font-size:11px;
   line-height:1.5;
 }
@@ -960,6 +1101,7 @@ button:disabled{
   width:100%;
 
   margin-top:7px;
+
   padding:12px 11px;
 
   border-radius:9px;
@@ -971,6 +1113,7 @@ button:disabled{
   outline:none;
 
   background:#0b0b0b;
+
   color:#fff;
 
   font-size:10px;
@@ -989,6 +1132,7 @@ button:disabled{
 
 .modal-button{
   min-height:42px;
+
   padding:10px 8px;
 
   border-radius:9px;
@@ -1025,7 +1169,7 @@ button:disabled{
 
 
 /* =========================================
-   NAVIGATION
+   BOTTOM NAVIGATION
    ========================================= */
 
 .nav-grid{
@@ -1050,6 +1194,7 @@ button:disabled{
   padding:11px 8px;
 
   text-align:center;
+
   text-decoration:none;
 
   color:#fff;
@@ -1125,6 +1270,11 @@ button:disabled{
 
 }
 
+
+/* =========================================
+   END OF CSS
+   ========================================= */
+
 </style>
 
 </head>
@@ -1133,7 +1283,12 @@ button:disabled{
 <body>
 
 
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
 <header class="header">
+
 
 <a
   href="index.html"
@@ -1174,8 +1329,13 @@ The official Team Wolfpack community chat.
 
 <div class="line"></div>
 
+
 </header>
 
+
+<!-- =========================================
+     MAIN CONTENT
+     ========================================= -->
 
 <main class="content">
 
@@ -1189,7 +1349,7 @@ CONNECTING TO PACK CHAT...
 
 
 <!-- =========================================
-     JOIN / LOGIN
+     JOIN / ADMIN LOGIN
      ========================================= -->
 
 <section
@@ -1269,11 +1429,12 @@ ADMIN LOGIN
 
 </div>
 
+
 </section>
 
 
 <!-- =========================================
-     ACCOUNT
+     ACCOUNT BAR
      ========================================= -->
 
 <section
@@ -1287,6 +1448,7 @@ ADMIN LOGIN
 
 <div class="account-name">
 
+
 <span id="accountName">
 PACK MEMBER
 </span>
@@ -1298,6 +1460,7 @@ PACK MEMBER
 >
 ADMIN
 </span>
+
 
 </div>
 
@@ -1335,6 +1498,7 @@ LEAVE CHAT
 
 
 </div>
+
 
 </section>
 
@@ -1413,7 +1577,7 @@ RESET ADMIN DATA
 
 
 <!-- =========================================
-     CHAT
+     PACK CHAT
      ========================================= -->
 
 <section
@@ -1628,11 +1792,12 @@ SUBMIT REPORT
 
 </div>
 
+
 </div>
 
 
 <!-- =========================================
-     FIREBASE
+     FIREBASE JAVASCRIPT
      ========================================= -->
 
 <script type="module">
@@ -1717,7 +1882,7 @@ const db =
 
 
 /* =========================================
-   TEAM WOLFPACK ADMINS
+   OFFICIAL ADMINS
    ========================================= */
 
 const ADMINS = {
@@ -1732,7 +1897,7 @@ const ADMINS = {
 
 
 /* =========================================
-   ELEMENTS
+   PAGE ELEMENTS
    ========================================= */
 
 const status =
@@ -1904,7 +2069,7 @@ const submitReportButton =
 
 
 /* =========================================
-   STATE
+   APP STATE
    ========================================= */
 
 let currentUser =
@@ -2112,79 +2277,32 @@ function clearSavedName(){
   }
 
 }
+
+
+/* =========================================
+   END OF PART 2
+   JAVASCRIPT IS STILL OPEN
+   DO NOT ADD </script>
+   ========================================= */
   /* =========================================
-   SCREEN / ACCOUNT DISPLAY
+   STATUS DISPLAY
    ========================================= */
 
-function showJoinPanel(){
-
-  joinPanel.classList.add(
-    "show"
-  );
-
-
-  accountBar.classList.remove(
-    "show"
-  );
-
-
-  adminControls.classList.remove(
-    "show"
-  );
-
-
-  chatShell.classList.remove(
-    "show"
-  );
-
-
-  moderationNotice.classList.remove(
-    "show",
-    "muted",
-    "blocked"
-  );
-
+function setStatus(
+  text,
+  type = ""
+){
 
   status.textContent =
-    "● PACK CHAT READY";
-
+    text;
 
   status.className =
-    "status connected";
+    "status";
 
-}
+  if(type){
 
-
-function showChat(){
-
-  joinPanel.classList.remove(
-    "show"
-  );
-
-
-  accountBar.classList.add(
-    "show"
-  );
-
-
-  chatShell.classList.add(
-    "show"
-  );
-
-
-  if(
-    currentUser &&
-    isAdmin(currentUser.uid)
-  ){
-
-    adminControls.classList.add(
-      "show"
-    );
-
-  }else{
-
-    adminControls.classList.remove(
-      "show"
+    status.classList.add(
+      type
     );
 
   }
@@ -2192,23 +2310,75 @@ function showChat(){
 }
 
 
-function updateAccountBar(){
+/* =========================================
+   SHOW JOIN SCREEN
+   ========================================= */
 
-  if(
-    !currentUser ||
-    !currentName
-  ){
+function showJoinScreen(){
+
+  joinPanel.classList.add(
+    "show"
+  );
+
+  accountBar.classList.remove(
+    "show"
+  );
+
+  adminControls.classList.remove(
+    "show"
+  );
+
+  chatShell.classList.remove(
+    "show"
+  );
+
+  moderationNotice.className =
+    "moderation-notice";
+
+}
+
+
+/* =========================================
+   SHOW CHAT SCREEN
+   ========================================= */
+
+function showChatScreen(){
+
+  joinPanel.classList.remove(
+    "show"
+  );
+
+  accountBar.classList.add(
+    "show"
+  );
+
+  chatShell.classList.add(
+    "show"
+  );
+
+}
+
+
+/* =========================================
+   UPDATE ACCOUNT DISPLAY
+   ========================================= */
+
+function updateAccountDisplay(){
+
+  if(!currentUser){
 
     return;
 
   }
 
 
-  if(
+  const admin =
     isAdmin(
       currentUser.uid
-    )
-  ){
+    );
+
+
+  if(admin){
 
     currentName =
       ADMINS[
@@ -2228,63 +2398,64 @@ function updateAccountBar(){
       "inline-block";
 
 
+    adminControls.classList.add(
+      "show"
+    );
+
+
     changeNameButton.style.display =
       "none";
 
 
-    status.textContent =
-      "● " +
+    setStatus(
+      "• " +
       currentName +
-      " • ADMIN CONNECTED";
+      " • ADMIN CONNECTED",
+      "admin"
+    );
+
+  }else{
+
+    accountName.textContent =
+      currentName ||
+      "PACK MEMBER";
 
 
-    status.className =
-      "status admin";
+    accountRole.textContent =
+      "PACK MEMBER";
 
 
-    return;
+    accountAdminBadge.style.display =
+      "none";
+
+
+    adminControls.classList.remove(
+      "show"
+    );
+
+
+    changeNameButton.style.display =
+      "";
+
+
+    setStatus(
+      "• PACK CHAT CONNECTED",
+      "connected"
+    );
 
   }
-
-
-  accountName.textContent =
-    currentName;
-
-
-  accountRole.textContent =
-    "PACK MEMBER";
-
-
-  accountAdminBadge.style.display =
-    "none";
-
-
-  changeNameButton.style.display =
-    "";
-
-
-  status.textContent =
-    "● PACK CHAT CONNECTED";
-
-
-  status.className =
-    "status connected";
 
 }
 
 
 /* =========================================
-   MODERATION UI
+   UPDATE MODERATION DISPLAY
    ========================================= */
 
-function updateModerationUI(){
+function updateModerationDisplay(){
 
   moderationNotice.className =
     "moderation-notice";
-
-
-  moderationNotice.textContent =
-    "";
 
 
   if(
@@ -2292,42 +2463,21 @@ function updateModerationUI(){
     isAdmin(currentUser.uid)
   ){
 
-    currentModeration = {
-
-      muted:false,
-
-      blocked:false
-
-    };
-
-
     messageInput.disabled =
       false;
 
-
     sendButton.disabled =
       false;
-
-
-    messageInput.placeholder =
-      "Write a message...";
-
-
-    chatLiveStatus.textContent =
-      "LIVE";
-
 
     return;
 
   }
 
 
-  if(
-    currentModeration.blocked
-  ){
+  if(currentModeration.blocked){
 
     moderationNotice.textContent =
-      "PACK CHAT ACCESS BLOCKED — YOU CAN READ PACK CHAT BUT CANNOT SEND MESSAGES.";
+      "YOUR PACK CHAT ACCESS HAS BEEN BLOCKED BY A TEAM WOLFPACK ADMINISTRATOR.";
 
 
     moderationNotice.classList.add(
@@ -2348,16 +2498,10 @@ function updateModerationUI(){
       "Pack Chat access blocked";
 
 
-    chatLiveStatus.textContent =
-      "BLOCKED";
-
-
-    status.textContent =
-      "● PACK CHAT BLOCKED";
-
-
-    status.className =
-      "status blocked";
+    setStatus(
+      "• PACK CHAT ACCESS BLOCKED",
+      "blocked"
+    );
 
 
     return;
@@ -2365,12 +2509,10 @@ function updateModerationUI(){
   }
 
 
-  if(
-    currentModeration.muted
-  ){
+  if(currentModeration.muted){
 
     moderationNotice.textContent =
-      "YOU ARE MUTED — YOU CAN READ PACK CHAT BUT CANNOT SEND MESSAGES.";
+      "YOU ARE CURRENTLY MUTED. YOU CAN READ PACK CHAT BUT CANNOT SEND MESSAGES.";
 
 
     moderationNotice.classList.add(
@@ -2391,16 +2533,10 @@ function updateModerationUI(){
       "You are currently muted";
 
 
-    chatLiveStatus.textContent =
-      "MUTED";
-
-
-    status.textContent =
-      "● PACK CHAT CONNECTED • MUTED";
-
-
-    status.className =
-      "status muted";
+    setStatus(
+      "• PACK MEMBER MUTED",
+      "muted"
+    );
 
 
     return;
@@ -2420,21 +2556,21 @@ function updateModerationUI(){
     "Write a message...";
 
 
-  chatLiveStatus.textContent =
-    "LIVE";
+  setStatus(
+    "• PACK CHAT CONNECTED",
+    "connected"
+  );
 
 }
 
 
 /* =========================================
-   WATCH MODERATION
+   WATCH MEMBER MODERATION
    ========================================= */
 
 function watchModeration(){
 
-  if(
-    unsubscribeModeration
-  ){
+  if(unsubscribeModeration){
 
     unsubscribeModeration();
 
@@ -2444,32 +2580,21 @@ function watchModeration(){
   }
 
 
+  currentModeration = {
+
+    muted:false,
+
+    blocked:false
+
+  };
+
+
   if(
-    !currentUser
+    !currentUser ||
+    isAdmin(currentUser.uid)
   ){
 
-    return;
-
-  }
-
-
-  if(
-    isAdmin(
-      currentUser.uid
-    )
-  ){
-
-    currentModeration = {
-
-      muted:false,
-
-      blocked:false
-
-    };
-
-
-    updateModerationUI();
-
+    updateModerationDisplay();
 
     return;
 
@@ -2478,13 +2603,9 @@ function watchModeration(){
 
   const moderationRef =
     doc(
-
       db,
-
       "moderation",
-
       currentUser.uid
-
     );
 
 
@@ -2493,12 +2614,9 @@ function watchModeration(){
 
       moderationRef,
 
+      snapshot => {
 
-      function(snapshot){
-
-        if(
-          snapshot.exists()
-        ){
+        if(snapshot.exists()){
 
           const data =
             snapshot.data();
@@ -2527,17 +2645,28 @@ function watchModeration(){
         }
 
 
-        updateModerationUI();
+        updateModerationDisplay();
 
       },
 
-
-      function(error){
+      error => {
 
         console.error(
           "Moderation listener error:",
           error
         );
+
+
+        currentModeration = {
+
+          muted:false,
+
+          blocked:false
+
+        };
+
+
+        updateModerationDisplay();
 
       }
 
@@ -2547,297 +2676,249 @@ function watchModeration(){
 
 
 /* =========================================
-   IMMEDIATE MODERATION CHECK
+   RENDER CHAT MESSAGES
    ========================================= */
 
-async function checkModerationNow(){
+function renderMessages(
+  snapshot
+){
 
-  if(
-    !currentUser ||
-    isAdmin(currentUser.uid)
-  ){
-
-    currentModeration = {
-
-      muted:false,
-
-      blocked:false
-
-    };
+  messageMap = {};
 
 
-    return currentModeration;
+  if(snapshot.empty){
+
+    messages.innerHTML = `
+
+      <div class="empty-chat">
+
+        <div>
+
+          NO PACK CHAT MESSAGES YET
+
+          <br><br>
+
+          Start the conversation.
+
+        </div>
+
+      </div>
+
+    `;
+
+    return;
 
   }
 
 
-  try{
-
-    const snapshot =
-      await getDoc(
-
-        doc(
-
-          db,
-
-          "moderation",
-
-          currentUser.uid
-
-        )
-
-      );
+  let html = "";
 
 
-    if(
-      snapshot.exists()
-    ){
+  snapshot.forEach(
+    messageDocument => {
 
       const data =
-        snapshot.data();
+        messageDocument.data();
 
 
-      currentModeration = {
+      const id =
+        messageDocument.id;
 
-        muted:
-          data.muted === true,
 
-        blocked:
-          data.blocked === true
+      messageMap[id] = {
 
-      };
+        id:id,
 
-    }else{
-
-      currentModeration = {
-
-        muted:false,
-
-        blocked:false
+        ...data
 
       };
+
+
+      const senderUid =
+        data.uid ||
+        data.userId ||
+        "";
+
+
+      const adminMessage =
+        data.admin === true ||
+        isAdmin(senderUid);
+
+
+      const mine =
+        currentUser &&
+        senderUid ===
+        currentUser.uid;
+
+
+      const senderName =
+        adminMessage &&
+        ADMINS[senderUid]
+
+          ? ADMINS[senderUid]
+
+          : cleanName(
+              data.name ||
+              "Pack Member"
+            );
+
+
+      const text =
+        String(
+          data.text ||
+          ""
+        );
+
+
+      const rowClasses = [
+
+        "message-row",
+
+        mine
+          ? "mine"
+          : "other"
+
+      ];
+
+
+      if(adminMessage){
+
+        rowClasses.push(
+          "admin-message"
+        );
+
+      }
+
+
+      let actions = "";
+
+
+      if(
+        currentUser &&
+        isAdmin(currentUser.uid)
+      ){
+
+        actions = `
+
+          <button
+            class="message-action"
+            type="button"
+            data-delete-message="${escapeHTML(id)}"
+          >
+            DELETE
+          </button>
+
+        `;
+
+      }else if(
+        currentUser &&
+        !mine
+      ){
+
+        actions = `
+
+          <button
+            class="message-action report"
+            type="button"
+            data-report-message="${escapeHTML(id)}"
+          >
+            REPORT
+          </button>
+
+        `;
+
+      }
+
+
+      html += `
+
+        <div
+          class="${rowClasses.join(" ")}"
+        >
+
+          <div class="message-card">
+
+
+            <div class="message-name">
+
+              ${escapeHTML(senderName)}
+
+              ${
+                adminMessage
+
+                  ? `<span class="message-admin-badge">ADMIN</span>`
+
+                  : ""
+              }
+
+            </div>
+
+
+            <div class="message-text">
+
+              ${escapeHTML(text)}
+
+            </div>
+
+
+            <div class="message-footer">
+
+
+              <div class="message-time">
+
+                ${escapeHTML(
+                  displayDate(
+                    data.createdAt
+                  )
+                )}
+
+              </div>
+
+
+              <div class="message-actions">
+
+                ${actions}
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      `;
 
     }
 
-  }catch(error){
+  );
 
-    console.error(
-      "Moderation check error:",
-      error
-    );
 
-  }
+  messages.innerHTML =
+    html;
 
 
-  updateModerationUI();
+  requestAnimationFrame(
+    () => {
 
+      messages.scrollTop =
+        messages.scrollHeight;
 
-  return currentModeration;
-
-}
-
-
-/* =========================================
-   BUILD CHAT MESSAGE
-   ========================================= */
-
-function buildMessage(snapshot){
-
-  const data =
-    snapshot.data();
-
-
-  const messageId =
-    snapshot.id;
-
-
-  const uid =
-    data.uid || "";
-
-
-  const ownMessage =
-    Boolean(
-
-      currentUser &&
-
-      uid ===
-      currentUser.uid
-
-    );
-
-
-  const adminMessage =
-    isAdmin(uid);
-
-
-  let rowClass =
-    ownMessage
-      ? "message-row mine"
-      : "message-row other";
-
-
-  if(
-    adminMessage
-  ){
-
-    rowClass +=
-      " admin-message";
-
-  }
-
-
-  let badge =
-    "";
-
-
-  if(
-    adminMessage
-  ){
-
-    badge =
-      '<span class="message-admin-badge">' +
-      'ADMIN' +
-      '</span>';
-
-  }
-
-
-  let action =
-    "";
-
-
-  if(
-    currentUser &&
-    isAdmin(
-      currentUser.uid
-    )
-  ){
-
-    action =
-      '<button ' +
-      'class="message-action" ' +
-      'type="button" ' +
-      'data-delete-message="' +
-      escapeHTML(
-        messageId
-      ) +
-      '">' +
-      'DELETE' +
-      '</button>';
-
-  }
-
-  else if(
-    currentUser &&
-    !ownMessage
-  ){
-
-    action =
-      '<button ' +
-      'class="message-action report" ' +
-      'type="button" ' +
-      'data-report-message="' +
-      escapeHTML(
-        messageId
-      ) +
-      '">' +
-      'REPORT' +
-      '</button>';
-
-  }
-
-
-  return (
-
-    '<div class="' +
-    rowClass +
-    '">' +
-
-
-      '<article class="message-card">' +
-
-
-        '<div class="message-name">' +
-
-
-          escapeHTML(
-
-            adminMessage
-              ? ADMINS[uid]
-              : (
-                  data.name ||
-                  "Pack Member"
-                )
-
-          ) +
-
-
-          badge +
-
-
-        '</div>' +
-
-
-        '<div class="message-text">' +
-
-
-          escapeHTML(
-            data.text || ""
-          ) +
-
-
-        '</div>' +
-
-
-        '<div class="message-footer">' +
-
-
-          '<div class="message-time">' +
-
-
-            escapeHTML(
-
-              displayDate(
-                data.createdAt
-              )
-
-            ) +
-
-
-          '</div>' +
-
-
-          '<div class="message-actions">' +
-
-
-            action +
-
-
-          '</div>' +
-
-
-        '</div>' +
-
-
-      '</article>' +
-
-
-    '</div>'
-
+    }
   );
 
 }
 
 
 /* =========================================
-   LIVE MESSAGES
+   WATCH CHAT MESSAGES
    ========================================= */
 
-function startMessages(){
+function watchMessages(){
 
-  if(
-    unsubscribeMessages
-  ){
+  if(unsubscribeMessages){
 
     unsubscribeMessages();
 
@@ -2860,7 +2941,7 @@ function startMessages(){
         "asc"
       ),
 
-      limit(100)
+      limit(200)
 
     );
 
@@ -2870,96 +2951,39 @@ function startMessages(){
 
       messagesQuery,
 
+      snapshot => {
 
-      function(snapshot){
-
-        messageMap =
-          {};
-
-
-        if(
-          snapshot.empty
-        ){
-
-          messages.innerHTML =
-            '<div class="empty-chat">' +
-            'NO PACK CHAT MESSAGES YET' +
-            '<br><br>' +
-            'Start the conversation.' +
-            '</div>';
-
-
-          return;
-
-        }
-
-
-        let html =
-          "";
-
-
-        snapshot.forEach(
-
-          function(
-            messageSnapshot
-          ){
-
-            messageMap[
-              messageSnapshot.id
-            ] = {
-
-              id:
-                messageSnapshot.id,
-
-              data:
-                messageSnapshot.data()
-
-            };
-
-
-            html +=
-              buildMessage(
-                messageSnapshot
-              );
-
-          }
-
+        renderMessages(
+          snapshot
         );
 
 
-        messages.innerHTML =
-          html;
-
-
-        attachMessageButtons();
-
-
-        requestAnimationFrame(
-
-          function(){
-
-            messages.scrollTop =
-              messages.scrollHeight;
-
-          }
-
-        );
+        chatLiveStatus.textContent =
+          "LIVE";
 
       },
 
-
-      function(error){
+      error => {
 
         console.error(
-          "Messages listener error:",
+          "Message listener error:",
           error
         );
 
 
-        messages.innerHTML =
-          '<div class="empty-chat">' +
-          'UNABLE TO LOAD PACK CHAT.' +
-          '</div>';
+        chatLiveStatus.textContent =
+          "ERROR";
+
+
+        messages.innerHTML = `
+
+          <div class="empty-chat">
+
+            Unable to load Pack Chat.
+
+          </div>
+
+        `;
 
       }
 
@@ -2969,77 +2993,278 @@ function startMessages(){
 
 
 /* =========================================
-   MESSAGE BUTTONS
+   ENTER PACK CHAT
    ========================================= */
 
-function attachMessageButtons(){
+async function enterPackChat(){
 
-  messages
-    .querySelectorAll(
-      "[data-report-message]"
-    )
-    .forEach(
-
-      function(button){
-
-        button.addEventListener(
-
-          "click",
-
-          function(){
-
-            const record =
-              messageMap[
-                button.dataset.reportMessage
-              ];
-
-
-            if(
-              record
-            ){
-
-              openReportModal(
-                record
-              );
-
-            }
-
-          }
-
-        );
-
-      }
-
+  const requestedName =
+    cleanName(
+      nameInput.value
     );
 
 
-  messages
-    .querySelectorAll(
-      "[data-delete-message]"
+  if(!requestedName){
+
+    alert(
+      "Please enter your Pack Chat name."
+    );
+
+    nameInput.focus();
+
+    return;
+
+  }
+
+
+  if(
+    isReservedAdminName(
+      requestedName
     )
-    .forEach(
+  ){
 
-      function(button){
+    alert(
+      "That name is reserved for Team Wolfpack administrators."
+    );
 
-        button.addEventListener(
+    return;
 
-          "click",
+  }
 
-          function(){
 
-            deleteChatMessage(
+  joinButton.disabled =
+    true;
 
-              button.dataset.deleteMessage
 
-            );
+  try{
 
-          }
+    let user =
+      auth.currentUser;
 
+
+    /*
+      If an administrator is currently
+      authenticated, sign them out before
+      creating a normal Pack Member session.
+    */
+
+    if(
+      user &&
+      !user.isAnonymous
+    ){
+
+      await signOut(
+        auth
+      );
+
+
+      user =
+        null;
+
+    }
+
+
+    if(!user){
+
+      const credential =
+        await signInAnonymously(
+          auth
         );
 
-      }
 
+      user =
+        credential.user;
+
+    }
+
+
+    currentUser =
+      user;
+
+
+    currentName =
+      requestedName;
+
+
+    saveName(
+      currentName
     );
+
+
+    showChatScreen();
+
+
+    updateAccountDisplay();
+
+
+    watchModeration();
+
+
+    watchMessages();
+
+
+  }catch(error){
+
+    console.error(
+      "Enter Pack Chat error:",
+      error
+    );
+
+
+    alert(
+      "Unable to enter Pack Chat. " +
+      (
+        error.message ||
+        ""
+      )
+    );
+
+  }finally{
+
+    joinButton.disabled =
+      false;
+
+  }
+
+}
+
+
+/* =========================================
+   ADMIN LOGIN
+   ========================================= */
+
+async function adminLogin(){
+
+  const email =
+    String(
+      adminEmail.value ||
+      ""
+    ).trim();
+
+
+  const password =
+    String(
+      adminPassword.value ||
+      ""
+    );
+
+
+  if(
+    !email ||
+    !password
+  ){
+
+    alert(
+      "Enter the administrator email and password."
+    );
+
+    return;
+
+  }
+
+
+  adminLoginButton.disabled =
+    true;
+
+
+  try{
+
+    /*
+      Remove an anonymous Pack Member
+      session before administrator login.
+    */
+
+    if(auth.currentUser){
+
+      await signOut(
+        auth
+      );
+
+    }
+
+
+    const credential =
+      await signInWithEmailAndPassword(
+
+        auth,
+
+        email,
+
+        password
+
+      );
+
+
+    if(
+      !isAdmin(
+        credential.user.uid
+      )
+    ){
+
+      await signOut(
+        auth
+      );
+
+
+      throw new Error(
+        "This Firebase account is not an authorised Team Wolfpack administrator."
+      );
+
+    }
+
+
+    currentUser =
+      credential.user;
+
+
+    currentName =
+      ADMINS[
+        credential.user.uid
+      ];
+
+
+    showChatScreen();
+
+
+    updateAccountDisplay();
+
+
+    watchModeration();
+
+
+    watchMessages();
+
+
+    adminEmail.value =
+      "";
+
+
+    adminPassword.value =
+      "";
+
+
+  }catch(error){
+
+    console.error(
+      "Admin login error:",
+      error
+    );
+
+
+    alert(
+      "ADMIN LOGIN ERROR: " +
+      (
+        error.message ||
+        "Unable to sign in."
+      )
+    );
+
+  }finally{
+
+    adminLoginButton.disabled =
+      false;
+
+  }
 
 }
 
@@ -3050,10 +3275,7 @@ function attachMessageButtons(){
 
 async function sendMessage(){
 
-  if(
-    !currentUser ||
-    !currentName
-  ){
+  if(!currentUser){
 
     return;
 
@@ -3067,26 +3289,7 @@ async function sendMessage(){
     ).trim();
 
 
-  if(
-    !text
-  ){
-
-    return;
-
-  }
-
-
-  await checkModerationNow();
-
-
-  if(
-    currentModeration.blocked
-  ){
-
-    window.alert(
-      "Your Pack Chat account is blocked."
-    );
-
+  if(!text){
 
     return;
 
@@ -3094,13 +3297,27 @@ async function sendMessage(){
 
 
   if(
-    currentModeration.muted
+    currentModeration.blocked &&
+    !isAdmin(currentUser.uid)
   ){
 
-    window.alert(
-      "You are currently muted and cannot send Pack Chat messages."
+    alert(
+      "Your Pack Chat access is blocked."
     );
 
+    return;
+
+  }
+
+
+  if(
+    currentModeration.muted &&
+    !isAdmin(currentUser.uid)
+  ){
+
+    alert(
+      "You are currently muted."
+    );
 
     return;
 
@@ -3113,6 +3330,22 @@ async function sendMessage(){
 
   try{
 
+    const admin =
+      isAdmin(
+        currentUser.uid
+      );
+
+
+    const senderName =
+      admin
+
+        ? ADMINS[
+            currentUser.uid
+          ]
+
+        : currentName;
+
+
     await addDoc(
 
       collection(
@@ -3120,22 +3353,13 @@ async function sendMessage(){
         "messages"
       ),
 
-
       {
 
         uid:
           currentUser.uid,
 
-
         name:
-          isAdmin(
-            currentUser.uid
-          )
-            ? ADMINS[
-                currentUser.uid
-              ]
-            : currentName,
-
+          senderName,
 
         text:
           text.slice(
@@ -3143,6 +3367,8 @@ async function sendMessage(){
             500
           ),
 
+        admin:
+          admin,
 
         createdAt:
           serverTimestamp()
@@ -3156,6 +3382,10 @@ async function sendMessage(){
       "";
 
 
+    messageInput.style.height =
+      "auto";
+
+
   }catch(error){
 
     console.error(
@@ -3164,40 +3394,18 @@ async function sendMessage(){
     );
 
 
-    await checkModerationNow();
-
-
-    if(
-      currentModeration.muted
-    ){
-
-      window.alert(
-        "You are currently muted and cannot send messages."
-      );
-
-    }
-
-    else if(
-      currentModeration.blocked
-    ){
-
-      window.alert(
-        "Your Pack Chat account has been blocked."
-      );
-
-    }
-
-    else{
-
-      window.alert(
-        "Unable to send your Pack Chat message."
-      );
-
-    }
+    alert(
+      "Unable to send message. " +
+      (
+        error.message ||
+        ""
+      )
+    );
 
   }finally{
 
-    updateModerationUI();
+    sendButton.disabled =
+      false;
 
   }
 
@@ -3205,18 +3413,16 @@ async function sendMessage(){
 
 
 /* =========================================
-   DELETE SINGLE MESSAGE
+   DELETE ONE MESSAGE - ADMIN ONLY
    ========================================= */
 
-async function deleteChatMessage(
+async function deleteMessage(
   messageId
 ){
 
   if(
     !currentUser ||
-    !isAdmin(
-      currentUser.uid
-    )
+    !isAdmin(currentUser.uid)
   ){
 
     return;
@@ -3225,14 +3431,12 @@ async function deleteChatMessage(
 
 
   const confirmed =
-    window.confirm(
-      "Delete this message from Pack Chat?"
+    confirm(
+      "Delete this Pack Chat message?"
     );
 
 
-  if(
-    !confirmed
-  ){
+  if(!confirmed){
 
     return;
 
@@ -3244,13 +3448,9 @@ async function deleteChatMessage(
     await deleteDoc(
 
       doc(
-
         db,
-
         "messages",
-
         messageId
-
       )
 
     );
@@ -3263,8 +3463,12 @@ async function deleteChatMessage(
     );
 
 
-    window.alert(
-      "Unable to delete this message."
+    alert(
+      "Unable to delete this message. " +
+      (
+        error.message ||
+        ""
+      )
     );
 
   }
@@ -3273,22 +3477,15 @@ async function deleteChatMessage(
 
 
 /* =========================================
-   CLEAR ENTIRE PACK CHAT
+   CLEAR ENTIRE PACK CHAT - ADMIN ONLY
    ========================================= */
 
 async function clearPackChat(){
 
   if(
     !currentUser ||
-    !isAdmin(
-      currentUser.uid
-    )
+    !isAdmin(currentUser.uid)
   ){
-
-    window.alert(
-      "Team Wolfpack administrator access is required."
-    );
-
 
     return;
 
@@ -3296,20 +3493,12 @@ async function clearPackChat(){
 
 
   const firstConfirm =
-    window.confirm(
-
-      "CLEAR ALL PACK CHAT MESSAGES?\n\n" +
-
-      "This will permanently remove every current Pack Chat message.\n\n" +
-
-      "Reports, member moderation, mutes, blocks and resolved history will NOT be deleted."
-
+    confirm(
+      "CLEAR PACK CHAT?\n\nThis will permanently delete every current Pack Chat message."
     );
 
 
-  if(
-    !firstConfirm
-  ){
+  if(!firstConfirm){
 
     return;
 
@@ -3317,20 +3506,12 @@ async function clearPackChat(){
 
 
   const secondConfirm =
-    window.confirm(
-
-      "FINAL CONFIRMATION\n\n" +
-
-      "Are you absolutely sure you want to clear Pack Chat and start a fresh conversation?\n\n" +
-
-      "This cannot be undone."
-
+    confirm(
+      "FINAL CONFIRMATION\n\nDelete ALL Pack Chat messages and start the conversation fresh?"
     );
 
 
-  if(
-    !secondConfirm
-  ){
+  if(!secondConfirm){
 
     return;
 
@@ -3358,129 +3539,50 @@ async function clearPackChat(){
       );
 
 
-    const deletedCount =
-      snapshot.size;
-
-
-    const deletions =
-      [];
-
-
-    snapshot.forEach(
-
-      function(
-        messageDocument
-      ){
-
-        deletions.push(
-
-          deleteDoc(
-
-            doc(
-
-              db,
-
-              "messages",
-
-              messageDocument.id
-
-            )
-
-          )
-
-        );
-
-      }
-
-    );
-
-
-    await Promise.all(
-      deletions
-    );
-
-
     /*
-      Record chat clear in history.
+      Delete in smaller groups rather than
+      trying to fire hundreds of writes at once.
     */
 
-    await addDoc(
-
-      collection(
-        db,
-        "resolvedReports"
-      ),
+    const documents =
+      snapshot.docs;
 
 
-      {
-
-        source:
-          "pack-chat",
+    const groupSize =
+      20;
 
 
-        type:
-          "chat-clear",
+    for(
+      let index = 0;
+      index < documents.length;
+      index += groupSize
+    ){
+
+      const group =
+        documents.slice(
+          index,
+          index + groupSize
+        );
 
 
-        action:
-          "CHAT CLEARED",
+      await Promise.all(
+
+        group.map(
+          item =>
+            deleteDoc(
+              item.ref
+            )
+        )
+
+      );
+
+    }
 
 
-        actionTaken:
-          "CHAT CLEARED",
-
-
-        deletedMessageCount:
-          deletedCount,
-
-
-        resolvedByUid:
-          currentUser.uid,
-
-
-        resolvedByName:
-          ADMINS[
-            currentUser.uid
-          ]
-          ||
-          "TEAM WOLFPACK ADMIN",
-
-
-        resolvedBy:
-          ADMINS[
-            currentUser.uid
-          ]
-          ||
-          "TEAM WOLFPACK ADMIN",
-
-
-        resolvedAt:
-          serverTimestamp(),
-
-
-        createdAt:
-          serverTimestamp()
-
-      }
-
+    alert(
+      "Pack Chat has been cleared. The conversation now has a fresh start."
     );
 
-
-    window.alert(
-
-      "PACK CHAT CLEARED\n\n" +
-
-      deletedCount +
-
-      (
-        deletedCount === 1
-          ? " message was removed."
-          : " messages were removed."
-      ) +
-
-      "\n\nThe Pack can now start a fresh conversation."
-
-    );
 
   }catch(error){
 
@@ -3490,8 +3592,12 @@ async function clearPackChat(){
     );
 
 
-    window.alert(
-      "Unable to clear Pack Chat."
+    alert(
+      "CLEAR CHAT ERROR: " +
+      (
+        error.message ||
+        "Unable to clear Pack Chat."
+      )
     );
 
   }finally{
@@ -3509,376 +3615,42 @@ async function clearPackChat(){
 
 
 /* =========================================
-   FULL ADMIN DATA RESET
-
-   CLEARS:
-   - OPEN REPORTS
-   - MODERATION RECORDS
-   - ALL MUTES
-   - ALL BLOCKS
-   - RESOLVED HISTORY
-
-   DOES NOT CLEAR CHAT MESSAGES
+   OPEN REPORT MODAL
    ========================================= */
 
-async function fullAdminReset(){
+function openReportModal(
+  messageId
+){
 
-  if(
-    !currentUser ||
-    !isAdmin(
-      currentUser.uid
-    )
-  ){
+  const item =
+    messageMap[
+      messageId
+    ];
 
-    window.alert(
-      "Team Wolfpack administrator access is required."
-    );
 
+  if(!item){
 
     return;
 
-  }
-
-
-  const firstConfirm =
-    window.confirm(
-
-      "FULL ADMIN RESET?\n\n" +
-
-      "This will permanently delete:\n\n" +
-
-      "• ALL OPEN REPORTS\n" +
-
-      "• ALL MEMBER MODERATION RECORDS\n" +
-
-      "• ALL MUTES\n" +
-
-      "• ALL BLOCKS\n" +
-
-      "• ALL RESOLVED HISTORY\n\n" +
-
-      "Pack Chat messages will NOT be deleted.\n\n" +
-
-      "Continue?"
-
-    );
-
-
-  if(
-    !firstConfirm
-  ){
-
-    return;
-
-  }
-
-
-  const secondConfirm =
-    window.confirm(
-
-      "FINAL WARNING\n\n" +
-
-      "All reports, mutes, blocks and moderation history will be permanently removed.\n\n" +
-
-      "This cannot be undone.\n\n" +
-
-      "Continue with the reset?"
-
-    );
-
-
-  if(
-    !secondConfirm
-  ){
-
-    return;
-
-  }
-
-
-  const typedConfirmation =
-    window.prompt(
-
-      "Type RESET to confirm the full Team Wolfpack moderation reset."
-
-    );
-
-
-  if(
-    typedConfirmation !==
-    "RESET"
-  ){
-
-    window.alert(
-      "Reset cancelled."
-    );
-
-
-    return;
-
-  }
-
-
-  fullResetButton.disabled =
-    true;
-
-
-  fullResetButton.textContent =
-    "RESETTING...";
-
-
-  try{
-
-    /*
-      Read all three admin collections.
-    */
-
-    const [
-      reportsSnapshot,
-      moderationSnapshot,
-      historySnapshot
-    ] =
-      await Promise.all([
-
-
-        getDocs(
-
-          collection(
-            db,
-            "reports"
-          )
-
-        ),
-
-
-        getDocs(
-
-          collection(
-            db,
-            "moderation"
-          )
-
-        ),
-
-
-        getDocs(
-
-          collection(
-            db,
-            "resolvedReports"
-          )
-
-        )
-
-
-      ]);
-
-
-    const reportCount =
-      reportsSnapshot.size;
-
-
-    const moderationCount =
-      moderationSnapshot.size;
-
-
-    const historyCount =
-      historySnapshot.size;
-
-
-    const deletions =
-      [];
-
-
-    /*
-      Delete open reports.
-    */
-
-    reportsSnapshot.forEach(
-
-      function(item){
-
-        deletions.push(
-
-          deleteDoc(
-
-            doc(
-
-              db,
-
-              "reports",
-
-              item.id
-
-            )
-
-          )
-
-        );
-
-      }
-
-    );
-
-
-    /*
-      Delete moderation documents.
-
-      Removing these documents clears
-      all current mutes and blocks.
-    */
-
-    moderationSnapshot.forEach(
-
-      function(item){
-
-        deletions.push(
-
-          deleteDoc(
-
-            doc(
-
-              db,
-
-              "moderation",
-
-              item.id
-
-            )
-
-          )
-
-        );
-
-      }
-
-    );
-
-
-    /*
-      Delete resolved history.
-    */
-
-    historySnapshot.forEach(
-
-      function(item){
-
-        deletions.push(
-
-          deleteDoc(
-
-            doc(
-
-              db,
-
-              "resolvedReports",
-
-              item.id
-
-            )
-
-          )
-
-        );
-
-      }
-
-    );
-
-
-    /*
-      Perform the reset.
-    */
-
-    await Promise.all(
-      deletions
-    );
-
-
-    window.alert(
-
-      "TEAM WOLFPACK ADMIN RESET COMPLETE\n\n" +
-
-      reportCount +
-      " open reports removed.\n" +
-
-      moderationCount +
-      " moderation records removed.\n" +
-
-      historyCount +
-      " history records removed.\n\n" +
-
-      "ALL MUTES CLEARED\n" +
-
-      "ALL BLOCKS CLEARED\n\n" +
-
-      "Pack Chat messages were left untouched."
-
-    );
-
-  }catch(error){
-
-    console.error(
-      "Full admin reset error:",
-      error
-    );
-
-
-    window.alert(
-      "Unable to complete the full admin reset."
-    );
-
-  }finally{
-
-    fullResetButton.disabled =
-      false;
-
-
-    fullResetButton.textContent =
-      "RESET ADMIN DATA";
-
-  }
-
-}
-  /* =========================================
-   REPORTING
-   ========================================= */
-
-function openReportModal(record){
-
-  if(
-    !currentUser ||
-    !record
-  ){
-    return;
-  }
-
-
-  if(
-    record.data.uid ===
-    currentUser.uid
-  ){
-
-    window.alert(
-      "You cannot report your own Pack Chat message."
-    );
-
-    return;
   }
 
 
   selectedReportMessage =
-    record;
+    item;
 
 
   reportPreviewName.textContent =
-    record.data.name ||
-    "Pack Member";
+    cleanName(
+      item.name ||
+      "Pack Member"
+    );
 
 
   reportPreviewText.textContent =
-    record.data.text ||
-    "";
+    String(
+      item.text ||
+      ""
+    );
 
 
   reportReason.value =
@@ -3891,6 +3663,10 @@ function openReportModal(record){
 
 }
 
+
+/* =========================================
+   CLOSE REPORT MODAL
+   ========================================= */
 
 function closeReportModal(){
 
@@ -3905,49 +3681,39 @@ function closeReportModal(){
 }
 
 
+/* =========================================
+   SUBMIT REPORT
+   ========================================= */
+
 async function submitReport(){
 
   if(
     !currentUser ||
     !selectedReportMessage
   ){
+
     return;
+
   }
 
 
-  const reason =
-    String(
-      reportReason.value || ""
-    ).trim();
-
-
-  if(!reason){
-    return;
-  }
-
-
-  const record =
-    selectedReportMessage;
-
-
-  const data =
-    record.data;
+  const reportedUid =
+    selectedReportMessage.uid ||
+    selectedReportMessage.userId ||
+    "";
 
 
   if(
-    data.uid ===
+    reportedUid ===
     currentUser.uid
   ){
 
-    window.alert(
-      "You cannot report your own Pack Chat message."
+    alert(
+      "You cannot report your own message."
     );
 
-
-    closeReportModal();
-
-
     return;
+
   }
 
 
@@ -3964,54 +3730,43 @@ async function submitReport(){
         "reports"
       ),
 
-
       {
 
-        reporterUid:
-          String(
-            currentUser.uid
-          ),
-
-
         messageId:
-          String(
-            record.id || ""
-          ),
+          selectedReportMessage.id,
 
+        reportedUid:
+          reportedUid,
 
-        messageUid:
-          String(
-            data.uid || ""
-          ),
-
-
-        messageName:
-          String(
-            data.name ||
+        reportedName:
+          cleanName(
+            selectedReportMessage.name ||
             "Pack Member"
-          ).slice(
-            0,
-            30
           ),
 
-
-        messageText:
+        reportedMessage:
           String(
-            data.text || ""
-          ).slice(
-            0,
-            500
+            selectedReportMessage.text ||
+            ""
           ),
 
+        reporterUid:
+          currentUser.uid,
+
+        reporterName:
+          isAdmin(currentUser.uid)
+
+            ? ADMINS[
+                currentUser.uid
+              ]
+
+            : currentName,
 
         reason:
-          String(
-            reason
-          ).slice(
-            0,
-            100
-          ),
+          reportReason.value,
 
+        status:
+          "open",
 
         createdAt:
           serverTimestamp()
@@ -4024,41 +3779,26 @@ async function submitReport(){
     closeReportModal();
 
 
-    window.alert(
+    alert(
       "Report submitted to Team Wolfpack administrators."
     );
+
 
   }catch(error){
 
     console.error(
-      "Report error:",
+      "Report submission error:",
       error
     );
 
 
-    if(
-      error.code ===
-      "permission-denied"
-    ){
-
-      window.alert(
-        "REPORT ERROR: Firestore permission denied."
-      );
-
-    }else{
-
-      window.alert(
-
-        "REPORT ERROR: " +
-
-        (
-          error.code ||
-          "unknown"
-        )
-
-      );
-
-    }
+    alert(
+      "REPORT ERROR: " +
+      (
+        error.message ||
+        "Unable to submit this report."
+      )
+    );
 
   }finally{
 
@@ -4071,140 +3811,368 @@ async function submitReport(){
 
 
 /* =========================================
-   MEMBER JOIN
+   RESET COLLECTION HELPER
+
+   Used by the administrator fresh-start
+   control in Part 4.
    ========================================= */
 
-function enterPackChat(){
+async function deleteCollectionDocuments(
+  collectionName
+){
 
-  if(
-    !currentUser
-  ){
+  const snapshot =
+    await getDocs(
 
-    window.alert(
-      "Pack Chat is still connecting."
-    );
+      collection(
+        db,
+        collectionName
+      )
 
-    return;
-  }
-
-
-  /*
-    Admins do not need a display-name
-    entry. Their verified Firebase UID
-    determines their official name.
-  */
-
-  if(
-    isAdmin(
-      currentUser.uid
-    )
-  ){
-
-    currentName =
-      ADMINS[
-        currentUser.uid
-      ];
-
-
-    updateAccountBar();
-
-
-    showChat();
-
-
-    watchModeration();
-
-
-    startMessages();
-
-
-    return;
-  }
-
-
-  const name =
-    cleanName(
-      nameInput.value
     );
 
 
-  if(
-    !name
+  const documents =
+    snapshot.docs;
+
+
+  const groupSize =
+    20;
+
+
+  for(
+    let index = 0;
+    index < documents.length;
+    index += groupSize
   ){
 
-    window.alert(
-      "Enter your Pack name."
+    const group =
+      documents.slice(
+        index,
+        index + groupSize
+      );
+
+
+    await Promise.all(
+
+      group.map(
+        item =>
+          deleteDoc(
+            item.ref
+          )
+      )
+
     );
 
-    return;
   }
 
 
-  /*
-    Stop normal members impersonating
-    MR WOLFIE or MRS WOLFIE.
-  */
-
-  if(
-    isReservedAdminName(
-      name
-    )
-  ){
-
-    window.alert(
-      "That name is reserved for an official Team Wolfpack administrator."
-    );
-
-    return;
-  }
-
-
-  currentName =
-    name;
-
-
-  saveName(
-    currentName
-  );
-
-
-  nameInput.value =
-    "";
-
-
-  updateAccountBar();
-
-
-  showChat();
-
-
-  watchModeration();
-
-
-  startMessages();
+  return documents.length;
 
 }
 
 
 /* =========================================
-   CHANGE MEMBER NAME
+   END OF PART 3
+
+   IMPORTANT:
+   JAVASCRIPT IS STILL OPEN.
+
+   DO NOT ADD:
+   </script>
+   </body>
+   </html>
+
+   PART 4 WILL FINISH THE FILE.
+   ========================================= */
+      /* =========================================
+   FULL ADMIN DATA RESET
+
+   CLEARS:
+   - OPEN REPORTS
+   - MEMBER MODERATION RECORDS
+   - ALL MUTES
+   - ALL BLOCKS
+   - RESOLVED HISTORY
+
+   DOES NOT DELETE PACK CHAT MESSAGES
+   ========================================= */
+
+async function fullAdminReset(){
+
+  if(
+    !currentUser ||
+    !isAdmin(currentUser.uid)
+  ){
+
+    alert(
+      "Team Wolfpack administrator access is required."
+    );
+
+    return;
+
+  }
+
+
+  /*
+    FIRST WARNING
+  */
+
+  const firstConfirm =
+    confirm(
+
+      "RESET ADMIN DATA?\n\n" +
+
+      "This will permanently clear:\n\n" +
+
+      "• ALL OPEN REPORTS\n" +
+
+      "• ALL MEMBER MODERATION RECORDS\n" +
+
+      "• ALL MUTES\n" +
+
+      "• ALL BLOCKS\n" +
+
+      "• ALL RESOLVED HISTORY\n\n" +
+
+      "PACK CHAT MESSAGES WILL NOT BE DELETED.\n\n" +
+
+      "Do you want to continue?"
+
+    );
+
+
+  if(!firstConfirm){
+
+    return;
+
+  }
+
+
+  /*
+    SECOND WARNING
+  */
+
+  const secondConfirm =
+    confirm(
+
+      "FINAL WARNING\n\n" +
+
+      "You are about to completely reset the Team Wolfpack moderation system.\n\n" +
+
+      "All reports, mutes, blocks and resolved history will be permanently removed.\n\n" +
+
+      "This cannot be undone.\n\n" +
+
+      "Continue?"
+
+    );
+
+
+  if(!secondConfirm){
+
+    return;
+
+  }
+
+
+  /*
+    REQUIRE ADMIN TO TYPE RESET
+  */
+
+  const typedConfirmation =
+    prompt(
+
+      "TYPE RESET TO CONFIRM\n\n" +
+
+      "Enter RESET in capital letters to continue."
+
+    );
+
+
+  if(
+    typedConfirmation !==
+    "RESET"
+  ){
+
+    alert(
+      "Admin reset cancelled."
+    );
+
+    return;
+
+  }
+
+
+  fullResetButton.disabled =
+    true;
+
+
+  clearChatButton.disabled =
+    true;
+
+
+  fullResetButton.textContent =
+    "RESETTING...";
+
+
+  try{
+
+
+    /*
+      STEP 1
+      CLEAR OPEN REPORTS
+    */
+
+    fullResetButton.textContent =
+      "CLEARING REPORTS...";
+
+
+    const reportsRemoved =
+      await deleteCollectionDocuments(
+        "reports"
+      );
+
+
+    /*
+      STEP 2
+      CLEAR MEMBER MODERATION
+
+      Each member moderation document
+      stores their current mute/block state.
+
+      Deleting these documents therefore
+      releases all current mutes and blocks.
+    */
+
+    fullResetButton.textContent =
+      "CLEARING MODERATION...";
+
+
+    const moderationRemoved =
+      await deleteCollectionDocuments(
+        "moderation"
+      );
+
+
+    /*
+      STEP 3
+      CLEAR RESOLVED HISTORY
+    */
+
+    fullResetButton.textContent =
+      "CLEARING HISTORY...";
+
+
+    const historyRemoved =
+      await deleteCollectionDocuments(
+        "resolvedReports"
+      );
+
+
+    /*
+      RESET COMPLETE
+
+      We intentionally DO NOT create a
+      "RESET ADMIN DATA" history record.
+
+      The user requested completely fresh
+      resolved history, so resolvedReports
+      remains empty after the reset.
+    */
+
+
+    fullResetButton.textContent =
+      "RESET COMPLETE";
+
+
+    alert(
+
+      "TEAM WOLFPACK ADMIN RESET COMPLETE\n\n" +
+
+      "OPEN REPORTS REMOVED: " +
+      reportsRemoved +
+      "\n\n" +
+
+      "MODERATION RECORDS REMOVED: " +
+      moderationRemoved +
+      "\n\n" +
+
+      "RESOLVED HISTORY REMOVED: " +
+      historyRemoved +
+      "\n\n" +
+
+      "✓ ALL MUTES CLEARED\n" +
+
+      "✓ ALL BLOCKS CLEARED\n" +
+
+      "✓ OPEN REPORTS CLEARED\n" +
+
+      "✓ MODERATION DATA CLEARED\n" +
+
+      "✓ RESOLVED HISTORY CLEARED\n\n" +
+
+      "Pack Chat messages were NOT deleted."
+
+    );
+
+
+  }catch(error){
+
+    console.error(
+      "Full admin reset error:",
+      error
+    );
+
+
+    alert(
+
+      "ADMIN RESET ERROR\n\n" +
+
+      (
+        error.message ||
+        "Unable to complete the reset."
+      )
+
+    );
+
+
+  }finally{
+
+    fullResetButton.disabled =
+      false;
+
+
+    clearChatButton.disabled =
+      false;
+
+
+    fullResetButton.textContent =
+      "RESET ADMIN DATA";
+
+  }
+
+}
+
+
+/* =========================================
+   CHANGE PACK MEMBER NAME
    ========================================= */
 
 function changePackName(){
 
   if(
     !currentUser ||
-    isAdmin(
-      currentUser.uid
-    )
+    isAdmin(currentUser.uid)
   ){
 
     return;
+
   }
 
 
-  const entered =
-    window.prompt(
+  const newName =
+    prompt(
 
       "Enter your new Pack Chat name:",
 
@@ -4213,44 +4181,47 @@ function changePackName(){
     );
 
 
-  if(
-    entered === null
-  ){
+  if(newName === null){
 
     return;
+
   }
 
 
-  const name =
+  const cleaned =
     cleanName(
-      entered
+      newName
     );
 
 
-  if(
-    !name
-  ){
+  if(!cleaned){
+
+    alert(
+      "Please enter a valid Pack Chat name."
+    );
 
     return;
+
   }
 
 
   if(
     isReservedAdminName(
-      name
+      cleaned
     )
   ){
 
-    window.alert(
-      "That name is reserved for an official Team Wolfpack administrator."
+    alert(
+      "That name is reserved for Team Wolfpack administrators."
     );
 
     return;
+
   }
 
 
   currentName =
-    name;
+    cleaned;
 
 
   saveName(
@@ -4258,151 +4229,14 @@ function changePackName(){
   );
 
 
-  updateAccountBar();
-
-}
+  updateAccountDisplay();
 
 
-/* =========================================
-   ADMIN LOGIN
-   ========================================= */
-
-async function adminLogin(){
-
-  const email =
-    adminEmail.value.trim();
-
-
-  const password =
-    adminPassword.value;
-
-
-  if(
-    !email ||
-    !password
-  ){
-
-    window.alert(
-      "Enter your Team Wolfpack admin email and password."
-    );
-
-    return;
-  }
-
-
-  adminLoginButton.disabled =
-    true;
-
-
-  adminLoginButton.textContent =
-    "SIGNING IN...";
-
-
-  try{
-
-    const credential =
-      await signInWithEmailAndPassword(
-
-        auth,
-
-        email,
-
-        password
-
-      );
-
-
-    const user =
-      credential.user;
-
-
-    /*
-      The account must have one of the
-      two approved Team Wolfpack admin UIDs.
-    */
-
-    if(
-      !ADMINS[
-        user.uid
-      ]
-    ){
-
-      await signOut(
-        auth
-      );
-
-
-      window.alert(
-        "This account is not authorised for Team Wolfpack administration."
-      );
-
-
-      return;
-    }
-
-
-    /*
-      Never store an admin display name
-      as the normal member name.
-    */
-
-    clearSavedName();
-
-
-    adminEmail.value =
-      "";
-
-
-    adminPassword.value =
-      "";
-
-  }catch(error){
-
-    console.error(
-      "Admin login error:",
-      error
-    );
-
-
-    if(
-
-      error.code ===
-      "auth/invalid-credential"
-
-      ||
-
-      error.code ===
-      "auth/wrong-password"
-
-      ||
-
-      error.code ===
-      "auth/user-not-found"
-
-    ){
-
-      window.alert(
-        "Incorrect admin email or password."
-      );
-
-    }else{
-
-      window.alert(
-        "Unable to sign into the Team Wolfpack admin account."
-      );
-
-    }
-
-  }finally{
-
-    adminLoginButton.disabled =
-      false;
-
-
-    adminLoginButton.textContent =
-      "ADMIN LOGIN";
-
-  }
+  alert(
+    "Your Pack Chat name is now " +
+    currentName +
+    "."
+  );
 
 }
 
@@ -4414,29 +4248,25 @@ async function adminLogin(){
 async function leavePackChat(){
 
   const confirmed =
-    window.confirm(
+    confirm(
       "Leave Pack Chat?"
     );
 
 
-  if(
-    !confirmed
-  ){
+  if(!confirmed){
 
     return;
+
   }
 
 
   /*
-    Stop active Firestore listeners.
+    Stop live message listener.
   */
 
-  if(
-    unsubscribeMessages
-  ){
+  if(unsubscribeMessages){
 
     unsubscribeMessages();
-
 
     unsubscribeMessages =
       null;
@@ -4444,12 +4274,13 @@ async function leavePackChat(){
   }
 
 
-  if(
-    unsubscribeModeration
-  ){
+  /*
+    Stop moderation listener.
+  */
+
+  if(unsubscribeModeration){
 
     unsubscribeModeration();
-
 
     unsubscribeModeration =
       null;
@@ -4457,27 +4288,19 @@ async function leavePackChat(){
   }
 
 
-  messages.innerHTML =
-    '<div class="empty-chat">' +
-    'Join Pack Chat to load messages.' +
-    '</div>';
-
-
   /*
-    ADMIN:
-    Sign out of the authenticated admin
-    Firebase account.
+    ADMIN USERS
 
-    The auth-state listener will then
-    automatically create a normal
-    anonymous Pack Chat session.
+    Admin accounts are fully signed out.
+
+    onAuthStateChanged will then return
+    the page to the normal Pack Chat
+    joining screen.
   */
 
   if(
     currentUser &&
-    isAdmin(
-      currentUser.uid
-    )
+    isAdmin(currentUser.uid)
   ){
 
     clearSavedName();
@@ -4487,26 +4310,41 @@ async function leavePackChat(){
       "";
 
 
-    await signOut(
-      auth
-    );
+    try{
+
+      await signOut(
+        auth
+      );
+
+    }catch(error){
+
+      console.error(
+        "Admin logout error:",
+        error
+      );
+
+    }
 
 
     return;
+
   }
 
 
   /*
-    NORMAL MEMBER:
+    NORMAL PACK MEMBERS
 
     IMPORTANT:
-    Do NOT sign the anonymous Firebase
-    user out.
 
-    Keeping this anonymous UID means
-    mute/block moderation continues to
-    apply when the member leaves and
-    rejoins Pack Chat.
+    DO NOT call signOut() here.
+
+    The anonymous Firebase account must
+    remain authenticated so that the
+    member keeps the SAME Firebase UID.
+
+    This means an administrator's mute
+    or block continues to apply after
+    the member leaves and rejoins.
   */
 
   clearSavedName();
@@ -4525,172 +4363,75 @@ async function leavePackChat(){
   };
 
 
-  showJoinPanel();
+  messageInput.value =
+    "";
+
+
+  messages.innerHTML = `
+
+    <div class="empty-chat">
+
+      Join Pack Chat to load messages.
+
+    </div>
+
+  `;
+
+
+  showJoinScreen();
+
+
+  setStatus(
+    "• PACK CHAT READY",
+    "connected"
+  );
 
 }
 
 
 /* =========================================
-   AUTHENTICATION
+   MESSAGE BUTTON CLICKS
+
+   Uses event delegation so REPORT and
+   DELETE continue working whenever the
+   real-time message list is rebuilt.
    ========================================= */
 
-onAuthStateChanged(
+messages.addEventListener(
 
-  auth,
+  "click",
 
-
-  async function(user){
-
-
-    currentUser =
-      user || null;
+  event => {
 
 
-    /*
-      Firebase user exists.
-    */
-
-    if(
-      user
-    ){
+    const reportButton =
+      event.target.closest(
+        "[data-report-message]"
+      );
 
 
-      /*
-        OFFICIAL ADMIN ACCOUNT
-      */
+    if(reportButton){
 
-      if(
-        isAdmin(
-          user.uid
-        )
-      ){
-
-        currentName =
-          ADMINS[
-            user.uid
-          ];
-
-
-        clearSavedName();
-
-
-        updateAccountBar();
-
-
-        showChat();
-
-
-        watchModeration();
-
-
-        startMessages();
-
-
-        return;
-      }
-
-
-      /*
-        NORMAL ANONYMOUS MEMBER
-      */
-
-      let savedName =
-        getSavedName();
-
-
-      /*
-        Protection against an old saved
-        admin-style display name.
-      */
-
-      if(
-        isReservedAdminName(
-          savedName
-        )
-      ){
-
-        clearSavedName();
-
-
-        savedName =
-          "";
-
-      }
-
-
-      if(
-        savedName
-      ){
-
-        currentName =
-          savedName;
-
-
-        updateAccountBar();
-
-
-        showChat();
-
-
-        watchModeration();
-
-
-        startMessages();
-
-      }else{
-
-        currentName =
-          "";
-
-
-        showJoinPanel();
-
-      }
-
+      openReportModal(
+        reportButton.dataset.reportMessage
+      );
 
       return;
+
     }
 
 
-    /*
-      No Firebase user exists.
-
-      Create a persistent anonymous
-      Pack Chat identity.
-    */
-
-    currentName =
-      "";
-
-
-    status.textContent =
-      "CONNECTING TO PACK CHAT...";
-
-
-    status.className =
-      "status";
-
-
-    try{
-
-      await signInAnonymously(
-        auth
-      );
-
-    }catch(error){
-
-      console.error(
-        "Anonymous authentication error:",
-        error
+    const deleteButton =
+      event.target.closest(
+        "[data-delete-message]"
       );
 
 
-      status.textContent =
-        "UNABLE TO CONNECT TO PACK CHAT";
+    if(deleteButton){
 
-
-      status.className =
-        "status error";
+      deleteMessage(
+        deleteButton.dataset.deleteMessage
+      );
 
     }
 
@@ -4700,13 +4441,8 @@ onAuthStateChanged(
 
 
 /* =========================================
-   EVENT LISTENERS
+   JOIN BUTTON
    ========================================= */
-
-
-/*
-  JOIN PACK CHAT
-*/
 
 joinButton.addEventListener(
 
@@ -4721,15 +4457,11 @@ nameInput.addEventListener(
 
   "keydown",
 
-  function(event){
+  event => {
 
-    if(
-      event.key ===
-      "Enter"
-    ){
+    if(event.key === "Enter"){
 
       event.preventDefault();
-
 
       enterPackChat();
 
@@ -4740,9 +4472,9 @@ nameInput.addEventListener(
 );
 
 
-/*
-  ADMIN LOGIN
-*/
+/* =========================================
+   ADMIN LOGIN
+   ========================================= */
 
 adminLoginButton.addEventListener(
 
@@ -4757,15 +4489,11 @@ adminPassword.addEventListener(
 
   "keydown",
 
-  function(event){
+  event => {
 
-    if(
-      event.key ===
-      "Enter"
-    ){
+    if(event.key === "Enter"){
 
       event.preventDefault();
-
 
       adminLogin();
 
@@ -4776,9 +4504,9 @@ adminPassword.addEventListener(
 );
 
 
-/*
-  SEND MESSAGE
-*/
+/* =========================================
+   SEND MESSAGE
+   ========================================= */
 
 sendButton.addEventListener(
 
@@ -4793,21 +4521,14 @@ messageInput.addEventListener(
 
   "keydown",
 
-  function(event){
+  event => {
 
     if(
-
-      event.key ===
-      "Enter"
-
-      &&
-
+      event.key === "Enter" &&
       !event.shiftKey
-
     ){
 
       event.preventDefault();
-
 
       sendMessage();
 
@@ -4818,9 +4539,34 @@ messageInput.addEventListener(
 );
 
 
-/*
-  MEMBER ACCOUNT
-*/
+/* =========================================
+   AUTO-GROW MESSAGE BOX
+   ========================================= */
+
+messageInput.addEventListener(
+
+  "input",
+
+  () => {
+
+    messageInput.style.height =
+      "auto";
+
+
+    messageInput.style.height =
+      Math.min(
+        messageInput.scrollHeight,
+        120
+      ) + "px";
+
+  }
+
+);
+
+
+/* =========================================
+   ACCOUNT BUTTONS
+   ========================================= */
 
 changeNameButton.addEventListener(
 
@@ -4840,10 +4586,9 @@ leaveChatButton.addEventListener(
 );
 
 
-/*
-  ADMIN:
-  CLEAR LIVE PACK CHAT
-*/
+/* =========================================
+   ADMIN CLEAR PACK CHAT
+   ========================================= */
 
 clearChatButton.addEventListener(
 
@@ -4854,11 +4599,9 @@ clearChatButton.addEventListener(
 );
 
 
-/*
-  ADMIN:
-  RESET REPORTS / MODERATION /
-  MUTES / BLOCKS / HISTORY
-*/
+/* =========================================
+   ADMIN FULL RESET
+   ========================================= */
 
 fullResetButton.addEventListener(
 
@@ -4869,9 +4612,9 @@ fullResetButton.addEventListener(
 );
 
 
-/*
-  REPORT MODAL
-*/
+/* =========================================
+   REPORT MODAL BUTTONS
+   ========================================= */
 
 cancelReportButton.addEventListener(
 
@@ -4895,7 +4638,7 @@ reportModal.addEventListener(
 
   "click",
 
-  function(event){
+  event => {
 
     if(
       event.target ===
@@ -4911,33 +4654,24 @@ reportModal.addEventListener(
 );
 
 
-/*
-  Re-check moderation whenever a member
-  returns to the page.
-*/
+/* =========================================
+   ESCAPE CLOSES REPORT WINDOW
+   ========================================= */
 
 document.addEventListener(
 
-  "visibilitychange",
+  "keydown",
 
-  function(){
+  event => {
 
     if(
-
-      document.visibilityState ===
-      "visible"
-
-      &&
-
-      currentUser
-
-      &&
-
-      currentName
-
+      event.key === "Escape" &&
+      reportModal.classList.contains(
+        "show"
+      )
     ){
 
-      checkModerationNow();
+      closeReportModal();
 
     }
 
@@ -4945,6 +4679,281 @@ document.addEventListener(
 
 );
 
+
+/* =========================================
+   FIREBASE AUTH STATE
+
+   IMPORTANT:
+   Existing anonymous users are kept.
+
+   This preserves their Firebase UID and
+   therefore preserves mute/block enforcement
+   until an administrator resets moderation.
+   ========================================= */
+
+onAuthStateChanged(
+
+  auth,
+
+  async user => {
+
+
+    /*
+      NO AUTHENTICATED FIREBASE USER
+    */
+
+    if(!user){
+
+      currentUser =
+        null;
+
+
+      currentName =
+        "";
+
+
+      currentModeration = {
+
+        muted:false,
+
+        blocked:false
+
+      };
+
+
+      adminControls.classList.remove(
+        "show"
+      );
+
+
+      /*
+        Automatically establish a normal
+        anonymous Pack Chat identity.
+
+        This does NOT automatically enter
+        the chat because the member still
+        needs a display name.
+      */
+
+      try{
+
+        const credential =
+          await signInAnonymously(
+            auth
+          );
+
+
+        currentUser =
+          credential.user;
+
+
+        const savedName =
+          getSavedName();
+
+
+        if(
+          savedName &&
+          !isReservedAdminName(
+            savedName
+          )
+        ){
+
+          currentName =
+            savedName;
+
+
+          showChatScreen();
+
+
+          updateAccountDisplay();
+
+
+          watchModeration();
+
+
+          watchMessages();
+
+        }else{
+
+          showJoinScreen();
+
+
+          setStatus(
+            "• PACK CHAT READY",
+            "connected"
+          );
+
+        }
+
+
+      }catch(error){
+
+        console.error(
+          "Anonymous authentication error:",
+          error
+        );
+
+
+        showJoinScreen();
+
+
+        setStatus(
+          "PACK CHAT CONNECTION ERROR",
+          "error"
+        );
+
+      }
+
+
+      return;
+
+    }
+
+
+    /*
+      FIREBASE USER EXISTS
+    */
+
+    currentUser =
+      user;
+
+
+    /*
+      OFFICIAL ADMIN
+    */
+
+    if(
+      isAdmin(
+        user.uid
+      )
+    ){
+
+      currentName =
+        ADMINS[
+          user.uid
+        ];
+
+
+      /*
+        Prevent the administrator name
+        becoming a saved anonymous
+        member display name.
+      */
+
+      clearSavedName();
+
+
+      showChatScreen();
+
+
+      updateAccountDisplay();
+
+
+      watchModeration();
+
+
+      watchMessages();
+
+
+      return;
+
+    }
+
+
+    /*
+      NORMAL PACK MEMBER
+    */
+
+    const savedName =
+      getSavedName();
+
+
+    if(
+      savedName &&
+      !isReservedAdminName(
+        savedName
+      )
+    ){
+
+      currentName =
+        savedName;
+
+
+      showChatScreen();
+
+
+      updateAccountDisplay();
+
+
+      watchModeration();
+
+
+      watchMessages();
+
+    }else{
+
+      currentName =
+        "";
+
+
+      showJoinScreen();
+
+
+      setStatus(
+        "• PACK CHAT READY",
+        "connected"
+      );
+
+    }
+
+  }
+
+);
+
+
+/* =========================================
+   PAGE VISIBILITY
+
+   When the user returns to Pack Chat,
+   Firestore listeners remain active.
+   ========================================= */
+
+document.addEventListener(
+
+  "visibilitychange",
+
+  () => {
+
+    if(
+      document.visibilityState ===
+      "visible" &&
+      currentUser &&
+      currentName
+    ){
+
+      if(!unsubscribeMessages){
+
+        watchMessages();
+
+      }
+
+
+      if(!unsubscribeModeration){
+
+        watchModeration();
+
+      }
+
+    }
+
+  }
+
+);
+
+
+/* =========================================
+   END FIREBASE MODULE
+   ========================================= */
 
 </script>
 
@@ -4963,23 +4972,21 @@ if(
 
     "load",
 
-    function(){
+    () => {
 
       navigator.serviceWorker
         .register(
-          "service-worker.js"
+          "./service-worker.js"
         )
         .catch(
-
-          function(error){
+          error => {
 
             console.error(
-              "Service worker error:",
+              "Service worker registration error:",
               error
             );
 
           }
-
         );
 
     }
