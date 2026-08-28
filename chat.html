@@ -1456,8 +1456,39 @@ HISTORY
 >
 CLEAR PACK CHAT
 </button>
+<button
+  id="fullResetButton"
+  class="admin-link full-reset-button"
+  type="button"
+>
+RESET ADMIN DATA
+</button>
+.full-reset-button{
+  width:100%;
+  cursor:pointer;
 
+  border-color:
+    rgba(255,40,40,.55);
 
+  color:#ff5050;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(120,0,0,.18),
+      rgba(255,70,0,.12)
+    );
+}
+
+.full-reset-button:hover{
+  border-color:#ff3030;
+  color:#ff3030;
+}
+
+.full-reset-button:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
 </nav>
 
 
